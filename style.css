@@ -103,6 +103,11 @@ nav a:hover::after {
     box-shadow: 0 0 20px rgba(0,245,255,0.6);
 }
 
+.mainpage {
+    padding: 80px 0;
+    text-align: center;
+}
+
 .services {
     padding: 80px 0;
     text-align: center;
@@ -131,6 +136,11 @@ nav a:hover::after {
 }
 
 .about {
+    background: #111827;
+    padding: 100px 0;
+}
+
+.blog {
     background: #111827;
     padding: 100px 0;
 }

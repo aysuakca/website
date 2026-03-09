@@ -1,239 +1,204 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="description" content="Nexora Innovation, SEO, web site oluşturma ve geliştirme hizmetleri sunar.">
-<meta name="keywords" content="SEO ajansı, web site yapımı, website geliştirme, dijital ajans">
-<meta name="author" content="Nexora Innovation">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="description" content="Nexora Innovation, SEO, web site oluşturma ve geliştirme hizmetleri sunar.">
+    <meta name="keywords" content="SEO ajansı, web site yapımı, website geliştirme, dijital ajans">
+    <meta name="author" content="Nexora Innovation">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nexora Innovation | SEO & Web Çözümleri</title>
+    <title>Nexora Innovation | SEO & Web Çözümleri</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Ekstra Tasarım Dokunuşları */
+        .services-intro {
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            text-align: center;
+            line-height: 1.8;
+            color: #b0b0b0;
+            font-size: 1.1rem;
+        }
+        .services-intro strong {
+            color: #fff;
+            display: block;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .card {
+            background: #11141d;
+            border: 1px solid #1f232e;
+            padding: 40px 30px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #6c63ff;
+            box-shadow: 0 10px 30px rgba(108, 99, 255, 0.1);
+        }
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+        .card p {
+            color: #a0a0a0;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        .card .btn-text {
+            color: #6c63ff;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+    </style>
 </head>
 
 <body>
 
-<header style="height:80px; position:relative;">
-<div class="container nav" style="display:flex;align-items:center;justify-content:space-between;height:100%;">
-
-<div class="logo-area" style="display:flex;align-items:center;position:relative;">
-
-<div style="position:absolute;left:-110px;top:50%;transform:translateY(-50%);z-index:10;">
-<script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
-
-<dotlottie-wc
-src="https://lottie.host/7297ece4-167c-4ecd-8dbf-dff152387f2b/LTCzDd2ISL.lottie"
-style="width:150px;height:150px;"
-autoplay
-loop>
-</dotlottie-wc>
-
-</div>
-
-<h2 class="logo" style="margin-left:40px;position:relative;z-index:11;">
-Nexora Innovation
-</h2>
-
-</div>
-
-<nav>
-<a href="#mainpage">Ana Sayfa</a>
-<a href="#services">Hizmetlerimiz</a>
-<a href="#about">Hakkımızda</a>
-<a href="#blog">Blog</a>
-<a href="#contact">İletişim</a>
-</nav>
-
-</div>
+<header style="height:80px; position:relative; background: #0B0F19;">
+    <div class="container nav" style="display:flex;align-items:center;justify-content:space-between;height:100%; padding: 0 5%;">
+        <div class="logo-area" style="display:flex;align-items:center;position:relative;">
+            <div style="position:absolute;left:-110px;top:50%;transform:translateY(-50%);z-index:10;">
+                <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
+                <dotlottie-wc src="https://lottie.host/7297ece4-167c-4ecd-8dbf-dff152387f2b/LTCzDd2ISL.lottie" style="width:150px;height:150px;" autoplay loop></dotlottie-wc>
+            </div>
+            <h2 class="logo" style="margin-left:40px;position:relative;z-index:11; color: white;">Nexora Innovation</h2>
+        </div>
+        <nav>
+            <a href="#mainpage">Ana Sayfa</a>
+            <a href="#services">Hizmetlerimiz</a>
+            <a href="#about">Hakkımızda</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">İletişim</a>
+        </nav>
+    </div>
 </header>
 
-<!-- HERO / ANASAYFA -->
-
-<section id="mainpage" class="hero" style="position:relative;padding:100px 0;min-height:500px;display:flex;align-items:center;justify-content:center;">
-
-<div class="hero-text" style="text-align:center;z-index:2;max-width:600px;">
-<h1>Markanızı <span>Dijitalde</span> Güçlendiriyoruz</h1>
-
-<p>
-SEO, web sitesi oluşturma ve geliştirme çözümleriyle
-işletmenizi bir adım öne taşıyoruz.
-</p>
-
-<a href="#contact" class="btn">Teklif Al</a>
-</div>
-
-<div class="hero-animation" style="position:absolute;right:5%;top:50%;transform:translateY(-50%);z-index:1;">
-
-<script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
-
-<dotlottie-wc
-src="https://lottie.host/b40a6abe-f8c4-459e-8c91-31cc341e95d0/u3gtq0Bzrh.lottie"
-style="width:350px;height:350px;"
-autoplay
-loop>
-</dotlottie-wc>
-
-</div>
-
+<section id="mainpage" class="hero" style="position:relative;padding:120px 0;min-height:600px;display:flex;align-items:center;justify-content:center; background:#0B0F19;">
+    <div class="hero-text" style="text-align:center;z-index:2;max-width:800px; padding: 0 20px;">
+        <h1 style="font-size: 3.5rem; color: white; margin-bottom: 20px;">Markanızı <span style="color:#6c63ff;">Dijitalde</span> Güçlendiriyoruz</h1>
+        <p style="font-size: 1.2rem; color: #ccc; margin-bottom: 30px;">SEO, web sitesi oluşturma ve geliştirme çözümleriyle işletmenizi bir adım öne taşıyoruz.</p>
+        <a href="#contact" class="btn" style="padding: 15px 40px; background: #6c63ff; color: white; border-radius: 30px; text-decoration: none; font-weight: 600;">Teklif Al</a>
+    </div>
 </section>
 
-<!-- HİZMETLER -->
+<section id="services" class="services" style="padding: 100px 0; background: #080b12;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        
+        <h2 style="text-align: center; font-size: 2.5rem; color: white; margin-bottom: 30px;">Hizmetlerimiz</h2>
+        
+        <div class="services-intro">
+            <strong>Markanızın dijital potansiyelini ortaya çıkarmanız için yanınızdayız.</strong>
+            <p>
+                Markanızın dijital dünyada güçlü bir konum elde etmesi için strateji, teknoloji ve yaratıcı çözümleri bir araya getiriyoruz. 
+                Dijital dünyada rekabet avantajı elde etmek doğru planlanmış bir dijital strateji ile mümkündür. 
+                Web sitesi geliştirme, SEO optimizasyonu, reklam yönetimi ve içerik stratejileri ile markaların çevrim içi dünyada daha güçlü bir konuma ulaşmasını sağlıyoruz. 
+                İşletmenizin dijital potansiyelini ortaya çıkaran ve sürdürülebilir büyüme sağlayan çözümler geliştiriyoruz.
+            </p>
+        </div>
 
-<section id="services" class="services">
-<div class="container">
+        <div class="service-grid">
+            <a href="#seo-detay" style="text-decoration:none;">
+                <div class="card">
+                    <h3>SEO Hizmetleri</h3>
+                    <p>Google’da üst sıralara çıkmanız için teknik ve içerik odaklı SEO çözümleri sunuyoruz.</p>
+                    <span class="btn-text">İncele →</span>
+                </div>
+            </a>
 
-<h2>Hizmetlerimiz</h2>
+            <a href="#website-detay" style="text-decoration:none;">
+                <div class="card">
+                    <h3>Website Oluşturma</h3>
+                    <p>Modern, mobil uyumlu ve hızlı web siteleri tasarlıyoruz.</p>
+                    <span class="btn-text">İncele →</span>
+                </div>
+            </a>
 
-<div class="service-grid">
-
-<a href="#seo-detay" style="text-decoration:none;color:inherit;">
-<div class="card">
-<h3>SEO Hizmetleri</h3>
-<p>Google’da üst sıralara çıkmanız için teknik ve içerik odaklı SEO çözümleri sunuyoruz.</p>
-<span style="color:#6c63ff;font-weight:bold;">İncele →</span>
-</div>
-</a>
-
-<a href="#website-detay" style="text-decoration:none;color:inherit;">
-<div class="card">
-<h3>Website Oluşturma</h3>
-<p>Modern, mobil uyumlu ve hızlı web siteleri tasarlıyoruz.</p>
-<span style="color:#6c63ff;font-weight:bold;">İncele →</span>
-</div>
-</a>
-
-<div class="card">
-<h3>Website Geliştirme</h3>
-<p>Mevcut sitenizi performans, hız ve dönüşüm odaklı olarak geliştiriyoruz.</p>
-</div>
-
-</div>
-</div>
+            <div class="card">
+                <h3>Website Geliştirme</h3>
+                <p>Mevcut sitenizi performans, hız ve dönüşüm odaklı olarak geliştiriyoruz.</p>
+                <span class="btn-text" style="opacity: 0.5;">Çok Yakında</span>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- SEO DETAY -->
-
-<section id="seo-detay" style="padding:80px 0;background:linear-gradient(135deg,#1a1422,#2a253a);font-family:'Poppins';">
-
-<div class="container" style="max-width:1200px;margin:auto;display:flex;align-items:center;gap:40px;flex-wrap:wrap;padding:0 20px;">
-
-<div style="flex:1;min-width:350px;display:flex;justify-content:center;">
-
-<script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
-
-<dotlottie-wc
-src="https://lottie.host/04baee12-4b60-4491-bd12-ce2187177579/3uBWoOKWyw.lottie"
-style="width:450px;height:450px;"
-autoplay
-loop>
-</dotlottie-wc>
-
-</div>
-
-<div style="flex:1.2;min-width:350px;">
-
-<h2 style="font-size:2.5rem;color:white;margin-bottom:20px;">
-SEO Hizmeti <span style="color:#998bff;">Nedir?</span>
-</h2>
-
-<p style="color:white;">
-Nexora Innovation olarak web sitenizin Google’da üst sıralara çıkması için
-teknik SEO, içerik SEO ve analiz çalışmaları yapıyoruz.
-</p>
-
-<a href="#contact" class="btn"
-style="display:inline-block;padding:16px 40px;background:linear-gradient(90deg,#00f5ff,#007cf0);text-decoration:none;border-radius:8px;font-weight:700;">
-Hemen Fiyat Al
-</a>
-
-</div>
-</div>
+<section id="seo-detay" style="padding:100px 0;background:linear-gradient(135deg,#0d0b14,#1a1422);">
+    <div class="container" style="max-width:1200px;margin:auto;display:flex;align-items:center;gap:60px;flex-wrap:wrap;padding:0 20px;">
+        <div style="flex:1;min-width:300px;display:flex;justify-content:center;">
+            <dotlottie-wc src="https://lottie.host/04baee12-4b60-4491-bd12-ce2187177579/3uBWoOKWyw.lottie" style="width:100%;max-width:450px;" autoplay loop></dotlottie-wc>
+        </div>
+        <div style="flex:1.2;min-width:300px;">
+            <h2 style="font-size:2.8rem;color:white;margin-bottom:20px;">SEO Hizmeti <span style="color:#998bff;">Nedir?</span></h2>
+            <p style="color:#b0b0b0; font-size: 1.1rem; margin-bottom: 30px;">Nexora Innovation olarak web sitenizin Google’da üst sıralara çıkması için teknik SEO, içerik SEO ve analiz çalışmaları yapıyoruz.</p>
+            <a href="#contact" class="btn" style="display:inline-block;padding:18px 45px;background:linear-gradient(90deg,#6c63ff,#4b45b2);color:white;text-decoration:none;border-radius:8px;font-weight:700;">Hemen Fiyat Al</a>
+        </div>
+    </div>
 </section>
 
-<!-- WEBSITE DETAY -->
-
-<section id="website-detay" style="padding:80px 0;background:#0B0F19;font-family:'Poppins';">
-
-<div class="container" style="max-width:1200px;margin:auto;display:flex;align-items:center;gap:40px;flex-wrap:wrap;padding:0 20px;">
-
-<div style="flex:1;min-width:350px;display:flex;justify-content:center;">
-
-<script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
-
-<dotlottie-wc
-src="https://lottie.host/452cc8be-1ace-4ec6-8835-51ddb36e37a0/CZJsO0qLpF.lottie"
-style="width:300px;height:300px"
-autoplay
-loop>
-</dotlottie-wc>
-
-</div>
-
-<div style="flex:1.2;min-width:350px;">
-
-<h2 style="font-size:2.5rem;color:white;margin-bottom:20px;">
-Web Site Kurma
-</h2>
-
-<p style="color:white;">
-İşletmeniz için modern, mobil uyumlu ve SEO dostu web siteleri oluşturuyoruz.
-</p>
-
-<a href="#contact" class="btn"
-style="display:inline-block;padding:16px 40px;background:linear-gradient(90deg,#00f5ff,#007cf0);text-decoration:none;border-radius:8px;font-weight:700;">
-Hemen Fiyat Al
-</a>
-
-</div>
-</div>
+<section id="website-detay" style="padding:100px 0;background:#0B0F19;">
+    <div class="container" style="max-width:1200px;margin:auto;display:flex;align-items:center;gap:60px;flex-wrap:wrap;padding:0 20px;">
+        <div style="flex:1.2;min-width:300px;">
+            <h2 style="font-size:2.8rem;color:white;margin-bottom:20px;">Web Tasarımı ve Geliştirme</h2>
+            <p style="color:#b0b0b0; line-height: 1.8; margin-bottom: 25px;">
+                Güçlü bir dijital varlığın temeli profesyonel bir web sitesidir. İşletmenizin kimliğini yansıtan, hızlı, güvenli ve kullanıcı deneyimi odaklı web siteleri tasarlıyor ve geliştiriyoruz.
+            </p>
+            <ul style="color: #6c63ff; list-style: none; padding: 0; margin-bottom: 30px; font-weight: 600;">
+                <li style="margin-bottom: 10px;">✓ Kurumsal web sitesi tasarımı</li>
+                <li style="margin-bottom: 10px;">✓ Landing page (Kampanya sayfası)</li>
+                <li style="margin-bottom: 10px;">✓ E-ticaret çözümleri</li>
+            </ul>
+            <a href="#contact" class="btn" style="display:inline-block;padding:18px 45px;background:linear-gradient(90deg,#00f5ff,#007cf0);color:white;text-decoration:none;border-radius:8px;font-weight:700;">Hemen Fiyat Al</a>
+        </div>
+        <div style="flex:1;min-width:300px;display:flex;justify-content:center;">
+            <dotlottie-wc src="https://lottie.host/452cc8be-1ace-4ec6-8835-51ddb36e37a0/CZJsO0qLpF.lottie" style="width:100%;max-width:400px;" autoplay loop></dotlottie-wc>
+        </div>
+    </div>
 </section>
 
-<!-- BLOG -->
-
-<section id="blog" style="padding:80px 0;background:#141824;color:white;text-align:center;">
-<div class="container">
-
-<h2>Blog</h2>
-
-<p>
-SEO, dijital pazarlama ve web geliştirme hakkında içerikler yakında burada olacak.
-</p>
-
-</div>
+<section id="blog" style="padding:80px 0;background:#080b12;color:white;text-align:center;">
+    <div class="container">
+        <h2>Blog</h2>
+        <p style="color: #666;">İçerikler yakında burada olacak.</p>
+    </div>
 </section>
 
-<!-- HAKKIMIZDA -->
-
-<section id="about" class="about">
-<div class="container">
-
-<h2>Hakkımızda</h2>
-
-<p>
-Nexora Innovation olarak işletmelerin dijital dünyada
-daha görünür ve güçlü olmalarını sağlıyoruz.
-</p>
-
-</div>
+<section id="about" style="padding:80px 0; background:#0B0F19; text-align:center; color: white;">
+    <div class="container">
+        <h2>Hakkımızda</h2>
+        <p style="max-width: 700px; margin: 20px auto; color: #aaa;">Nexora Innovation olarak işletmelerin dijital dünyada daha görünür ve güçlü olmalarını sağlıyoruz.</p>
+    </div>
 </section>
 
-<!-- İLETİŞİM -->
-
-<section id="contact" style="padding:60px 0;background:#0B0F19;color:white;text-align:center;">
-<div class="container">
-
-<h2>İletişim</h2>
-
-<p><strong>Telefon:</strong> +90 5XX XXX XX XX</p>
-<p><strong>Email:</strong> info@nexorainnovation.com</p>
-
-</div>
+<section id="contact" style="padding:100px 0;background:#080b12;color:white;text-align:center;">
+    <div class="container">
+        <h2 style="margin-bottom: 30px;">İletişim</h2>
+        <p><strong>Telefon:</strong> +90 5XX XXX XX XX</p>
+        <p><strong>Email:</strong> info@nexorainnovation.com</p>
+    </div>
 </section>
 
-<footer style="text-align:center;padding:20px;background:#080b12;color:white;">
-© 2026 Nexora Innovation. Tüm hakları saklıdır.
+<footer style="text-align:center;padding:40px;background:#05070a;color:#555; border-top: 1px solid #111;">
+    © 2026 Nexora Innovation. Tüm hakları saklıdır.
 </footer>
 
 </body>

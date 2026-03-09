@@ -32,17 +32,17 @@
         Nexora Innovation
     </h2>
 </div>
-        <nav>
-            <a href="#mainpage">Ana Sayfa</a>
-            <a href="#services">Hizmetlerimiz</a>
-            <a href="#about">Hakkımızda</a>
-            <a href="#blog">Blog</a>
-            <a href="#contact">İletişim</a>
-        </nav>
+      <nav>
+    <a href="#mainpage" class="active">Ana Sayfa</a>
+    <a href="#services">Hizmetlerimiz</a>
+    <a href="#about">Hakkımızda</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">İletişim</a>
+</nav>
     </div>
 </header>
 
-<section id="mainpage" class="hero" style="position:relative; padding:100px 0; min-height:550px; display:flex; align-items:center; justify-content:center; background: radial-gradient(circle at center, #1e293b 0%, #0B0F19 100%);">
+<section id="mainpage" class="hero active-section" style="position:relative; padding:100px 0; min-height:550px; display:flex; align-items:center; justify-content:center; background: radial-gradient(circle at center, #1e293b 0%, #0B0F19 100%);">
     <div class="hero-text" style="text-align:center; z-index:2; max-width:700px; padding: 0 20px;">
         <h1 style="font-size: 3.5rem; color: white; margin-bottom: 20px;">Markanızı <span style="color:#6c63ff;">Dijitalde</span> Güçlendiriyoruz</h1>
         <p style="font-size: 1.2rem; color: #94a3b8; margin-bottom: 30px;">SEO, web sitesi oluşturma ve geliştirme çözümleriyle işletmenizi bir adım öne taşıyoruz.</p>
@@ -151,16 +151,38 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 60px;">
 </a>
 <script>
-    // Menü bağlantılarını seç
     const navLinks = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('section');
 
     navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            // Önce tüm menülerden 'active' ışığını söndür
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            // 1. Menüdeki aktiflik ışığını değiştir
             navLinks.forEach(item => item.classList.remove('active'));
-            
-            // Sadece tıklanan menüyü yak (active yap)
             this.classList.add('active');
+
+            // 2. Tıklanan linkin hedef id'sini al (Örn: #services)
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+
+            // 3. TÜM section'ları gizle, sadece hedefi göster
+            sections.forEach(section => {
+                section.classList.remove('active-section');
+                section.style.display = 'none'; // Kesin çözüm için display kullanıyoruz
+            });
+
+            if (targetSection) {
+                targetSection.classList.add('active-section');
+                targetSection.style.display = 'flex'; // Hero için flex, diğerleri için block yapabilirsin
+                
+                // Eğer hero değilse normal block kullan
+                if (targetId !== "#mainpage") {
+                   targetSection.style.display = 'block';
+                }
+            }
+
+            window.scrollTo(0, 0);
         });
     });
 </script>

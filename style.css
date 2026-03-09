@@ -1,111 +1,99 @@
 /* --- GENEL AYARLAR --- */
-html { 
-    scroll-behavior: smooth; 
+html {
+    scroll-behavior: smooth;
 }
 
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-    font-family: 'Poppins', sans-serif; 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-body { 
+body {
     background: #0B0F19; /* Derin Gece Mavisi */
-    color: #e5e7eb; 
-    line-height: 1.6; 
-    overflow-x: hidden; 
+    color: #e5e7eb;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-.container { 
-    width: 90%; 
-    max-width: 1200px; 
-    margin: auto; 
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
 }
 
 /* --- HEADER & NAV --- */
 header {
-    background: rgba(11, 15, 25, 0.9);
+    background: rgba(17, 24, 39, 0.8);
     backdrop-filter: blur(10px);
-    height: 80px;
-    display: flex;
-    align-items: center;
+    padding: 15px 0;
     border-bottom: 1px solid rgba(255,255,255,0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-.nav { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    width: 100%; 
-}
-
-.logo-area { 
-    display: flex; 
-    align-items: center; 
-    position: relative; 
-}
-
-.logo { 
-    color: white; 
-    font-weight: 700; 
-    margin-left: 40px; 
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav a {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1rem;
-    color: white;
+    color: #d1d5db;
     text-decoration: none;
-    margin-left: 25px;
-    transition: 0.3s;
+    margin-left: 30px;
+    transition: all 0.3s ease;
     position: relative;
 }
 
-nav a:hover { 
-    color: #6c63ff; 
+nav a:hover {
+    color: #6c63ff;
 }
 
 nav a::after {
-    content: ''; 
-    position: absolute; 
-    width: 0; 
+    content: '';
+    position: absolute;
+    width: 0;
     height: 2px;
-    bottom: -5px; 
-    left: 0; 
-    background: #6c63ff; 
-    transition: 0.3s;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(90deg, #6c63ff, #00f5ff);
+    transition: width 0.3s ease;
 }
 
-nav a:hover::after { 
-    width: 100%; 
+nav a:hover::after {
+    width: 100%;
 }
 
 /* --- HERO SECTION --- */
 .hero {
     background: radial-gradient(circle at center, #1e293b 0%, #0B0F19 100%);
-    padding: 120px 0;
+    padding: 150px 0 100px 0; /* Header yüksekliği için padding artırıldı */
     text-align: center;
 }
 
-.hero h1 { 
-    font-size: clamp(2.5rem, 5vw, 4rem); 
-    color: white; 
-    margin-bottom: 20px; 
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 700;
 }
 
-.hero h1 span { 
-    color: #00f5ff; 
+.hero h1 span {
+    background: linear-gradient(90deg, #00f5ff, #6c63ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.hero p { 
-    font-size: 1.2rem; 
-    color: #94a3b8; 
-    max-width: 700px; 
-    margin: 0 auto 40px; 
+.hero p {
+    margin: 0 auto 40px auto;
+    font-size: 1.1rem;
+    max-width: 700px;
+    color: #94a3b8;
 }
 
 /* --- BUTONLAR --- */
@@ -113,178 +101,140 @@ nav a:hover::after {
     display: inline-block;
     background: linear-gradient(90deg, #6c63ff, #4b45b2);
     color: white;
-    padding: 14px 40px;
+    padding: 14px 35px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    transition: 0.3s ease;
-    box-shadow: 0 10px 20px rgba(108, 99, 255, 0.2);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: none;
     cursor: pointer;
 }
 
-.btn:hover { 
-    transform: translateY(-3px); 
-    box-shadow: 0 15px 30px rgba(108, 99, 255, 0.4); 
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(108, 99, 255, 0.4);
 }
 
-/* --- HİZMETLER BÖLÜMÜ --- */
-.services { 
-    padding: 100px 0; 
-    background: #080b12; 
+/* --- HİZMETLER & TANITIM METNİ --- */
+.services {
+    padding: 100px 0;
+    background: #080b12;
 }
 
-.services h2 { 
-    text-align: center; 
-    font-size: 2.5rem; 
-    color: white; 
-    margin-bottom: 30px; 
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
 }
 
 .services-intro {
-    max-width: 900px; 
-    margin: 0 auto 60px; 
-    text-align: center; 
-    color: #b0b0b0; 
-    font-size: 1.1rem; 
+    max-width: 850px;
+    margin: 0 auto 60px auto;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 1.05rem;
     line-height: 1.8;
 }
 
-.services-intro strong { 
-    color: #fff; 
-    font-size: 1.4rem; 
-    display: block; 
-    margin-bottom: 15px; 
+.services-intro strong {
+    color: #fff;
+    display: block;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
 }
 
-/* --- KART GRİD YAPISI --- */
+/* --- KART TASARIMI --- */
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
 }
 
 .card {
-    background: #11141d;
-    border: 1px solid #1f232e;
-    padding: 40px 30px;
+    background: #111827;
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 40px;
     border-radius: 20px;
     transition: all 0.4s ease;
+    text-align: left; /* Daha modern bir görünüm için sola yaslandı */
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-12px);
     border-color: #6c63ff;
-    background: #161a27;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    background: #161e2e;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
-.card h3 { 
-    color: white; 
-    font-size: 1.4rem; 
-    margin-bottom: 15px; 
-    min-height: 3.5rem; 
-    display: flex; 
-    align-items: center; 
+.card h3 {
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
 }
 
-.card p { 
-    color: #a0a0a0; 
-    font-size: 0.95rem; 
-    margin-bottom: 20px; 
-    flex-grow: 1; 
+.card p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    flex-grow: 1;
 }
 
-/* --- KART İÇİ LİSTELER --- */
-.card-list { 
-    list-style: none; 
-    border-top: 1px solid rgba(255,255,255,0.05); 
-    padding-top: 20px; 
-}
-
-.card-list li { 
-    color: #6c63ff; 
-    font-size: 0.9rem; 
-    font-weight: 600; 
-    margin-bottom: 8px; 
-    display: flex; 
-    align-items: center; 
-}
-
-.card-list li::before { 
-    content: "•"; 
-    color: #00f5ff; 
-    margin-right: 10px; 
-    font-size: 1.2rem; 
-}
-
-/* --- İLETİŞİM VE CTA --- */
-.contact-cta { 
-    padding: 100px 0; 
-    text-align: center; 
-    background: #0B0F19; 
-}
-
-.cta-box {
-    background: linear-gradient(135deg, #111827 0%, #080b12 100%);
-    padding: 60px 30px; 
-    border-radius: 30px; 
-    border: 1px solid rgba(255,255,255,0.05);
-    max-width: 1000px; 
-    margin: 0 auto;
+.btn-text {
+    color: #6c63ff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* --- WHATSAPP BUTONU --- */
 .whatsapp {
-    position: fixed; 
-    bottom: 30px; 
-    right: 30px; 
-    width: 60px; 
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
     height: 60px;
-    background: #25D366; 
-    border-radius: 50%; 
+    background: #25D366;
+    border-radius: 50%;
     display: flex;
-    align-items: center; 
-    justify-content: center; 
+    align-items: center;
+    justify-content: center;
     z-index: 9999;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3); 
-    transition: 0.3s;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+    transition: 0.3s ease;
 }
 
-.whatsapp:hover { 
-    transform: scale(1.1); 
+.whatsapp:hover {
+    transform: scale(1.1) rotate(10deg);
 }
 
-.whatsapp img { 
-    width: 30px; 
-    height: 30px; 
+.whatsapp img {
+    width: 32px;
+    height: 32px;
 }
 
 /* --- FOOTER --- */
-footer { 
-    padding: 40px 0; 
-    text-align: center; 
-    background: #05070a; 
-    color: #555; 
-    font-size: 0.9rem; 
-    border-top: 1px solid #111;
+footer {
+    padding: 40px 0;
+    text-align: center;
+    background: #05070a;
+    color: #64748b;
+    border-top: 1px solid rgba(255,255,255,0.03);
 }
 
-/* --- MOBİL UYUMLULUK (RESPONSIVE) --- */
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+    .container { width: 92%; }
+}
+
 @media (max-width: 768px) {
-    nav { 
-        display: none; 
-    }
-    .service-grid { 
-        grid-template-columns: 1fr; 
-    }
-    .hero h1 { 
-        font-size: 2.2rem; 
-    }
-    .container {
-        width: 95%;
-    }
+    nav { display: none; }
+    .hero { padding: 100px 0 60px 0; }
+    .hero h1 { font-size: 2.2rem; }
+    .service-grid { grid-template-columns: 1fr; }
+    .card { padding: 30px; }
 }

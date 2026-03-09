@@ -2,22 +2,36 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Nexora Innovation, SEO, web site oluşturma ve geliştirme hizmetleri sunar.">
+    <meta name="keywords" content="SEO ajansı, web site yapımı, website geliştirme, dijital ajans">
+    <meta name="author" content="Nexora Innovation">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexora Innovation | SEO & Web Çözümleri</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
 </head>
+
 <body>
 
-<header style="height:80px; position:sticky; top:0; background: rgba(11, 15, 25, 0.9); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05);">
-    <div class="container nav" style="display:flex; align-items:center; justify-content:space-between; height:100%; padding: 0 5%;">
-        <div class="logo-area" style="display:flex; align-items:center; position:relative;">
-            <div style="position:absolute; left:-110px; top:50%; transform:translateY(-50%); z-index:10;">
+<header style="height:80px; position:relative; background: #0B0F19; z-index: 1000;">
+    <div class="container nav" style="display:flex; align-items:center; justify-content:space-between; height:100%;">
+       <div class="logo-area" style="display: flex; align-items: center; position: relative;">
+            
+            <div style="position: absolute; left: -300px; top: 50%; transform: translateY(-50%); z-index: 10;">
                 <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
-                <dotlottie-wc src="https://lottie.host/7297ece4-167c-4ecd-8dbf-dff152387f2b/LTCzDd2ISL.lottie" style="width:150px; height:150px;" autoplay loop></dotlottie-wc>
+                <dotlottie-wc 
+                    src="https://lottie.host/7297ece4-167c-4ecd-8dbf-dff152387f2b/LTCzDd2ISL.lottie" 
+                    style="width: 150px; height: 150px;" 
+                    autoplay 
+                    loop>
+                </dotlottie-wc>
             </div>
-            <h2 class="logo" style="margin-left:40px; position:relative; z-index:11; color: white;">Nexora Innovation</h2>
-        </div>
+    <h2 class="logo" style="position: absolute; left: -190px; color: white; margin: 0; white-space: nowrap;">
+        Nexora Innovation
+    </h2>
+</div>
         <nav>
             <a href="#mainpage">Ana Sayfa</a>
             <a href="#services">Hizmetlerimiz</a>
@@ -28,111 +42,127 @@
     </div>
 </header>
 
-<section id="mainpage" class="hero">
-    <div class="container">
-        <h1>Markanızı <span>Dijitalde</span> Güçlendiriyoruz</h1>
-        <p>SEO, web sitesi oluşturma ve geliştirme çözümleriyle işletmenizi bir adım öne taşıyoruz.</p>
+<section id="mainpage" class="hero" style="position:relative; padding:100px 0; min-height:550px; display:flex; align-items:center; justify-content:center; background: radial-gradient(circle at center, #1e293b 0%, #0B0F19 100%);">
+    <div class="hero-text" style="text-align:center; z-index:2; max-width:700px; padding: 0 20px;">
+        <h1 style="font-size: 3.5rem; color: white; margin-bottom: 20px;">Markanızı <span style="color:#6c63ff;">Dijitalde</span> Güçlendiriyoruz</h1>
+        <p style="font-size: 1.2rem; color: #94a3b8; margin-bottom: 30px;">SEO, web sitesi oluşturma ve geliştirme çözümleriyle işletmenizi bir adım öne taşıyoruz.</p>
         <a href="#contact" class="btn">Teklif Al</a>
     </div>
+    <div class="hero-animation" style="position:absolute; right:5%; top:50%; transform:translateY(-50%); z-index:1; opacity: 0.6;">
+        <dotlottie-wc src="https://lottie.host/b40a6abe-f8c4-459e-8c91-31cc341e95d0/u3gtq0Bzrh.lottie" style="width:350px; height:350px;" autoplay loop></dotlottie-wc>
+    </div>
 </section>
 
-<section id="services" class="services">
+<section id="services" class="services" style="padding: 100px 0; background: #080b12;">
     <div class="container">
-        <h2>Hizmetlerimiz</h2>
-        <div class="services-intro">
-            <strong>Markanızın dijital potansiyelini ortaya çıkarmanız için yanınızdayız.</strong>
-            <p>Web sitesi geliştirme, SEO optimizasyonu ve içerik stratejileri ile markaların çevrim içi dünyada daha güçlü bir konuma ulaşmasını sağlıyoruz.</p>
-        </div>
-
+        <h2 style="text-align: center; font-size: 2.8rem; color: white; margin-bottom: 50px;">Hizmetlerimiz</h2>
         <div class="service-grid">
+            <a href="#seo-detay" style="text-decoration:none; color:inherit;">
+                <div class="card">
+                    <h3>SEO Hizmetleri</h3>
+                    <p>Google’da üst sıralara çıkmanız için teknik ve içerik odaklı SEO çözümleri sunuyoruz.</p>
+                    <span class="btn-text">İncele →</span>
+                </div>
+            </a>
+            <a href="#website-detay" style="text-decoration:none; color:inherit;">
+                <div class="card">
+                    <h3>Website Oluşturma</h3>
+                    <p>Modern, mobil uyumlu ve hızlı web siteleri tasarlıyoruz.</p>
+                    <span class="btn-text">İncele →</span>
+                </div>
+            </a>
             <div class="card">
-                <h3>Web Tasarımı ve Geliştirme</h3>
-                <p>İşletmenizin kimliğini yansıtan, hızlı ve kullanıcı deneyimi odaklı web siteleri.</p>
-                <span class="btn-text">İncele →</span>
+                <h3>Website Geliştirme</h3>
+                <p>Mevcut sitenizi performans, hız ve dönüşüm odaklı olarak geliştiriyoruz.</p>
+                <span class="btn-text" style="opacity:0.5;">İncele →</span>
             </div>
             <div class="card">
-                <h3>SEO Hizmetleri</h3>
-                <p>Google’da üst sıralara çıkmanız için teknik ve içerik odaklı çözümler.</p>
-                <span class="btn-text">İncele →</span>
+                <h3>Google Ads & Reklam</h3>
+                <p>Doğru hedefleme ile reklam bütçenizi en verimli şekilde yönetiyoruz.</p>
+                <span class="btn-text">Yakında →</span>
             </div>
             <div class="card">
-                <h3>SEO İçerik Üretimi</h3>
-                <p>SEO uyumlu makalelerle sitenizin değerini profesyonelce artırıyoruz.</p>
-                <span class="btn-text">İncele →</span>
+                <h3>Dönüşüm Optimizasyonu</h3>
+                <p>Sitenizdeki ziyaretçileri müşteriye dönüştürecek stratejik dokunuşlar.</p>
+                <span class="btn-text">Yakında →</span>
             </div>
             <div class="card">
-                <h3>Çok Dilli Çeviri</h3>
-                <p>Global pazar için içeriklerinizi kültürel ve dilsel olarak lokalize ediyoruz.</p>
-                <span class="btn-text">İncele →</span>
-            </div>
-            <div class="card">
-                <h3>Google Ads Yönetimi</h3>
-                <p>Doğru hedefleme ile bütçenizi en verimli şekilde kullanıyoruz.</p>
-                <span class="btn-text">İncele →</span>
-            </div>
-            <div class="card">
-                <h3>Sosyal Medya Reklamları</h3>
-                <p>Yaratıcı stratejilerle doğru kitleye sosyal medya üzerinden ulaşıyoruz.</p>
-                <span class="btn-text">İncele →</span>
-            </div>
-            <div class="card">
-                <h3>Dönüşüm Optimizasyonu (CRO)</h3>
-                <p>Ziyaretçilerinizi müşteriye dönüştüren stratejik iyileştirmeler.</p>
-                <span class="btn-text">İncele →</span>
-            </div>
-            <div class="card">
-                <h3>QA ve Web Testi</h3>
-                <p>Sitenizin her cihazda kusursuz çalışması için teknik testler.</p>
-                <span class="btn-text">İncele →</span>
+                <h3>İçerik Pazarlaması</h3>
+                <p>Markanızı anlatan, SEO uyumlu ve ilgi çekici içerikler üretiyoruz.</p>
+                <span class="btn-text">Yakında →</span>
             </div>
         </div>
     </div>
 </section>
 
-<section id="seo-detay" style="padding:100px 0; background:linear-gradient(135deg,#0d0b14,#1a1422);">
+<section id="seo-detay" style="padding:100px 0; background:linear-gradient(135deg, #1a1422 0%, #2a253a 100%);">
     <div class="container" style="display:flex; align-items:center; gap:60px; flex-wrap:wrap;">
-        <div style="flex:1; min-width:300px; display:flex; justify-content:center;">
-            <dotlottie-wc src="https://lottie.host/04baee12-4b60-4491-bd12-ce2187177579/3uBWoOKWyw.lottie" style="width:100%; max-width:450px;" autoplay loop></dotlottie-wc>
+        <div style="flex:1; min-width:350px; display:flex; justify-content:center;">
+            <dotlottie-wc src="https://lottie.host/04baee12-4b60-4491-bd12-ce2187177579/3uBWoOKWyw.lottie" style="width:450px; height:450px;" autoplay loop></dotlottie-wc>
         </div>
-        <div style="flex:1.2; min-width:300px;">
-            <h2 style="font-size:2.8rem; color:white; margin-bottom:20px;">SEO Hizmeti <span style="color:#998bff;">Nedir?</span></h2>
-            <p style="color:#b0b0b0;">Web sitenizin Google’da üst sıralara çıkması için teknik ve içerik çalışmaları yapıyoruz.</p>
-            <a href="#contact" class="btn" style="margin-top:20px;">Hemen Fiyat Al</a>
+        <div style="flex:1.2; min-width:350px;">
+            <h2 style="font-size: 2.8rem; color: #ffffff; margin-bottom: 20px;">SEO Hizmeti <span style="color: #998bff;">Nedir?</span></h2>
+            <p style="color: white; font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
+                <strong>Nexora Innovation</strong> olarak web sitenizin Google’da üst sıralara çıkması için teknik SEO, içerik SEO ve analiz çalışmaları yapıyoruz. Satışlarınızın artışı için özel stratejiler geliştiriyoruz.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px;">
+                <span class="tag">E-Ticaret SEO</span> <span class="tag">Shopify SEO</span> <span class="tag">Wordpress SEO</span>
+            </div>
+            <a href="#contact" class="btn">Hemen Fiyat Al</a>
         </div>
     </div>
 </section>
 
 <section id="website-detay" style="padding:100px 0; background:#0B0F19;">
-    <div class="container" style="display:flex; align-items:center; gap:60px; flex-wrap:wrap;">
-        <div style="flex:1.2; min-width:300px;">
-            <h2 style="font-size:2.8rem; color:white; margin-bottom:20px;">Web Tasarımı ve Geliştirme</h2>
-            <p style="color:#b0b0b0; margin-bottom: 25px;">Güçlü bir dijital varlığın temeli profesyonel bir web sitesidir.</p>
-            <ul style="color: #6c63ff; list-style: none; padding: 0; font-weight: 600;">
-                <li style="margin-bottom: 10px;">✓ Kurumsal web sitesi tasarımı</li>
-                <li style="margin-bottom: 10px;">✓ Landing page (Kampanya sayfası)</li>
-                <li style="margin-bottom: 10px;">✓ E-ticaret çözümleri</li>
-            </ul>
+    <div class="container" style="display:flex; align-items:center; gap:60px; flex-wrap:wrap; flex-direction: row-reverse;">
+        <div style="flex:1; min-width:350px; display:flex; justify-content:center;">
+            <dotlottie-wc src="https://lottie.host/452cc8be-1ace-4ec6-8835-51ddb36e37a0/CZJsO0qLpF.lottie" style="width: 350px; height: 350px" autoplay loop></dotlottie-wc>
         </div>
-        <div style="flex:1; min-width:300px; display:flex; justify-content:center;">
-            <dotlottie-wc src="https://lottie.host/452cc8be-1ace-4ec6-8835-51ddb36e37a0/CZJsO0qLpF.lottie" style="width:100%; max-width:400px;" autoplay loop></dotlottie-wc>
+        <div style="flex:1.2; min-width:350px;">
+            <h2 style="font-size: 2.8rem; color: #ffffff; margin-bottom: 20px;">Web Site Kurma</h2>
+            <p style="color: white; font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
+                İşletmeniz için modern, mobil uyumlu ve yüksek performanslı web siteleri inşa ediyoruz. Kullanıcı deneyimini ön planda tutan tasarımlarla fark yaratın.
+            </p>
+            <a href="#contact" class="btn">Projenizi Başlatın</a>
         </div>
     </div>
 </section>
 
-<section id="contact" style="padding:100px 0; background:#080b12; color:white; text-align:center;">
+<section id="about" style="padding:100px 0; background:#080b12; color:white; text-align:center;">
+    <div class="container">
+        <h2>Hakkımızda</h2>
+        <p style="max-width:800px; margin: 20px auto; color: #94a3b8;">Nexora Innovation olarak işletmelerin dijital dünyada daha görünür ve güçlü olmalarını sağlıyoruz. Veri odaklı stratejiler ve modern teknolojilerle sürdürülebilir büyüme hedefliyoruz.</p>
+    </div>
+</section>
+
+<section id="contact" style="padding:100px 0; background:#0B0F19; color:white; text-align:center;">
     <div class="container">
         <h2>İletişim</h2>
+        <p style="margin: 20px 0;"><strong>Telefon:</strong> +90 5XX XXX XX XX</p>
         <p><strong>Email:</strong> info@nexorainnovation.com</p>
     </div>
 </section>
 
-<footer>
+<footer style="text-align:center; padding:40px; background:#05070a; color:#64748b; border-top: 1px solid #111;">
     © 2026 Nexora Innovation. Tüm hakları saklıdır.
 </footer>
 
-<a href="https://wa.me/905XXXXXXXXX" class="whatsapp" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+<a href="https://wa.me/905XXXXXXXXX" class="whatsapp" target="_blank" style="position: fixed; bottom: 30px; right: 30px; z-index: 999;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 60px;">
 </a>
+<script>
+    // Menü bağlantılarını seç
+    const navLinks = document.querySelectorAll('nav a');
 
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Önce tüm menülerden 'active' ışığını söndür
+            navLinks.forEach(item => item.classList.remove('active'));
+            
+            // Sadece tıklanan menüyü yak (active yap)
+            this.classList.add('active');
+        });
+    });
+</script>
 </body>
 </html>

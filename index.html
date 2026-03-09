@@ -42,55 +42,147 @@
     </div>
 </header>
 
-<section id="mainpage" class="hero active-section" style="position:relative; padding:100px 0; min-height:550px; display:flex; align-items:center; justify-content:center; background: radial-gradient(circle at center, #1e293b 0%, #0B0F19 100%);">
-    <div class="hero-text" style="text-align:center; z-index:2; max-width:700px; padding: 0 20px;">
-        <h1 style="font-size: 3.5rem; color: white; margin-bottom: 20px;">Markanızı <span style="color:#6c63ff;">Dijitalde</span> Güçlendiriyoruz</h1>
-        <p style="font-size: 1.2rem; color: #94a3b8; margin-bottom: 30px;">SEO, web sitesi oluşturma ve geliştirme çözümleriyle işletmenizi bir adım öne taşıyoruz.</p>
-        <a href="#contact" class="btn">Teklif Al</a>
-    </div>
-    <div class="hero-animation" style="position:absolute; right:5%; top:50%; transform:translateY(-50%); z-index:1; opacity: 0.6;">
-        <dotlottie-wc src="https://lottie.host/b40a6abe-f8c4-459e-8c91-31cc341e95d0/u3gtq0Bzrh.lottie" style="width:350px; height:350px;" autoplay loop></dotlottie-wc>
+<section id="mainpage" class="hero active-section" style="padding: 80px 0; background: radial-gradient(circle at center, #1e293b 0%, #0B0F19 100%); min-height: calc(100vh - 80px); position: relative;">
+    <div class="container">
+        <div style="display: flex; flex-direction: column; align-items: center; position: relative; margin-bottom: 60px;">
+            <div style="flex: 1.5; min-width: 350px; text-align: center; display: flex; flex-direction: column; align-items: center; z-index: 2;">
+                <h1 style="font-size: 3.5rem; color: white; line-height: 1.2; margin-bottom: 20px; text-align: center;">
+                    İşletmenizi <span style="color:#6c63ff;">Dijitalde</span> <br>Büyüten Stratejik Çözümler
+                </h1>
+                <p style="font-size: 1.1rem; color: #94a3b8; margin-bottom: 30px; max-width: 500px; margin-left: auto; margin-right: auto; text-align: center;">
+                    Dijital strateji, teknoloji ve içerik çözümleri ile markaların çevrim içi potansiyelini en üst seviyeye çıkarıyoruz.
+                </p>
+                <a href="#contact" class="btn" style="z-index: 10;" onclick="document.querySelector('a[href=\'#contact\']').click()">Teklif Al</a>
+            </div>
+            
+            <div class="hero-animation" style="position:absolute; right: -22%; top: 48%; transform:translateY(-50%); z-index:1; opacity: 0.8; pointer-events: none;">
+                <dotlottie-wc src="https://lottie.host/b40a6abe-f8c4-459e-8c91-31cc341e95d0/u3gtq0Bzrh.lottie" style="width:400px; height:400px;" autoplay loop></dotlottie-wc>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 50px;">
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 15px 25px; border-radius: 100px; display: flex; align-items: center; gap: 12px; color: #e2e8f0; font-weight: 500; font-size: 0.9rem;">
+                <span style="color: #6c63ff; font-size: 1.2rem;">✦</span> UI/UX Tasarım
+            </div>
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 15px 25px; border-radius: 100px; display: flex; align-items: center; gap: 12px; color: #e2e8f0; font-weight: 500; font-size: 0.9rem;">
+                <span style="color: #6c63ff; font-size: 1.2rem;">✦</span> SEO & Semantik Veri
+            </div>
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 15px 25px; border-radius: 100px; display: flex; align-items: center; gap: 12px; color: #e2e8f0; font-weight: 500; font-size: 0.9rem;">
+                <span style="color: #6c63ff; font-size: 1.2rem;">✦</span> Google Ads Yönetimi
+            </div>
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 15px 25px; border-radius: 100px; display: flex; align-items: center; gap: 12px; color: #e2e8f0; font-weight: 500; font-size: 0.9rem;">
+                <span style="color: #6c63ff; font-size: 1.2rem;">✦</span> Yazılım Geliştirme
+            </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+            <div class="strategy-card" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(108, 99, 255, 0.25); border-radius: 24px; padding: 40px; backdrop-filter: blur(15px); position: relative; overflow: hidden;">
+                <div style="background: linear-gradient(135deg, #6c63ff, #3f37c9); width: 54px; height: 54px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; box-shadow: 0 8px 15px rgba(108, 99, 255, 0.2);">
+                    <span style="font-size: 1.6rem;">🌍</span>
+                </div>
+                <h3 style="color: white; font-size: 1.6rem; font-weight: 700; margin-bottom: 18px;">Çok Dilli & Global Konumlandırma</h3>
+                <p style="color: #e2e8f0; font-size: 1.05rem; line-height: 1.7; margin: 0;">
+                    İçeriklerinizi yalnızca çevirmiyor, hedef pazarın kültürüne ve dijital dinamiklerine göre yeniden uyarlıyoruz. Markanızın uluslararası görünürlüğünü sürdürülebilir bir altyapıyla artırıyoruz.
+                </p>
+            </div>
+
+            <div class="strategy-card" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(0, 245, 255, 0.25); border-radius: 24px; padding: 40px; backdrop-filter: blur(15px); position: relative; overflow: hidden;">
+                <div style="background: linear-gradient(135deg, #00f5ff, #00b4d8); width: 54px; height: 54px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; box-shadow: 0 8px 15px rgba(0, 245, 255, 0.2);">
+                    <span style="font-size: 1.6rem;">⚙️</span>
+                </div>
+                <h3 style="color: white; font-size: 1.6rem; font-weight: 700; margin-bottom: 18px;">Uçtan Uca Dijital Performans</h3>
+                <p style="color: #e2e8f0; font-size: 1.05rem; line-height: 1.7; margin: 0;">
+                    Web tasarımı, SEO ve Google Ads süreçlerini; QA (Kalite Kontrol) ve dijital performans analizi ile harmanlayarak işletmenizin dijital varlığını uçtan uca, hatasız ve verimli bir şekilde inşa ediyoruz.
+                </p>
+            </div>
+        </div>
     </div>
 </section>
 
-<section id="services" class="services" style="padding: 100px 0; background: #080b12;">
-    <div class="container">
-        <h2 style="text-align: center; font-size: 2.8rem; color: white; margin-bottom: 50px;">Hizmetlerimiz</h2>
-        <div class="service-grid">
-            <a href="#seo-detay" style="text-decoration:none; color:inherit;">
-                <div class="card">
-                    <h3>SEO Hizmetleri</h3>
-                    <p>Google’da üst sıralara çıkmanız için teknik ve içerik odaklı SEO çözümleri sunuyoruz.</p>
-                    <span class="btn-text">İncele →</span>
+
+
+<section id="services" class="services" style="padding: 120px 0; background: #080b12; position: relative; overflow: hidden;">
+    
+    <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 100%; background: radial-gradient(circle at 50% 50%, rgba(108, 99, 255, 0.03) 0%, transparent 70%); pointer-events: none;"></div>
+
+    <div class="container" style="position: relative; z-index: 2;">
+        <div style="text-align: center; margin-bottom: 80px;">
+            <h2 style="font-size: 3rem; color: white; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 15px;">Hizmetlerimiz</h2>
+            <div style="width: 60px; height: 4px; background: linear-gradient(90deg, #6c63ff, #00f5ff); margin: 0 auto; border-radius: 10px;"></div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px;">
+            
+            <div class="pro-service-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 28px; padding: 40px; transition: 0.4s ease; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="width: 50px; height: 50px; background: rgba(108, 99, 255, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; color: #6c63ff; font-size: 1.5rem;">💻</div>
+                    <h3 style="color: white; font-size: 1.4rem; margin-bottom: 15px; font-weight: 700;">Web Tasarımı & Geliştirme</h3>
+                    <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Güçlü bir dijital varlığın temeli profesyonel bir web sitesidir. Modern tasarım ve teknik altyapı ile etkileyici bir deneyim inşa ediyoruz.</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
+                        <li style="color: #e2e8f0; font-size: 0.85rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #6c63ff;">✦</span> Kurumsal Web Tasarımı</li>
+                        <li style="color: #e2e8f0; font-size: 0.85rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #6c63ff;">✦</span> Landing Page Çözümleri</li>
+                        <li style="color: #e2e8f0; font-size: 0.85rem; display: flex; align-items: center; gap: 8px;"><span style="color: #6c63ff;">✦</span> E-ticaret Optimizasyonu</li>
+                    </ul>
                 </div>
-            </a>
-            <a href="#website-detay" style="text-decoration:none; color:inherit;">
-                <div class="card">
-                    <h3>Website Oluşturma</h3>
-                    <p>Modern, mobil uyumlu ve hızlı web siteleri tasarlıyoruz.</p>
-                    <span class="btn-text">İncele →</span>
+                <a href="#website-detay" style="color: #6c63ff; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 5px;">Detayları Gör →</a>
+            </div>
+
+            <div class="pro-service-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 28px; padding: 40px; transition: 0.4s ease; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="width: 50px; height: 50px; background: rgba(0, 245, 255, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; color: #00f5ff; font-size: 1.5rem;">🔍</div>
+                    <h3 style="color: white; font-size: 1.4rem; margin-bottom: 15px; font-weight: 700;">SEO & İçerik Stratejisi</h3>
+                    <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Arama motorlarında görünürlük, trafiği ve marka değerini doğrudan artırır. Semantik içerik ve teknik SEO ile zirveyi hedefliyoruz.</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
+                        <li style="color: #e2e8f0; font-size: 0.85rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00f5ff;">✦</span> Teknik SEO & Site İçi Analiz</li>
+                        <li style="color: #e2e8f0; font-size: 0.85rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00f5ff;">✦</span> SEO Uyumlu Blog & Makale</li>
+                        <li style="color: #e2e8f0; font-size: 0.85rem; display: flex; align-items: center; gap: 8px;"><span style="color: #00f5ff;">✦</span> Backlink & Otorite Yönetimi</li>
+                    </ul>
                 </div>
-            </a>
-            <div class="card">
-                <h3>Website Geliştirme</h3>
-                <p>Mevcut sitenizi performans, hız ve dönüşüm odaklı olarak geliştiriyoruz.</p>
-                <span class="btn-text" style="opacity:0.5;">İncele →</span>
+                <a href="#seo-detay" style="color: #00f5ff; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 5px;">Detayları Gör →</a>
             </div>
-            <div class="card">
-                <h3>Google Ads & Reklam</h3>
-                <p>Doğru hedefleme ile reklam bütçenizi en verimli şekilde yönetiyoruz.</p>
-                <span class="btn-text">Yakında →</span>
+
+            <div class="pro-service-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 28px; padding: 40px; transition: 0.4s ease; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="width: 50px; height: 50px; background: rgba(108, 99, 255, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; color: #6c63ff; font-size: 1.5rem;">📈</div>
+                    <h3 style="color: white; font-size: 1.4rem; margin-bottom: 15px; font-weight: 700;">Google Ads Yönetimi</h3>
+                    <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Amacımız yalnızca trafik değil, doğru kullanıcıyı doğru zamanda yakalayarak gerçek müşteri kazanımı ve yüksek dönüşüm sağlamaktır.</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
+                        <li style="color: #e2e8f0; font-size: 0.85rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #6c63ff;">✦</span> Search & Display Kampanyaları</li>
+                        <li style="color: #e2e8f0; font-size: 0.85rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #6c63ff;">✦</span> Remarketing Stratejileri</li>
+                        <li style="color: #e2e8f0; font-size: 0.85rem; display: flex; align-items: center; gap: 8px;"><span style="color: #6c63ff;">✦</span> Dönüşüm Odaklı Optimizasyon</li>
+                    </ul>
+                </div>
+                <a href="#ads-detay" style="color: #6c63ff; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 5px;">Detayları Gör →</a>
             </div>
-            <div class="card">
-                <h3>Dönüşüm Optimizasyonu</h3>
-                <p>Sitenizdeki ziyaretçileri müşteriye dönüştürecek stratejik dokunuşlar.</p>
-                <span class="btn-text">Yakında →</span>
+
+            <div class="pro-service-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 28px; padding: 40px; transition: 0.4s ease; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="width: 50px; height: 50px; background: rgba(0, 245, 255, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; color: #00f5ff; font-size: 1.5rem;">🌍</div>
+                    <h3 style="color: white; font-size: 1.4rem; margin-bottom: 15px; font-weight: 700;">Global Lokalizasyon</h3>
+                    <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">İçeriklerinizi yalnızca çevirmiyor, hedef pazarın kültürüne ve kullanıcı alışkanlıklarına göre yeniden uyarlıyoruz.</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
+                        <li style="color: #e2e8f0; font-size: 0.85rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00f5ff;">✦</span> Web Sitesi Lokalizasyonu</li>
+                        <li style="color: #e2e8f0; font-size: 0.85rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00f5ff;">✦</span> Çok Dilli SEO Çevirisi</li>
+                        <li style="color: #e2e8f0; font-size: 0.85rem; display: flex; align-items: center; gap: 8px;"><span style="color: #00f5ff;">✦</span> Global Pazara İçerik Uyarlaması</li>
+                    </ul>
+                </div>
+                <a href="#global-detay" style="color: #00f5ff; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 5px;">Detayları Gör →</a>
             </div>
-            <div class="card">
-                <h3>İçerik Pazarlaması</h3>
-                <p>Markanızı anlatan, SEO uyumlu ve ilgi çekici içerikler üretiyoruz.</p>
-                <span class="btn-text">Yakında →</span>
+
+            <div class="pro-service-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 28px; padding: 40px; transition: 0.4s ease; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="width: 50px; height: 50px; background: rgba(108, 99, 255, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; color: #6c63ff; font-size: 1.5rem;">⚙️</div>
+                    <h3 style="color: white; font-size: 1.4rem; margin-bottom: 15px; font-weight: 700;">Performans & QA Test</h3>
+                    <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Website testing ve CRO süreçleri ile sitenizin hatasız çalışmasını ve ziyaretçilerin müşteriye dönüşmesini sağlıyoruz.</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
+                        <li style="color: #e2e8f0; font-size: 0.85rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #6c63ff;">✦</span> Teknik QA & Hata Tespiti</li>
+                        <li style="color: #e2e8f0; font-size: 0.85rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #6c63ff;">✦</span> Dönüşüm Oranı Optimizasyonu (CRO)</li>
+                        <li style="color: #e2e8f0; font-size: 0.85rem; display: flex; align-items: center; gap: 8px;"><span style="color: #6c63ff;">✦</span> Cross-browser & Cihaz Testleri</li>
+                    </ul>
+                </div>
+                <a href="#qa-detay" style="color: #6c63ff; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 5px;">Detayları Gör →</a>
             </div>
+
         </div>
     </div>
 </section>

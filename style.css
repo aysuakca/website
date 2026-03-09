@@ -1,240 +1,51 @@
-/* --- GENEL AYARLAR --- */
-html {
-    scroll-behavior: smooth;
-}
+/* GENEL AYARLAR */
+html { scroll-behavior: smooth; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+body { background: #0B0F19; color: #e5e7eb; line-height: 1.6; overflow-x: hidden; }
+.container { width: 90%; max-width: 1200px; margin: auto; }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+/* HEADER & NAV */
+header { background: rgba(17, 24, 39, 0.8); backdrop-filter: blur(10px); padding: 15px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.nav { display: flex; justify-content: space-between; align-items: center; }
+nav a { font-weight: 500; font-size: 1rem; color: #d1d5db; text-decoration: none; margin-left: 30px; transition: 0.3s; position: relative; }
+nav a:hover { color: #6c63ff; }
+nav a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background: linear-gradient(90deg, #6c63ff, #00f5ff); transition: 0.3s; }
+nav a:hover::after { width: 100%; }
 
-body {
-    background: #0B0F19; /* Derin Gece Mavisi */
-    color: #e5e7eb;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
+/* HERO */
+.hero { background: radial-gradient(circle at center, #1e293b 0%, #0B0F19 100%); padding: 100px 0; text-align: center; }
+.hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 20px; color: white; font-weight: 700; }
+.hero h1 span { background: linear-gradient(90deg, #00f5ff, #6c63ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero p { margin: 0 auto 40px auto; font-size: 1.1rem; max-width: 700px; color: #94a3b8; }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-}
+/* BUTONLAR */
+.btn { display: inline-block; background: linear-gradient(90deg, #6c63ff, #4b45b2); color: white; padding: 14px 35px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: none; cursor: pointer; }
+.btn:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(108, 99, 255, 0.4); }
 
-/* --- HEADER & NAV --- */
-header {
-    background: rgba(17, 24, 39, 0.8);
-    backdrop-filter: blur(10px);
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+/* HİZMETLER */
+.services { padding: 100px 0; background: #080b12; }
+.services h2 { font-size: 2.5rem; margin-bottom: 20px; color: white; text-align: center; }
+.services-intro { max-width: 850px; margin: 0 auto 60px auto; text-align: center; color: #94a3b8; line-height: 1.8; }
+.services-intro strong { color: #fff; display: block; font-size: 1.3rem; margin-bottom: 15px; }
 
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+/* KART TASARIMI */
+.service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+.card { background: #111827; border: 1px solid rgba(255,255,255,0.05); padding: 40px; border-radius: 20px; transition: all 0.4s ease; text-align: center; display: flex; flex-direction: column; height: 100%; }
+.card:hover { transform: translateY(-12px); border-color: #6c63ff; background: #161e2e; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+.card h3 { color: white; font-size: 1.4rem; margin-bottom: 15px; }
+.card p { color: #94a3b8; font-size: 0.95rem; margin-bottom: 25px; flex-grow: 1; }
+.btn-text { color: #6c63ff; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
 
-nav a {
-    font-weight: 500;
-    font-size: 1rem;
-    color: #d1d5db;
-    text-decoration: none;
-    margin-left: 30px;
-    transition: all 0.3s ease;
-    position: relative;
-}
+/* WHATSAPP */
+.whatsapp { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 9999; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); transition: 0.3s; }
+.whatsapp:hover { transform: scale(1.1) rotate(10deg); }
+.whatsapp img { width: 32px; height: 32px; }
 
-nav a:hover {
-    color: #6c63ff;
-}
+footer { padding: 40px 0; text-align: center; background: #05070a; color: #64748b; border-top: 1px solid rgba(255,255,255,0.03); }
 
-nav a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background: linear-gradient(90deg, #6c63ff, #00f5ff);
-    transition: width 0.3s ease;
-}
-
-nav a:hover::after {
-    width: 100%;
-}
-
-/* --- HERO SECTION --- */
-.hero {
-    background: radial-gradient(circle at center, #1e293b 0%, #0B0F19 100%);
-    padding: 150px 0 100px 0; /* Header yüksekliği için padding artırıldı */
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    margin-bottom: 20px;
-    color: white;
-    font-weight: 700;
-}
-
-.hero h1 span {
-    background: linear-gradient(90deg, #00f5ff, #6c63ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero p {
-    margin: 0 auto 40px auto;
-    font-size: 1.1rem;
-    max-width: 700px;
-    color: #94a3b8;
-}
-
-/* --- BUTONLAR --- */
-.btn {
-    display: inline-block;
-    background: linear-gradient(90deg, #6c63ff, #4b45b2);
-    color: white;
-    padding: 14px 35px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: none;
-    cursor: pointer;
-}
-
-.btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(108, 99, 255, 0.4);
-}
-
-/* --- HİZMETLER & TANITIM METNİ --- */
-.services {
-    padding: 100px 0;
-    background: #080b12;
-}
-
-.services h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: white;
-    text-align: center;
-}
-
-.services-intro {
-    max-width: 850px;
-    margin: 0 auto 60px auto;
-    text-align: center;
-    color: #94a3b8;
-    font-size: 1.05rem;
-    line-height: 1.8;
-}
-
-.services-intro strong {
-    color: #fff;
-    display: block;
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-}
-
-/* --- KART TASARIMI --- */
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-}
-
-.card {
-    background: #111827;
-    border: 1px solid rgba(255,255,255,0.05);
-    padding: 40px;
-    border-radius: 20px;
-    transition: all 0.4s ease;
-    text-align: left; /* Daha modern bir görünüm için sola yaslandı */
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.card:hover {
-    transform: translateY(-12px);
-    border-color: #6c63ff;
-    background: #161e2e;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-}
-
-.card h3 {
-    color: white;
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-}
-
-.card p {
-    color: #94a3b8;
-    font-size: 0.95rem;
-    margin-bottom: 25px;
-    flex-grow: 1;
-}
-
-.btn-text {
-    color: #6c63ff;
-    font-weight: 700;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* --- WHATSAPP BUTONU --- */
-.whatsapp {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    background: #25D366;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-    transition: 0.3s ease;
-}
-
-.whatsapp:hover {
-    transform: scale(1.1) rotate(10deg);
-}
-
-.whatsapp img {
-    width: 32px;
-    height: 32px;
-}
-
-/* --- FOOTER --- */
-footer {
-    padding: 40px 0;
-    text-align: center;
-    background: #05070a;
-    color: #64748b;
-    border-top: 1px solid rgba(255,255,255,0.03);
-}
-
-/* --- RESPONSIVE --- */
-@media (max-width: 992px) {
-    .container { width: 92%; }
-}
-
+/* MOBİL */
 @media (max-width: 768px) {
     nav { display: none; }
-    .hero { padding: 100px 0 60px 0; }
     .hero h1 { font-size: 2.2rem; }
     .service-grid { grid-template-columns: 1fr; }
-    .card { padding: 30px; }
 }

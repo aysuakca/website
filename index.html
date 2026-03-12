@@ -1,44 +1,45 @@
-<!DOCTYPE html>
-<html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Nexora Innovation, SEO, web site oluşturma ve geliştirme hizmetleri sunar.">
-    <meta name="keywords" content="SEO ajansı, web site yapımı, website geliştirme, dijital ajans">
-    <meta name="author" content="Nexora Innovation">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexora Innovation | SEO & Web Çözümleri</title>
     
+    <meta name="description" content="Nexora Innovation, SEO ve modern web geliştirme çözümleriyle markanızı dijitalde büyütür.">
+    <meta property="og:title" content="Nexora Innovation | SEO & Web Çözümleri">
+    <meta property="og:image" content="logo-veya-onizleme.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
+    
     <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
 </head>
 
 <body>
 
-<header style="height:80px; position:relative; background: #0B0F19; z-index: 1000;">
-    <div class="container nav" style="display:flex; align-items:center; justify-content:space-between; height:100%;">
-       <div class="logo-area" style="display: flex; align-items: center; position: relative;">
-            
-            <div style="position: absolute; left: -300px; top: 50%; transform: translateY(-50%); z-index: 10;">
-                <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
-                <dotlottie-wc 
+<header class="main-header">
+    <div class="nav-wrapper">
+        
+        <div class="logo-area">
+<div class="logo-lottie-container">
+                    <dotlottie-wc 
                     src="https://lottie.host/7297ece4-167c-4ecd-8dbf-dff152387f2b/LTCzDd2ISL.lottie" 
-                    style="width: 150px; height: 150px;" 
                     autoplay 
                     loop>
                 </dotlottie-wc>
+            
             </div>
-    <h2 class="logo" style="position: absolute; left: -190px; color: white; margin: 0; white-space: nowrap;">
-        Nexora Innovation
-    </h2>
-</div>
-      <nav>
-    <a href="#mainpage" class="active">Ana Sayfa</a>
-    <a href="#services">Hizmetlerimiz</a>
-    <a href="#about">Hakkımızda</a>
-    <a href="#blog">Blog</a>
-    <a href="#contact">İletişim</a>
-</nav>
+            <h2 class="logo">Nexora Innovation</h2>
+        </div>
+
+        <nav>
+            <a href="#mainpage" class="active">Ana Sayfa</a>
+            <a href="#services">Hizmetlerimiz</a>
+            <a href="#about">Hakkımızda</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">İletişim</a>
+        </nav>
     </div>
 </header>
 
@@ -58,8 +59,24 @@
                     Dijital strateji, teknoloji ve içerik çözümleri ile markaların çevrim içi potansiyelini en üst seviyeye çıkarıyoruz.
                 </p>
                 
-                <a href="#contact" class="btn" style="box-shadow: 0 10px 20px rgba(108, 99, 255, 0.2);" onclick="document.querySelector('a[href=\'#contact\']').click()">Teklif Al</a>
+            
             </div>
+
+            <div style="display: flex; gap: 20px; justify-content: center; align-items: center; flex-wrap: wrap;">
+    <a href="#contact" class="btn" style="box-shadow: 0 10px 20px rgba(108, 99, 255, 0.2); margin: 0;">Teklif Al</a>
+
+    <a href="#contact" class="btn2" style="
+        background: transparent; 
+        border: 2px solid #6c63ff; 
+        color: white; 
+        padding: 12px 28px; 
+        border-radius: 50px; 
+        text-decoration: none; 
+        font-weight: 600; 
+        transition: 0.3s;
+        box-shadow: 0 5px 15px rgba(108, 99, 255, 0.1);
+    ">Ücretsiz Analiz</a>
+</div>
             
             <div class="hero-animation" style="position:absolute; right: -15%; top: 40%; transform:translateY(-50%); z-index:1; opacity: 0.6; pointer-events: none;">
                 <dotlottie-wc src="https://lottie.host/b40a6abe-f8c4-459e-8c91-31cc341e95d0/u3gtq0Bzrh.lottie" style="width:380px; height:380px;" autoplay loop></dotlottie-wc>
@@ -68,24 +85,27 @@
 
         <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 60px;">
             <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 12px 22px; border-radius: 100px; display: flex; align-items: center; gap: 10px; color: #cbd5e1; font-weight: 500; font-size: 0.85rem;">
-                <span style="color: #6c63ff;">✦</span> UI/UX Tasarım
+                <span style="color: #6c63ff;">✦</span> Web Tasarımı & Geliştirme
             </div>
             <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 12px 22px; border-radius: 100px; display: flex; align-items: center; gap: 10px; color: #cbd5e1; font-weight: 500; font-size: 0.85rem;">
-                <span style="color: #6c63ff;">✦</span> SEO & Semantik Veri
+                <span style="color: #6c63ff;">✦</span> SEO & İçerik Stratejisi
             </div>
             <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 12px 22px; border-radius: 100px; display: flex; align-items: center; gap: 10px; color: #cbd5e1; font-weight: 500; font-size: 0.85rem;">
                 <span style="color: #6c63ff;">✦</span> Google Ads Yönetimi
             </div>
             <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 12px 22px; border-radius: 100px; display: flex; align-items: center; gap: 10px; color: #cbd5e1; font-weight: 500; font-size: 0.85rem;">
-                <span style="color: #6c63ff;">✦</span> Yazılım Geliştirme
+                <span style="color: #6c63ff;">✦</span> Global Lokalizasyon
             </div>
+
+             <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 12px 22px; border-radius: 100px; display: flex; align-items: center; gap: 10px; color: #cbd5e1; font-weight: 500; font-size: 0.85rem;">
+                <span style="color: #6c63ff;">✦</span> Performans & QA Test
+            </div>
+
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
             <div class="strategy-card" style="background: #0b0f17; border: 1px solid rgba(108, 99, 255, 0.15); border-radius: 28px; padding: 45px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); position: relative; overflow: hidden;">
-                <div style="background: linear-gradient(135deg, #6c63ff, #3f37c9); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
-                    <span style="font-size: 1.4rem;">🌍</span>
-                </div>
+                
                 <h3 style="color: white; font-size: 1.5rem; font-weight: 700; margin-bottom: 18px;">Çok Dilli & Global Konumlandırma</h3>
                 <p style="color: #94a3b8; font-size: 1rem; line-height: 1.7; margin: 0;">
                     İçeriklerinizi yalnızca çevirmiyor, hedef pazarın kültürüne göre yeniden uyarlıyoruz. Markanızın uluslararası görünürlüğünü sürdürülebilir bir altyapıyla artırıyoruz.
@@ -93,9 +113,7 @@
             </div>
 
             <div class="strategy-card" style="background: #0b0f17; border: 1px solid rgba(0, 245, 255, 0.15); border-radius: 28px; padding: 45px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); position: relative; overflow: hidden;">
-                <div style="background: linear-gradient(135deg, #00f5ff, #00b4d8); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
-                    <span style="font-size: 1.4rem;">⚙️</span>
-                </div>
+                
                 <h3 style="color: white; font-size: 1.5rem; font-weight: 700; margin-bottom: 18px;">Uçtan Uca Dijital Performans</h3>
                 <p style="color: #94a3b8; font-size: 1rem; line-height: 1.7; margin: 0;">
                     SEO ve reklam süreçlerini veri analizi ile harmanlayarak işletmenizin dijital varlığını uçtan uca, hatasız ve verimli bir şekilde inşa ediyoruz.
@@ -106,90 +124,257 @@
 </section>
 
 
-<section id="services" class="services" style="padding: 120px 0; background: #080b12; position: relative; overflow: hidden;">
+<section id="services" class="services" style="padding: 30px 0; background: #080b12; position: relative; overflow: hidden;">
     
-    <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 100%; background: radial-gradient(circle at 50% 50%, rgba(108, 99, 255, 0.03) 0%, transparent 70%); pointer-events: none;"></div>
+    <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 100%; background: radial-gradient(circle at 50% 50%, rgba(108, 99, 255, 0.05) 0%, transparent 70%); pointer-events: none;"></div>
 
     <div class="container" style="position: relative; z-index: 2;">
-        <div style="text-align: center; margin-bottom: 80px;">
-            <h2 style="font-size: 3rem; color: white; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 15px;">Hizmetlerimiz</h2>
-            <div style="width: 60px; height: 4px; background: linear-gradient(90deg, #6c63ff, #00f5ff); margin: 0 auto; border-radius: 10px;"></div>
+        
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h2 style="font-size: 1.5rem; color: white; font-weight: 300; letter-spacing: -2px; margin-bottom: 10px;">Hizmetlerimiz</h2>
+            <div style="width: 80px; height: 5px; background: linear-gradient(90deg, #6c63ff, #00f5ff); margin: 0 auto; border-radius: 10px;"></div>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
             
-            <div class="pro-service-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 28px; padding: 40px; transition: 0.4s ease; display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="pro-service-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 30px; padding: 50px; transition: 0.4s ease; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <div style="width: 50px; height: 50px; background: rgba(108, 99, 255, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; color: #6c63ff; font-size: 1.5rem;">💻</div>
-                    <h3 style="color: white; font-size: 1.4rem; margin-bottom: 15px; font-weight: 700;">Web Tasarımı & Geliştirme</h3>
-                    <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Güçlü bir dijital varlığın temeli profesyonel bir web sitesidir. Modern tasarım ve teknik altyapı ile etkileyici bir deneyim inşa ediyoruz.</p>
-                    <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
-                        <li style="color: #e2e8f0; font-size: 0.85rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #6c63ff;">✦</span> Kurumsal Web Tasarımı</li>
-                        <li style="color: #e2e8f0; font-size: 0.85rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #6c63ff;">✦</span> Landing Page Çözümleri</li>
-                        <li style="color: #e2e8f0; font-size: 0.85rem; display: flex; align-items: center; gap: 8px;"><span style="color: #6c63ff;">✦</span> E-ticaret Optimizasyonu</li>
+                    <div style="width: 80px; height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; margin-left: auto; margin-right: auto;">
+                        <svg viewBox="0 0 24 24" style="width: 100%; height: 100%; fill: none; stroke: url(#gradient-mor-turkuaz); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                            <path d="M6 10l3 3m0 0l3-3m-3 3l3 3"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: white; font-size: 1.6rem; margin-bottom: 20px; font-weight: 700; text-align: center;">Web Sitesi Tasarımı ve Geliştirme</h3>
+                    <p style="color: #94a3b8; font-size: 1rem; line-height: 1.7; margin-bottom: 25px;">Güçlü bir dijital varlığın temeli profesyonel bir web sitesidir. İşletmenizin kimliğini yansıtan, hızlı, güvenli ve kullanıcı deneyimi odaklı web siteleri tasarlıyor ve geliştiriyoruz.</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 40px;">
+                        <li style="color: #e2e8f0; font-size: 0.9rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-mor-turkuaz);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> Kurumsal web sitesi tasarımı ve geliştirme</li>
+                        <li style="color: #e2e8f0; font-size: 0.9rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-mor-turkuaz);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> Landing page (kampanya sayfası) tasarımı</li>
+                        <li style="color: #e2e8f0; font-size: 0.9rem; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-mor-turkuaz);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> E-ticaret web sitesi kurulumu ve optimizasyonu</li>
                     </ul>
                 </div>
-                <a href="#website-detay" style="color: #6c63ff; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 5px;">Detayları Gör →</a>
+                <a href="#web-tasarim-detay" style="color: #6c63ff; text-decoration: none; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; margin-top: auto; justify-content: center; transition: gap 0.3s ease;">Detayları Gör <svg viewBox="0 0 24 24" style="width: 1.2rem; height: 1.2rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
             </div>
 
-            <div class="pro-service-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 28px; padding: 40px; transition: 0.4s ease; display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="pro-service-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 30px; padding: 50px; transition: 0.4s ease; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <div style="width: 50px; height: 50px; background: rgba(0, 245, 255, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; color: #00f5ff; font-size: 1.5rem;">🔍</div>
-                    <h3 style="color: white; font-size: 1.4rem; margin-bottom: 15px; font-weight: 700;">SEO & İçerik Stratejisi</h3>
-                    <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Arama motorlarında görünürlük, trafiği ve marka değerini doğrudan artırır. Semantik içerik ve teknik SEO ile zirveyi hedefliyoruz.</p>
-                    <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
-                        <li style="color: #e2e8f0; font-size: 0.85rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00f5ff;">✦</span> Teknik SEO & Site İçi Analiz</li>
-                        <li style="color: #e2e8f0; font-size: 0.85rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00f5ff;">✦</span> SEO Uyumlu Blog & Makale</li>
-                        <li style="color: #e2e8f0; font-size: 0.85rem; display: flex; align-items: center; gap: 8px;"><span style="color: #00f5ff;">✦</span> Backlink & Otorite Yönetimi</li>
+                    <div style="width: 80px; height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; margin-left: auto; margin-right: auto;">
+                        <svg viewBox="0 0 24 24" style="width: 100%; height: 100%; fill: none; stroke: url(#gradient-turkuaz-mor); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;">
+                            <circle cx="11" cy="11" r="8"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                            <path d="M11 11m-3 0l6 0m0-3l-6 0m3 6l0-6"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: white; font-size: 1.6rem; margin-bottom: 20px; font-weight: 700; text-align: center;">SEO (Arama Motoru Optimizasyonu)</h3>
+                    <p style="color: #94a3b8; font-size: 1rem; line-height: 1.7; margin-bottom: 25px;">Web sitenizin arama motorlarında görünür olması, potansiyel müşterilere ulaşmanın en etkili yollarından biridir. SEO çalışmaları ile web sitenizin Google'da daha üst sıralarda yer almasını sağlıyoruz.</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 40px;">
+                        <li style="color: #e2e8f0; font-size: 0.9rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-turkuaz-mor);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> Teknik SEO analizi ve site optimizasyonu</li>
+                        <li style="color: #e2e8f0; font-size: 0.9rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-turkuaz-mor);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> Site içi SEO çalışmaları</li>
+                        <li style="color: #e2e8f0; font-size: 0.9rem; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-turkuaz-mor);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> Anahtar kelime araştırması ve backlink stratejisi</li>
                     </ul>
                 </div>
-                <a href="#seo-detay" style="color: #00f5ff; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 5px;">Detayları Gör →</a>
+                <a href="#seo-detay" style="color: #00f5ff; text-decoration: none; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; margin-top: auto; justify-content: center; transition: gap 0.3s ease;">Detayları Gör <svg viewBox="0 0 24 24" style="width: 1.2rem; height: 1.2rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
             </div>
 
-            <div class="pro-service-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 28px; padding: 40px; transition: 0.4s ease; display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="pro-service-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 30px; padding: 50px; transition: 0.4s ease; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <div style="width: 50px; height: 50px; background: rgba(108, 99, 255, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; color: #6c63ff; font-size: 1.5rem;">📈</div>
-                    <h3 style="color: white; font-size: 1.4rem; margin-bottom: 15px; font-weight: 700;">Google Ads Yönetimi</h3>
-                    <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Amacımız yalnızca trafik değil, doğru kullanıcıyı doğru zamanda yakalayarak gerçek müşteri kazanımı ve yüksek dönüşüm sağlamaktır.</p>
-                    <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
-                        <li style="color: #e2e8f0; font-size: 0.85rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #6c63ff;">✦</span> Search & Display Kampanyaları</li>
-                        <li style="color: #e2e8f0; font-size: 0.85rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #6c63ff;">✦</span> Remarketing Stratejileri</li>
-                        <li style="color: #e2e8f0; font-size: 0.85rem; display: flex; align-items: center; gap: 8px;"><span style="color: #6c63ff;">✦</span> Dönüşüm Odaklı Optimizasyon</li>
+                    <div style="width: 80px; height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; margin-left: auto; margin-right: auto;">
+                        <svg viewBox="0 0 24 24" style="width: 100%; height: 100%; fill: none; stroke: url(#gradient-mor-turkuaz); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;">
+                            <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/>
+                            <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: white; font-size: 1.6rem; margin-bottom: 20px; font-weight: 700; text-align: center;">SEO İçerik Üretimi</h3>
+                    <p style="color: #94a3b8; font-size: 1rem; line-height: 1.7; margin-bottom: 25px;">Arama motorlarında güçlü bir konum elde etmek için stratejik içerik üretimi büyük önem taşır. SEO uyumlu içerikler hazırlayarak web sitenizi hem arama motorları hem de kullanıcılar için değerli hale getiriyoruz.</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 40px;">
+                        <li style="color: #e2e8f0; font-size: 0.9rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-mor-turkuaz);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> SEO uyumlu blog yazıları</li>
+                        <li style="color: #e2e8f0; font-size: 0.9rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-mor-turkuaz);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> Arama motoru odaklı makale içerikleri</li>
+                        <li style="color: #e2e8f0; font-size: 0.9rem; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-mor-turkuaz);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> Ürün ve kategori sayfası içerikleri</li>
                     </ul>
                 </div>
-                <a href="#ads-detay" style="color: #6c63ff; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 5px;">Detayları Gör →</a>
+                <a href="#ads-detay" style="color: #6c63ff; text-decoration: none; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; margin-top: auto; justify-content: center; transition: gap 0.3s ease;">Detayları Gör <svg viewBox="0 0 24 24" style="width: 1.2rem; height: 1.2rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
             </div>
 
-            <div class="pro-service-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 28px; padding: 40px; transition: 0.4s ease; display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="pro-service-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 30px; padding: 50px; transition: 0.4s ease; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <div style="width: 50px; height: 50px; background: rgba(0, 245, 255, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; color: #00f5ff; font-size: 1.5rem;">🌍</div>
-                    <h3 style="color: white; font-size: 1.4rem; margin-bottom: 15px; font-weight: 700;">Global Lokalizasyon</h3>
-                    <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">İçeriklerinizi yalnızca çevirmiyor, hedef pazarın kültürüne ve kullanıcı alışkanlıklarına göre yeniden uyarlıyoruz.</p>
-                    <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
-                        <li style="color: #e2e8f0; font-size: 0.85rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00f5ff;">✦</span> Web Sitesi Lokalizasyonu</li>
-                        <li style="color: #e2e8f0; font-size: 0.85rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #00f5ff;">✦</span> Çok Dilli SEO Çevirisi</li>
-                        <li style="color: #e2e8f0; font-size: 0.85rem; display: flex; align-items: center; gap: 8px;"><span style="color: #00f5ff;">✦</span> Global Pazara İçerik Uyarlaması</li>
+                    <div style="width: 80px; height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; margin-left: auto; margin-right: auto;">
+                        <svg viewBox="0 0 24 24" style="width: 100%; height: 100%; fill: none; stroke: url(#gradient-mor-turkuaz); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;">
+                            <path d="M3 6l3 18h12l3-18H3z"/>
+                            <path d="M12 12l2.4-2.4a3.39 3.39 0 000-4.8 3.39 3.39 0 00-4.8 0 3.39 3.39 0 000 4.8l2.4 2.4z"/>
+                            <path d="M12 12V21M12 12H18.6M12 12H5.4M12 12L8.4 15.6M12 12L15.6 15.6"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: white; font-size: 1.6rem; margin-bottom: 20px; font-weight: 700; text-align: center;">Google Ads Yönetimi</h3>
+                    <p style="color: #94a3b8; font-size: 1rem; line-height: 1.7; margin-bottom: 25px;">Google Ads ile markanızın dijital görünürlüğünü ve dönüşüm oranlarını stratejik reklam kampanyalarıyla artırıyoruz. Trafik elde etmekten öte, doğru kullanıcıyı doğru zamanda yakalayarak gerçek müşteri kazanımını hedefliyoruz.</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 40px;">
+                        <li style="color: #e2e8f0; font-size: 0.9rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-mor-turkuaz);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> Google Search reklam kampanyalarının kurulumu ve optimizasyonu</li>
+                        <li style="color: #e2e8f0; font-size: 0.9rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-mor-turkuaz);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> Display reklam ağı kampanyaları</li>
+                        <li style="color: #e2e8f0; font-size: 0.9rem; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-mor-turkuaz);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> Remarketing stratejileri ve kampanyaları</li>
                     </ul>
                 </div>
-                <a href="#global-detay" style="color: #00f5ff; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 5px;">Detayları Gör →</a>
+                <a href="#ads-detay" style="color: #6c63ff; text-decoration: none; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; margin-top: auto; justify-content: center; transition: gap 0.3s ease;">Detayları Gör <svg viewBox="0 0 24 24" style="width: 1.2rem; height: 1.2rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
             </div>
 
-            <div class="pro-service-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 28px; padding: 40px; transition: 0.4s ease; display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="pro-service-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 30px; padding: 50px; transition: 0.4s ease; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
-                    <div style="width: 50px; height: 50px; background: rgba(108, 99, 255, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; color: #6c63ff; font-size: 1.5rem;">⚙️</div>
-                    <h3 style="color: white; font-size: 1.4rem; margin-bottom: 15px; font-weight: 700;">Performans & QA Test</h3>
-                    <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Website testing ve CRO süreçleri ile sitenizin hatasız çalışmasını ve ziyaretçilerin müşteriye dönüşmesini sağlıyoruz.</p>
-                    <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
-                        <li style="color: #e2e8f0; font-size: 0.85rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #6c63ff;">✦</span> Teknik QA & Hata Tespiti</li>
-                        <li style="color: #e2e8f0; font-size: 0.85rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #6c63ff;">✦</span> Dönüşüm Oranı Optimizasyonu (CRO)</li>
-                        <li style="color: #e2e8f0; font-size: 0.85rem; display: flex; align-items: center; gap: 8px;"><span style="color: #6c63ff;">✦</span> Cross-browser & Cihaz Testleri</li>
+                    <div style="width: 80px; height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; margin-left: auto; margin-right: auto;">
+                        <svg viewBox="0 0 24 24" style="width: 100%; height: 100%; fill: none; stroke: url(#gradient-turkuaz-mor); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 2a15.3 15.3 0 014 10a15.3 15.3 0 01-4 10a15.3 15.3 0 01-4-10a15.3 15.3 0 014-10z"/>
+                            <path d="M2.5 9h19M2.5 15h19"/>
+                            <path d="M12 11m-3 0l6 0m0-3l-6 0m3 6l0-6"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: white; font-size: 1.6rem; margin-bottom: 20px; font-weight: 700; text-align: center;">Çok Dilli Çeviri ve Global Lokalizasyon</h3>
+                    <p style="color: #94a3b8; font-size: 1rem; line-height: 1.7; margin-bottom: 25px;">Uluslararası pazarlara açılmak isteyen markalar için çok dilli içerik büyük bir avantaj sağlar. İçeriklerinizi yalnızca çevirmiyor, hedef pazarın diline, kültürüne ve kullanıcı alışkanlıklarına uygun şekilde lokalize ediyoruz.</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 40px;">
+                        <li style="color: #e2e8f0; font-size: 0.9rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-turkuaz-mor);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> Web sitesi çevirisi ve lokalizasyonu</li>
+                        <li style="color: #e2e8f0; font-size: 0.9rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-turkuaz-mor);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> SEO makale ve içerik çevirisi</li>
+                        <li style="color: #e2e8f0; font-size: 0.9rem; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-turkuaz-mor);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> Global pazarlara yönelik içerik uyarlaması</li>
                     </ul>
                 </div>
-                <a href="#qa-detay" style="color: #6c63ff; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 5px;">Detayları Gör →</a>
+                <a href="#global-detay" style="color: #00f5ff; text-decoration: none; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; margin-top: auto; justify-content: center; transition: gap 0.3s ease;">Detayları Gör <svg viewBox="0 0 24 24" style="width: 1.2rem; height: 1.2rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            </div>
+
+            <div class="pro-service-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 30px; padding: 50px; transition: 0.4s ease; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="width: 80px; height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; margin-left: auto; margin-right: auto;">
+                        <svg viewBox="0 0 24 24" style="width: 100%; height: 100%; fill: none; stroke: url(#gradient-mor-turkuaz); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;">
+                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                            <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: white; font-size: 1.6rem; margin-bottom: 20px; font-weight: 700; text-align: center;">Conversion Rate Optimization (CRO)</h3>
+                    <p style="color: #94a3b8; font-size: 1rem; line-height: 1.7; margin-bottom: 25px;">Web sitenize gelen ziyaretçilerin müşteriye dönüşmesi dijital başarının en önemli göstergelerinden biridir. Kullanıcı davranışlarını analiz ederek web sitenizin dönüşüm oranını artıracak stratejik iyileştirmeler gerçekleştiriyoruz.</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 40px;">
+                        <li style="color: #e2e8f0; font-size: 0.9rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-mor-turkuaz);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> Landing page performans optimizasyonu</li>
+                        <li style="color: #e2e8f0; font-size: 0.9rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-mor-turkuaz);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> A/B testleri ile kullanıcı deneyimi geliştirme</li>
+                        <li style="color: #e2e8f0; font-size: 0.9rem; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-mor-turkuaz);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> Kullanıcı davranışı ve dönüşüm analizi</li>
+                    </ul>
+                </div>
+                <a href="#qa-detay" style="color: #6c63ff; text-decoration: none; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; margin-top: auto; justify-content: center; transition: gap 0.3s ease;">Detayları Gör <svg viewBox="0 0 24 24" style="width: 1.2rem; height: 1.2rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            </div>
+
+            <div class="pro-service-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 30px; padding: 50px; transition: 0.4s ease; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="width: 80px; height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; margin-left: auto; margin-right: auto;">
+                        <svg viewBox="0 0 24 24" style="width: 100%; height: 100%; fill: none; stroke: url(#gradient-mor-turkuaz); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;">
+                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                            <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: white; font-size: 1.6rem; margin-bottom: 20px; font-weight: 700; text-align: center;">Performans & QA Test</h3>
+                    <p style="color: #94a3b8; font-size: 1rem; line-height: 1.7; margin-bottom: 25px;">Website testing ve CRO süreçleri ile sitenizin hatasız çalışmasını ve ziyaretçilerin müşteriye dönüşmesini sağlıyoruz.</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 40px;">
+                        <li style="color: #e2e8f0; font-size: 0.9rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-mor-turkuaz);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> Teknik QA & Hata Tespiti</li>
+                        <li style="color: #e2e8f0; font-size: 0.9rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-mor-turkuaz);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> Dönüşüm Oranı Optimizasyonu (CRO)</li>
+                        <li style="color: #e2e8f0; font-size: 0.9rem; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-mor-turkuaz);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> Cross-browser & Cihaz Testleri</li>
+                    </ul>
+                </div>
+                <a href="#qa-detay" style="color: #6c63ff; text-decoration: none; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; margin-top: auto; justify-content: center; transition: gap 0.3s ease;">Detayları Gör <svg viewBox="0 0 24 24" style="width: 1.2rem; height: 1.2rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            </div>
+
+            <div class="pro-service-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 30px; padding: 50px; transition: 0.4s ease; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="width: 80px; height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; margin-left: auto; margin-right: auto;">
+                        <svg viewBox="0 0 24 24" style="width: 100%; height: 100%; fill: none; stroke: url(#gradient-mor-turkuaz); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;">
+                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                            <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: white; font-size: 1.6rem; margin-bottom: 20px; font-weight: 700; text-align: center;">Analitik ve Veri Takibi Kurulumu</h3>
+                    <p style="color: #94a3b8; font-size: 1rem; line-height: 1.7; margin-bottom: 25px;">Dijital performansın doğru ölçülebilmesi için güçlü bir veri altyapısı gereklidir. Analitik araçların kurulumu ve veri takibi ile web sitenizin performansını analiz etmenizi sağlıyoruz.</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 40px;">
+                        <li style="color: #e2e8f0; font-size: 0.9rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-mor-turkuaz);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> Google Analytics kurulumu ve yapılandırması</li>
+                        <li style="color: #e2e8f0; font-size: 0.9rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-mor-turkuaz);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> A/Conversion tracking kurulumu</li>
+                        <li style="color: #e2e8f0; font-size: 0.9rem; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-mor-turkuaz);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> Veri analizi ve dashboard raporları</li>
+                    </ul>
+                </div>
+                <a href="#qa-detay" style="color: #6c63ff; text-decoration: none; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; margin-top: auto; justify-content: center; transition: gap 0.3s ease;">Detayları Gör <svg viewBox="0 0 24 24" style="width: 1.2rem; height: 1.2rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            </div>
+
+            <div class="pro-service-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 30px; padding: 50px; transition: 0.4s ease; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="width: 80px; height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; margin-left: auto; margin-right: auto;">
+                        <svg viewBox="0 0 24 24" style="width: 100%; height: 100%; fill: none; stroke: url(#gradient-mor-turkuaz); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;">
+                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                            <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: white; font-size: 1.6rem; margin-bottom: 20px; font-weight: 700; text-align: center;">Website Bakım ve Destek</h3>
+                    <p style="color: #94a3b8; font-size: 1rem; line-height: 1.7; margin-bottom: 25px;">Web sitelerinin güvenli, hızlı ve güncel kalabilmesi için düzenli bakım büyük önem taşır. Teknik bakım hizmetlerimiz ile sitenizin sorunsuz çalışmasını sağlıyoruz.</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 40px;">
+                        <li style="color: #e2e8f0; font-size: 0.9rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-mor-turkuaz);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> Web sitesi güncellemeleri ve teknik bakım</li>
+                        <li style="color: #e2e8f0; font-size: 0.9rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-mor-turkuaz);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> Güvenlik kontrolleri ve koruma çözümleri</li>
+                        <li style="color: #e2e8f0; font-size: 0.9rem; display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 24 24" style="width: 1rem; height: 1rem; fill: url(#gradient-mor-turkuaz);"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg> Site performansı ve hız optimizasyonu</li>
+                    </ul>
+                </div>
+                <a href="#qa-detay" style="color: #6c63ff; text-decoration: none; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; margin-top: auto; justify-content: center; transition: gap 0.3s ease;">Detayları Gör <svg viewBox="0 0 24 24" style="width: 1.2rem; height: 1.2rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
             </div>
 
         </div>
     </div>
+
+    <svg width="0" height="0">
+        <defs>
+            <linearGradient id="gradient-mor-turkuaz" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#6c63ff; stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#00f5ff; stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="gradient-turkuaz-mor" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#00f5ff; stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#6c63ff; stop-opacity:1" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+</section>
+
+            
+<div id="web-tasarim-detay" style="background: rgba(255, 255, 255, 0.01); border: 1px solid rgba(108, 99, 255, 0.1); border-radius: 40px; padding: 60px; margin-top: 40px; scroll-margin-top: 100px;">
+            <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; align-items: start;">
+                
+                <div class="detail-text">
+                    <span style="color: #6c63ff; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">Detaylı İnceleme</span>
+                    <h2 style="color: white; font-size: 2.5rem; margin: 15px 0 25px; font-weight: 800;">Web Sitesi Tasarımı ve <span style="background: linear-gradient(90deg, #6c63ff, #00f5ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Yazılım Süreçlerimiz</span></h2>
+                    
+                    <p style="color: #94a3b8; line-height: 1.8; margin-bottom: 25px; font-size: 1.05rem;">
+                        Nexora Innovation olarak, sadece görsel bir arayüz değil; işletmenizin dijitaldeki en güçlü satış aracını inşa ediyoruz. Web sitelerimizi oluştururken **SEO uyumluluğu**, **yüksek hız** ve **mobil öncelikli tasarım** (responsive) standartlarını temel alıyoruz.
+                    </p>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div style="background: rgba(108, 99, 255, 0.05); padding: 20px; border-radius: 20px;">
+                            <h4 style="color: white; margin-bottom: 10px;">Yüksek Performans</h4>
+                            <p style="color: #94a3b8; font-size: 0.9rem;">Google Core Web Vitals skorlarında en üst seviyeyi hedefleyen, milisaniyeler içinde açılan sayfalar.</p>
+                        </div>
+                        <div style="background: rgba(0, 245, 255, 0.05); padding: 20px; border-radius: 20px;">
+                            <h4 style="color: white; margin-bottom: 10px;">QA & Test Süreçleri</h4>
+                            <p style="color: #94a3b8; font-size: 0.9rem;">Yazılım profesyonelliğimizle, sitenizi hatasız bir kullanıcı deneyimi için kapsamlı testlerden geçiriyoruz.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-features" style="background: rgba(255, 255, 255, 0.02); padding: 40px; border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.05);">
+                    <h3 style="color: white; font-size: 1.3rem; margin-bottom: 20px;">Neler Dahil?</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: #e2e8f0; margin-bottom: 15px; display: flex; gap: 12px; font-size: 0.95rem;"><span style="color: #6c63ff;">✔</span> Kurumsal ve Modern Arayüz Tasarımı</li>
+                        <li style="color: #e2e8f0; margin-bottom: 15px; display: flex; gap: 12px; font-size: 0.95rem;"><span style="color: #6c63ff;">✔</span> CMS (İçerik Yönetim Sistemi) Entegrasyonu</li>
+                        <li style="color: #e2e8f0; margin-bottom: 15px; display: flex; gap: 12px; font-size: 0.95rem;"><span style="color: #6c63ff;">✔</span> SSL Güvenlik ve Hızlı Hosting Kurulumu</li>
+                        <li style="color: #e2e8f0; margin-bottom: 15px; display: flex; gap: 12px; font-size: 0.95rem;"><span style="color: #6c63ff;">✔</span> Teknik SEO ve Meta Veri Optimizasyonu</li>
+                    </ul>
+                    <a href="#contact" style="display: block; background: #6c63ff; color: white; text-align: center; padding: 15px; border-radius: 15px; text-decoration: none; font-weight: 600; margin-top: 20px; transition: 0.3s;">Hemen Teklif Al</a>
+                </div>
+
+            </div>
+        </div>
+        
+
 </section>
 
 <section id="seo-detay" style="padding:100px 0; background:linear-gradient(135deg, #1a1422 0%, #2a253a 100%);">
@@ -240,48 +425,52 @@
     </div>
 </section>
 
-<footer style="text-align:center; padding:40px; background:#05070a; color:#64748b; border-top: 1px solid #111;">
-    © 2026 Nexora Innovation. Tüm hakları saklıdır.
+<footer class="main-footer">
+    <div class="footer-top-gradient"></div> <div class="container footer-grid">
+        
+        <div class="footer-brand">
+            <div class="f-logo">
+                <dotlottie-wc src="https://lottie.host/7297ece4-167c-4ecd-8dbf-dff152387f2b/LTCzDd2ISL.lottie" autoplay loop></dotlottie-wc>
+                <span>Nexora Innovation</span>
+            </div>
+            <p class="brand-desc">Dijital dünyada iz bırakmanız için strateji, tasarım ve teknolojiyi bir araya getiriyoruz.</p>
+            <div class="social-icons">
+                <a href="#" class="s-icon">In</a>
+                <a href="#" class="s-icon">Ig</a>
+                <a href="#" class="s-icon">X</a>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <h4 class="footer-title">İletişim</h4>
+            <ul class="contact-list">
+                <li><span class="c-emoji">📍</span> İstanbul, Türkiye</li>
+                <li><span class="c-emoji">✉️</span> info@nexorainnovation.com</li>
+                <li><span class="c-emoji">📞</span> +90 5XX XXX XX XX</li>
+            </ul>
+        </div>
+
+        <div class="footer-links">
+            <h4 class="footer-title">Kurumsal</h4>
+            <ul class="legal-list">
+                <li><a href="#">Gizlilik - KVKK Açıklama</a></li>
+                <li><a href="#">Kullanım Şartları</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <p>© 2026 Nexora Innovation. Tüm hakları saklıdır.</p>
+        </div>
+    </div>
 </footer>
-
-<a href="https://wa.me/905XXXXXXXXX" class="whatsapp" target="_blank" style="position: fixed; bottom: 30px; right: 30px; z-index: 999;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 60px;">
+<a href="https://wa.me/905XXXXXXXXX" class="whatsapp" target="_blank" aria-label="WhatsApp üzerinden bizimle iletişime geçin">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
 </a>
-<script>
-    const navLinks = document.querySelectorAll('nav a');
-    const sections = document.querySelectorAll('section');
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            // 1. Menüdeki aktiflik ışığını değiştir
-            navLinks.forEach(item => item.classList.remove('active'));
-            this.classList.add('active');
-
-            // 2. Tıklanan linkin hedef id'sini al (Örn: #services)
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-
-            // 3. TÜM section'ları gizle, sadece hedefi göster
-            sections.forEach(section => {
-                section.classList.remove('active-section');
-                section.style.display = 'none'; // Kesin çözüm için display kullanıyoruz
-            });
-
-            if (targetSection) {
-                targetSection.classList.add('active-section');
-                targetSection.style.display = 'flex'; // Hero için flex, diğerleri için block yapabilirsin
-                
-                // Eğer hero değilse normal block kullan
-                if (targetId !== "#mainpage") {
-                   targetSection.style.display = 'block';
-                }
-            }
-
-            window.scrollTo(0, 0);
-        });
-    });
-</script>
+<script src="script.js"></script>
 </body>
 </html>

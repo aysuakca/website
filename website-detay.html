@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Sitesi Tasarımı ve Geliştirme | Nexora Innovation</title>
+    <meta name="description" content="Profesyonel, hızlı ve SEO uyumlu web tasarım çözümleri. Nexora ile dijital varlığınızı güçlendirin.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Temel Ayarlar */
+        * { margin: 0; padding: 0; box-box-sizing: border-box; }
+        body { 
+            background: #080b12; 
+            color: #e5e7eb; 
+            font-family: 'Poppins', sans-serif; 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+            position: relative; 
+            z-index: 2;
+        }
+
+        /* Header */
+        header {
+            padding: 30px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .logo { font-weight: 800; font-size: 1.5rem; color: white; text-decoration: none; }
+
+        /* Hero Bölümü */
+        .hero {
+            padding: 100px 0 60px;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(108, 99, 255, 0.05) 0%, transparent 70%);
+        }
+        .hero h1 { font-size: 3.5rem; color: white; font-weight: 800; margin-bottom: 20px; letter-spacing: -1.5px; }
+        .hero span { background: linear-gradient(90deg, #6c63ff, #00f5ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.2rem; color: #94a3b8; max-width: 800px; margin: 0 auto; }
+
+        /* İçerik Alanı */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+            padding: 60px 0;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 28px;
+            padding: 40px;
+        }
+        h2, h3 { color: white; margin-bottom: 20px; }
+        .feature-list { list-style: none; margin-top: 25px; }
+        .feature-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; color: #cbd5e1; }
+        .feature-list span { color: #6c63ff; font-weight: bold; }
+
+        /* Sağ Panel Buton */
+        .btn-contact {
+            display: block;
+            background: #6c63ff;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+        .btn-contact:hover { background: #5a52e0; transform: translateY(-3px); }
+
+        @media (max-width: 992px) {
+            .main-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Nexora Innovation</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Web Tasarımı & <span>Geliştirme</span></h1>
+            <p>İşletmenizin dijital kimliğini, en modern teknolojiler ve kullanıcı odaklı tasarım anlayışıyla inşa ediyoruz.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="main-grid">
+            <div class="content">
+                <div class="card">
+                    <h2>Neden Profesyonel Bir Web Sitesi?</h2>
+                    <p>Güçlü bir dijital varlığın temeli profesyonel bir web sitesidir. İşletmenizin kimliğini yansıtan, hızlı, güvenli ve kullanıcı deneyimi odaklı web siteleri tasarlıyor ve geliştiriyoruz.</p>
+                    
+                    <ul class="feature-list">
+                        <li><span>✦</span> Kurumsal web sitesi tasarımı ve geliştirme</li>
+                        <li><span>✦</span> Landing page (kampanya sayfası) tasarımı</li>
+                        <li><span>✦</span> E-ticaret çözümleri ve optimizasyonu</li>
+                        <li><span>✦</span> %100 Mobil uyumlu (Responsive) yapılar</li>
+                    </ul>
+
+                    <h3 style="margin-top: 40px;">Teknik Yaklaşımımız</h3>
+                    <p>Sadece görsel tasarıma değil, aynı zamanda SEO puanlarınızı artıracak teknik altyapıya da odaklanıyoruz. Temiz kodlama, hızlı sunucu yanıt süreleri ve Google Core Web Vitals optimizasyonu standart prosedürümüzdür.</p>
+                </div>
+            </div>
+
+            <aside>
+                <div class="card" style="position: sticky; top: 20px;">
+                    <h3>Projenizi Başlatalım</h3>
+                    <p style="font-size: 0.9rem; color: #94a3b8;">Fikirlerinizi gerçeğe dönüştürmek için profesyonel bir ekiple çalışın.</p>
+                    <a href="mailto:hello@nexorainnovation.com" class="btn-contact">Bize Yazın</a>
+                    <a href="index.html" style="display: block; text-align: center; margin-top: 15px; color: #94a3b8; font-size: 0.8rem; text-decoration: none;">← Ana Sayfaya Dön</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+</body>
+</html>

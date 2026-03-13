@@ -20,15 +20,15 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-        --bg:        #06080f;
-        --bg-2:      #090c16;
-        --bg-card:   rgba(255,255,255,0.025);
-        --border:    rgba(255,255,255,0.07);
-        --border-hi: rgba(108,99,255,0.4);
-        --purple:    #6c63ff;
-        --cyan:      #00f5ff;
-        --text:      #e2e8f0;
-        --muted:     #64748b;
+        --bg:        #000000;
+        --bg-2:      #050507;
+        --bg-card:   rgba(255,255,255,0.05);
+        --border:    rgba(255,255,255,0.1);
+        --border-hi: rgba(120,100,255,0.55);
+        --purple:    #7c6dff;
+        --cyan:      #00f0ff;
+        --text:      #eaf0fb;
+        --muted:     #94a3b8;
         --body-font: 'Inter', sans-serif;
         --head-font: 'Plus Jakarta Sans', sans-serif;
         --radius-xl: 28px;
@@ -204,7 +204,7 @@
         line-height: 1;
     }
     .hss-label {
-        color: #64748b;
+        color: #94a3b8;
         font-size: .78rem;
         line-height: 1.4;
     }
@@ -226,8 +226,8 @@
         min-height: calc(100vh - 76px);
         display:flex; align-items:center;
         overflow:hidden;
-        background: radial-gradient(ellipse 100% 70% at 50% -10%, rgba(108,99,255,.07) 0%, transparent 60%),
-                    var(--bg-2);
+        background: radial-gradient(ellipse 100% 70% at 50% -10%, rgba(120,100,255,.09) 0%, transparent 60%),
+                    #000;
     }
 
     /* Decorative grid lines */
@@ -277,11 +277,11 @@
     }
 
     .hero-sub {
-        font-size:1.15rem; color:var(--muted);
+        font-size:1.15rem; color:#b0bdd0;
         max-width:620px; line-height:1.75;
         margin-bottom:40px;
         animation: fadeUp .6s .2s ease both;
-        font-weight:300;
+        font-weight:400;
     }
 
     .hero-buttons {
@@ -336,12 +336,13 @@
     }
 
     .strategy-card-pro {
-        background: var(--bg-card);
-        border: 1px solid var(--border);
+        background: rgba(10,8,22,0.85);
+        border: 1px solid rgba(255,255,255,0.1);
         border-radius: var(--radius-xl);
         padding:40px;
         position:relative; overflow:hidden;
         transition: transform .3s, border-color .3s, box-shadow .3s;
+        backdrop-filter: blur(12px);
     }
     .strategy-card-pro::before {
         content:'';
@@ -362,7 +363,7 @@
         font-family:var(--head-font); font-size:1.25rem; font-weight:700;
         color:#fff; margin-bottom:14px;
     }
-    .strategy-card-pro p { color:var(--muted); font-size:.95rem; line-height:1.7; }
+    .strategy-card-pro p { color:#b0bdd0; font-size:.95rem; line-height:1.7; }
 
     /* Hero stats */
     .hero-stats {
@@ -385,7 +386,7 @@
         -webkit-background-clip:text; -webkit-text-fill-color:transparent;
         margin-bottom:8px;
     }
-    .stat-box p { color:var(--muted); font-size:.85rem; }
+    .stat-box p { color:#b0bdd0; font-size:.85rem; }
 
     /* ====================================================
        SECTION LABELS & HEADERS
@@ -406,8 +407,8 @@
     }
 
     .section-sub {
-        color:var(--muted); font-size:1.05rem; line-height:1.75;
-        max-width:660px; font-weight:300;
+        color:#b0bdd0; font-size:1.05rem; line-height:1.75;
+        max-width:660px; font-weight:400;
     }
 
     /* ====================================================
@@ -456,7 +457,7 @@
         font-family:var(--head-font); font-size:1.3rem; font-weight:700;
         color:#fff; margin-bottom:14px;
     }
-    .success-card p { color:var(--muted); font-size:.95rem; line-height:1.7; }
+    .success-card p { color:#b0bdd0; font-size:.95rem; line-height:1.7; }
 
     .success-card.seo { background:linear-gradient(135deg, rgba(59,130,246,.07), rgba(108,99,255,.07)); }
     .success-card.ux  { background:linear-gradient(135deg, rgba(0,245,255,.06), rgba(59,130,246,.06)); }
@@ -486,13 +487,14 @@
     }
 
     .pro-service-card {
-        background: var(--bg-card);
-        border: 1px solid var(--border);
+        background: rgba(8,6,18,0.9);
+        border: 1px solid rgba(255,255,255,.1);
         border-radius:var(--radius-xl);
         padding:44px;
         display:flex; flex-direction:column; justify-content:space-between;
         transition: transform .35s cubic-bezier(.175,.885,.32,1.275), border-color .35s, box-shadow .35s;
         position:relative; overflow:hidden;
+        backdrop-filter: blur(16px);
     }
     .pro-service-card::after {
         content:''; position:absolute; bottom:0; left:0; right:0; height:1px;
@@ -520,7 +522,7 @@
         color:#fff; margin-bottom:14px;
     }
     .pro-service-card > div > p {
-        color:var(--muted); font-size:.92rem; line-height:1.7; margin-bottom:24px;
+        color:#b0bdd0; font-size:.92rem; line-height:1.7; margin-bottom:24px;
     }
 
     .service-list { list-style:none; padding:0; margin-bottom:36px; }
@@ -546,182 +548,283 @@
     .service-link:hover { gap:10px; }
 
     /* ====================================================
-       WEB DESIGN DETAIL
+       WEB DESIGN DETAIL — CANLI & ANİMASYONLU
     ==================================================== */
     #web-tasarim-detay {
-        background: var(--bg-2);
-        border: none;
-        border-radius: 0;
-        padding: 100px 0;
-        margin: 0;
-        max-width: 100%;
-        scroll-margin-top: 100px;
         position: relative;
+        padding: 0;
+        margin: 0;
         overflow: hidden;
+        background: #000;
+        scroll-margin-top: 80px;
     }
-    #web-tasarim-detay::before { display:none; }
 
-    .wtd-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        max-width: 1200px;
-        margin: 0 auto 70px;
-        padding: 0 28px;
-        gap: 40px;
+    /* Arka plan canvas */
+    #wtd-canvas {
+        position: absolute; inset: 0;
+        width: 100%; height: 100%;
+        pointer-events: none; z-index: 0;
+        opacity: .55;
     }
-    .wtd-header-left { max-width: 560px; }
-    .wtd-header-left .section-title { font-size: 2.8rem; margin-bottom: 0; }
-    .wtd-header-right { color:var(--muted); font-size:.95rem; max-width:300px; text-align:right; line-height:1.7; flex-shrink:0; }
-    .wtd-lead { display:none; }
 
-    /* Değer kartları — tam genişlik 3 kolon şerit */
+    /* Büyük başlık bölümü */
+    .wtd-hero {
+        position: relative; z-index: 2;
+        padding: 110px 0 70px;
+        text-align: center;
+    }
+    .wtd-hero-label {
+        display: inline-flex; align-items: center; gap: 10px;
+        background: rgba(120,100,255,.12);
+        border: 1px solid rgba(120,100,255,.3);
+        border-radius: 100px; padding: 8px 22px;
+        font-size: .78rem; font-weight: 700; letter-spacing: 2px;
+        text-transform: uppercase; color: var(--purple);
+        margin-bottom: 28px;
+        animation: fadeUp .6s ease both;
+    }
+    .wtd-hero-label span { width:6px; height:6px; background:var(--cyan); border-radius:50%; display:inline-block; animation:pulse 2s infinite; }
+    .wtd-hero-title {
+        font-family: var(--head-font);
+        font-size: clamp(2.6rem, 5vw, 4.2rem);
+        font-weight: 900; letter-spacing: -2px; line-height: 1.08;
+        color: #fff; margin-bottom: 22px;
+        animation: fadeUp .6s .1s ease both;
+    }
+    .wtd-hero-title em { font-style:normal; }
+    .wtd-hero-sub {
+        color: #b0bdd0; font-size: 1.1rem; line-height: 1.8;
+        max-width: 580px; margin: 0 auto 48px;
+        animation: fadeUp .6s .2s ease both;
+    }
+    /* Sayaç şerit */
+    .wtd-counters {
+        display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;
+        animation: fadeUp .6s .3s ease both;
+    }
+    .wtd-ctr { text-align: center; }
+    .wtd-ctr-num {
+        font-family: var(--head-font); font-size: 2.6rem; font-weight: 900;
+        background: linear-gradient(135deg, var(--purple), var(--cyan));
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        line-height: 1;
+    }
+    .wtd-ctr-label { color: #7a8ea8; font-size: .78rem; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 6px; }
+
+    /* Değer kartları — 3 sütun yeni tasarım */
     .wtd-values {
         display: grid;
         grid-template-columns: repeat(3,1fr);
-        gap: 0;
+        gap: 20px;
         max-width: 1200px;
-        margin: 0 auto 2px;
-        padding: 0 28px;
+        margin: 0 auto;
+        padding: 0 28px 80px;
+        position: relative; z-index: 2;
     }
     .wtd-val-card {
-        background: rgba(255,255,255,.025);
-        border: 1px solid rgba(255,255,255,.06);
-        border-radius: 0;
-        padding: 48px 44px;
-        transition: background .3s;
+        background: linear-gradient(145deg, rgba(18,12,40,0.95), rgba(8,6,20,0.98));
+        border: 1px solid rgba(255,255,255,.09);
+        border-radius: 24px;
+        padding: 44px 38px;
         position: relative; overflow: hidden;
+        transition: transform .4s cubic-bezier(.23,1,.32,1), box-shadow .4s, border-color .3s;
+        cursor: default;
     }
-    .wtd-val-card:first-child  { border-radius: 20px 0 0 20px; }
-    .wtd-val-card:last-child   { border-radius: 0 20px 20px 0; border-right: 1px solid rgba(255,255,255,.06); }
-    .wtd-val-card + .wtd-val-card { border-left: none; }
-    .wtd-val-card:nth-child(1) { background: rgba(255,255,255,.025); border-color:rgba(255,255,255,.06); }
-    .wtd-val-card:nth-child(2) { background: rgba(255,255,255,.025); border-color:rgba(255,255,255,.06); }
-    .wtd-val-card:nth-child(3) { background: rgba(255,255,255,.025); border-color:rgba(255,255,255,.06); }
-    .wtd-val-card::after {
-        content:''; position:absolute; top:0; left:0; right:0; height:3px;
-        background:linear-gradient(90deg,var(--purple),var(--cyan));
-        transform:scaleX(0); transform-origin:left; transition:transform .4s;
+    /* Mouse-tracking glow overlay */
+    .wtd-val-card .card-glow {
+        position: absolute; inset: 0; border-radius: inherit; pointer-events:none;
+        background: radial-gradient(400px circle at var(--mx,50%) var(--my,50%), rgba(120,100,255,.12), transparent 65%);
+        opacity: 0; transition: opacity .35s;
     }
-    .wtd-val-card:hover { background: rgba(108,99,255,.07); }
-    .wtd-val-card:hover::after { transform:scaleX(1); }
+    .wtd-val-card:hover .card-glow { opacity: 1; }
+    .wtd-val-card::before {
+        content: '';
+        position: absolute; top: 0; left: 0; right: 0; height: 2px;
+        background: linear-gradient(90deg, transparent, var(--purple), var(--cyan), transparent);
+        transform: scaleX(0); transform-origin: left;
+        transition: transform .5s cubic-bezier(.23,1,.32,1);
+    }
+    .wtd-val-card:hover { transform: translateY(-10px); border-color: rgba(120,100,255,.4); box-shadow: 0 32px 64px rgba(100,80,255,.22), 0 0 0 1px rgba(120,100,255,.15); }
+    .wtd-val-card:hover::before { transform: scaleX(1); }
+    /* İkon — dönen gradient ring */
     .wtd-val-icon {
-        width:48px; height:48px;
-        background:rgba(108,99,255,.12); border:1px solid rgba(108,99,255,.25);
-        border-radius:12px; display:flex; align-items:center; justify-content:center;
-        margin-bottom:24px; color:var(--purple);
+        width: 58px; height: 58px;
+        border-radius: 16px;
+        display: flex; align-items: center; justify-content: center;
+        margin-bottom: 28px; position: relative;
+        background: rgba(120,100,255,.1);
+        border: 1px solid rgba(120,100,255,.25);
+        transition: transform .4s, box-shadow .4s;
     }
-    .wtd-val-card:nth-child(2) .wtd-val-icon { background:rgba(0,245,255,.1); border-color:rgba(0,245,255,.2); color:var(--cyan); }
-    .wtd-val-icon svg { width:20px; height:20px; }
-    .wtd-val-card h3 { font-family:var(--head-font); font-size:1.15rem; color:#fff; margin-bottom:12px; font-weight:700; }
-    .wtd-val-card p { color:var(--muted); font-size:.9rem; line-height:1.75; }
+    .wtd-val-card:hover .wtd-val-icon { transform: scale(1.12) rotate(-4deg); box-shadow: 0 0 28px rgba(120,100,255,.4); }
+    .wtd-val-card:nth-child(2) .wtd-val-icon { background: rgba(0,240,255,.08); border-color: rgba(0,240,255,.22); }
+    .wtd-val-card:nth-child(2) .wtd-val-icon svg { stroke: var(--cyan); }
+    .wtd-val-card:nth-child(3) .wtd-val-icon { background: rgba(180,100,255,.1); border-color: rgba(180,100,255,.25); }
+    .wtd-val-card:nth-child(3) .wtd-val-icon svg { stroke: #c084fc; }
+    .wtd-val-icon svg { width: 24px; height: 24px; stroke: var(--purple); }
+    .wtd-val-card h3 { font-family:var(--head-font); font-size:1.2rem; color:#fff; margin-bottom:14px; font-weight:700; }
+    .wtd-val-card p { color:#b0bdd0; font-size:.92rem; line-height:1.8; }
+    /* Dekoratif köşe nokta */
+    .wtd-val-card::after {
+        content: ''; position: absolute; bottom: 20px; right: 20px;
+        width: 44px; height: 44px; border-radius: 50%;
+        background: radial-gradient(circle, rgba(120,100,255,.18), transparent 70%);
+        transition: transform .4s, opacity .4s; opacity: 0;
+    }
+    .wtd-val-card:hover::after { opacity: 1; transform: scale(1.6); }
 
-    /* Orta: Kimler için (dar) + Kullanım kartları (geniş) */
-    .wtd-main-grid {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: 0;
-        max-width: 1200px;
-        margin: 40px auto 0;
-        padding: 0 28px;
-        border-top: 1px solid rgba(255,255,255,.05);
+    /* ---- Tab bölümü ---- */
+    .wtd-tabs-section {
+        position: relative; z-index: 2;
+        max-width: 1200px; margin: 0 auto 80px; padding: 0 28px;
     }
+    .wtd-tabs-nav {
+        display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap;
+    }
+    .wtd-tab-btn {
+        padding: 10px 24px;
+        background: rgba(255,255,255,.04);
+        border: 1px solid rgba(255,255,255,.09);
+        border-radius: 100px; color: #94a3b8;
+        font-size: .85rem; font-weight: 600; cursor: pointer;
+        transition: all .25s; white-space: nowrap;
+    }
+    .wtd-tab-btn.active, .wtd-tab-btn:hover {
+        background: rgba(120,100,255,.18);
+        border-color: rgba(120,100,255,.5);
+        color: #fff; box-shadow: 0 0 20px rgba(120,100,255,.2);
+    }
+    .wtd-tab-panel { display: none; }
+    .wtd-tab-panel.active { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 16px; }
+
+    .wtd-use-card {
+        background: linear-gradient(145deg, rgba(14,10,32,0.95), rgba(6,4,16,0.98));
+        border: 1px solid rgba(255,255,255,.08);
+        border-radius: 20px; padding: 32px 26px;
+        transition: transform .3s, border-color .3s, box-shadow .3s;
+        position: relative; overflow: hidden;
+        cursor: default;
+    }
+    .wtd-use-card::before {
+        content: ''; position:absolute; inset:0; border-radius:inherit;
+        background: radial-gradient(300px at var(--mx,50%) var(--my,50%), rgba(120,100,255,.1), transparent 60%);
+        opacity:0; transition:opacity .3s; pointer-events:none;
+    }
+    .wtd-use-card:hover { transform: translateY(-6px); border-color: rgba(120,100,255,.4); box-shadow: 0 20px 48px rgba(100,80,255,.18); }
+    .wtd-use-card:hover::before { opacity:1; }
+    .wtd-use-icon { font-size: 2rem; display: block; margin-bottom: 18px; filter: drop-shadow(0 0 8px rgba(120,100,255,.4)); }
+    .wtd-use-card strong { display:block; color:#eaf0fb; font-size:1rem; font-weight:700; margin-bottom:10px; font-family:var(--head-font); }
+    .wtd-use-card p { color:#9eadc4; font-size:.85rem; line-height:1.65; margin:0; }
+
+    /* ---- Process/Süreç adımlar ---- */
+    .wtd-process {
+        position: relative; z-index: 2;
+        max-width: 1200px; margin: 0 auto 80px; padding: 0 28px;
+    }
+    .wtd-process-title {
+        font-size:.72rem; font-weight:700; color:var(--muted);
+        letter-spacing:2px; text-transform:uppercase; margin-bottom:40px;
+    }
+    .wtd-steps {
+        display: grid; grid-template-columns: repeat(4,1fr); gap: 0;
+        position: relative;
+    }
+    .wtd-steps::before {
+        content: '';
+        position:absolute; top:28px; left:14%; right:14%; height:1px;
+        background:linear-gradient(90deg,rgba(120,100,255,.5),rgba(0,240,255,.4),rgba(120,100,255,.5));
+        z-index:0;
+    }
+    .wtd-step {
+        text-align: center; padding: 0 16px; position: relative; z-index:1;
+        opacity: 0; transform: translateY(30px);
+        transition: opacity .5s, transform .5s;
+    }
+    .wtd-step.visible { opacity:1; transform:translateY(0); }
+    .wtd-step-num {
+        width: 56px; height: 56px; border-radius: 50%;
+        background: linear-gradient(135deg, var(--purple), var(--cyan));
+        display: flex; align-items: center; justify-content: center;
+        font-family: var(--head-font); font-size: 1.1rem; font-weight: 900; color: #fff;
+        margin: 0 auto 20px; position: relative;
+        box-shadow: 0 0 0 8px rgba(120,100,255,.1);
+        transition: box-shadow .3s, transform .3s;
+    }
+    .wtd-step:hover .wtd-step-num { box-shadow: 0 0 0 12px rgba(120,100,255,.18), 0 0 32px rgba(120,100,255,.4); transform: scale(1.1); }
+    .wtd-step h4 { font-family:var(--head-font); font-size:.95rem; font-weight:700; color:#fff; margin-bottom:8px; }
+    .wtd-step p { color:#94a3b8; font-size:.8rem; line-height:1.6; }
+
+    /* ---- Feature list + Paket ---- */
+    .wtd-bottom-grid {
+        display: grid;
+        grid-template-columns: 1.3fr .7fr;
+        gap: 24px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 28px 100px;
+        position: relative; z-index: 2;
+    }
+    .wtd-features { padding: 0; }
     .wtd-sub-title {
         font-size: .72rem; font-weight:700;
         color:var(--muted); letter-spacing:2px; text-transform:uppercase;
         margin-bottom:32px; font-family:var(--body-font);
     }
-
-    .wtd-for-whom {
-        padding: 52px 44px 52px 0;
-        border-right: 1px solid rgba(255,255,255,.05);
-    }
-    .wtd-audience-list { display:flex; flex-direction:column; gap:28px; }
-    .wtd-audience-item { display:flex; align-items:flex-start; gap:14px; }
-    .wtd-aud-dot {
-        flex-shrink:0; width:7px; height:7px; border-radius:50%;
-        background:var(--purple); margin-top:7px;
-        box-shadow:0 0 10px rgba(108,99,255,.8);
-    }
-    .wtd-audience-item strong { display:block; color:#e8eeff; font-weight:600; margin-bottom:4px; font-size:.93rem; }
-    .wtd-audience-item p { color:var(--muted); font-size:.84rem; line-height:1.65; margin:0; }
-
-    .wtd-use-cases { padding: 52px 0 52px 48px; }
-    .wtd-use-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
-    .wtd-use-card {
-        background: rgba(255,255,255,.03);
-        border: 1px solid rgba(255,255,255,.07);
-        border-radius: 18px; padding: 28px 22px;
-        transition: border-color .25s, background .25s, transform .2s;
-    }
-    .wtd-use-card:hover { border-color:rgba(108,99,255,.35); background:rgba(108,99,255,.06); transform:translateY(-3px); }
-    .wtd-use-icon { font-size:1.6rem; display:block; margin-bottom:14px; }
-    .wtd-use-card strong { display:block; color:#e2e8f0; font-size:.95rem; font-weight:600; margin-bottom:8px; }
-    .wtd-use-card p { color:var(--muted); font-size:.82rem; line-height:1.6; margin:0; }
-
-    /* Alt: Özellikler (2 kolon liste) + Paket */
-    .wtd-bottom-grid {
-        display: grid;
-        grid-template-columns: 1.3fr .7fr;
-        gap: 0;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 28px;
-        border-top: 1px solid rgba(255,255,255,.05);
-    }
-    .wtd-features {
-        padding: 52px 44px 52px 0;
-        border-right: 1px solid rgba(255,255,255,.05);
-    }
     .wtd-feature-list { display:grid; grid-template-columns:1fr 1fr; gap:0 24px; }
     .wtd-feat {
         display:flex; align-items:center; gap:12px;
-        padding:13px 0; border-bottom:1px solid rgba(255,255,255,.04);
-        color:#b8c4da; font-size:.88rem; transition:color .2s;
+        padding:14px 0; border-bottom:1px solid rgba(255,255,255,.05);
+        color:#c8d4e8; font-size:.875rem; transition: color .2s, gap .2s;
     }
-    .wtd-feat:hover { color:#fff; }
-    .wtd-feat-bar { flex-shrink:0; width:3px; height:15px; background:linear-gradient(180deg,var(--purple),var(--cyan)); border-radius:10px; }
+    .wtd-feat:hover { color:#fff; gap:16px; }
+    .wtd-feat-bar {
+        flex-shrink:0; width:4px; height:16px;
+        background:linear-gradient(180deg,var(--purple),var(--cyan));
+        border-radius:10px;
+        box-shadow: 0 0 10px rgba(120,100,255,.5);
+    }
 
     .wtd-package {
-        padding: 52px 0 52px 52px;
-        position:relative;
+        background: linear-gradient(145deg, rgba(20,14,50,0.97), rgba(10,6,24,0.98));
+        border: 1px solid rgba(120,100,255,.3);
+        border-radius: 28px; padding: 44px 38px;
+        position:relative; overflow:hidden;
+        box-shadow: 0 0 0 1px rgba(120,100,255,.1), inset 0 1px 0 rgba(255,255,255,.06);
     }
     .wtd-pkg-glow {
-        position:absolute; bottom:-80px; right:-80px;
-        width:300px; height:300px;
-        background:radial-gradient(circle,rgba(108,99,255,.12),transparent 65%);
-        pointer-events:none;
+        position:absolute; bottom:-60px; right:-60px;
+        width:280px; height:280px;
+        background:radial-gradient(circle,rgba(120,100,255,.18),transparent 65%);
+        pointer-events:none; animation: pkgGlow 4s ease-in-out infinite alternate;
     }
+    @keyframes pkgGlow { from{opacity:.7;transform:scale(1)} to{opacity:1;transform:scale(1.2)} }
     .wtd-pkg-badge {
         display:inline-block;
         background:linear-gradient(90deg,var(--purple),var(--cyan));
-        color:#fff; font-size:.7rem; font-weight:700;
-        padding:5px 16px; border-radius:100px;
-        letter-spacing:.5px; text-transform:uppercase;
+        color:#fff; font-size:.7rem; font-weight:800;
+        padding:6px 18px; border-radius:100px;
+        letter-spacing:.8px; text-transform:uppercase;
         margin-bottom:20px;
     }
     .wtd-package h3 { font-family:var(--head-font); color:#fff; font-size:1.4rem; font-weight:700; margin-bottom:8px; }
-    .wtd-pkg-desc { color:var(--muted); font-size:.9rem; margin-bottom:28px; line-height:1.65; }
+    .wtd-pkg-desc { color:#b0bdd0; font-size:.9rem; margin-bottom:28px; line-height:1.65; }
     .wtd-package .includes-list li { color:#c8d4ee; border-bottom-color:rgba(255,255,255,.05); font-size:.88rem; }
     .wtd-pkg-note { text-align:center; color:var(--muted); font-size:.73rem; margin-top:14px; opacity:.6; }
 
     @media (max-width:1024px) {
-        .wtd-header { flex-direction:column; align-items:flex-start; }
-        .wtd-header-right { text-align:left; max-width:100%; }
-        .wtd-main-grid,.wtd-bottom-grid { grid-template-columns:1fr; }
-        .wtd-for-whom { border-right:none; border-bottom:1px solid rgba(255,255,255,.05); padding:48px 0; }
-        .wtd-use-cases { padding:48px 0; }
-        .wtd-features { border-right:none; border-bottom:1px solid rgba(255,255,255,.05); padding:48px 0; }
-        .wtd-package { padding:48px 0; }
-        .wtd-feature-list { grid-template-columns:1fr; }
-        .wtd-use-grid { grid-template-columns:repeat(2,1fr); }
+        .wtd-steps { grid-template-columns: repeat(2,1fr); }
+        .wtd-steps::before { display:none; }
+        .wtd-bottom-grid { grid-template-columns:1fr; }
     }
-    @media (max-width:640px) {
-        #web-tasarim-detay { padding:60px 0; }
-        .wtd-values { grid-template-columns:1fr; padding:0 20px; gap:12px; }
-        .wtd-val-card { border-radius:16px !important; border:1px solid rgba(255,255,255,.06) !important; }
-        .wtd-use-grid { grid-template-columns:1fr; }
-        .wtd-header,.wtd-main-grid,.wtd-bottom-grid { padding:0 20px; }
+    @media (max-width:768px) {
+        .wtd-values { grid-template-columns:1fr; }
+        .wtd-feature-list { grid-template-columns:1fr; }
+        .wtd-counters { gap:32px; }
+        .wtd-steps { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width:480px) {
+        .wtd-steps { grid-template-columns: 1fr; }
+        .wtd-tab-panel.active { grid-template-columns:1fr; }
     }
 
 
@@ -730,7 +833,7 @@
     ==================================================== */
     #seo-detay {
         padding:120px 0;
-        background: linear-gradient(135deg, #0f0d1a 0%, #151226 100%);
+        background: linear-gradient(135deg, #060410 0%, #0a0820 100%);
     }
 
     .seo-inner { display:flex; align-items:center; gap:70px; flex-wrap:wrap; }
@@ -803,7 +906,7 @@
     .pillar:hover { border-color:var(--border-hi); transform:translateY(-4px); }
     .pillar-icon { font-size:1.6rem; margin-bottom:14px; }
     .pillar h4 { font-family:var(--head-font); color:#fff; font-size:1rem; font-weight:700; margin-bottom:8px; }
-    .pillar p { color:var(--muted); font-size:.85rem; line-height:1.6; }
+    .pillar p { color:#b0bdd0; font-size:.85rem; line-height:1.6; }
 
     /* ====================================================
        CONTACT
@@ -1005,10 +1108,77 @@
 
     /* 10. About bölümü — arka planda dekoratif büyük yazı */
     .about-watermark { position:absolute; font-family:var(--head-font); font-size:14rem; font-weight:900; color:rgba(108,99,255,.025); top:50%; left:50%; transform:translate(-50%,-50%); white-space:nowrap; pointer-events:none; user-select:none; z-index:0; letter-spacing:-6px; }
+
+    /* 11. Header blur artırıldı + alt hat gradient */
+    .main-header {
+        background: rgba(0,0,0,.85);
+        border-bottom: 1px solid transparent;
+        border-image: linear-gradient(90deg, transparent, rgba(120,100,255,.3), rgba(0,240,255,.15), transparent) 1;
+    }
+
+    /* 12. Floating ambient orbs — arka planda yüzen renk topları */
+    .ambient-orbs { position:fixed; inset:0; z-index:-2; pointer-events:none; overflow:hidden; }
+    .ambient-orbs span { position:absolute; border-radius:50%; filter:blur(120px); opacity:.55; animation:orbDrift 20s ease-in-out infinite alternate; }
+    .ambient-orbs span:nth-child(1) { width:700px; height:500px; background:rgba(100,80,255,.07); top:-15%; left:-10%; animation-duration:22s; }
+    .ambient-orbs span:nth-child(2) { width:500px; height:500px; background:rgba(0,230,255,.05); bottom:-12%; right:-8%; animation-duration:18s; animation-delay:-8s; }
+    .ambient-orbs span:nth-child(3) { width:350px; height:350px; background:rgba(150,80,255,.06); top:45%; left:55%; animation-duration:26s; animation-delay:-14s; }
+    @keyframes orbDrift { 0%{transform:translate(0,0)} 33%{transform:translate(40px,-30px)} 66%{transform:translate(-25px,20px)} 100%{transform:translate(15px,-15px)} }
+
+    /* 13. Kart hover'da üst kısım ince ışık hattı */
+    .strategy-card-pro::after, .pro-service-card::after {
+        content:''; position:absolute; top:0; left:0; right:0; height:1px;
+        background:linear-gradient(90deg,transparent,rgba(120,100,255,.6),rgba(0,240,255,.4),transparent);
+        transform:scaleX(0); transition:transform .4s ease;
+    }
+    .strategy-card-pro:hover::after, .pro-service-card:hover::after { transform:scaleX(1); }
+
+    /* 14. Success card dark upgrade */
+    .success-card {
+        background: rgba(6,4,16,0.9) !important;
+        border-color: rgba(255,255,255,.09) !important;
+        backdrop-filter: blur(14px);
+    }
+
+    /* 15. Stat box derin siyah */
+    .stat-box {
+        background: rgba(6,4,16,0.88);
+        backdrop-filter: blur(10px);
+    }
+
+    /* 16. Pillar cards derin */
+    .pillar { background: rgba(6,4,16,0.88); backdrop-filter:blur(10px); }
+
+    /* 17. Contact card derin */
+    .contact-card { background: rgba(6,4,16,0.9) !important; backdrop-filter:blur(16px); }
+
+    /* 18. Nav active state güçlendirildi */
+    nav a.active {
+        background: rgba(120,100,255,.2);
+        box-shadow: inset 0 0 0 1px rgba(120,100,255,.4), 0 0 16px rgba(120,100,255,.15);
+    }
+
+    /* 19. Footer tam siyah */
+    .main-footer { background: #000 !important; }
+
+    /* 20. Glow cursor efekti (desktop only) */
+    @media(hover:hover){
+        body { cursor: none; }
+        #cursor-glow { position:fixed; width:28px; height:28px; border-radius:50%; background:rgba(120,100,255,.35); pointer-events:none; z-index:99998; transform:translate(-50%,-50%); transition:transform .08s, width .2s, height .2s, opacity .3s; mix-blend-mode:screen; filter:blur(2px); }
+        #cursor-dot  { position:fixed; width:5px; height:5px; border-radius:50%; background:#fff; pointer-events:none; z-index:99999; transform:translate(-50%,-50%); }
+        a:hover ~ #cursor-glow, button:hover ~ #cursor-glow { width:48px; height:48px; }
+    }
     </style>
 </head>
 
 <body>
+    <!-- Ambient floating orbs -->
+    <div class="ambient-orbs">
+        <span></span><span></span><span></span>
+    </div>
+    <!-- Custom cursor -->
+    <div id="cursor-glow"></div>
+    <div id="cursor-dot"></div>
+
     <div class="global-background-glow"></div>
 
     <!-- HEADER -->
@@ -1348,125 +1518,118 @@
             </div>
         </div>
 
-        <!-- WEB DESIGN DETAIL — Kapsamlı -->
+        <!-- WEB DESIGN DETAIL — CANLI & ANİMASYONLU -->
         <div id="web-tasarim-detay">
 
-            <!-- Bölüm başlığı -->
-            <div class="wtd-header">
-                <div class="wtd-header-left">
-                    <span class="section-label">Web Tasarım & Geliştirme</span>
-                    <h2 class="section-title">Sadece Bir Site Değil,<br><span class="g-text">Dijital İş Yeriniz</span></h2>
-                </div>
-                <div class="wtd-header-right">
-                    Kurumsal web sitesiyle neler yapabilirsiniz? İşletmenizi büyüten, ziyaretçiyi müşteriye dönüştüren dijital çözümler.
+            <!-- Arka plan canvas (particle ağı) -->
+            <canvas id="wtd-canvas"></canvas>
+
+            <!-- Hero başlık -->
+            <div class="wtd-hero container">
+                <div class="wtd-hero-label"><span></span> Web Tasarım & Geliştirme</div>
+                <h2 class="wtd-hero-title">
+                    Sadece Bir Site Değil,<br>
+                    <em class="g-text">Dijital İş Yeriniz</em>
+                </h2>
+                <p class="wtd-hero-sub">Kurumsal web sitesiyle neler yapabilirsiniz? İşletmenizi büyüten, ziyaretçiyi müşteriye dönüştüren dijital çözümler.</p>
+                <div class="wtd-counters">
+                    <div class="wtd-ctr"><div class="wtd-ctr-num" data-to="150">0</div><div class="wtd-ctr-label">Proje Tamamlandı</div></div>
+                    <div class="wtd-ctr"><div class="wtd-ctr-num" data-to="98">0</div><div class="wtd-ctr-label">% Memnuniyet</div></div>
+                    <div class="wtd-ctr"><div class="wtd-ctr-num" data-to="5">0</div><div class="wtd-ctr-label">Yıl Deneyim</div></div>
+                    <div class="wtd-ctr"><div class="wtd-ctr-num" data-to="320">0</div><div class="wtd-ctr-label">% Trafik Artışı</div></div>
                 </div>
             </div>
 
-            <!-- 3 ana değer -->
+            <!-- 3 Değer kartı -->
             <div class="wtd-values">
                 <div class="wtd-val-card">
+                    <div class="card-glow"></div>
                     <div class="wtd-val-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                     </div>
                     <h3>Kullanıcı Dostu Tasarımlar</h3>
                     <p>Anlaşılır, hızlı açılan ve her cihazda kusursuz görünen arayüzler. Ziyaretçiniz siteyi açtığı an nereye tıklayacağını bilir — çünkü biz bunu tasarladık.</p>
                 </div>
                 <div class="wtd-val-card">
+                    <div class="card-glow"></div>
                     <div class="wtd-val-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                     </div>
                     <h3>Yaratıcı Fikirler</h3>
                     <p>Her marka kendine özgüdür. Sıradan şablonların ötesine geçerek markanızın ruhunu yansıtan, sektörde iz bırakan estetik ve interaktif deneyimler tasarlıyoruz.</p>
                 </div>
                 <div class="wtd-val-card">
+                    <div class="card-glow"></div>
                     <div class="wtd-val-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
                     </div>
                     <h3>Sonuç Odaklı Çözümler</h3>
                     <p>Güzel görünmek yetmez — dönüşüm sağlamalı. Stratejik planlama ve veri odaklı kararlarla sitenizi işletmenizin en güçlü satış kanalına dönüştürüyoruz.</p>
                 </div>
             </div>
 
-            <!-- Kimler için + özellikler grid -->
-            <div class="wtd-main-grid">
-
-                <!-- Sol: Kimler için -->
-                <div class="wtd-for-whom">
-                    <h3 class="wtd-sub-title">Kimler İçin?</h3>
-                    <div class="wtd-audience-list">
-                        <div class="wtd-audience-item">
-                            <div class="wtd-aud-dot"></div>
-                            <div>
-                                <strong>KOBİ'ler & Girişimler</strong>
-                                <p>Daha geniş kitlelere ulaşmak, dijalde güçlü bir duruş sergilemek isteyen küçük ve orta ölçekli işletmeler.</p>
-                            </div>
-                        </div>
-                        <div class="wtd-audience-item">
-                            <div class="wtd-aud-dot"></div>
-                            <div>
-                                <strong>Marka Yenilemek Isteyenler</strong>
-                                <p>Eskiyen dijital kimliğini modern, çarpıcı bir görünümle yenileyerek yeniden öne çıkmak isteyen markalar.</p>
-                            </div>
-                        </div>
-                        <div class="wtd-audience-item">
-                            <div class="wtd-aud-dot"></div>
-                            <div>
-                                <strong>Profesyonel Hizmet Sektörleri</strong>
-                                <p>Hukuk, sağlık, danışmanlık, mimarlık gibi prestijini çevrimiçi yansıtmak isteyen profesyoneller.</p>
-                            </div>
-                        </div>
-                        <div class="wtd-audience-item">
-                            <div class="wtd-aud-dot"></div>
-                            <div>
-                                <strong>Global Rekabete Girişmek İsteyenler</strong>
-                                <p>Çok dilli altyapı ve uluslararası UX standartlarıyla dünya sahnesine çıkmayı hedefleyen şirketler.</p>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Kullanım alanları — tab sistemi -->
+            <div class="wtd-tabs-section">
+                <div class="wtd-tabs-nav">
+                    <button class="wtd-tab-btn active" data-tab="all">Tümü</button>
+                    <button class="wtd-tab-btn" data-tab="kobi">KOBİ & Girişim</button>
+                    <button class="wtd-tab-btn" data-tab="kurumsal">Kurumsal</button>
+                    <button class="wtd-tab-btn" data-tab="eticaret">E-Ticaret</button>
                 </div>
+                <div class="wtd-tab-panel active" id="tab-all">
+                    <div class="wtd-use-card"><span class="wtd-use-icon">🏢</span><strong>Kurumsal Tanıtım</strong><p>Şirketinizi, değerlerinizi ve hizmetlerinizi güçlü bir kurumsal kimlikle sunun.</p></div>
+                    <div class="wtd-use-card"><span class="wtd-use-icon">💬</span><strong>İletişim & Destek</strong><p>Canlı chat, form ve SSS entegrasyonlarıyla müşterilerinize 7/24 ulaşılabilin.</p></div>
+                    <div class="wtd-use-card"><span class="wtd-use-icon">🗂️</span><strong>Ürün & Portföy</strong><p>Ürün ve projelerinizi görsel açıdan etkileyici bir portföy sayfasıyla öne çıkarın.</p></div>
+                    <div class="wtd-use-card"><span class="wtd-use-icon">✍️</span><strong>Blog & İçerik</strong><p>Sektörel içeriklerle otorite kurun, organik trafik ve marka güveni kazanın.</p></div>
+                    <div class="wtd-use-card"><span class="wtd-use-icon">👥</span><strong>İşe Alım & Kariyer</strong><p>Şirket kültürünüzü yansıtın, yetenekleri çekin ve başvuruları kolayca yönetin.</p></div>
+                    <div class="wtd-use-card"><span class="wtd-use-icon">📣</span><strong>Etkinlik & Duyurular</strong><p>Lansmanlar, haberler ve etkinlikleri tek platformdan duyurun.</p></div>
+                </div>
+                <div class="wtd-tab-panel" id="tab-kobi">
+                    <div class="wtd-use-card"><span class="wtd-use-icon">🚀</span><strong>Hızlı Lansman</strong><p>Fikrinizi en kısa sürede dijital dünyaya taşıyın, müşterilerinize ulaşın.</p></div>
+                    <div class="wtd-use-card"><span class="wtd-use-icon">💰</span><strong>Bütçe Dostu</strong><p>Küçük ekipler için optimize edilmiş, büyümeyle birlikte ölçeklenen çözümler.</p></div>
+                    <div class="wtd-use-card"><span class="wtd-use-icon">📱</span><strong>Mobil Öncelikli</strong><p>Müşterilerinizin %70'i mobilde — her ekranda mükemmel deneyim.</p></div>
+                </div>
+                <div class="wtd-tab-panel" id="tab-kurumsal">
+                    <div class="wtd-use-card"><span class="wtd-use-icon">🔐</span><strong>Güvenlik & Uyumluluk</strong><p>SSL, GDPR, KVKK ve güvenlik duvarı ile kurumsal standartlar.</p></div>
+                    <div class="wtd-use-card"><span class="wtd-use-icon">🔗</span><strong>CRM Entegrasyonu</strong><p>Salesforce, HubSpot ve özel CRM sistemleriyle sorunsuz bağlantı.</p></div>
+                    <div class="wtd-use-card"><span class="wtd-use-icon">📊</span><strong>Gelişmiş Analitik</strong><p>GA4, Tag Manager ve özel dashboard ile gerçek zamanlı performans takibi.</p></div>
+                </div>
+                <div class="wtd-tab-panel" id="tab-eticaret">
+                    <div class="wtd-use-card"><span class="wtd-use-icon">🛒</span><strong>Ödeme Sistemleri</strong><p>iyzico, PayTR, Stripe entegrasyonuyla güvenli ödeme akışı.</p></div>
+                    <div class="wtd-use-card"><span class="wtd-use-icon">📦</span><strong>Stok & Kargo</strong><p>Otomatik stok yönetimi ve kargo entegrasyonuyla operasyonel kolaylık.</p></div>
+                    <div class="wtd-use-card"><span class="wtd-use-icon">💡</span><strong>Dönüşüm Optimizasyonu</strong><p>Sepet terk oranını düşüren UX ve A/B test stratejileri.</p></div>
+                </div>
+            </div>
 
-                <!-- Sağ: Kullanım amaçları -->
-                <div class="wtd-use-cases">
-                    <h3 class="wtd-sub-title">Sitenizle Neler Yapabilirsiniz?</h3>
-                    <div class="wtd-use-grid">
-                        <div class="wtd-use-card">
-                            <span class="wtd-use-icon">🏢</span>
-                            <strong>Kurumsal Tanıtım</strong>
-                            <p>Şirketinizi, değerlerinizi ve hizmetlerinizi güçlü bir kurumsal kimlikle sunun.</p>
-                        </div>
-                        <div class="wtd-use-card">
-                            <span class="wtd-use-icon">💬</span>
-                            <strong>İletişim & Destek</strong>
-                            <p>Canlı chat, form ve SSS entegrasyonlarıyla müşterilerinize 7/24 ulaşılabilin.</p>
-                        </div>
-                        <div class="wtd-use-card">
-                            <span class="wtd-use-icon">🗂️</span>
-                            <strong>Ürün & Portföy</strong>
-                            <p>Ürün ve projelerinizi görsel açıdan etkileyici bir portföy sayfasıyla öne çıkarın.</p>
-                        </div>
-                        <div class="wtd-use-card">
-                            <span class="wtd-use-icon">✍️</span>
-                            <strong>Blog & İçerik</strong>
-                            <p>Sektörel içeriklerle otorite kurun, organik trafik ve marka güveni kazanın.</p>
-                        </div>
-                        <div class="wtd-use-card">
-                            <span class="wtd-use-icon">👥</span>
-                            <strong>İşe Alım & Kariyer</strong>
-                            <p>Şirket kültürünüzü yansıtın, yetenekleri çekin ve başvuruları kolayca yönetin.</p>
-                        </div>
-                        <div class="wtd-use-card">
-                            <span class="wtd-use-icon">📣</span>
-                            <strong>Etkinlik & Duyurular</strong>
-                            <p>Lansmanlar, haberler ve etkinlikleri tek platformdan duyurun.</p>
-                        </div>
+            <!-- Süreç adımları -->
+            <div class="wtd-process">
+                <p class="wtd-process-title">Nasıl Çalışıyoruz?</p>
+                <div class="wtd-steps">
+                    <div class="wtd-step">
+                        <div class="wtd-step-num">01</div>
+                        <h4>Keşif & Analiz</h4>
+                        <p>İşletmenizi, hedef kitlenizi ve rekabeti derinlemesine anlıyoruz.</p>
+                    </div>
+                    <div class="wtd-step">
+                        <div class="wtd-step-num">02</div>
+                        <h4>Tasarım & Prototip</h4>
+                        <p>Markanıza özgü wireframe ve interaktif prototip hazırlıyoruz.</p>
+                    </div>
+                    <div class="wtd-step">
+                        <div class="wtd-step-num">03</div>
+                        <h4>Geliştirme</h4>
+                        <p>Hızlı, güvenli ve ölçeklenebilir kod tabanıyla hayata geçiriyoruz.</p>
+                    </div>
+                    <div class="wtd-step">
+                        <div class="wtd-step-num">04</div>
+                        <h4>Yayın & Destek</h4>
+                        <p>Test, optimizasyon ve 6 ay ücretsiz bakım desteğiyle yanınızdayız.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Alt: özellikler + paket -->
+            <!-- Özellikler + Paket -->
             <div class="wtd-bottom-grid">
-
-                <!-- Öne çıkan özellikler -->
                 <div class="wtd-features">
                     <h3 class="wtd-sub-title">Ne Sunuyoruz?</h3>
                     <div class="wtd-feature-list">
@@ -1480,8 +1643,6 @@
                         <div class="wtd-feat"><span class="wtd-feat-bar"></span><span>6 Ay Ücretsiz Bakım & Güncelleme Desteği</span></div>
                     </div>
                 </div>
-
-                <!-- Paket kartı -->
                 <div class="wtd-package">
                     <div class="wtd-pkg-glow"></div>
                     <span class="wtd-pkg-badge">Popüler Paket</span>
@@ -1514,7 +1675,7 @@
             <div>
                 <span class="section-label">Organik Büyüme</span>
                 <h2 class="section-title">SEO Hizmeti <span class="g-text">Nedir?</span></h2>
-                <p style="color:var(--muted);font-size:1.05rem;line-height:1.8;margin-bottom:20px;font-weight:300;">
+                <p style="color:#b0bdd0;font-size:1.05rem;line-height:1.8;margin-bottom:20px;font-weight:400;">
                     <strong style="color:#e2e8f0;">Nexora Innovation</strong> olarak web sitenizin Google'da üst sıralara çıkması için teknik SEO, içerik SEO ve analiz çalışmaları yapıyoruz. Satışlarınızın artışı için özel stratejiler geliştiriyoruz.
                 </p>
                 <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px;">
@@ -1538,7 +1699,7 @@
             <div>
                 <span class="section-label">Sıfırdan İnşa</span>
                 <h2 class="section-title">Web Site <span class="g-text">Kurma</span></h2>
-                <p style="color:var(--muted);font-size:1.05rem;line-height:1.8;margin-bottom:36px;font-weight:300;">
+                <p style="color:#b0bdd0;font-size:1.05rem;line-height:1.8;margin-bottom:36px;font-weight:400;">
                     İşletmeniz için modern, mobil uyumlu ve yüksek performanslı web siteleri inşa ediyoruz. Kullanıcı deneyimini ön planda tutan tasarımlarla fark yaratın. Rakiplerinizin önünde, ziyaretçilerinizin gönlünde yer alan dijital bir varlık inşa edelim.
                 </p>
                 <a href="#contact" class="btn-primary">Projenizi Başlatın</a>
@@ -1689,6 +1850,121 @@
         el.style.cssText += 'opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease';
         observer.observe(el);
     });
+
+    // Custom cursor
+    const cg = document.getElementById('cursor-glow');
+    const cd = document.getElementById('cursor-dot');
+    if(cg && cd){
+        document.addEventListener('mousemove', e => {
+            cg.style.left = e.clientX + 'px';
+            cg.style.top  = e.clientY + 'px';
+            cd.style.left = e.clientX + 'px';
+            cd.style.top  = e.clientY + 'px';
+        });
+        document.addEventListener('mousedown', () => { cg.style.transform='translate(-50%,-50%) scale(.6)'; });
+        document.addEventListener('mouseup',   () => { cg.style.transform='translate(-50%,-50%) scale(1)'; });
+    }
+    // ── WEB TASARIM DETAY — Canvas Particle Network ──
+    (function(){
+        const canvas = document.getElementById('wtd-canvas');
+        if(!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let W, H, particles = [], mouse = {x:-9999,y:-9999};
+        const COLORS = ['#7c6dff','#00f0ff','#c084fc'];
+        function resize(){ W = canvas.width = canvas.offsetWidth; H = canvas.height = canvas.offsetHeight; }
+        function Particle(){
+            this.x = Math.random()*W; this.y = Math.random()*H;
+            this.vx = (Math.random()-.5)*.4; this.vy = (Math.random()-.5)*.4;
+            this.r = Math.random()*1.8+.6;
+            this.color = COLORS[Math.floor(Math.random()*COLORS.length)];
+        }
+        Particle.prototype.update = function(){
+            this.x+=this.vx; this.y+=this.vy;
+            if(this.x<0||this.x>W) this.vx*=-1;
+            if(this.y<0||this.y>H) this.vy*=-1;
+        };
+        function init(){ particles=[]; for(let i=0;i<90;i++) particles.push(new Particle()); }
+        function draw(){
+            ctx.clearRect(0,0,W,H);
+            for(let i=0;i<particles.length;i++){
+                const p=particles[i]; p.update();
+                ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+                ctx.fillStyle=p.color; ctx.globalAlpha=.7; ctx.fill();
+                for(let j=i+1;j<particles.length;j++){
+                    const q=particles[j];
+                    const dx=p.x-q.x, dy=p.y-q.y, d=Math.sqrt(dx*dx+dy*dy);
+                    if(d<140){
+                        ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y);
+                        ctx.globalAlpha=(1-d/140)*.18;
+                        ctx.strokeStyle=p.color; ctx.lineWidth=.8; ctx.stroke();
+                    }
+                }
+                const mdx=p.x-mouse.x, mdy=p.y-mouse.y, md=Math.sqrt(mdx*mdx+mdy*mdy);
+                if(md<180){
+                    ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(mouse.x,mouse.y);
+                    ctx.globalAlpha=(1-md/180)*.35; ctx.strokeStyle='#7c6dff'; ctx.lineWidth=1; ctx.stroke();
+                }
+            }
+            ctx.globalAlpha=1;
+            requestAnimationFrame(draw);
+        }
+        canvas.closest('#web-tasarim-detay').addEventListener('mousemove', e=>{
+            const r=canvas.getBoundingClientRect();
+            mouse.x=e.clientX-r.left; mouse.y=e.clientY-r.top;
+        });
+        canvas.closest('#web-tasarim-detay').addEventListener('mouseleave',()=>{mouse.x=-9999;mouse.y=-9999;});
+        resize(); init(); draw();
+        window.addEventListener('resize',()=>{resize();init();});
+    })();
+
+    // ── WTD Card Mouse Tracking Glow ──
+    document.querySelectorAll('.wtd-val-card,.wtd-use-card').forEach(card=>{
+        card.addEventListener('mousemove',e=>{
+            const r=card.getBoundingClientRect();
+            card.style.setProperty('--mx',(e.clientX-r.left)+'px');
+            card.style.setProperty('--my',(e.clientY-r.top)+'px');
+        });
+    });
+
+    // ── WTD Tab Sistemi ──
+    document.querySelectorAll('.wtd-tab-btn').forEach(btn=>{
+        btn.addEventListener('click',()=>{
+            document.querySelectorAll('.wtd-tab-btn').forEach(b=>b.classList.remove('active'));
+            document.querySelectorAll('.wtd-tab-panel').forEach(p=>p.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('tab-'+btn.dataset.tab).classList.add('active');
+        });
+    });
+
+    // ── WTD Süreç Adımları — Scroll Reveal ──
+    const stepObs = new IntersectionObserver(entries=>{
+        entries.forEach((e,i)=>{
+            if(e.isIntersecting){
+                const steps=e.target.querySelectorAll('.wtd-step');
+                steps.forEach((s,idx)=>{ setTimeout(()=>s.classList.add('visible'),idx*150); });
+                stepObs.unobserve(e.target);
+            }
+        });
+    },{threshold:.2});
+    const stepsEl=document.querySelector('.wtd-steps');
+    if(stepsEl) stepObs.observe(stepsEl);
+
+    // ── WTD Sayaç Animasyonu ──
+    const wtdCtrObs = new IntersectionObserver(entries=>{
+        entries.forEach(e=>{
+            if(e.isIntersecting){
+                e.target.querySelectorAll('.wtd-ctr-num[data-to]').forEach(el=>{
+                    const target=+el.dataset.to, dur=1800;
+                    let start=null;
+                    function step(ts){ if(!start)start=ts; const p=Math.min((ts-start)/dur,1); el.textContent=Math.round(p*target)+(target>=100?'+':''); if(p<1)requestAnimationFrame(step); }
+                    requestAnimationFrame(step);
+                });
+                wtdCtrObs.unobserve(e.target);
+            }
+        });
+    },{threshold:.3});
+    const wtdHero=document.querySelector('.wtd-hero');
+    if(wtdHero) wtdCtrObs.observe(wtdHero);
 
     </script>
     <script src="script.js"></script>

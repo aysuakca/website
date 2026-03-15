@@ -554,7 +554,7 @@
         padding:120px 0;
         background: var(--bg-2);
         position:relative;
-        overflow:hidden;
+        overflow:clip;
     }
 
     /* Sakin, yavaş yüzen arka plan orb'ları */
@@ -981,6 +981,228 @@
     /* ====================================================
        SEO DETAIL
     ==================================================== */
+    /* ====================================================
+       GOOGLE ADS DETAIL
+    ==================================================== */
+    #ads-detay {
+        padding: 110px 0 100px;
+        background: var(--bg);
+        position: relative; overflow: hidden;
+        scroll-margin-top: 76px;
+    }
+    #ads-detay::before {
+        content: '';
+        position: absolute; top: 0; right: 0;
+        width: 500px; height: 500px; border-radius: 50%;
+        background: radial-gradient(circle, rgba(0,200,255,.03) 0%, transparent 65%);
+        pointer-events: none; filter: blur(80px);
+    }
+
+    /* Giriş: 2 kolon */
+    .ads-intro {
+        display: grid;
+        grid-template-columns: 1fr 1.3fr;
+        gap: 64px; align-items: center;
+        margin-bottom: 100px;
+    }
+    @media (max-width: 860px) { .ads-intro { grid-template-columns: 1fr; gap: 40px; } }
+
+    /* Sol: görsel kart */
+    .ads-visual {
+        background: rgba(255,255,255,.03);
+        border: 1px solid rgba(255,255,255,.08);
+        border-radius: 24px;
+        padding: 40px 32px;
+        display: flex; flex-direction: column; gap: 20px;
+    }
+    .ads-visual-row {
+        display: flex; align-items: center; gap: 14px;
+        background: rgba(255,255,255,.04);
+        border: 1px solid rgba(255,255,255,.07);
+        border-radius: 12px; padding: 14px 16px;
+        transition: border-color .25s, background .25s;
+    }
+    .ads-visual-row:hover { border-color: rgba(255,255,255,.14); background: rgba(255,255,255,.06); }
+    .ads-visual-dot {
+        width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+    .ads-visual-dot.green  { background: #34d399; box-shadow: 0 0 8px rgba(52,211,153,.5); }
+    .ads-visual-dot.blue   { background: #38bdf8; box-shadow: 0 0 8px rgba(56,189,248,.5); }
+    .ads-visual-dot.purple { background: #a78bfa; box-shadow: 0 0 8px rgba(167,139,250,.5); }
+    .ads-visual-dot.cyan   { background: var(--cyan); box-shadow: 0 0 8px rgba(0,240,255,.5); }
+    .ads-visual-label { font-size: .82rem; font-weight: 600; color: #b8c8db; flex: 1; }
+    .ads-visual-val {
+        font-family: var(--head-font); font-size: .95rem; font-weight: 800; color: #fff;
+    }
+    .ads-visual-bar-wrap {
+        height: 4px; background: rgba(255,255,255,.07);
+        border-radius: 100px; overflow: hidden; margin-top: 4px;
+        width: 100%;
+    }
+    .ads-visual-bar { height: 100%; border-radius: 100px; }
+    .ads-visual-bar.green  { background: linear-gradient(90deg,#34d399,#059669); }
+    .ads-visual-bar.blue   { background: linear-gradient(90deg,#38bdf8,#0284c7); }
+    .ads-visual-bar.purple { background: linear-gradient(90deg,#a78bfa,#7c3aed); }
+    .ads-visual-bar.cyan   { background: linear-gradient(90deg,var(--cyan),#0077ff); }
+
+    /* Sağ: metin */
+    .ads-text p { color: #8fa3be; font-size: .97rem; line-height: 1.85; margin-bottom: 14px; }
+    .ads-text p strong { color: #dde6f3; font-weight: 600; }
+    .ads-text .tags-row { display: flex; flex-wrap: wrap; gap: 9px; margin: 22px 0 32px; }
+
+    /* Bölüm başlığı */
+    .ads-block-title {
+        font-family: var(--head-font); font-size: 1.45rem; font-weight: 800;
+        color: #eaf2ff; letter-spacing: -.3px; margin-bottom: 8px;
+    }
+    .ads-block-lead {
+        color: #a0b4c8; font-size: .88rem; line-height: 1.75;
+        max-width: 660px; margin-bottom: 36px;
+    }
+
+    /* 4 adım */
+    .ads-how { margin-bottom: 90px; }
+    .ads-steps {
+        display: grid; grid-template-columns: repeat(4,1fr);
+        border: 1px solid rgba(255,255,255,.1);
+        border-radius: 16px; overflow: hidden;
+    }
+    @media (max-width: 860px) { .ads-steps { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 480px) { .ads-steps { grid-template-columns: 1fr; } }
+
+    .ads-step {
+        padding: 28px 24px;
+        background: rgba(255,255,255,.05);
+        border-right: 1px solid rgba(255,255,255,.1);
+        transition: background .25s;
+    }
+    .ads-step:last-child { border-right: none; }
+    .ads-step:hover { background: rgba(255,255,255,.08); }
+    .ads-step-num {
+        font-family: var(--head-font); font-size: 1.8rem; font-weight: 900;
+        color: rgba(255,255,255,.22); line-height: 1; margin-bottom: 12px;
+    }
+    .ads-step h4 { font-family: var(--head-font); font-size: .9rem; font-weight: 700; color: #e2eeff; margin-bottom: 6px; }
+    .ads-step p  { color: #a0b4c8; font-size: .8rem; line-height: 1.6; }
+
+    /* Paketler */
+    .ads-packages { margin-bottom: 90px; }
+    .ads-pkg-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+    @media (max-width: 660px) { .ads-pkg-grid { grid-template-columns: 1fr; } }
+
+    .ads-pkg-card {
+        border: 1px solid rgba(255,255,255,.08);
+        border-radius: 20px; padding: 36px;
+        background: rgba(255,255,255,.025);
+        position: relative; overflow: hidden;
+        transition: border-color .3s, box-shadow .3s, transform .3s;
+        display: flex; flex-direction: column;
+    }
+    .ads-pkg-card:hover { border-color: rgba(255,255,255,.15); box-shadow: 0 16px 40px rgba(0,0,0,.35); transform: translateY(-4px); }
+    .ads-pkg-card.featured {
+        border-color: rgba(56,189,248,.25);
+        background: rgba(56,189,248,.04);
+    }
+    .ads-pkg-card.featured::before { display: none; }
+    .ads-pkg-badge {
+        display: inline-flex; align-items: center; gap: 6px;
+        background: rgba(255,255,255,.06); color: #94a3b8;
+        font-size: .7rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;
+        padding: 5px 14px; border-radius: 100px;
+        border: 1px solid rgba(255,255,255,.1); margin-bottom: 16px;
+    }
+    .ads-pkg-badge.featured-badge {
+        background: rgba(56,189,248,.12); color: #38bdf8;
+        border-color: rgba(56,189,248,.3);
+    }
+    .ads-pkg-badge.featured-badge::before {
+        content: '';
+        width: 6px; height: 6px; border-radius: 50%;
+        background: #38bdf8; box-shadow: 0 0 6px rgba(56,189,248,.7);
+        flex-shrink: 0;
+    }
+    .ads-pkg-card h3 { font-family: var(--head-font); font-size: 1.3rem; font-weight: 800; color: #eaf2ff; margin-bottom: 8px; }
+    .ads-pkg-desc { color: #a0b4c8; font-size: .875rem; line-height: 1.65; margin-bottom: 24px; }
+    .ads-pkg-list {
+        list-style: none; padding: 0;
+        border-top: 1px solid rgba(255,255,255,.07);
+        padding-top: 18px; margin-bottom: 30px; flex: 1;
+    }
+    .ads-pkg-list li {
+        color: #c8d8e8; font-size: .845rem;
+        display: flex; align-items: baseline; gap: 10px; padding: 6px 0;
+        border-bottom: 1px solid rgba(255,255,255,.04);
+    }
+    .ads-pkg-list li:last-child { border-bottom: none; }
+    .ads-pkg-list li::before {
+        content: ''; flex-shrink: 0; margin-top: 6px;
+        width: 4px; height: 4px; border-radius: 50%;
+        background: #38bdf8; box-shadow: 0 0 6px rgba(56,189,248,.4);
+    }
+    .ads-pkg-price { font-family: var(--head-font); font-size: 2rem; font-weight: 900; color: #fff; line-height: 1; margin-top: auto; padding-top: 4px; }
+    .ads-pkg-price span { font-size: .82rem; font-weight: 400; color: #94a3b8; margin-left: 6px; }
+
+    /* Reklam türleri */
+    .ads-types { margin-bottom: 80px; }
+    .ads-type-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    @media (max-width: 860px) { .ads-type-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 540px) { .ads-type-grid { grid-template-columns: 1fr; } }
+
+    .ads-type-card {
+        padding: 30px 26px; border: 1px solid rgba(255,255,255,.07);
+        border-radius: 16px; background: rgba(255,255,255,.02);
+        transition: border-color .25s, background .25s;
+    }
+    .ads-type-card:hover { border-color: rgba(255,255,255,.13); background: rgba(255,255,255,.04); }
+    .ads-type-icon {
+        width: 48px; height: 48px;
+        background: rgba(56,189,248,.1);
+        border: 1px solid rgba(56,189,248,.2);
+        border-radius: 13px;
+        display: flex; align-items: center; justify-content: center;
+        margin-bottom: 18px;
+        transition: background .25s, border-color .25s;
+    }
+    .ads-type-card:hover .ads-type-icon {
+        background: rgba(56,189,248,.18);
+        border-color: rgba(56,189,248,.38);
+    }
+    .ads-type-card h4 { font-family: var(--head-font); font-size: .95rem; font-weight: 700; color: #e2eeff; margin-bottom: 9px; }
+    .ads-type-card p { color: #a0b4c8; font-size: .845rem; line-height: 1.72; }
+
+    /* CTA şerit */
+    .ads-cta-strip {
+        background: rgba(255,255,255,.03);
+        border: 1px solid rgba(255,255,255,.09);
+        border-radius: 20px; padding: 44px 52px;
+        display: flex; align-items: center; justify-content: space-between;
+        gap: 32px; flex-wrap: wrap;
+    }
+    @media (max-width: 680px) { .ads-cta-strip { padding: 32px 28px; } }
+    .ads-cta-strip h3 { font-family: var(--head-font); font-size: 1.35rem; font-weight: 800; color: #eaf2ff; margin-bottom: 8px; }
+    .ads-cta-strip p { color: #a0b4c8; font-size: .88rem; line-height: 1.65; max-width: 520px; }
+
+    /* SEO Accordion */
+    .seo-acc-item { border-bottom: 1px solid rgba(255,255,255,.07); }
+    .seo-acc-btn {
+        width: 100%; display: flex; align-items: center; justify-content: space-between;
+        padding: 18px 24px; background: rgba(255,255,255,.02);
+        border: none; cursor: pointer; text-align: left;
+        color: #d4e0ef; font-family: var(--head-font); font-size: .95rem; font-weight: 600;
+        transition: background .2s, color .2s;
+    }
+    .seo-acc-btn:hover { background: rgba(255,255,255,.05); color: #fff; }
+    .seo-acc-btn.open { background: rgba(255,255,255,.04); color: #fff; }
+    .seo-acc-arrow { transition: transform .3s; flex-shrink: 0; color: #4a5c70; }
+    .seo-acc-btn.open .seo-acc-arrow { transform: rotate(180deg); color: #38bdf8; }
+    .seo-acc-body {
+        max-height: 0; overflow: hidden;
+        transition: max-height .35s cubic-bezier(.23,1,.32,1), padding .35s;
+        padding: 0 24px;
+    }
+    .seo-acc-body.open { max-height: 300px; padding: 0 24px 20px; }
+    .seo-acc-body p { color: #a0b4c8; font-size: .88rem; line-height: 1.8; }
+
     #seo-detay {
         padding:120px 0;
         background: linear-gradient(135deg, #060410 0%, #0a0820 100%);
@@ -1305,12 +1527,168 @@
     .main-footer { background: #000 !important; }
 
     /* Custom cursor kaldırıldı — tarayıcı varsayılan imleci */
+    /* ====================================================
+       TEKLİF POPUP
+    ==================================================== */
+    .popup-overlay {
+        position: fixed; inset: 0; z-index: 9000;
+        background: rgba(0,0,0,.7);
+        backdrop-filter: blur(8px);
+        display: flex; align-items: center; justify-content: center;
+        padding: 20px;
+        opacity: 0; pointer-events: none;
+        transition: opacity .3s;
+    }
+    .popup-overlay.open { opacity: 1; pointer-events: all; }
+
+    .popup-box {
+        background: #0d0b1a;
+        border: 1px solid rgba(255,255,255,.1);
+        border-radius: 24px;
+        padding: 48px 44px;
+        width: 100%; max-width: 480px;
+        position: relative;
+        transform: translateY(24px) scale(.97);
+        transition: transform .35s cubic-bezier(.23,1,.32,1);
+        box-shadow: 0 32px 80px rgba(0,0,0,.6);
+    }
+    .popup-overlay.open .popup-box { transform: translateY(0) scale(1); }
+
+    .popup-close {
+        position: absolute; top: 18px; right: 18px;
+        width: 36px; height: 36px; border-radius: 50%;
+        background: rgba(255,255,255,.06);
+        border: 1px solid rgba(255,255,255,.1);
+        color: #94a3b8; font-size: 1.1rem;
+        display: flex; align-items: center; justify-content: center;
+        cursor: pointer; transition: background .2s, color .2s;
+    }
+    .popup-close:hover { background: rgba(255,255,255,.12); color: #fff; }
+
+    .popup-label {
+        font-size: .72rem; font-weight: 700; letter-spacing: 2px;
+        text-transform: uppercase; color: var(--purple);
+        margin-bottom: 10px;
+    }
+    .popup-title {
+        font-family: var(--head-font); font-size: 1.55rem; font-weight: 800;
+        color: #fff; margin-bottom: 8px; letter-spacing: -.3px;
+    }
+    .popup-sub { color: #7a8aa0; font-size: .875rem; line-height: 1.65; margin-bottom: 32px; }
+
+    .popup-field { margin-bottom: 16px; }
+    .popup-field label {
+        display: block; font-size: .78rem; font-weight: 600;
+        color: #94a3b8; margin-bottom: 7px; letter-spacing: .3px;
+    }
+    .popup-field input, .popup-field select {
+        width: 100%; background: rgba(255,255,255,.04);
+        border: 1px solid rgba(255,255,255,.1);
+        border-radius: 10px; padding: 12px 16px;
+        color: #e8f0fb; font-size: .9rem; font-family: var(--body-font);
+        outline: none; transition: border-color .2s, background .2s;
+    }
+    .popup-field input::placeholder { color: #4a5c70; }
+    .popup-field input:focus, .popup-field select:focus {
+        border-color: rgba(108,99,255,.5);
+        background: rgba(255,255,255,.07);
+    }
+    .popup-field select option { background: #0d0b1a; color: #e8f0fb; }
+
+    .popup-optional {
+        font-size: .72rem; color: #4a5c70; font-weight: 400;
+        margin-left: 6px; letter-spacing: 0;
+    }
+
+    .popup-btn {
+        width: 100%; margin-top: 8px;
+        padding: 14px; border-radius: 12px;
+        background: linear-gradient(135deg, var(--purple), #8b5cf6);
+        color: #fff; font-weight: 700; font-size: .95rem;
+        border: none; cursor: pointer;
+        box-shadow: 0 8px 28px rgba(120,100,255,.35);
+        transition: transform .15s, box-shadow .15s, opacity .2s;
+        font-family: var(--body-font);
+    }
+    .popup-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(120,100,255,.5); }
+    .popup-btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+
+    .popup-note {
+        text-align: center; font-size: .75rem; color: #4a5c70;
+        margin-top: 14px; line-height: 1.6;
+    }
+
+    .popup-success {
+        text-align: center; padding: 20px 0;
+        display: none;
+    }
+    .popup-success.show { display: block; }
+    .popup-success-icon {
+        width: 64px; height: 64px; border-radius: 50%;
+        background: rgba(52,211,153,.12); border: 1px solid rgba(52,211,153,.3);
+        display: flex; align-items: center; justify-content: center;
+        margin: 0 auto 20px; font-size: 1.8rem;
+    }
+    .popup-success h3 { font-family: var(--head-font); font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .popup-success p { color: #7a8aa0; font-size: .88rem; line-height: 1.65; }
+
+    @media (max-width: 540px) { .popup-box { padding: 32px 24px; } }
+
     </style>
 </head>
 
 <body>
     <!-- Ambient floating orbs -->
     <div class="global-background-glow"></div>
+
+    <!-- TEKLİF POPUP -->
+    <div class="popup-overlay" id="teklifPopup">
+        <div class="popup-box">
+            <button class="popup-close" onclick="closePopup()">✕</button>
+
+            <div id="popupForm">
+                <div class="popup-label">Ücretsiz Teklif</div>
+                <h2 class="popup-title">Size Özel Teklif Alalım</h2>
+                <p class="popup-sub">Bilgilerinizi bırakın, en kısa sürede sizinle iletişime geçelim. Taahhüt yok.</p>
+
+                <div class="popup-field">
+                    <label>Ad Soyad</label>
+                    <input type="text" id="popupName" placeholder="Adınız ve soyadınız" required>
+                </div>
+                <div class="popup-field">
+                    <label>E-posta</label>
+                    <input type="email" id="popupEmail" placeholder="ornek@sirket.com" required>
+                </div>
+                <div class="popup-field">
+                    <label>Telefon <span class="popup-optional">(isteğe bağlı)</span></label>
+                    <input type="tel" id="popupPhone" placeholder="+90 5XX XXX XX XX">
+                </div>
+                <div class="popup-field">
+                    <label>İlgilendiğiniz Hizmet</label>
+                    <select id="popupService">
+                        <option value="">Seçiniz…</option>
+                        <option value="Web Sitesi Tasarımı">Web Sitesi Tasarımı</option>
+                        <option value="SEO Hizmeti">SEO Hizmeti</option>
+                        <option value="Google Ads Yönetimi">Google Ads Yönetimi</option>
+                        <option value="Global Lokalizasyon">Global Lokalizasyon</option>
+                        <option value="Performans & QA">Performans & QA</option>
+                        <option value="Analitik Kurulumu">Analitik Kurulumu</option>
+                        <option value="Website Bakım">Website Bakım</option>
+                        <option value="Diğer / Birden Fazla">Diğer / Birden Fazla</option>
+                    </select>
+                </div>
+
+                <button class="popup-btn" onclick="submitPopup()">Teklif İste →</button>
+                <p class="popup-note">Bilgileriniz yalnızca sizinle iletişim kurmak için kullanılır.</p>
+            </div>
+
+            <div class="popup-success" id="popupSuccess">
+                <div class="popup-success-icon">✓</div>
+                <h3>Talebiniz Alındı!</h3>
+                <p>En kısa sürede <strong id="popupSuccessEmail"></strong> adresine veya telefonla geri dönüş yapacağız.</p>
+            </div>
+        </div>
+    </div>
 
     <!-- HEADER -->
     <header class="main-header">
@@ -1358,8 +1736,8 @@
                     </p>
 
                     <div class="hero-buttons">
-                        <a href="#contact" class="btn-primary" id="btnPrimary">Teklif Al</a>
-                        <a href="#contact" class="btn-ghost" id="btnGhost">Ücretsiz Analiz</a>
+                        <a href="javascript:void(0)" class="btn-primary" id="btnPrimary">Teklif Al</a>
+                        <a href="javascript:void(0)" class="btn-ghost" id="btnGhost">Ücretsiz Analiz</a>
                     </div>
 
                     <div class="hero-chips">
@@ -1551,7 +1929,7 @@
                             <li>Dönüşüm optimizasyonu ve A/B testleri</li>
                         </ul>
                     </div>
-                    <a href="#contact" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <a href="#ads-detay" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
                 </div>
 
                 <!-- Global Lokalizasyon -->
@@ -1572,7 +1950,7 @@
                             <li>Uluslararası SEO stratejileri</li>
                         </ul>
                     </div>
-                    <a href="#contact" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <a href="javascript:void(0)" class="service-link popup-trigger" data-service="Global Lokalizasyon">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
                 </div>
 
                 <!-- Performans & QA -->
@@ -1592,7 +1970,7 @@
                             <li>Cross-browser & Cihaz Testleri</li>
                         </ul>
                     </div>
-                    <a href="#contact" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <a href="javascript:void(0)" class="service-link popup-trigger" data-service="Performans & QA">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
                 </div>
 
                 <!-- Analitik -->
@@ -1613,7 +1991,7 @@
                             <li>Veri analizi ve dashboard raporları</li>
                         </ul>
                     </div>
-                    <a href="#contact" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <a href="javascript:void(0)" class="service-link popup-trigger" data-service="Analitik Kurulumu">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
                 </div>
 
                 <!-- Website Bakım -->
@@ -1632,181 +2010,704 @@
                             <li>Site performansı ve hız optimizasyonu</li>
                         </ul>
                     </div>
-                    <a href="#contact" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <a href="#web-tasarim-detay" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
                 </div>
 
             </div>
         </div>
 
-        <!-- WEB DESIGN DETAIL — CANLI & ANİMASYONLU -->
-        <div id="web-tasarim-detay">
+    </section><!-- /services -->
 
-            <!-- Arka plan canvas (particle ağı) -->
-            <canvas id="wtd-canvas"></canvas>
+    <!-- WEB TASARIM DETAIL -->
+    <section id="web-tasarim-detay" style="padding:110px 0 100px;background:var(--bg);position:relative;overflow:hidden;scroll-margin-top:76px;">
+        <div style="position:absolute;top:0;right:0;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(108,99,255,.04) 0%,transparent 70%);filter:blur(80px);pointer-events:none;"></div>
+        <div class="container">
 
-            <!-- Hero başlık -->
-            <div class="wtd-hero container">
-                <div class="wtd-hero-label"><span></span> Web Tasarım & Geliştirme</div>
-                <h2 class="wtd-hero-title">
-                    Sadece Bir Site Değil,<br>
-                    <em class="g-text">Dijital İş Yeriniz</em>
-                </h2>
-                <p class="wtd-hero-sub">Kurumsal web sitesiyle neler yapabilirsiniz? İşletmenizi büyüten, ziyaretçiyi müşteriye dönüştüren dijital çözümler.</p>
-                <div class="wtd-counters">
-                    <div class="wtd-ctr"><div class="wtd-ctr-num" data-to="150">0</div><div class="wtd-ctr-label">Proje Tamamlandı</div></div>
-                    <div class="wtd-ctr"><div class="wtd-ctr-num" data-to="98">0</div><div class="wtd-ctr-label">% Memnuniyet</div></div>
-                    <div class="wtd-ctr"><div class="wtd-ctr-num" data-to="5">0</div><div class="wtd-ctr-label">Yıl Deneyim</div></div>
-                    <div class="wtd-ctr"><div class="wtd-ctr-num" data-to="320">0</div><div class="wtd-ctr-label">% Trafik Artışı</div></div>
+            <!-- Giriş -->
+            <div class="ads-intro">
+                <div class="ads-visual">
+                    <div style="margin-bottom:8px;">
+                        <div style="font-family:var(--head-font);font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#4a5c70;margin-bottom:18px;">Proje Performansı</div>
+                        <div class="ads-visual-row">
+                            <div class="ads-visual-dot green"></div>
+                            <div style="flex:1;">
+                                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                                    <span class="ads-visual-label">Sayfa Yükleme Hızı</span>
+                                    <span class="ads-visual-val">98 / 100</span>
+                                </div>
+                                <div class="ads-visual-bar-wrap"><div class="ads-visual-bar green" style="width:98%"></div></div>
+                            </div>
+                        </div>
+                        <div class="ads-visual-row">
+                            <div class="ads-visual-dot blue"></div>
+                            <div style="flex:1;">
+                                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                                    <span class="ads-visual-label">Mobil Uyumluluk</span>
+                                    <span class="ads-visual-val">100 / 100</span>
+                                </div>
+                                <div class="ads-visual-bar-wrap"><div class="ads-visual-bar blue" style="width:100%"></div></div>
+                            </div>
+                        </div>
+                        <div class="ads-visual-row">
+                            <div class="ads-visual-dot cyan"></div>
+                            <div style="flex:1;">
+                                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                                    <span class="ads-visual-label">SEO Skoru</span>
+                                    <span class="ads-visual-val">96 / 100</span>
+                                </div>
+                                <div class="ads-visual-bar-wrap"><div class="ads-visual-bar cyan" style="width:96%"></div></div>
+                            </div>
+                        </div>
+                        <div class="ads-visual-row">
+                            <div class="ads-visual-dot purple"></div>
+                            <div style="flex:1;">
+                                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                                    <span class="ads-visual-label">Dönüşüm Artışı</span>
+                                    <span class="ads-visual-val">+%210</span>
+                                </div>
+                                <div class="ads-visual-bar-wrap"><div class="ads-visual-bar purple" style="width:70%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;padding-top:4px;">
+                        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:16px 18px;">
+                            <div style="font-family:var(--head-font);font-size:1.6rem;font-weight:900;color:#fff;line-height:1;margin-bottom:4px;">+150</div>
+                            <div style="font-size:.75rem;color:#4a5c70;">Tamamlanan Proje</div>
+                        </div>
+                        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:16px 18px;">
+                            <div style="font-family:var(--head-font);font-size:1.6rem;font-weight:900;color:#fff;line-height:1;margin-bottom:4px;">6 Ay</div>
+                            <div style="font-size:.75rem;color:#4a5c70;">Ücretsiz Destek</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ads-text">
+                    <span class="section-label">Web Tasarım & Geliştirme</span>
+                    <h2 class="section-title">Sadece Site Değil, <span class="g-text">Dijital İş Yeriniz</span></h2>
+                    <p>Güçlü bir dijital varlığın temeli profesyonel bir web sitesidir. <strong>Nexora Innovation</strong> olarak işletmenizin kimliğini yansıtan, hızlı açılan, güvenli ve dönüşüm odaklı web siteleri tasarlıyor ve geliştiriyoruz.</p>
+                    <p>Sıradan şablonların ötesine geçerek markanıza özel, <strong>kullanıcı davranışını yönlendiren</strong> tasarımlar üretiyoruz. Ziyaretçiniz siteye girdiği anda nereye tıklayacağını bilir — çünkü biz bunu tasarladık.</p>
+                    <div class="tags-row">
+                        <span class="tag">Kurumsal Web</span>
+                        <span class="tag">E-Ticaret</span>
+                        <span class="tag">Landing Page</span>
+                        <span class="tag">Mobil Uyumlu</span>
+                        <span class="tag">Core Web Vitals</span>
+                    </div>
+                    <a href="javascript:void(0)" class="btn-primary">Ücretsiz Keşif Görüşmesi Al</a>
                 </div>
             </div>
 
-            <!-- 3 Değer kartı -->
-            <div class="wtd-values">
-                <div class="wtd-val-card">
-                    <div class="card-glow"></div>
-                    <div class="wtd-val-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                    </div>
-                    <h3>Kullanıcı Dostu Tasarımlar</h3>
-                    <p>Anlaşılır, hızlı açılan ve her cihazda kusursuz görünen arayüzler. Ziyaretçiniz siteyi açtığı an nereye tıklayacağını bilir — çünkü biz bunu tasarladık.</p>
-                </div>
-                <div class="wtd-val-card">
-                    <div class="card-glow"></div>
-                    <div class="wtd-val-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    </div>
-                    <h3>Yaratıcı Fikirler</h3>
-                    <p>Her marka kendine özgüdür. Sıradan şablonların ötesine geçerek markanızın ruhunu yansıtan, sektörde iz bırakan estetik ve interaktif deneyimler tasarlıyoruz.</p>
-                </div>
-                <div class="wtd-val-card">
-                    <div class="card-glow"></div>
-                    <div class="wtd-val-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-                    </div>
-                    <h3>Sonuç Odaklı Çözümler</h3>
-                    <p>Güzel görünmek yetmez — dönüşüm sağlamalı. Stratejik planlama ve veri odaklı kararlarla sitenizi işletmenizin en güçlü satış kanalına dönüştürüyoruz.</p>
-                </div>
-            </div>
-
-            <!-- Kullanım alanları — tab sistemi -->
-            <div class="wtd-tabs-section">
-                <div class="wtd-tabs-nav">
-                    <button class="wtd-tab-btn active" data-tab="all">Tümü</button>
-                    <button class="wtd-tab-btn" data-tab="kobi">KOBİ & Girişim</button>
-                    <button class="wtd-tab-btn" data-tab="kurumsal">Kurumsal</button>
-                    <button class="wtd-tab-btn" data-tab="eticaret">E-Ticaret</button>
-                </div>
-                <div class="wtd-tab-panel active" id="tab-all">
-                    <div class="wtd-use-card"><span class="wtd-use-icon">🏢</span><strong>Kurumsal Tanıtım</strong><p>Şirketinizi, değerlerinizi ve hizmetlerinizi güçlü bir kurumsal kimlikle sunun.</p></div>
-                    <div class="wtd-use-card"><span class="wtd-use-icon">💬</span><strong>İletişim & Destek</strong><p>Canlı chat, form ve SSS entegrasyonlarıyla müşterilerinize 7/24 ulaşılabilin.</p></div>
-                    <div class="wtd-use-card"><span class="wtd-use-icon">🗂️</span><strong>Ürün & Portföy</strong><p>Ürün ve projelerinizi görsel açıdan etkileyici bir portföy sayfasıyla öne çıkarın.</p></div>
-                    <div class="wtd-use-card"><span class="wtd-use-icon">✍️</span><strong>Blog & İçerik</strong><p>Sektörel içeriklerle otorite kurun, organik trafik ve marka güveni kazanın.</p></div>
-                    <div class="wtd-use-card"><span class="wtd-use-icon">👥</span><strong>İşe Alım & Kariyer</strong><p>Şirket kültürünüzü yansıtın, yetenekleri çekin ve başvuruları kolayca yönetin.</p></div>
-                    <div class="wtd-use-card"><span class="wtd-use-icon">📣</span><strong>Etkinlik & Duyurular</strong><p>Lansmanlar, haberler ve etkinlikleri tek platformdan duyurun.</p></div>
-                </div>
-                <div class="wtd-tab-panel" id="tab-kobi">
-                    <div class="wtd-use-card"><span class="wtd-use-icon">🚀</span><strong>Hızlı Lansman</strong><p>Fikrinizi en kısa sürede dijital dünyaya taşıyın, müşterilerinize ulaşın.</p></div>
-                    <div class="wtd-use-card"><span class="wtd-use-icon">💰</span><strong>Bütçe Dostu</strong><p>Küçük ekipler için optimize edilmiş, büyümeyle birlikte ölçeklenen çözümler.</p></div>
-                    <div class="wtd-use-card"><span class="wtd-use-icon">📱</span><strong>Mobil Öncelikli</strong><p>Müşterilerinizin %70'i mobilde — her ekranda mükemmel deneyim.</p></div>
-                </div>
-                <div class="wtd-tab-panel" id="tab-kurumsal">
-                    <div class="wtd-use-card"><span class="wtd-use-icon">🔐</span><strong>Güvenlik & Uyumluluk</strong><p>SSL, GDPR, KVKK ve güvenlik duvarı ile kurumsal standartlar.</p></div>
-                    <div class="wtd-use-card"><span class="wtd-use-icon">🔗</span><strong>CRM Entegrasyonu</strong><p>Salesforce, HubSpot ve özel CRM sistemleriyle sorunsuz bağlantı.</p></div>
-                    <div class="wtd-use-card"><span class="wtd-use-icon">📊</span><strong>Gelişmiş Analitik</strong><p>GA4, Tag Manager ve özel dashboard ile gerçek zamanlı performans takibi.</p></div>
-                </div>
-                <div class="wtd-tab-panel" id="tab-eticaret">
-                    <div class="wtd-use-card"><span class="wtd-use-icon">🛒</span><strong>Ödeme Sistemleri</strong><p>iyzico, PayTR, Stripe entegrasyonuyla güvenli ödeme akışı.</p></div>
-                    <div class="wtd-use-card"><span class="wtd-use-icon">📦</span><strong>Stok & Kargo</strong><p>Otomatik stok yönetimi ve kargo entegrasyonuyla operasyonel kolaylık.</p></div>
-                    <div class="wtd-use-card"><span class="wtd-use-icon">💡</span><strong>Dönüşüm Optimizasyonu</strong><p>Sepet terk oranını düşüren UX ve A/B test stratejileri.</p></div>
-                </div>
-            </div>
-
-            <!-- Süreç adımları -->
-            <div class="wtd-process">
-                <p class="wtd-process-title">Nasıl Çalışıyoruz?</p>
-                <div class="wtd-steps">
-                    <div class="wtd-step">
-                        <div class="wtd-step-num">01</div>
+            <!-- Nasıl Çalışıyoruz -->
+            <div class="ads-how">
+                <h3 class="ads-block-title">Nasıl Çalışıyoruz?</h3>
+                <p class="ads-block-lead">Fikrinizden yayına kadar her adımı birlikte yürütüyoruz. Şeffaf süreç, net timeline, sıfır sürpriz.</p>
+                <div class="ads-steps">
+                    <div class="ads-step">
+                        <div class="ads-step-num">01</div>
                         <h4>Keşif & Analiz</h4>
-                        <p>İşletmenizi, hedef kitlenizi ve rekabeti derinlemesine anlıyoruz.</p>
+                        <p>İşletmenizi, hedef kitlenizi ve rakiplerinizi derinlemesine anlıyoruz.</p>
                     </div>
-                    <div class="wtd-step">
-                        <div class="wtd-step-num">02</div>
+                    <div class="ads-step">
+                        <div class="ads-step-num">02</div>
                         <h4>Tasarım & Prototip</h4>
-                        <p>Markanıza özgü wireframe ve interaktif prototip hazırlıyoruz.</p>
+                        <p>Markanıza özgü wireframe ve interaktif prototip hazırlıyoruz. Onayınız alınır.</p>
                     </div>
-                    <div class="wtd-step">
-                        <div class="wtd-step-num">03</div>
+                    <div class="ads-step">
+                        <div class="ads-step-num">03</div>
                         <h4>Geliştirme</h4>
                         <p>Hızlı, güvenli ve ölçeklenebilir kod tabanıyla hayata geçiriyoruz.</p>
                     </div>
-                    <div class="wtd-step">
-                        <div class="wtd-step-num">04</div>
+                    <div class="ads-step">
+                        <div class="ads-step-num">04</div>
                         <h4>Yayın & Destek</h4>
                         <p>Test, optimizasyon ve 6 ay ücretsiz bakım desteğiyle yanınızdayız.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Özellikler + Paket -->
-            <div class="wtd-bottom-grid">
-                <div class="wtd-features">
-                    <h3 class="wtd-sub-title">Ne Sunuyoruz?</h3>
-                    <div class="wtd-feature-list">
-                        <div class="wtd-feat"><span class="wtd-feat-bar"></span><span>Özgün UI/UX Tasarım — markanızın ruhu, her pikselde</span></div>
-                        <div class="wtd-feat"><span class="wtd-feat-bar"></span><span>Mobil Öncelikli & Responsive Geliştirme</span></div>
-                        <div class="wtd-feat"><span class="wtd-feat-bar"></span><span>Geleceğe Hazır, Ölçeklenebilir Altyapı</span></div>
-                        <div class="wtd-feat"><span class="wtd-feat-bar"></span><span>CRM, E-posta & 3. Parti Entegrasyonlar</span></div>
-                        <div class="wtd-feat"><span class="wtd-feat-bar"></span><span>Google Core Web Vitals Optimizasyonu</span></div>
-                        <div class="wtd-feat"><span class="wtd-feat-bar"></span><span>SSL, Güvenlik Duvarı & GDPR Uyumu</span></div>
-                        <div class="wtd-feat"><span class="wtd-feat-bar"></span><span>Teknik SEO & Yapısal Veri (Schema)</span></div>
-                        <div class="wtd-feat"><span class="wtd-feat-bar"></span><span>6 Ay Ücretsiz Bakım & Güncelleme Desteği</span></div>
+            <!-- Ne sunuyoruz -->
+            <div class="ads-packages" style="margin-bottom:60px;">
+                <h3 class="ads-block-title">Ne Sunuyoruz?</h3>
+                <p class="ads-block-lead">Her projede standart olarak sunduğumuz özellikler — ekstra ücret yok.</p>
+                <div class="ads-type-grid">
+                    <div class="ads-type-card">
+                        <div class="ads-type-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                        <h4>Özgün UI/UX Tasarım</h4>
+                        <p>Markanızın ruhunu yansıtan, kullanıcıyı doğru yönlendiren, sektörde iz bırakan arayüz tasarımı.</p>
+                    </div>
+                    <div class="ads-type-card">
+                        <div class="ads-type-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+                            </svg>
+                        </div>
+                        <h4>Mobil Öncelikli Geliştirme</h4>
+                        <p>Ziyaretçilerin %70'i mobilde. Her ekranda kusursuz çalışan, hızlı ve duyarlı yapı.</p>
+                    </div>
+                    <div class="ads-type-card">
+                        <div class="ads-type-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                            </svg>
+                        </div>
+                        <h4>Teknik SEO & Schema</h4>
+                        <p>Yapısal veri, meta optimizasyonu ve Core Web Vitals ile arama motorlarında doğru okunma.</p>
+                    </div>
+                    <div class="ads-type-card">
+                        <div class="ads-type-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <h4>SSL & Güvenlik</h4>
+                        <p>SSL sertifikası, güvenlik duvarı ve GDPR/KVKK uyumu ile ziyaretçilerinizin güveni korunur.</p>
+                    </div>
+                    <div class="ads-type-card">
+                        <div class="ads-type-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+                            </svg>
+                        </div>
+                        <h4>Dönüşüm Optimizasyonu</h4>
+                        <p>Stratejik CTA yerleşimi, A/B testleri ve kullanıcı davranış analiziyle satışa dönüşüm artırılır.</p>
+                    </div>
+                    <div class="ads-type-card">
+                        <div class="ads-type-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+                            </svg>
+                        </div>
+                        <h4>CMS & Entegrasyonlar</h4>
+                        <p>WordPress, özel CMS, CRM, e-posta pazarlama ve 3. parti araçlarla sorunsuz entegrasyon.</p>
                     </div>
                 </div>
-                <div class="wtd-package">
-                    <div class="wtd-pkg-glow"></div>
-                    <span class="wtd-pkg-badge">Popüler Paket</span>
-                    <h3>Kurumsal Web Paketi</h3>
-                    <p class="wtd-pkg-desc">İşletmeniz için eksiksiz, yayına hazır dijital kimlik çözümü.</p>
-                    <ul class="includes-list" style="margin-bottom:28px;">
-                        <li><span class="check">✔</span> Kurumsal & Modern Arayüz Tasarımı</li>
-                        <li><span class="check">✔</span> CMS Entegrasyonu (WordPress / Custom)</li>
-                        <li><span class="check">✔</span> SSL + Hızlı Hosting Kurulumu</li>
-                        <li><span class="check">✔</span> Teknik SEO & Meta Veri Optimizasyonu</li>
-                        <li><span class="check">✔</span> Tam Mobil Uyumluluk (Responsive)</li>
-                        <li><span class="check">✔</span> Google Analytics & Tag Manager Kurulumu</li>
-                        <li><span class="check">✔</span> 6 Ay Ücretsiz Teknik Destek</li>
-                    </ul>
-                    <a href="#contact" class="btn-block">Ücretsiz Keşif Görüşmesi Al</a>
-                    <p class="wtd-pkg-note">Görüşme sonrası net fiyat teklifi verilir · Taahhüt yok</p>
+            </div>
+
+            <!-- Paket -->
+            <div class="ads-packages">
+                <h3 class="ads-block-title">Kurumsal Web Paketi</h3>
+                <p class="ads-block-lead">İşletmeniz için eksiksiz, yayına hazır dijital kimlik çözümü. Görüşme sonrası net fiyat teklifi verilir.</p>
+                <div class="ads-pkg-grid">
+
+                    <div class="ads-pkg-card">
+                        <div class="ads-pkg-badge">Başlangıç</div>
+                        <h3>Landing Page</h3>
+                        <p class="ads-pkg-desc">Kampanya, ürün veya hizmetiniz için tek sayfalık, dönüşüm odaklı tasarım. Hızlı yayın, maksimum etki.</p>
+                        <ul class="ads-pkg-list">
+                            <li>Özel UI/UX tasarım</li>
+                            <li>Mobil uyumlu responsive geliştirme</li>
+                            <li>Temel SEO optimizasyonu</li>
+                            <li>İletişim formu & CTA entegrasyonu</li>
+                            <li>SSL + hız optimizasyonu</li>
+                            <li>3 ay ücretsiz teknik destek</li>
+                        </ul>
+                        <div class="ads-pkg-price">Teklif Al <span>· projeye özel</span></div>
+                    </div>
+
+                    <div class="ads-pkg-card featured">
+                        <div class="ads-pkg-badge featured-badge">Önerilen · Tam Paket</div>
+                        <h3>Kurumsal Web Sitesi</h3>
+                        <p class="ads-pkg-desc">Markanızı tam anlamıyla yansıtan, büyümeyle birlikte ölçeklenen kurumsal web sitesi. Her şey dahil.</p>
+                        <ul class="ads-pkg-list">
+                            <li>Kurumsal & özgün arayüz tasarımı</li>
+                            <li>CMS entegrasyonu (WordPress / Özel)</li>
+                            <li>SSL + hızlı hosting kurulumu</li>
+                            <li>Teknik SEO & meta veri optimizasyonu</li>
+                            <li>Tam mobil uyumluluk</li>
+                            <li>Google Analytics & Tag Manager kurulumu</li>
+                            <li>CRM & 3. parti entegrasyonlar</li>
+                            <li>6 ay ücretsiz teknik destek</li>
+                        </ul>
+                        <div class="ads-pkg-price">Teklif Al <span>· projeye özel</span></div>
+                    </div>
+
                 </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="ads-cta-strip">
+                <div>
+                    <h3>Projenizi Hayata Geçirelim</h3>
+                    <p>Ücretsiz keşif görüşmesinde ihtiyaçlarınızı dinler, size özel bir çözüm ve net fiyat sunarız. Taahhüt yok.</p>
+                </div>
+                <a href="javascript:void(0)" class="btn-primary" style="white-space:nowrap;flex-shrink:0;">Ücretsiz Görüşme Al</a>
             </div>
 
         </div>
-
-    </section>
+    </section><!-- /web-tasarim-detay -->
 
     <!-- SEO DETAIL -->
-    <section id="seo-detay" style="padding:120px 0;background:linear-gradient(135deg,#0f0d1a 0%,#151226 100%);">
-        <div class="container seo-inner">
-            <div>
-                <dotlottie-wc src="https://lottie.host/04baee12-4b60-4491-bd12-ce2187177579/3uBWoOKWyw.lottie" style="width:420px;height:420px;" autoplay loop></dotlottie-wc>
-            </div>
-            <div>
-                <span class="section-label">Organik Büyüme</span>
-                <h2 class="section-title">SEO Hizmeti <span class="g-text">Nedir?</span></h2>
-                <p style="color:#b0bdd0;font-size:1.05rem;line-height:1.8;margin-bottom:20px;font-weight:400;">
-                    <strong style="color:#e2e8f0;">Nexora Innovation</strong> olarak web sitenizin Google'da üst sıralara çıkması için teknik SEO, içerik SEO ve analiz çalışmaları yapıyoruz. Satışlarınızın artışı için özel stratejiler geliştiriyoruz.
-                </p>
-                <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px;">
-                    <span class="tag">E-Ticaret SEO</span>
-                    <span class="tag">Shopify SEO</span>
-                    <span class="tag">WordPress SEO</span>
-                    <span class="tag">Teknik SEO</span>
-                    <span class="tag">İçerik Stratejisi</span>
+    <!-- GOOGLE ADS DETAIL -->
+    <section id="ads-detay">
+        <div class="container">
+
+            <!-- Giriş -->
+            <div class="ads-intro">
+                <div class="ads-visual">
+                    <div style="margin-bottom:8px;">
+                        <div style="font-family:var(--head-font);font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#4a5c70;margin-bottom:18px;">Kampanya Performansı</div>
+                        <div class="ads-visual-row">
+                            <div class="ads-visual-dot green"></div>
+                            <div style="flex:1;">
+                                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                                    <span class="ads-visual-label">Dönüşüm Oranı</span>
+                                    <span class="ads-visual-val">%4.8</span>
+                                </div>
+                                <div class="ads-visual-bar-wrap"><div class="ads-visual-bar green" style="width:48%"></div></div>
+                            </div>
+                        </div>
+                        <div class="ads-visual-row">
+                            <div class="ads-visual-dot blue"></div>
+                            <div style="flex:1;">
+                                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                                    <span class="ads-visual-label">Tıklama Oranı (CTR)</span>
+                                    <span class="ads-visual-val">%7.2</span>
+                                </div>
+                                <div class="ads-visual-bar-wrap"><div class="ads-visual-bar blue" style="width:72%"></div></div>
+                            </div>
+                        </div>
+                        <div class="ads-visual-row">
+                            <div class="ads-visual-dot cyan"></div>
+                            <div style="flex:1;">
+                                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                                    <span class="ads-visual-label">Reklam Skoru</span>
+                                    <span class="ads-visual-val">9.1 / 10</span>
+                                </div>
+                                <div class="ads-visual-bar-wrap"><div class="ads-visual-bar cyan" style="width:91%"></div></div>
+                            </div>
+                        </div>
+                        <div class="ads-visual-row">
+                            <div class="ads-visual-dot purple"></div>
+                            <div style="flex:1;">
+                                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                                    <span class="ads-visual-label">Bütçe Verimliliği</span>
+                                    <span class="ads-visual-val">+%320</span>
+                                </div>
+                                <div class="ads-visual-bar-wrap"><div class="ads-visual-bar purple" style="width:82%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;padding-top:4px;">
+                        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:16px 18px;">
+                            <div style="font-family:var(--head-font);font-size:1.6rem;font-weight:900;color:#fff;line-height:1;margin-bottom:4px;">+150</div>
+                            <div style="font-size:.75rem;color:#4a5c70;">Yönetilen Kampanya</div>
+                        </div>
+                        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:16px 18px;">
+                            <div style="font-family:var(--head-font);font-size:1.6rem;font-weight:900;color:#fff;line-height:1;margin-bottom:4px;">%98</div>
+                            <div style="font-size:.75rem;color:#4a5c70;">Müşteri Memnuniyeti</div>
+                        </div>
+                    </div>
                 </div>
-                <a href="#contact" class="btn-primary">Hemen Fiyat Al</a>
+
+                <div class="ads-text">
+                    <span class="section-label">Ücretli Reklamcılık</span>
+                    <h2 class="section-title">Google Ads ile <span class="g-text">Rakiplerin Önüne Geçin</span></h2>
+                    <p><strong>Google Ads arama ağı reklamları</strong> ile arama sonuçlarında rakiplerinizin üstüne hızlıca çıkabilirsiniz. Yerelde faaliyet gösteren bir işletme olarak ulusal markalarla aynı sayfada, eşit koşullarda rekabet edebilirsiniz.</p>
+                    <p><strong>Yeniden pazarlama teknolojisi</strong> sayesinde sitenizi ziyaret edip ayrılan kullanıcılara, onlar başka sitelerde gezinirken reklamlarınızı göstermeye devam edersiniz. Akılda kalıcılığınız artar, kararsız ziyaretçiler müşteriye dönüşür.</p>
+                    <div class="tags-row">
+                        <span class="tag">Arama Ağı</span>
+                        <span class="tag">Görsel Display</span>
+                        <span class="tag">Yeniden Pazarlama</span>
+                        <span class="tag">Dönüşüm Takibi</span>
+                        <span class="tag">ROI Odaklı</span>
+                    </div>
+                    <a href="javascript:void(0)" class="btn-primary">Ücretsiz Reklam Analizi Al</a>
+                </div>
             </div>
+
+            <!-- Nasıl Çalışır -->
+            <div class="ads-how">
+                <h3 class="ads-block-title">Nasıl Çalışır?</h3>
+                <p class="ads-block-lead">Günlük bütçe dahilinde reklamlarınız seçtiğiniz konumlarda ve anahtar kelimelerde yayına girer. Tıklama veya arama gerçekleştiğinde belirlenen ücret bütçenizden düşülür. Bütçe dolunca reklamlar durur, ertesi gün planlı saatte yeniden başlar.</p>
+                <div class="ads-steps">
+                    <div class="ads-step">
+                        <div class="ads-step-num">01</div>
+                        <h4>Strateji & Kurulum</h4>
+                        <p>Hedef kitle, bölge, bütçe ve anahtar kelimeler belirlenir. Kampanya yapısı kurulur.</p>
+                    </div>
+                    <div class="ads-step">
+                        <div class="ads-step-num">02</div>
+                        <h4>Yayına Alınır</h4>
+                        <p>Reklamlar belirlenen saat aralıklarında ve seçili bölgelerde gösterime girer.</p>
+                    </div>
+                    <div class="ads-step">
+                        <div class="ads-step-num">03</div>
+                        <h4>Takip & Ölçüm</h4>
+                        <p>Her tıklama, telefon araması ve dönüşüm kayıt altına alınır. Veriler anlık izlenir.</p>
+                    </div>
+                    <div class="ads-step">
+                        <div class="ads-step-num">04</div>
+                        <h4>Sürekli Optimizasyon</h4>
+                        <p>Anahtar kelimeler, teklifler ve reklam metinleri veriye göre düzenli güncellenir.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paketler -->
+            <div class="ads-packages">
+                <h3 class="ads-block-title">Çözümlerimiz</h3>
+                <p class="ads-block-lead">Kendi hesabınızı yönetmek ister misiniz, yoksa her şeyi bize bırakmak mı? Her iki yola da hazırız.</p>
+                <div class="ads-pkg-grid">
+
+                    <div class="ads-pkg-card">
+                        <div class="ads-pkg-badge">Tek Seferlik</div>
+                        <h3>Hesap Kurulumu</h3>
+                        <p class="ads-pkg-desc">Reklam altyapınızı profesyonelce kuruyor, sizi hazır bir kampanyayla bırakıyoruz. Hesabı kendiniz yönetecekler için ideal başlangıç.</p>
+                        <ul class="ads-pkg-list">
+                            <li>Google Ads hesap kurulumu</li>
+                            <li>Anahtar kelime araştırması ve optimizasyonu</li>
+                            <li>Bölgesel hedefleme yapılandırması</li>
+                            <li>Zamansal planlama (saat & gün seçimi)</li>
+                            <li>Kampanya ve reklam grubu kurulumu</li>
+                        </ul>
+                        <div class="ads-pkg-price">2.000 ₺ <span>· tek seferlik</span></div>
+                    </div>
+
+                    <div class="ads-pkg-card featured">
+                        <div class="ads-pkg-badge featured-badge">Önerilen · Aylık Yönetim</div>
+                        <h3>Danışmanlık Paketi</h3>
+                        <p class="ads-pkg-desc">Hesap kendi kart bilgilerinizle açılır; tüm yönetimi ve optimizasyonu biz üstleniriz. Şeffaf panel erişimi, aylık raporlama.</p>
+                        <ul class="ads-pkg-list">
+                            <li>Hesap kurulumu ve tam yapılandırma</li>
+                            <li>Anahtar kelime takibi ve periyodik güncelleme</li>
+                            <li>Negatif anahtar kelime optimizasyonu</li>
+                            <li>Bölgesel ve zamansal hedefleme yönetimi</li>
+                            <li>Dönüşüm oranı takibi ve raporlama</li>
+                            <li>A/B reklam metni testleri</li>
+                            <li>Aylık performans raporu</li>
+                        </ul>
+                        <div class="ads-pkg-price">5.000 ₺ <span>· aylık</span></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Reklam Türleri -->
+            <div class="ads-types">
+                <h3 class="ads-block-title">Yönettiğimiz Reklam Türleri</h3>
+                <div class="ads-type-grid">
+
+                    <div class="ads-type-card">
+                        <div class="ads-type-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                            </svg>
+                        </div>
+                        <h4>Metin Arama Reklamları</h4>
+                        <p>Kullanıcı Google'da anahtar kelimeyi yazdığı an reklamınız rakiplerinizin üstünde belirir. Satın almaya en yakın kitleye, tam doğru anda ulaşırsınız.</p>
+                    </div>
+
+                    <div class="ads-type-card">
+                        <div class="ads-type-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+                            </svg>
+                        </div>
+                        <h4>Görsel Display Reklamları</h4>
+                        <p>Hürriyet, Milliyet gibi ulusal yayın organları dahil milyonlarca sitede hedef kitlenize görsel reklamlar gösterilir. Marka bilinirliğiniz yayılır, yeni ziyaretçiler kazanırsınız.</p>
+                    </div>
+
+                    <div class="ads-type-card">
+                        <div class="ads-type-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+                                <path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+                            </svg>
+                        </div>
+                        <h4>Yeniden Pazarlama</h4>
+                        <p>Sitenizi ziyaret edip ayrılan kullanıcılar başka sitelere geçtiğinde markanız peşlerinde gelir. Doğru planlanan remarketing, daha düşük maliyetle dönüşüm sağlar.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="ads-cta-strip">
+                <div>
+                    <h3>Bugün Başlayın, Yarın Müşteriler Gelsin</h3>
+                    <p>Hedef kitleniz şu an Google'da sizi arıyor. Uzmanlarımız reklam panelinizi kurar, kampanyanızı yayına alır — siz işinize odaklanın.</p>
+                </div>
+                <a href="javascript:void(0)" class="btn-primary" style="white-space:nowrap;flex-shrink:0;">Hemen İletişime Geç</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="seo-detay" style="padding:110px 0 100px;background:var(--bg-2);position:relative;overflow:hidden;scroll-margin-top:76px;">
+        <div style="position:absolute;top:0;left:0;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(108,99,255,.04) 0%,transparent 70%);filter:blur(80px);pointer-events:none;"></div>
+        <div class="container">
+
+            <!-- Giriş -->
+            <div class="ads-intro">
+                <div class="ads-visual">
+                    <div style="margin-bottom:8px;">
+                        <div style="font-family:var(--head-font);font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#4a5c70;margin-bottom:18px;">Organik Büyüme Metrikleri</div>
+                        <div class="ads-visual-row">
+                            <div class="ads-visual-dot green"></div>
+                            <div style="flex:1;">
+                                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                                    <span class="ads-visual-label">Organik Trafik Artışı</span>
+                                    <span class="ads-visual-val">+%320</span>
+                                </div>
+                                <div class="ads-visual-bar-wrap"><div class="ads-visual-bar green" style="width:82%"></div></div>
+                            </div>
+                        </div>
+                        <div class="ads-visual-row">
+                            <div class="ads-visual-dot blue"></div>
+                            <div style="flex:1;">
+                                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                                    <span class="ads-visual-label">İlk Sayfa Sıralaması</span>
+                                    <span class="ads-visual-val">%78</span>
+                                </div>
+                                <div class="ads-visual-bar-wrap"><div class="ads-visual-bar blue" style="width:78%"></div></div>
+                            </div>
+                        </div>
+                        <div class="ads-visual-row">
+                            <div class="ads-visual-dot cyan"></div>
+                            <div style="flex:1;">
+                                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                                    <span class="ads-visual-label">Domain Otoritesi</span>
+                                    <span class="ads-visual-val">DA 62</span>
+                                </div>
+                                <div class="ads-visual-bar-wrap"><div class="ads-visual-bar cyan" style="width:62%"></div></div>
+                            </div>
+                        </div>
+                        <div class="ads-visual-row">
+                            <div class="ads-visual-dot purple"></div>
+                            <div style="flex:1;">
+                                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                                    <span class="ads-visual-label">Dönüşüm Artışı</span>
+                                    <span class="ads-visual-val">+%140</span>
+                                </div>
+                                <div class="ads-visual-bar-wrap"><div class="ads-visual-bar purple" style="width:70%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;padding-top:4px;">
+                        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:16px 18px;">
+                            <div style="font-family:var(--head-font);font-size:1.6rem;font-weight:900;color:#fff;line-height:1;margin-bottom:4px;">5+</div>
+                            <div style="font-size:.75rem;color:#4a5c70;">Yıllık Deneyim</div>
+                        </div>
+                        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:16px 18px;">
+                            <div style="font-family:var(--head-font);font-size:1.6rem;font-weight:900;color:#fff;line-height:1;margin-bottom:4px;">%98</div>
+                            <div style="font-size:.75rem;color:#4a5c70;">Memnuniyet Oranı</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ads-text">
+                    <span class="section-label">Organik Büyüme</span>
+                    <h2 class="section-title">SEO ile <span class="g-text">Kalıcı Büyüme</span> Sağlayın</h2>
+                    <p>Arama motoru optimizasyonu, işletmenizin dijital görünürlüğünü sürdürülebilir biçimde artırır. <strong>Nexora Innovation</strong> olarak teknik SEO, içerik stratejisi ve bağlantı inşası ile arama sıralamalarınızı iyileştiriyor; hedef kitlenize kalıcı olarak ulaşmanızı sağlıyoruz.</p>
+                    <p>Sadece trafik değil — <strong>dönüşüm odaklı</strong> bir yaklaşımla çalışıyoruz. E-ticaret, Shopify, İkas ve WordPress'ten kurumsal yapılara kadar her platforma özel strateji geliştiriyoruz.</p>
+                    <div class="tags-row">
+                        <span class="tag">Teknik SEO</span>
+                        <span class="tag">İçerik Stratejisi</span>
+                        <span class="tag">E-Ticaret SEO</span>
+                        <span class="tag">Shopify & İkas</span>
+                        <span class="tag">Uluslararası SEO</span>
+                    </div>
+                    <a href="javascript:void(0)" class="btn-primary">Ücretsiz SEO Analizi Al</a>
+                </div>
+            </div>
+
+            <!-- SEO Türleri — tab benzeri liste -->
+            <div class="ads-how">
+                <h3 class="ads-block-title">Sunduğumuz SEO Hizmet Türleri</h3>
+                <p class="ads-block-lead">Tek boyutlu bir optimizasyon değil — teknikten içeriğe, bağlantıdan performansa kadar bütünsel bir büyüme altyapısı kuruyoruz.</p>
+                <div class="ads-steps" style="grid-template-columns:repeat(5,1fr);">
+                    <div class="ads-step">
+                        <div class="ads-step-num">01</div>
+                        <h4>On-Page SEO</h4>
+                        <p>Başlık, meta, içerik yapısı ve site haritası optimizasyonu.</p>
+                    </div>
+                    <div class="ads-step">
+                        <div class="ads-step-num">02</div>
+                        <h4>Off-Page SEO</h4>
+                        <p>Otoriter backlink inşası ve marka otoritesi geliştirme.</p>
+                    </div>
+                    <div class="ads-step">
+                        <div class="ads-step-num">03</div>
+                        <h4>Teknik SEO</h4>
+                        <p>Site hızı, taranabilirlik ve teknik altyapı sağlığı.</p>
+                    </div>
+                    <div class="ads-step">
+                        <div class="ads-step-num">04</div>
+                        <h4>İçerik & Topical Authority</h4>
+                        <p>Konu otoritesi stratejisi ve satış odaklı içerik planı.</p>
+                    </div>
+                    <div class="ads-step" style="border-right:none;">
+                        <div class="ads-step-num">05</div>
+                        <h4>Performans & Raporlama</h4>
+                        <p>ROI bazlı şeffaf aylık raporlama ve sürekli takip.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- On-Page detay açılır -->
+            <div class="ads-packages" style="margin-bottom:60px;">
+                <h3 class="ads-block-title">On-Page SEO Neler Kapsar?</h3>
+                <p class="ads-block-lead">Sayfalarınızın hem kullanıcılar hem de arama motorları tarafından doğru okunmasını sağlayan temel optimizasyonlar.</p>
+                <div class="ads-type-grid">
+                    <div class="ads-type-card">
+                        <div class="ads-type-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+                            </svg>
+                        </div>
+                        <h4>Title & Meta Optimizasyonu</h4>
+                        <p>Her sayfa için benzersiz, anahtar kelime odaklı başlık ve meta açıklamaları. Duygusal tetikleyiciler ve güçlü CTA'larla tıklama oranınız maksimize edilir.</p>
+                    </div>
+                    <div class="ads-type-card">
+                        <div class="ads-type-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="21" y1="10" x2="3" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="21" y1="18" x2="14" y2="18"/>
+                            </svg>
+                        </div>
+                        <h4>Başlık Hiyerarşisi & İçerik Akışı</h4>
+                        <p>H1–H6 yapısı kullanıcı ve arama motoru deneyimine göre kurulur. Ziyaretçiler aradıkları bilgiye hızla ulaşır, sitede kalma süresi uzar.</p>
+                    </div>
+                    <div class="ads-type-card">
+                        <div class="ads-type-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+                            </svg>
+                        </div>
+                        <h4>Sayfa & Blog Haritası (Sitemap)</h4>
+                        <p>Anahtar kelime ve rekabet analizi sonrası hangi hizmet, kategori ve blog sayfalarının oluşturulacağı, yayın tarihleriyle birlikte raporlanır.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sektör bazlı çözümler — accordion -->
+            <div class="ads-packages" style="margin-bottom:60px;">
+                <h3 class="ads-block-title">Sektör ve Platform Bazlı Çözümler</h3>
+                <p class="ads-block-lead">Her sektörün ve platformun kendine özgü dinamikleri var. Size özel strateji geliştiriyoruz.</p>
+                <div id="seo-accordion" style="display:flex;flex-direction:column;gap:2px;border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;">
+
+                    <div class="seo-acc-item">
+                        <button class="seo-acc-btn" onclick="toggleAcc(this)">
+                            <span>Kurumsal SEO</span>
+                            <svg class="seo-acc-arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="seo-acc-body">
+                            <p>Büyük ölçekli şirketler için bütünsel bir yaklaşım. Teknik altyapıdan marka itibarına, on binlerce sayfanın taranabilirliğinden C-Level ROI raporlamasına kadar tüm dijital varlıklarınız yönetilir. Marka adınız aratıldığında çıkan SERP sonuçları proaktif olarak yönetilir; sektörünüzde düşünce liderliği konumlanması sağlanır.</p>
+                        </div>
+                    </div>
+
+                    <div class="seo-acc-item">
+                        <button class="seo-acc-btn" onclick="toggleAcc(this)">
+                            <span>E-Ticaret SEO</span>
+                            <svg class="seo-acc-arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="seo-acc-body">
+                            <p>Ürün ve kategori sayfalarının organik sıralamada üst konumlara taşınması, sepet terk oranının düşürülmesi ve dönüşüm odaklı içerik mimarisi kurulması. Rekabetçi anahtar kelime boşlukları tespit edilerek satış odaklı sayfa planı çıkarılır.</p>
+                        </div>
+                    </div>
+
+                    <div class="seo-acc-item">
+                        <button class="seo-acc-btn" onclick="toggleAcc(this)">
+                            <span>Shopify & İkas SEO</span>
+                            <svg class="seo-acc-arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="seo-acc-body">
+                            <p>Her iki platformun teknik kısıtları ve güçlü yanları bilinilerek yapılan özelleştirilmiş optimizasyon. Partner olduğumuz Shopify ve İkas altyapılarında all-in-one destek, landing page kurulumu ve platform özel içerik stratejisi sunulmaktadır.</p>
+                        </div>
+                    </div>
+
+                    <div class="seo-acc-item">
+                        <button class="seo-acc-btn" onclick="toggleAcc(this)">
+                            <span>WordPress SEO</span>
+                            <svg class="seo-acc-arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="seo-acc-body">
+                            <p>Teknik sağlık denetimiyle başlayan, içerik stratejisiyle derinleşen ve otorite backlink inşasıyla pekişen kapsamlı WordPress SEO hizmeti. Core Web Vitals optimizasyonu ve şema markup entegrasyonu dahildir.</p>
+                        </div>
+                    </div>
+
+                    <div class="seo-acc-item">
+                        <button class="seo-acc-btn" onclick="toggleAcc(this)">
+                            <span>Yerel & Uluslararası SEO</span>
+                            <svg class="seo-acc-arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="seo-acc-body">
+                            <p>Google Business Profile optimizasyonu ve yerel arama görünürlüğü için Local SEO; çok dilli yapı, hreflang yönetimi ve ülke/dil bazlı anahtar kelime stratejisiyle Uluslararası SEO. Hedef pazarda rakiplerinizin önünde konumlanın.</p>
+                        </div>
+                    </div>
+
+                    <div class="seo-acc-item" style="border-bottom:none;">
+                        <button class="seo-acc-btn" onclick="toggleAcc(this)">
+                            <span>Sektöre Özel SEO (Doktor, Avukat, Otel…)</span>
+                            <svg class="seo-acc-arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="seo-acc-body">
+                            <p>Doktorlar, diş hekimleri, avukatlar, oteller gibi belirli regülasyonlar ve yerel niyet içeren sektörler için özelleştirilmiş strateji. E-E-A-T (Deneyim, Uzmanlık, Otorite, Güven) sinyalleri ön plana alınarak güven bazlı sıralama sağlanır.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Paket fiyatları -->
+            <div class="ads-packages">
+                <h3 class="ads-block-title">SEO Paketleri & Fiyatlar</h3>
+                <p class="ads-block-lead">Bütçenize ve büyüme hedefinize göre iki farklı yol — tek seferlik derinlikli analiz veya sürekli büyüme ortaklığı.</p>
+                <div class="ads-pkg-grid">
+
+                    <div class="ads-pkg-card">
+                        <div class="ads-pkg-badge">Tek Seferlik</div>
+                        <h3>SEO / Pazar / Rakip Analizi</h3>
+                        <p class="ads-pkg-desc">Eski ajansınızdan memnun kalmadıysanız ya da doğru bir yol haritasına ihtiyacınız varsa — sorunları tespit edip uygulanabilir bir strateji çıkarıyoruz.</p>
+                        <ul class="ads-pkg-list">
+                            <li>Detaylı rakip, pazar ve strateji analizi</li>
+                            <li>Satış odaklı anahtar kelime araştırması</li>
+                            <li>İçerik boşluğu analizi (Content Gap)</li>
+                            <li>Backlink sağlık kontrolü</li>
+                            <li>Kapsamlı teknik SEO denetimi</li>
+                            <li>Konu otoritesi stratejisi</li>
+                            <li>Satış öncelikli sayfa & blog listesi (Sitemap)</li>
+                            <li>26 saat araştırma + rapor</li>
+                        </ul>
+                        <div class="ads-pkg-price">16.900 ₺ <span>· tek seferlik</span></div>
+                    </div>
+
+                    <div class="ads-pkg-card featured">
+                        <div class="ads-pkg-badge featured-badge">Önerilen · Aylık Büyüme</div>
+                        <h3>Aylık SEO + GEO Hizmeti</h3>
+                        <p class="ads-pkg-desc">Kurumsal ve e-ticaret markalarına satış odaklı, on-page, off-page ve teknik SEO ile yapay zeka optimizasyonu (GEO) içeren kapsamlı büyüme ortaklığı.</p>
+                        <ul class="ads-pkg-list">
+                            <li>Satış odaklı SEO stratejisi (trafik değil, dönüşüm)</li>
+                            <li>Aylık On-Page SEO optimizasyonu</li>
+                            <li>Off-Page SEO kampanyası ve medya rehberi</li>
+                            <li>Satış odaklı aylık içerik planı</li>
+                            <li>Şeffaf ROI bazlı aylık raporlama</li>
+                            <li>Dönüşüm oranı optimizasyonu (CRO) ve A/B testleri</li>
+                            <li>Yüksek otoriteli sektörel link inşası</li>
+                            <li>Google algoritma koruması ve sürekli teknik takip</li>
+                            <li>Shopify / İkas / WordPress özel destek</li>
+                        </ul>
+                        <div style="margin-bottom:16px;">
+                            <div style="font-size:.8rem;color:#6a7d93;text-decoration:line-through;margin-bottom:4px;">30.000 ₺</div>
+                            <div class="ads-pkg-price">22.900 ₺ <span>· aylık · ilk 3 ay</span></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="ads-cta-strip">
+                <div>
+                    <h3>Rakipleriniz Sıralamada Yükselirken Siz Neredesiniz?</h3>
+                    <p>Her geçen gün ertelenen SEO yatırımı, rakiplerinize hediye edilen organik trafiktir. Hemen analiz isteyin, kayıplarınızı somut verilerle görelim.</p>
+                </div>
+                <a href="javascript:void(0)" class="btn-primary" style="white-space:nowrap;flex-shrink:0;">Hemen Fiyat Al</a>
+            </div>
+
         </div>
     </section>
 
@@ -1822,7 +2723,7 @@
                 <p style="color:#b0bdd0;font-size:1.05rem;line-height:1.8;margin-bottom:36px;font-weight:400;">
                     İşletmeniz için modern, mobil uyumlu ve yüksek performanslı web siteleri inşa ediyoruz. Kullanıcı deneyimini ön planda tutan tasarımlarla fark yaratın. Rakiplerinizin önünde, ziyaretçilerinizin gönlünde yer alan dijital bir varlık inşa edelim.
                 </p>
-                <a href="#contact" class="btn-primary">Projenizi Başlatın</a>
+                <a href="javascript:void(0)" class="btn-primary">Projenizi Başlatın</a>
             </div>
         </div>
     </section>
@@ -1919,7 +2820,7 @@
                     <a href="#contact">İletişim</a>
                 </nav>
                 <div class="footer-actions">
-                    <a href="#contact" class="btn-quote">Teklif Al</a>
+                    <a href="javascript:void(0)" class="btn-quote">Teklif Al</a>
                     <div class="social-icons-minimal">
                         <a href="#">In</a>
                         <a href="#">Ig</a>
@@ -1942,6 +2843,30 @@
     </footer>
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // ── Web Tasarım Detay anchor zorla scroll ──
+    document.querySelectorAll('a[href="#web-tasarim-detay"]').forEach(a => {
+        a.addEventListener('click', e => {
+            e.preventDefault();
+            const target = document.getElementById('web-tasarim-detay');
+            if (target) {
+                const top = target.getBoundingClientRect().top + window.scrollY - 80;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }
+        });
+    });
+
+    // ── Ads-detay anchor zorla scroll ──
+    document.querySelectorAll('a[href="#ads-detay"]').forEach(a => {
+        a.addEventListener('click', e => {
+            e.preventDefault();
+            const target = document.getElementById('ads-detay');
+            if (target) {
+                const top = target.getBoundingClientRect().top + window.scrollY - 80;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }
+        });
+    });
+
     // Sticky nav active state on scroll
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('nav a');
@@ -2209,6 +3134,102 @@
         chip.addEventListener('mousemove',e=>{
             const r=chip.getBoundingClientRect();
             chip.style.setProperty('--mx',(e.clientX-r.left)+'px');
+        });
+    });
+
+    // ── SEO Accordion ──
+    function toggleAcc(btn) {
+        const body = btn.nextElementSibling;
+        const isOpen = btn.classList.contains('open');
+        // Tümünü kapat
+        document.querySelectorAll('.seo-acc-btn.open').forEach(b => {
+            b.classList.remove('open');
+            b.nextElementSibling.classList.remove('open');
+        });
+        // Tıklanan kapalıysa aç
+        if (!isOpen) {
+            btn.classList.add('open');
+            body.classList.add('open');
+        }
+    }
+
+    // ══════════════════════════════════════════════
+    // TEKLİF POPUP
+    // ══════════════════════════════════════════════
+    function openPopup(service) {
+        const overlay = document.getElementById('teklifPopup');
+        // Hizmet seçeneğini önceden doldur
+        if (service) {
+            const sel = document.getElementById('popupService');
+            for (let i = 0; i < sel.options.length; i++) {
+                if (sel.options[i].value === service) { sel.selectedIndex = i; break; }
+            }
+        }
+        document.getElementById('popupForm').style.display = 'block';
+        document.getElementById('popupSuccess').classList.remove('show');
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => document.getElementById('popupName').focus(), 350);
+    }
+
+    function closePopup() {
+        document.getElementById('teklifPopup').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    function submitPopup() {
+        const name    = document.getElementById('popupName').value.trim();
+        const email   = document.getElementById('popupEmail').value.trim();
+        const phone   = document.getElementById('popupPhone').value.trim();
+        const service = document.getElementById('popupService').value;
+
+        if (!name)  { document.getElementById('popupName').focus();  return; }
+        if (!email || !email.includes('@')) { document.getElementById('popupEmail').focus(); return; }
+
+        const btn = document.querySelector('.popup-btn');
+        btn.disabled = true;
+        btn.textContent = 'Gönderiliyor…';
+
+        // mailto ile mail aç
+        const body = `Ad Soyad: ${name}%0AE-posta: ${email}%0ATelefon: ${phone || '—'}%0AHizmet: ${service || '—'}`;
+        window.location.href = `mailto:info@nexorainnovation.com?subject=Teklif Talebi — ${service || 'Genel'}&body=${body}`;
+
+        setTimeout(() => {
+            document.getElementById('popupForm').style.display = 'none';
+            document.getElementById('popupSuccessEmail').textContent = email;
+            document.getElementById('popupSuccess').classList.add('show');
+            btn.disabled = false;
+            btn.textContent = 'Teklif İste →';
+            setTimeout(closePopup, 4000);
+        }, 800);
+    }
+
+    // ESC ile kapat
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
+
+    // Overlay dışına tıklayınca kapat
+    document.getElementById('teklifPopup').addEventListener('click', function(e) {
+        if (e.target === this) closePopup();
+    });
+
+    // Tüm CTA butonları popup'a bağla
+    document.querySelectorAll(
+        'a.btn-primary, a.btn-ghost, a.btn-block, a.btn-quote, a.popup-trigger'
+    ).forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            // data-service varsa onu kullan, yoksa section'a göre belirle
+            let service = this.dataset.service || '';
+            if (!service) {
+                const section = this.closest('section');
+                if (section) {
+                    const id = section.id;
+                    if (id === 'web-tasarim-detay') service = 'Web Sitesi Tasarımı';
+                    else if (id === 'ads-detay')    service = 'Google Ads Yönetimi';
+                    else if (id === 'seo-detay')    service = 'SEO Hizmeti';
+                }
+            }
+            openPopup(service);
         });
     });
 

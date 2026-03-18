@@ -5208,5 +5208,15 @@
     }
 
     </script>
+
+    <!-- script.js'i etkisiz kıl: sunucuda varsa showSection'ı override et -->
+    <script>
+    window.addEventListener('load', function() {
+        document.querySelectorAll('section').forEach(function(s) {
+            s.style.removeProperty('display');
+        });
+        window.showSection = function() {};
+    });
+    </script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const navLinks = document.querySelectorAll('nav a, .btn, .btn2');
+   const navLinks = document.querySelectorAll('a[href^="#"]');
     const sections = document.querySelectorAll('section');
 
     function showSection(targetId) {

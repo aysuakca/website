@@ -3,10 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexora Innovation | SEO & Web Çözümleri</title>
-    <meta name="description" content="Nexora Innovation, SEO ve modern web geliştirme çözümleriyle markanızı dijitalde büyütür.">
-    <meta property="og:title" content="Nexora Innovation | SEO & Web Çözümleri">
-    <meta property="og:image" content="logo-veya-onizleme.jpg">
+
+    <!-- SEO Temel -->
+    <title>Nexora Innovation | SEO, Web Tasarım & Dijital Büyüme Çözümleri</title>
+    <meta name="description" content="Nexora Innovation olarak SEO, Google Ads, web tasarım ve global lokalizasyon hizmetleriyle markanızı dijitalde büyütüyoruz. Ücretsiz analiz için hemen iletişime geçin.">
+    <meta name="keywords" content="SEO, web tasarım, Google Ads, dijital pazarlama, lokalizasyon, Nexora Innovation">
+    <meta name="author" content="Nexora Innovation">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nexorainnovation.com/">
+
+    <!-- Open Graph / Sosyal Medya -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nexorainnovation.com/">
+    <meta property="og:title" content="Nexora Innovation | SEO, Web Tasarım & Dijital Büyüme">
+    <meta property="og:description" content="SEO, Google Ads, web tasarım ve global lokalizasyon hizmetleriyle markanızı dijitalde büyütüyoruz.">
+    <meta property="og:image" content="https://nexorainnovation.com/logo-veya-onizleme.jpg">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:site_name" content="Nexora Innovation">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nexora Innovation | SEO & Web Çözümleri">
+    <meta name="twitter:description" content="SEO, Google Ads ve web tasarım ile dijital büyüme.">
+    <meta name="twitter:image" content="https://nexorainnovation.com/logo-veya-onizleme.jpg">
+
+    <!-- Schema.org Yapısal Veri -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Nexora Innovation",
+        "url": "https://nexorainnovation.com",
+        "logo": "https://nexorainnovation.com/logo-veya-onizleme.jpg",
+        "description": "SEO, web tasarım, Google Ads ve global lokalizasyon hizmetleri",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "info@nexorainnovation.com",
+            "contactType": "customer service",
+            "availableLanguage": "Turkish"
+        },
+        "sameAs": []
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -4886,19 +4924,25 @@
     };
     window.addEventListener('scroll', ctrScrollFn, { passive: true });
 
-    // Scroll reveal
+    // Scroll reveal — sadece viewport dışındakileri gizle
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(e => {
             if (e.isIntersecting) {
                 e.target.style.opacity = '1';
-                    e.target.style.transform = 'translateY(0)';
+                e.target.style.transform = 'translateY(0)';
+                observer.unobserve(e.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.08 });
 
     document.querySelectorAll('.success-card,.pro-service-card,.stat-box,.pillar,.strategy-card-pro').forEach(el => {
-        el.style.cssText += 'opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease';
-        observer.observe(el);
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            // Zaten görünür — dokunma
+        } else {
+            el.style.cssText += 'opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease';
+            observer.observe(el);
+        }
     });
 
     // Custom cursor kaldırıldı

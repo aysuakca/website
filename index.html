@@ -259,7 +259,7 @@
     }
 
     /* badge */
-    .hero-badge {
+    #mainpage .hero-badge {
         display:inline-flex; align-items:center; gap:8px;
         background: rgba(120,100,255,.1);
         border: 1px solid rgba(120,100,255,.3);
@@ -269,6 +269,18 @@
         letter-spacing:1.5px; text-transform:uppercase;
         margin-bottom:36px;
         animation: badgeIn .7s cubic-bezier(.23,1,.32,1) both;
+        box-shadow: 0 0 30px rgba(120,100,255,.15);
+        backdrop-filter:blur(10px);
+    }
+    .hero-badge {
+        display:inline-flex; align-items:center; gap:8px;
+        background: rgba(120,100,255,.1);
+        border: 1px solid rgba(120,100,255,.3);
+        border-radius:100px;
+        padding:9px 22px;
+        font-size:.78rem; font-weight:700; color: var(--purple);
+        letter-spacing:1.5px; text-transform:uppercase;
+        margin-bottom:36px;
         box-shadow: 0 0 30px rgba(120,100,255,.15);
         backdrop-filter:blur(10px);
     }
@@ -289,6 +301,8 @@
         letter-spacing:-2px;
         max-width:860px;
         margin-bottom:10px;
+    }
+    #mainpage .hero-title {
         animation: fadeUp .7s .15s cubic-bezier(.23,1,.32,1) both;
     }
     .hero-title .typed-word {
@@ -309,8 +323,10 @@
     .hero-tagline {
         font-size:clamp(1rem,1.4vw,1.2rem); color:#b0becc;
         max-width:540px; line-height:1.8; margin:0 auto 16px;
-        animation:fadeUp .7s .25s cubic-bezier(.23,1,.32,1) both;
         font-weight:400; letter-spacing:.2px;
+    }
+    #mainpage .hero-tagline {
+        animation:fadeUp .7s .25s cubic-bezier(.23,1,.32,1) both;
     }
 
     /* Gradient ayırıcı çizgi */
@@ -318,6 +334,8 @@
         width:80px; height:2px; margin:0 auto 36px;
         background:linear-gradient(90deg,var(--purple),var(--cyan));
         border-radius:10px;
+    }
+    #mainpage .hero-divider {
         animation:fadeUp .7s .3s both, dividerGrow 1s .4s cubic-bezier(.23,1,.32,1) both;
     }
     @keyframes dividerGrow { from{width:0} to{width:80px} }
@@ -326,14 +344,18 @@
         font-size:1.05rem; color:#bdc8d8;
         max-width:580px; line-height:1.85;
         margin-bottom:48px;
-        animation: fadeUp .7s .35s cubic-bezier(.23,1,.32,1) both;
         font-weight:400;
+    }
+    #mainpage .hero-sub {
+        animation: fadeUp .7s .35s cubic-bezier(.23,1,.32,1) both;
     }
 
     /* Magnetic butonlar */
     .hero-buttons {
         display:flex; gap:18px; flex-wrap:wrap; justify-content:center;
         margin-bottom:56px;
+    }
+    #mainpage .hero-buttons {
         animation: fadeUp .7s .42s cubic-bezier(.23,1,.32,1) both;
     }
 
@@ -369,6 +391,8 @@
     .hero-chips {
         display:flex; flex-wrap:wrap; gap:10px; justify-content:center;
         margin-bottom:80px;
+    }
+    #mainpage .hero-chips {
         animation: fadeUp .7s .5s cubic-bezier(.23,1,.32,1) both;
     }
 
@@ -413,6 +437,8 @@
     .hero-cards {
         display:grid; grid-template-columns:repeat(auto-fit, minmax(340px,1fr));
         gap:24px; width:100%;
+    }
+    #mainpage .hero-cards {
         animation: fadeUp .7s .58s cubic-bezier(.23,1,.32,1) both;
     }
 
@@ -737,6 +763,8 @@
         font-size: .78rem; font-weight: 700; letter-spacing: 2px;
         text-transform: uppercase; color: var(--purple);
         margin-bottom: 28px;
+    }
+    #web-tasarim-detay .wtd-hero-label {
         animation: fadeUp .6s ease both;
     }
     .wtd-hero-label span { width:6px; height:6px; background:var(--cyan); border-radius:50%; display:inline-block; animation:pulse 2s infinite; }
@@ -745,17 +773,23 @@
         font-size: clamp(2.6rem, 5vw, 4.2rem);
         font-weight: 900; letter-spacing: -2px; line-height: 1.08;
         color: #fff; margin-bottom: 22px;
+    }
+    #web-tasarim-detay .wtd-hero-title {
         animation: fadeUp .6s .1s ease both;
     }
     .wtd-hero-title em { font-style:normal; }
     .wtd-hero-sub {
         color: #b0bdd0; font-size: 1.1rem; line-height: 1.8;
         max-width: 580px; margin: 0 auto 48px;
+    }
+    #web-tasarim-detay .wtd-hero-sub {
         animation: fadeUp .6s .2s ease both;
     }
     /* Sayaç şerit */
     .wtd-counters {
         display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;
+    }
+    #web-tasarim-detay .wtd-counters {
         animation: fadeUp .6s .3s ease both;
     }
     .wtd-ctr { text-align: center; }
@@ -5207,40 +5241,6 @@
         window.location.href = `mailto:info@nexorainnovation.com?subject=Teklif Talebi — ${service||'Genel'}&body=${body}`;
     }
 
-    </script>
-
-    <!-- script.js etkisizleştirici + animasyon düzeltici -->
-    <script>
-    (function() {
-        // 1) showSection'ı hemen etkisiz yap (script.js henüz yüklenmeden)
-        window.showSection = function() {};
-
-        function fixAll() {
-            // 2) Gizlenmiş section'ları aç
-            document.querySelectorAll('section').forEach(function(s) {
-                s.style.removeProperty('display');
-            });
-            // 3) showSection'ı tekrar etkisiz yap (script.js sonradan ezip ezmedi diye)
-            window.showSection = function() {};
-
-            // 4) CSS animation "both" fill-mode'dan kaynaklanan gizli elementleri bul ve aç
-            document.querySelectorAll('*').forEach(function(el) {
-                try {
-                    var st = window.getComputedStyle(el);
-                    if (parseFloat(st.opacity) < 0.05 &&
-                        st.animationName && st.animationName !== 'none') {
-                        el.style.cssText += ';opacity:1!important;transform:none!important;animation:none!important;';
-                    }
-                } catch(e) {}
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', fixAll);
-        window.addEventListener('load', fixAll);
-        // script.js genellikle DOMContentLoaded'da çalışır — biraz sonra da çalıştır
-        setTimeout(fixAll, 100);
-        setTimeout(fixAll, 500);
-    })();
     </script>
 </body>
 </html>

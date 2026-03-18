@@ -5209,14 +5209,38 @@
 
     </script>
 
-    <!-- script.js'i etkisiz kıl: sunucuda varsa showSection'ı override et -->
+    <!-- script.js etkisizleştirici + animasyon düzeltici -->
     <script>
-    window.addEventListener('load', function() {
-        document.querySelectorAll('section').forEach(function(s) {
-            s.style.removeProperty('display');
-        });
+    (function() {
+        // 1) showSection'ı hemen etkisiz yap (script.js henüz yüklenmeden)
         window.showSection = function() {};
-    });
+
+        function fixAll() {
+            // 2) Gizlenmiş section'ları aç
+            document.querySelectorAll('section').forEach(function(s) {
+                s.style.removeProperty('display');
+            });
+            // 3) showSection'ı tekrar etkisiz yap (script.js sonradan ezip ezmedi diye)
+            window.showSection = function() {};
+
+            // 4) CSS animation "both" fill-mode'dan kaynaklanan gizli elementleri bul ve aç
+            document.querySelectorAll('*').forEach(function(el) {
+                try {
+                    var st = window.getComputedStyle(el);
+                    if (parseFloat(st.opacity) < 0.05 &&
+                        st.animationName && st.animationName !== 'none') {
+                        el.style.cssText += ';opacity:1!important;transform:none!important;animation:none!important;';
+                    }
+                } catch(e) {}
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', fixAll);
+        window.addEventListener('load', fixAll);
+        // script.js genellikle DOMContentLoaded'da çalışır — biraz sonra da çalıştır
+        setTimeout(fixAll, 100);
+        setTimeout(fixAll, 500);
+    })();
     </script>
 </body>
 </html>

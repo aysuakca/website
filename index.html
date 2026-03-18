@@ -4831,7 +4831,7 @@
         });
     });
 
-    // Sticky nav active state on scroll + tıklama
+    // Nav: tıklama + scroll aktif sistemi
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('nav a');
 
@@ -4843,7 +4843,7 @@
         });
     });
 
-    // Scroll'da da güncelle
+    // Scroll'da güncelle
     window.addEventListener('scroll', () => {
         let current = '';
         sections.forEach(s => {
@@ -4857,28 +4857,7 @@
         }
     }, { passive: true });
 
-    // Scroll reveal — sadece görünür olmayanlar için
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-            if (e.isIntersecting) {
-                e.target.classList.add('reveal-visible');
-                observer.unobserve(e.target);
-            }
-        });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-
-    document.querySelectorAll('.success-card, .pro-service-card, .stat-box, .pillar, .strategy-card-pro').forEach(el => {
-        // Zaten görünür alanda olanları hemen göster
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-            el.classList.add('reveal-visible');
-        } else {
-            el.classList.add('reveal-hidden');
-            observer.observe(el);
-        }
-    });
-
-    // ── Hero İstatistik Sayaçları (.ctr) ──
+    // Hero istatistik sayaçları (.ctr)
     function runCtr(el) {
         if (el.dataset.done) return;
         el.dataset.done = '1';
@@ -4886,29 +4865,40 @@
         const dur = 2000;
         const t0 = performance.now();
         const ease = t => 1 - Math.pow(1 - t, 3);
-        function tick(now) {
+        (function tick(now) {
             const p = Math.min((now - t0) / dur, 1);
             el.textContent = Math.floor(ease(p) * target);
             if (p < 1) requestAnimationFrame(tick);
             else el.textContent = target;
-        }
-        requestAnimationFrame(tick);
+        })(performance.now());
     }
-
-    const ctrObs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-            if (e.isIntersecting) {
-                e.target.querySelectorAll('.ctr[data-to]').forEach(runCtr);
-            }
-        });
-    }, { threshold: 0.3 });
-
-    const statsPanel = document.getElementById('heroStatsSide');
-    if (statsPanel) ctrObs.observe(statsPanel);
-    // Sayfa yüklenince zaten görünüyorsa hemen çalıştır
+    // Sayfa yüklenince görünür olanlara hemen çalıştır
     document.querySelectorAll('.ctr[data-to]').forEach(el => {
         const rect = el.getBoundingClientRect();
         if (rect.top < window.innerHeight) runCtr(el);
+    });
+    // Scroll ile görünür olanlara da çalıştır
+    const ctrScrollFn = () => {
+        document.querySelectorAll('.ctr[data-to]').forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight) runCtr(el);
+        });
+    };
+    window.addEventListener('scroll', ctrScrollFn, { passive: true });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.style.opacity = '1';
+                    e.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.success-card,.pro-service-card,.stat-box,.pillar,.strategy-card-pro').forEach(el => {
+        el.style.cssText += 'opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease';
+        observer.observe(el);
     });
 
     // Custom cursor kaldırıldı
@@ -5247,17 +5237,6 @@
             openPopup(service);
         });
     });
-
-    function submitContactForm() {
-        const name    = document.getElementById('cfName').value.trim();
-        const email   = document.getElementById('cfEmail').value.trim();
-        const phone   = document.getElementById('cfPhone') ? document.getElementById('cfPhone').value.trim() : '';
-        const service = document.getElementById('cfService') ? document.getElementById('cfService').value : '';
-        if (!name)  { document.getElementById('cfName').focus();  return; }
-        if (!email || !email.includes('@')) { document.getElementById('cfEmail').focus(); return; }
-        const body = `Ad Soyad: ${name}%0AE-posta: ${email}%0ATelefon: ${phone||'—'}%0AHizmet: ${service||'—'}`;
-        window.location.href = `mailto:info@nexorainnovation.com?subject=Teklif Talebi — ${service||'Genel'}&body=${body}`;
-    }
 
     </script>
 </body>

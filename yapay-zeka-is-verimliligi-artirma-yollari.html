@@ -295,12 +295,12 @@
     /* ── HERO GÖRSEL ALANI ── */
     .article-cover {
         width: 100%;
-        height: 420px;
+        height: 480px;
         border-radius: 0 0 var(--radius-2xl) var(--radius-2xl);
-        background: linear-gradient(135deg, rgba(108,99,255,.2) 0%, rgba(0,240,255,.12) 50%, rgba(168,85,247,.15) 100%);
+        background: url('yapay-zeka-cover.jpg') center center / cover no-repeat;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        align-items: flex-end;
+        justify-content: flex-start;
         position: relative;
         overflow: hidden;
         margin-bottom: 0;
@@ -309,10 +309,9 @@
     .article-cover::before {
         content:'';
         position:absolute;inset:0;
-        background-image:
-            linear-gradient(rgba(120,100,255,.06) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(120,100,255,.06) 1px, transparent 1px);
-        background-size: 48px 48px;
+        background:
+            linear-gradient(to top, rgba(0,0,0,.88) 0%, rgba(0,0,0,.4) 50%, rgba(0,0,0,.1) 100%),
+            linear-gradient(to right, rgba(108,99,255,.2) 0%, transparent 70%);
     }
 
     .cover-decoration {
@@ -824,8 +823,9 @@
     }
     @media (max-width: 768px) {
         .article-hero-title { font-size: 1.9rem; }
-        .article-cover { height: 260px; }
-        .cover-icon-grid { grid-template-columns: repeat(2,1fr); gap: 12px; }
+        .article-cover { height: 340px; background-position: center top; }
+        .cover-caption { padding: 20px 24px 28px !important; }
+
         .article-cta { padding: 36px 24px; }
         .article-nav { grid-template-columns: 1fr; }
         .nav-wrapper { padding: 0 16px; }
@@ -855,24 +855,19 @@
 
 <!-- ── MAKALE HERO ── -->
 <div class="article-cover">
-    <div class="cover-decoration">
-        <div class="cover-icon-grid">
-            <div class="cover-icon-box">
-                <span class="icon-emoji">🤖</span>
-                <span class="icon-label">Yapay Zeka</span>
-            </div>
-            <div class="cover-icon-box">
-                <span class="icon-emoji">⚡</span>
-                <span class="icon-label">Verimlilik</span>
-            </div>
-            <div class="cover-icon-box">
-                <span class="icon-emoji">📊</span>
-                <span class="icon-label">Analitik</span>
-            </div>
-            <div class="cover-icon-box">
-                <span class="icon-emoji">🚀</span>
-                <span class="icon-label">Büyüme</span>
-            </div>
+    <!-- Görsel üzerinde sol altta kayan başlık/etiket bandı -->
+    <div class="cover-caption" style="position:relative;z-index:2;padding:36px 48px 44px;width:100%;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
+            <span style="background:rgba(168,85,247,.25);color:#c084fc;border:1px solid rgba(168,85,247,.45);border-radius:100px;padding:5px 16px;font-size:.72rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;backdrop-filter:blur(8px);">Dijital Strateji</span>
+            <span style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:5px 16px;font-size:.72rem;font-weight:700;letter-spacing:.6px;backdrop-filter:blur(8px);">⏱ 12 dk okuma</span>
+            <span style="background:linear-gradient(135deg,#7c6dff,#00f0ff);color:#000;border-radius:100px;padding:5px 16px;font-size:.68rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;">Yeni</span>
+        </div>
+        <h2 style="font-family:var(--head-font);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:900;color:#fff;letter-spacing:-1px;line-height:1.2;max-width:640px;text-shadow:0 2px 20px rgba(0,0,0,.5);">Yapay Zeka ile İş Verimliliğini<br>Artırmanın 10 Yolu</h2>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;">
+            <span style="background:rgba(108,99,255,.18);color:#a78bfa;border:1px solid rgba(108,99,255,.3);border-radius:100px;padding:4px 12px;font-size:.7rem;font-weight:600;backdrop-filter:blur(6px);">ChatGPT</span>
+            <span style="background:rgba(108,99,255,.18);color:#a78bfa;border:1px solid rgba(108,99,255,.3);border-radius:100px;padding:4px 12px;font-size:.7rem;font-weight:600;backdrop-filter:blur(6px);">Claude</span>
+            <span style="background:rgba(0,240,255,.12);color:#67e8f9;border:1px solid rgba(0,240,255,.25);border-radius:100px;padding:4px 12px;font-size:.7rem;font-weight:600;backdrop-filter:blur(6px);">AI Araçları</span>
+            <span style="background:rgba(52,211,153,.1);color:#34d399;border:1px solid rgba(52,211,153,.25);border-radius:100px;padding:4px 12px;font-size:.7rem;font-weight:600;backdrop-filter:blur(6px);">Verimlilik</span>
         </div>
     </div>
 </div>

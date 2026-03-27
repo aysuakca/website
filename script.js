@@ -42,16 +42,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Animasyonlu elementleri yeniden tetikle (fadeUp fill-mode:both nedeniyle opacity:0 kalabilir)
             // Kısa gecikmeyle display:block'un tarayıcıya işlenmesini bekle
-            setTimeout(() => {
-                targetSection.querySelectorAll('*').forEach(el => {
-                    const computed = getComputedStyle(el);
-                    if (computed.animationName && computed.animationName !== 'none') {
-                        el.style.animation = 'none';
-                        el.offsetHeight; // reflow tetikle
-                        el.style.animation = '';
-                    }
-                });
-            }, 20);
+           setTimeout(() => {
+    targetSection.querySelectorAll('*').forEach(el => {
+        // fill-mode:both ile donmuş TÜM animasyonlu elementleri sıfırla
+        el.style.animation = 'none';
+        el.style.opacity = '';      // inline opacity varsa temizle
+    });
+    // Bir frame sonra animasyonları geri aç
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            targetSection.querySelectorAll('*').forEach(el => {
+                el.style.animation = '';
+            });
+        });
+    });
+}, 20);
 
             // Nav aktif durumu
             navLinks.forEach(item => item.classList.remove('active'));

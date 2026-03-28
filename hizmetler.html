@@ -2106,9 +2106,9 @@
             <nav>
                 <a href="index.html">Ana Sayfa</a>
                 <a href="hizmetler.html" class="active">Hizmetlerimiz</a>
-                <a href="index.html#about">Hakkımızda</a>
+                <a href="hakkimizda.html">Hakkımızda</a>
                 <a href="blog.html">Blog</a>
-                <a href="index.html#contact" class="nav-cta">İletişim</a>
+                <a href="iletisim.html" class="nav-cta">İletişim</a>
             </nav>
         </div>
     </header>
@@ -4258,8 +4258,8 @@
                 <div class="footer-nav-col">
                     <div class="footer-nav-heading">Şirket</div>
                     <ul class="footer-nav-list">
-                        <li><a href="index.html#about">Hakkımızda</a></li>
-                        <li><a href="index.html#contact">İletişim</a></li>
+                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="#">Referanslar</a></li>
                         <li><a href="#">Kariyer</a></li>
@@ -4310,528 +4310,52 @@
         </div>
     </footer>
 
-    <script>
-    // ── Tüm detay section anchor'ları — göster + scroll ──
-    const detaySectionIds = [
-        'web-tasarim-detay','seo-detay','ads-detay',
-        'lokalizasyon-detay','qa-detay','analitik-detay','bakim-detay','website-detay'
-    ];
+    
 
-    function showDetay(id) {
-        // script.js'in gizlediği tüm detay section'larını tekrar göster
-        detaySectionIds.forEach(sid => {
-            const s = document.getElementById(sid);
-            if (s) s.style.display = 'block';
-        });
-        // #services section'ını da göster
-        const srv = document.getElementById('services');
-        if (srv) srv.style.display = 'block';
 
-        // Hedef detay section'ına scroll yap
-        const target = document.getElementById(id);
-        if (target) {
-            // Animasyonlu elementleri yeniden tetikle (fadeUp fill-mode:both opacity:0 sorununu çözer)
-            setTimeout(() => {
-                target.querySelectorAll('*').forEach(el => {
-                    const computed = getComputedStyle(el);
-                    if (computed.animationName && computed.animationName !== 'none') {
-                        el.style.animation = 'none';
-                        el.offsetHeight; // reflow tetikle
-                        el.style.animation = '';
-                    }
-                });
-            }, 20);
-
-            setTimeout(() => {
-                const top = target.getBoundingClientRect().top + window.scrollY - 80;
-                window.scrollTo({ top, behavior: 'smooth' });
-            }, 30);
-        }
-    }
-
-    detaySectionIds.forEach(sid => {
-        document.querySelectorAll(`a[href="#${sid}"]`).forEach(a => {
-            a.addEventListener('click', e => {
-                e.preventDefault();
-                e.stopPropagation();
-                showDetay(sid);
-            });
-        });
-    });
-
-    // Sticky nav active state on scroll + tıklama
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('nav a');
-
-    // Tıklayınca anında aktif yap
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            navLinks.forEach(a => a.classList.remove('active'));
-            this.classList.add('active');
-        });
-    });
-
-    // Scroll'da da güncelle
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(s => {
-            if (window.scrollY >= s.offsetTop - 120) current = s.id;
-        });
-        if (current) {
-            navLinks.forEach(a => {
-                a.classList.remove('active');
-                if (a.getAttribute('href') === '#' + current) a.classList.add('active');
-            });
-        }
-    }, { passive: true });
-
-    // Scroll reveal
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-            if (e.isIntersecting) {
-                e.target.style.opacity = '1';
-                    e.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.success-card,.pro-service-card,.stat-box,.pillar,.strategy-card-pro').forEach(el => {
-        el.style.cssText += 'opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease';
-        observer.observe(el);
-    });
-
-    // ── Hero İstatistik Sayaçları (.ctr) ──
-    function runCtr(el) {
-        if (el.dataset.done) return;
-        el.dataset.done = '1';
-        const target = parseInt(el.dataset.to);
-        const dur = 2000;
-        const t0 = performance.now();
-        const ease = t => 1 - Math.pow(1 - t, 3);
-        function tick(now) {
-            const p = Math.min((now - t0) / dur, 1);
-            el.textContent = Math.floor(ease(p) * target);
-            if (p < 1) requestAnimationFrame(tick);
-            else el.textContent = target;
-        }
-        requestAnimationFrame(tick);
-    }
-
-    const ctrObs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-            if (e.isIntersecting) {
-                e.target.querySelectorAll('.ctr[data-to]').forEach(runCtr);
-            }
-        });
-    }, { threshold: 0.3 });
-
-    const statsPanel = document.getElementById('heroStatsSide');
-    if (statsPanel) ctrObs.observe(statsPanel);
-    // Sayfa yüklenince zaten görünüyorsa hemen çalıştır
-    document.querySelectorAll('.ctr[data-to]').forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight) runCtr(el);
-    });
-
-    // Custom cursor kaldırıldı
-    // ── WEB TASARIM DETAY — Canvas Particle Network ──
-    (function(){
-        const canvas = document.getElementById('wtd-canvas');
-        if(!canvas) return;
-        const ctx = canvas.getContext('2d');
-        let W, H, particles = [], mouse = {x:-9999,y:-9999};
-        const COLORS = ['#7c6dff','#00f0ff','#c084fc'];
-        function resize(){ W = canvas.width = canvas.offsetWidth; H = canvas.height = canvas.offsetHeight; }
-        function Particle(){
-            this.x = Math.random()*W; this.y = Math.random()*H;
-            this.vx = (Math.random()-.5)*.4; this.vy = (Math.random()-.5)*.4;
-            this.r = Math.random()*1.8+.6;
-            this.color = COLORS[Math.floor(Math.random()*COLORS.length)];
-        }
-        Particle.prototype.update = function(){
-            this.x+=this.vx; this.y+=this.vy;
-            if(this.x<0||this.x>W) this.vx*=-1;
-            if(this.y<0||this.y>H) this.vy*=-1;
-        };
-        function init(){ particles=[]; for(let i=0;i<90;i++) particles.push(new Particle()); }
-        function draw(){
-            ctx.clearRect(0,0,W,H);
-            for(let i=0;i<particles.length;i++){
-                const p=particles[i]; p.update();
-                ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-                ctx.fillStyle=p.color; ctx.globalAlpha=.7; ctx.fill();
-                for(let j=i+1;j<particles.length;j++){
-                    const q=particles[j];
-                    const dx=p.x-q.x, dy=p.y-q.y, d=Math.sqrt(dx*dx+dy*dy);
-                    if(d<140){
-                        ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y);
-                        ctx.globalAlpha=(1-d/140)*.18;
-                        ctx.strokeStyle=p.color; ctx.lineWidth=.8; ctx.stroke();
-                    }
-                }
-                const mdx=p.x-mouse.x, mdy=p.y-mouse.y, md=Math.sqrt(mdx*mdx+mdy*mdy);
-                if(md<180){
-                    ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(mouse.x,mouse.y);
-                    ctx.globalAlpha=(1-md/180)*.35; ctx.strokeStyle='#7c6dff'; ctx.lineWidth=1; ctx.stroke();
-                }
-            }
-            ctx.globalAlpha=1;
-            requestAnimationFrame(draw);
-        }
-        canvas.closest('#web-tasarim-detay').addEventListener('mousemove', e=>{
-            const r=canvas.getBoundingClientRect();
-            mouse.x=e.clientX-r.left; mouse.y=e.clientY-r.top;
-        });
-        canvas.closest('#web-tasarim-detay').addEventListener('mouseleave',()=>{mouse.x=-9999;mouse.y=-9999;});
-        resize(); init(); draw();
-        window.addEventListener('resize',()=>{resize();init();});
-    })();
-
-    // ── WTD Card Mouse Tracking Glow ──
-    document.querySelectorAll('.wtd-val-card,.wtd-use-card').forEach(card=>{
-        card.addEventListener('mousemove',e=>{
-            const r=card.getBoundingClientRect();
-            card.style.setProperty('--mx',(e.clientX-r.left)+'px');
-            card.style.setProperty('--my',(e.clientY-r.top)+'px');
-        });
-    });
-
-    // ── WTD Tab Sistemi ──
-    document.querySelectorAll('.wtd-tab-btn').forEach(btn=>{
-        btn.addEventListener('click',()=>{
-            document.querySelectorAll('.wtd-tab-btn').forEach(b=>b.classList.remove('active'));
-            document.querySelectorAll('.wtd-tab-panel').forEach(p=>p.classList.remove('active'));
-            btn.classList.add('active');
-            document.getElementById('tab-'+btn.dataset.tab).classList.add('active');
-        });
-    });
-
-    // ── WTD Süreç Adımları — Scroll Reveal ──
-    const stepObs = new IntersectionObserver(entries=>{
-        entries.forEach((e,i)=>{
-            if(e.isIntersecting){
-                const steps=e.target.querySelectorAll('.wtd-step');
-                steps.forEach((s,idx)=>{ setTimeout(()=>s.classList.add('visible'),idx*150); });
-                stepObs.unobserve(e.target);
-            }
-        });
-    },{threshold:.2});
-    const stepsEl=document.querySelector('.wtd-steps');
-    if(stepsEl) stepObs.observe(stepsEl);
-
-    // ── WTD Sayaç Animasyonu ──
-    const wtdCtrObs = new IntersectionObserver(entries=>{
-        entries.forEach(e=>{
-            if(e.isIntersecting){
-                e.target.querySelectorAll('.wtd-ctr-num[data-to]').forEach(el=>{
-                    const target=+el.dataset.to, dur=1800;
-                    let start=null;
-                    function step(ts){ if(!start)start=ts; const p=Math.min((ts-start)/dur,1); el.textContent=Math.round(p*target)+(target>=100?'+':''); if(p<1)requestAnimationFrame(step); }
-                    requestAnimationFrame(step);
-                });
-                wtdCtrObs.unobserve(e.target);
-            }
-        });
-    },{threshold:.3});
-    const wtdHero=document.querySelector('.wtd-hero');
-    if(wtdHero) wtdCtrObs.observe(wtdHero);
-
-    // ══════════════════════════════════════════════
-    // HERO CANVAS — Aurora Mesh + Floating Orbs
-    // ══════════════════════════════════════════════
-    (function(){
-        const canvas = document.getElementById('hero-canvas');
-        if(!canvas) return;
-        const ctx = canvas.getContext('2d');
-        let W, H, t = 0;
-        let mouse = {x: -1, y: -1};
-
-        // Orb tanımları — kaldırıldı
-
-        // Partiküller
-        const pts = [];
-        function initPts(){
-            pts.length=0;
-            const n = Math.min(Math.floor(W*H/14000), 80);
-            for(let i=0;i<n;i++) pts.push({
-                x:Math.random()*W, y:Math.random()*H,
-                vx:(Math.random()-.5)*.35, vy:(Math.random()-.5)*.35,
-                r:Math.random()*1.5+.5,
-                c:Math.random()<.5?'120,100,255':'0,240,255'
-            });
-        }
-
-        function resize(){
-            W = canvas.width = canvas.offsetWidth;
-            H = canvas.height = canvas.offsetHeight;
-            initPts();
-        }
-
-        document.getElementById('mainpage').addEventListener('mousemove',e=>{
-            const r=canvas.getBoundingClientRect();
-            mouse.x=e.clientX-r.left; mouse.y=e.clientY-r.top;
-        });
-        document.getElementById('mainpage').addEventListener('mouseleave',()=>{mouse.x=-1;mouse.y=-1;});
-
-        function draw(){
-            ctx.clearRect(0,0,W,H);
-            t+=.006;
-
-            // Çizgili ızgara efekti (hafif)
-            ctx.save();
-            ctx.strokeStyle='rgba(120,100,255,.025)';
-            ctx.lineWidth=1;
-            const g=72;
-            for(let x=0;x<W;x+=g){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
-            for(let y=0;y<H;y+=g){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
-            ctx.restore();
-
-            // Partiküller + bağlantılar
-            pts.forEach(p=>{
-                p.x+=p.vx; p.y+=p.vy;
-                if(p.x<0||p.x>W) p.vx*=-1;
-                if(p.y<0||p.y>H) p.vy*=-1;
-
-                // Mouse çekimi
-                if(mouse.x>0){
-                    const dx=mouse.x-p.x, dy=mouse.y-p.y, d=Math.sqrt(dx*dx+dy*dy);
-                    if(d<200){ p.vx+=dx/d*.015; p.vy+=dy/d*.015; }
-                    const sp=Math.sqrt(p.vx*p.vx+p.vy*p.vy);
-                    if(sp>.6){p.vx=p.vx/sp*.6;p.vy=p.vy/sp*.6;}
-                }
-
-                ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-                ctx.fillStyle=`rgba(${p.c},.8)`; ctx.fill();
-            });
-
-            for(let i=0;i<pts.length;i++){
-                for(let j=i+1;j<pts.length;j++){
-                    const a=pts[i],b=pts[j];
-                    const dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
-                    if(d<130){
-                        ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y);
-                        ctx.strokeStyle=`rgba(${a.c},${(1-d/130)*.15})`;
-                        ctx.lineWidth=.8; ctx.stroke();
-                    }
-                }
-                // Mouse bağlantısı
-                if(mouse.x>0){
-                    const dx=pts[i].x-mouse.x,dy=pts[i].y-mouse.y,d=Math.sqrt(dx*dx+dy*dy);
-                    if(d<220){
-                        ctx.beginPath(); ctx.moveTo(pts[i].x,pts[i].y); ctx.lineTo(mouse.x,mouse.y);
-                        ctx.strokeStyle=`rgba(120,100,255,${(1-d/220)*.3})`;
-                        ctx.lineWidth=1; ctx.stroke();
-                    }
-                }
-            }
-
-            requestAnimationFrame(draw);
-        }
-        resize(); draw();
-        window.addEventListener('resize',resize);
-    })();
-
-    // ══════════════════════════════════════════════
-    // MAGNETİK BUTON EFEKTİ
-    // ══════════════════════════════════════════════
-    document.querySelectorAll('.btn-primary,.btn-ghost').forEach(btn=>{
-        btn.addEventListener('mousemove',e=>{
-            const r=btn.getBoundingClientRect();
-            const x=(e.clientX-r.left-r.width/2)*.3;
-            const y=(e.clientY-r.top-r.height/2)*.3;
-            btn.style.transform=`translateY(-3px) translate(${x}px,${y}px)`;
-        });
-        btn.addEventListener('mouseleave',()=>{ btn.style.transform=''; });
-    });
-
-    // ══════════════════════════════════════════════
-    // 3D TILT — strateji kartları
-    // ══════════════════════════════════════════════
-    document.querySelectorAll('.strategy-card-pro').forEach(card=>{
-        card.addEventListener('mousemove',e=>{
-            const r=card.getBoundingClientRect();
-            const x=(e.clientX-r.left)/r.width-.5;
-            const y=(e.clientY-r.top)/r.height-.5;
-            card.style.transform=`translateY(-10px) rotateY(${x*10}deg) rotateX(${-y*8}deg)`;
-            card.style.transition='transform .1s';
-            // glow pozisyonu
-            card.style.setProperty('--mx',(e.clientX-r.left)+'px');
-            card.style.setProperty('--my',(e.clientY-r.top)+'px');
-        });
-        card.addEventListener('mouseleave',()=>{
-            card.style.transform='';
-            card.style.transition='transform .5s cubic-bezier(.23,1,.32,1)';
-        });
-    });
-
-    // ══════════════════════════════════════════════
-    // CHİP hover mouse-tracking
-    // ══════════════════════════════════════════════
-    document.querySelectorAll('.chip').forEach(chip=>{
-        chip.addEventListener('mousemove',e=>{
-            const r=chip.getBoundingClientRect();
-            chip.style.setProperty('--mx',(e.clientX-r.left)+'px');
-        });
-    });
-
-    // ── SEO Accordion ──
-    function toggleAcc(btn) {
-        const body = btn.nextElementSibling;
-        const isOpen = btn.classList.contains('open');
-        // Tümünü kapat
-        document.querySelectorAll('.seo-acc-btn.open').forEach(b => {
-            b.classList.remove('open');
-            b.nextElementSibling.classList.remove('open');
-        });
-        // Tıklanan kapalıysa aç
-        if (!isOpen) {
-            btn.classList.add('open');
-            body.classList.add('open');
-        }
-    }
-
-    // ══════════════════════════════════════════════
-    // TEKLİF POPUP
-    // ══════════════════════════════════════════════
-    function openPopup(service) {
-        const overlay = document.getElementById('teklifPopup');
-        // Hizmet seçeneğini önceden doldur
-        if (service) {
-            const sel = document.getElementById('popupService');
-            for (let i = 0; i < sel.options.length; i++) {
-                if (sel.options[i].value === service) { sel.selectedIndex = i; break; }
-            }
-        }
-        document.getElementById('popupForm').style.display = 'block';
-        document.getElementById('popupSuccess').classList.remove('show');
-        overlay.classList.add('open');
-        document.body.style.overflow = 'hidden';
-        setTimeout(() => document.getElementById('popupName').focus(), 350);
-    }
-
-    function closePopup() {
-        document.getElementById('teklifPopup').classList.remove('open');
-        document.body.style.overflow = '';
-    }
-
-    function submitPopup() {
-        const name    = document.getElementById('popupName').value.trim();
-        const email   = document.getElementById('popupEmail').value.trim();
-        const phone   = document.getElementById('popupPhone').value.trim();
-        const service = document.getElementById('popupService').value;
-
-        if (!name)  { document.getElementById('popupName').focus();  return; }
-        if (!email || !email.includes('@')) { document.getElementById('popupEmail').focus(); return; }
-
-        const btn = document.querySelector('.popup-btn');
-        btn.disabled = true;
-        btn.textContent = 'Gönderiliyor…';
-
-        // mailto ile mail aç
-        const body = `Ad Soyad: ${name}%0AE-posta: ${email}%0ATelefon: ${phone || '—'}%0AHizmet: ${service || '—'}`;
-        window.location.href = `mailto:info@nexorainnovation.com?subject=Teklif Talebi — ${service || 'Genel'}&body=${body}`;
-
-        setTimeout(() => {
-            document.getElementById('popupForm').style.display = 'none';
-            document.getElementById('popupSuccessEmail').textContent = email;
-            document.getElementById('popupSuccess').classList.add('show');
-            btn.disabled = false;
-            btn.textContent = 'Teklif İste →';
-            setTimeout(closePopup, 4000);
-        }, 800);
-    }
-
-    // ESC ile kapat
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
-
-    // Overlay dışına tıklayınca kapat
-    document.getElementById('teklifPopup').addEventListener('click', function(e) {
-        if (e.target === this) closePopup();
-    });
-
-    // Tüm CTA butonları popup'a bağla
-    document.querySelectorAll(
-        'a.btn-primary, a.btn-ghost, a.btn-block, a.btn-quote, a.popup-trigger'
-    ).forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            // data-service varsa onu kullan, yoksa section'a göre belirle
-            let service = this.dataset.service || '';
-            if (!service) {
-                const section = this.closest('section');
-                if (section) {
-                    const id = section.id;
-                    if (id === 'web-tasarim-detay') service = 'Web Sitesi Tasarımı';
-                    else if (id === 'ads-detay')    service = 'Google Ads Yönetimi';
-                    else if (id === 'seo-detay')    service = 'SEO Hizmeti';
-                }
-            }
-            openPopup(service);
-        });
-    });
-
-    function submitContactForm() {
-        const name    = document.getElementById('cfName').value.trim();
-        const email   = document.getElementById('cfEmail').value.trim();
-        const phone   = document.getElementById('cfPhone') ? document.getElementById('cfPhone').value.trim() : '';
-        const service = document.getElementById('cfService') ? document.getElementById('cfService').value : '';
-        if (!name)  { document.getElementById('cfName').focus();  return; }
-        if (!email || !email.includes('@')) { document.getElementById('cfEmail').focus(); return; }
-        const body = `Ad Soyad: ${name}%0AE-posta: ${email}%0ATelefon: ${phone||'—'}%0AHizmet: ${service||'—'}`;
-        window.location.href = `mailto:info@nexorainnovation.com?subject=Teklif Talebi — ${service||'Genel'}&body=${body}`;
-    }
-
-    </script>
 
 <script>
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-        const href = a.getAttribute('href');
+// Smooth scroll — sadece aynı sayfadaki anchor'lar için
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+        var href = this.getAttribute('href');
         if (!href || href === '#') return;
-        const target = document.querySelector(href);
+        var target = document.querySelector(href);
         if (target) {
             e.preventDefault();
-            const top = target.getBoundingClientRect().top + window.scrollY - 80;
-            window.scrollTo({ top, behavior: 'smooth' });
+            var top = target.getBoundingClientRect().top + window.scrollY - 80;
+            window.scrollTo({ top: top, behavior: 'smooth' });
         }
-        // target yoksa normal link davranışına bırak (e.preventDefault() YOK)
+        // target bulunamazsa e.preventDefault() YOK — tarayıcı normal davranır
     });
 });
 
-// Active nav highlight on scroll
-const navLinks = document.querySelectorAll('nav a');
-navLinks.forEach(l => l.addEventListener('click', function() {
-    navLinks.forEach(a => a.classList.remove('active'));
-    this.classList.add('active');
-}));
-
 // Counter animation
-function runCounter(el) {
-    const target = parseInt(el.dataset.to);
-    const dur = 2000;
-    const t0 = performance.now();
-    const ease = t => 1 - Math.pow(1 - t, 3);
-    function tick(now) {
-        const p = Math.min((now - t0) / dur, 1);
-        el.textContent = Math.floor(ease(p) * target);
-        if (p < 1) requestAnimationFrame(tick);
-        else el.textContent = target;
-    }
-    requestAnimationFrame(tick);
-}
-document.querySelectorAll('.ctr').forEach(runCounter);
+document.querySelectorAll('.ctr').forEach(function(el) {
+    var target = parseInt(el.dataset.to), dur = 2000, t0 = performance.now();
+    (function tick(now) {
+        var p = Math.min((now - t0) / dur, 1);
+        var ease = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.floor(ease * target);
+        if (p < 1) requestAnimationFrame(tick); else el.textContent = target;
+    })(performance.now());
+});
 
 // Teklif popup
-const popup = document.getElementById('teklifPopup');
+var popup = document.getElementById('teklifPopup');
 if (popup) {
-    document.querySelectorAll('[data-popup="teklif"], .btn-quote, #btnPrimary').forEach(btn => {
-        btn.addEventListener('click', e => { e.preventDefault(); popup.style.display = 'flex'; });
+    document.querySelectorAll('[data-popup="teklif"], .btn-quote, .popup-trigger').forEach(function(btn) {
+        btn.addEventListener('click', function(e) { e.preventDefault(); popup.style.display = 'flex'; });
     });
-    popup.addEventListener('click', e => { if(e.target === popup) popup.style.display = 'none'; });
-    document.querySelectorAll('.popup-close').forEach(b => b.addEventListener('click', () => popup.style.display = 'none'));
+    popup.addEventListener('click', function(e) { if (e.target === popup) popup.style.display = 'none'; });
+    document.querySelectorAll('.popup-close').forEach(function(b) { b.addEventListener('click', function() { popup.style.display = 'none'; }); });
 }
-</script>
 
+// Fade-up observer
+var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fadeUp, [class*="fade"]').forEach(function(el) { obs.observe(el); });
+</script>
 </body>
 </html>

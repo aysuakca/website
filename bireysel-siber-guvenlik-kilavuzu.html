@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siber Güvenlik: Bireysel Verilerinizi Koruma Kılavuzu | Nexora Innovation Blog</title>
+    <meta name="description" content="Dijital dünyada güvende kalın. Phishing saldırılarından korunma, şifre yönetimi ve veri güvenliği için kapsamlı güvenlik rehberi.">
+    <meta name="keywords" content="siber güvenlik, phishing, şifre yöneticisi, 2FA, VPN, veri güvenliği, IoT güvenliği, sosyal mühendislik">
+    <meta property="og:title" content="Siber Güvenlik: Bireysel Verilerinizi Koruma Kılavuzu">
+    <meta property="og:description" content="Dijital dünyada güvende kalın. Phishing saldırılarından korunma, şifre yönetimi ve veri güvenliği için kapsamlı güvenlik rehberi.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://nexorainnovation.com/bireysel-siber-guvenlik-kilavuzu">
+    <link rel="canonical" href="https://nexorainnovation.com/bireysel-siber-guvenlik-kilavuzu">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+    :root {
+        --bg: #000000;
+        --border: rgba(255,255,255,0.1);
+        --purple: #7c6dff;
+        --cyan: #00f0ff;
+        --text: #f0f4fc;
+        --body-font: 'Inter', sans-serif;
+        --head-font: 'Plus Jakarta Sans', sans-serif;
+        --radius-xl: 28px;
+        --radius-2xl: 40px;
+        /* Aksant: siber/neon yeşil — güvenlik terminali estetiği */
+        --accent:        #22d3ee;
+        --accent-dim:    rgba(34,211,238,.1);
+        --accent-border: rgba(34,211,238,.28);
+        --danger:        #ef4444;
+        --danger-dim:    rgba(239,68,68,.1);
+    }
+
+    html { scroll-behavior:smooth; }
+    body { background:var(--bg); color:var(--text); font-family:var(--body-font); font-size:1rem; line-height:1.6; overflow-x:hidden; }
+    body::before { content:''; position:fixed; inset:0; z-index:9999; pointer-events:none; opacity:.025; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:200px 200px; }
+
+    .global-background-glow { position:fixed; inset:0; z-index:-1; pointer-events:none; background: radial-gradient(ellipse 70% 55% at 65% 10%, rgba(34,211,238,.05) 0%, transparent 65%), radial-gradient(ellipse 60% 50% at 15% 85%, rgba(108,99,255,.04) 0%, transparent 65%); filter:blur(40px); }
+
+    .container { width:100%; max-width:1200px; margin:0 auto; padding:0 28px; }
+    .g-text { background:linear-gradient(100deg,var(--accent),#67e8f9); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+    /* HEADER */
+    .main-header { height:76px; position:sticky; top:0; z-index:1000; background:rgba(6,8,15,.85); backdrop-filter:blur(18px) saturate(180%); border-bottom:1px solid var(--border); }
+    .nav-wrapper { display:flex; align-items:center; justify-content:space-between; height:100%; gap:20px; padding:0 40px 0 24px; width:100%; }
+    .logo-area { display:flex; align-items:center; gap:12px; flex-shrink:0; }
+    .logo { font-family:var(--head-font); font-weight:800; font-size:1.45rem; color:#fff; white-space:nowrap; letter-spacing:-.5px; text-decoration:none; }
+    nav { display:flex; align-items:center; gap:4px; }
+    nav a { color:#fff; text-decoration:none; padding:9px 16px; font-size:.875rem; font-weight:500; border-radius:100px; opacity:.55; transition:opacity .25s,background .25s,color .25s; }
+    nav a:hover { opacity:1; }
+    nav a.active { opacity:1; background:rgba(108,99,255,.15); color:var(--purple); box-shadow:inset 0 0 0 1px rgba(108,99,255,.3); }
+
+    .read-progress-bar { position:fixed; top:76px; left:0; width:0%; height:3px; background:linear-gradient(90deg,var(--accent),#67e8f9); z-index:999; transition:width .1s linear; }
+
+    /* COVER */
+    .article-cover { width:100%; height:480px; background:url('siber-guvenlik-cover.jpg') center center / cover no-repeat; display:flex; align-items:flex-end; justify-content:flex-start; position:relative; overflow:hidden; border-radius:0 0 var(--radius-2xl) var(--radius-2xl); }
+    .article-cover::before { content:''; position:absolute; inset:0; background: linear-gradient(to top, rgba(0,0,0,.92) 0%, rgba(0,0,0,.5) 50%, rgba(0,0,0,.15) 100%), linear-gradient(to right, rgba(34,211,238,.1) 0%, transparent 60%); }
+
+    /* BREADCRUMB */
+    .breadcrumb { padding:20px 0 0; display:flex; align-items:center; gap:8px; font-size:.82rem; color:#64748b; }
+    .breadcrumb a { color:#64748b; text-decoration:none; transition:color .2s; }
+    .breadcrumb a:hover { color:var(--accent); }
+    .breadcrumb .sep { opacity:.4; }
+    .breadcrumb .current { color:#94a3b8; }
+
+    /* HERO */
+    .article-hero { padding:40px 0 0; }
+    .article-meta-top { display:flex; align-items:center; gap:14px; margin-bottom:24px; flex-wrap:wrap; }
+    .article-cat-badge { background:var(--accent-dim); color:var(--accent); border:1px solid var(--accent-border); border-radius:100px; padding:6px 16px; font-size:.75rem; font-weight:700; letter-spacing:.8px; text-transform:uppercase; }
+    .article-date { color:#64748b; font-size:.82rem; font-weight:500; }
+    .article-read-time { color:var(--accent); font-size:.78rem; font-weight:600; background:var(--accent-dim); border:1px solid var(--accent-border); padding:4px 12px; border-radius:100px; }
+    .article-hero-title { font-family:var(--head-font); font-size:clamp(2rem,4vw,3rem); font-weight:900; color:#fff; letter-spacing:-1.5px; line-height:1.15; margin-bottom:20px; max-width:820px; }
+    .article-hero-desc { font-size:1.15rem; color:#94a3b8; line-height:1.75; max-width:680px; margin-bottom:32px; }
+    .article-hero-tags { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:40px; }
+    .article-tag { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); color:#94a3b8; padding:5px 14px; border-radius:100px; font-size:.75rem; font-weight:600; transition:all .2s; }
+    .article-tag:hover { border-color:var(--accent-border); color:var(--accent); }
+    .article-author-bar { display:flex; align-items:center; justify-content:space-between; padding:20px 0; border-top:1px solid rgba(255,255,255,.06); border-bottom:1px solid rgba(255,255,255,.06); flex-wrap:wrap; gap:16px; }
+    .author-info { display:flex; align-items:center; gap:14px; }
+    .author-avatar { width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,var(--accent),#67e8f9); display:flex; align-items:center; justify-content:center; font-family:var(--head-font); font-weight:800; font-size:1rem; color:#000; flex-shrink:0; }
+    .author-name { font-family:var(--head-font); font-weight:700; color:#f0f4fc; font-size:.9rem; }
+    .author-title { color:#64748b; font-size:.78rem; margin-top:2px; }
+    .share-row { display:flex; align-items:center; gap:10px; }
+    .share-label { color:#64748b; font-size:.78rem; font-weight:600; }
+    .share-btn { display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); color:#94a3b8; text-decoration:none; transition:all .2s; cursor:pointer; }
+    .share-btn:hover { background:var(--accent-dim); border-color:var(--accent-border); color:var(--accent); transform:translateY(-2px); }
+
+    /* LAYOUT */
+    .article-layout { display:grid; grid-template-columns:1fr 320px; gap:60px; padding:60px 0 100px; align-items:start; }
+    .article-content { min-width:0; }
+
+    /* TOC */
+    .toc-box { background:rgba(255,255,255,.025); border:1px solid rgba(255,255,255,.08); border-left:3px solid var(--accent); border-radius:20px; padding:28px 32px; margin-bottom:52px; }
+    .toc-title { font-family:var(--head-font); font-size:.85rem; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:16px; }
+    .toc-list { list-style:none; display:flex; flex-direction:column; gap:4px; }
+    .toc-list li a { color:#94a3b8; text-decoration:none; font-size:.88rem; font-weight:500; display:flex; align-items:center; gap:10px; padding:6px 0; border-bottom:1px solid rgba(255,255,255,.04); transition:color .2s,gap .2s; }
+    .toc-list li:last-child a { border-bottom:none; }
+    .toc-list li a:hover { color:var(--accent); gap:14px; }
+    .toc-list li a .toc-num { color:rgba(34,211,238,.55); font-weight:700; font-size:.75rem; min-width:22px; }
+
+    /* İçerik */
+    .article-content h2 { font-family:var(--head-font); font-size:1.55rem; font-weight:800; color:#fff; letter-spacing:-.5px; margin:56px 0 18px; display:flex; align-items:center; gap:14px; }
+    .article-content h2 .step-num { display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:12px; background:var(--accent-dim); border:1px solid var(--accent-border); font-size:.85rem; font-weight:800; color:var(--accent); flex-shrink:0; }
+    .article-content p { color:#c8d4e4; font-size:1.02rem; line-height:1.85; margin-bottom:20px; }
+    .article-content p strong { color:#f0f4fc; font-weight:600; }
+    .article-content p em { color:var(--accent); font-style:normal; font-weight:500; }
+    .article-content ul { list-style:none; margin:16px 0 24px; display:flex; flex-direction:column; gap:10px; }
+    .article-content ul li { color:#c8d4e4; font-size:1rem; line-height:1.7; display:flex; gap:12px; align-items:flex-start; }
+    .article-content ul li::before { content:''; display:inline-block; width:6px; height:6px; border-radius:50%; background:linear-gradient(135deg,var(--accent),#67e8f9); margin-top:9px; flex-shrink:0; }
+
+    /* Tehlike kutusu */
+    .danger-box { background:var(--danger-dim); border:1px solid rgba(239,68,68,.25); border-left:3px solid var(--danger); border-radius:16px; padding:22px 26px; margin:28px 0; display:flex; gap:16px; align-items:flex-start; }
+    .danger-box .d-icon { font-size:1.3rem; flex-shrink:0; margin-top:2px; }
+    .danger-box .d-text { color:#c8d4e4; font-size:.95rem; line-height:1.7; }
+    .danger-box .d-text strong { color:#f87171; display:block; margin-bottom:4px; font-weight:700; }
+
+    /* Güvenli kutu */
+    .safe-box { background:var(--accent-dim); border:1px solid var(--accent-border); border-left:3px solid var(--accent); border-radius:16px; padding:22px 26px; margin:28px 0; display:flex; gap:16px; align-items:flex-start; }
+    .safe-box .s-icon { font-size:1.3rem; flex-shrink:0; margin-top:2px; }
+    .safe-box .s-text { color:#c8d4e4; font-size:.95rem; line-height:1.7; }
+    .safe-box .s-text strong { color:var(--accent); display:block; margin-bottom:4px; font-weight:700; }
+
+    /* Phishing kontrol listesi */
+    .phishing-checklist { background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.07); border-radius:20px; padding:26px 28px; margin:24px 0; }
+    .pc-title { font-family:var(--head-font); font-size:.78rem; font-weight:800; color:var(--danger); text-transform:uppercase; letter-spacing:1.4px; margin-bottom:16px; }
+    .pc-items { display:flex; flex-direction:column; gap:10px; }
+    .pc-item { display:flex; align-items:flex-start; gap:12px; }
+    .pc-dot { width:20px; height:20px; border-radius:6px; background:rgba(239,68,68,.15); border:1px solid rgba(239,68,68,.3); display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; font-size:.7rem; color:#f87171; font-weight:800; }
+    .pc-label { font-size:.88rem; color:#c8d4e4; line-height:1.55; }
+    .pc-label strong { color:#f0f4fc; }
+
+    /* 3-2-1 kuralı */
+    .rule321 { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:24px 0; }
+    .r321-card { background:linear-gradient(135deg,rgba(34,211,238,.06),rgba(103,232,249,.03)); border:1px solid rgba(34,211,238,.18); border-radius:18px; padding:22px 18px; text-align:center; }
+    .r321-num { font-family:var(--head-font); font-size:2.5rem; font-weight:900; color:var(--accent); line-height:1; margin-bottom:8px; }
+    .r321-label { font-size:.82rem; color:#94a3b8; line-height:1.4; }
+    .r321-label strong { color:#f0f4fc; display:block; margin-bottom:2px; }
+
+    /* Araç pilleri */
+    .tool-pills { display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 4px; }
+    .tool-pill { background:rgba(34,211,238,.07); border:1px solid rgba(34,211,238,.2); color:var(--accent); padding:6px 16px; border-radius:100px; font-size:.78rem; font-weight:700; font-family:var(--head-font); }
+
+    /* CTA */
+    .article-cta { margin-top:72px; background:linear-gradient(135deg,rgba(34,211,238,.07),rgba(103,232,249,.04)); border:1px solid rgba(34,211,238,.2); border-radius:var(--radius-2xl); padding:52px 48px; text-align:center; position:relative; overflow:hidden; }
+    .article-cta::before { content:''; position:absolute; top:-60px;left:50%;transform:translateX(-50%); width:400px;height:200px; background:radial-gradient(ellipse,rgba(34,211,238,.12) 0%,transparent 70%); pointer-events:none; filter:blur(40px); }
+    .article-cta h3 { font-family:var(--head-font); font-size:1.7rem; font-weight:800; color:#fff; margin-bottom:14px; position:relative; }
+    .article-cta p { color:#94a3b8; font-size:1rem; line-height:1.7; max-width:460px; margin:0 auto 32px; position:relative; }
+    .btn-primary { display:inline-block; padding:15px 36px; background:linear-gradient(135deg,var(--accent),#67e8f9); color:#000; font-weight:700; font-size:.95rem; border-radius:100px; text-decoration:none; box-shadow:0 8px 28px rgba(34,211,238,.3); transition:transform .15s,box-shadow .15s; }
+    .btn-primary:hover { transform:translateY(-3px); box-shadow:0 18px 40px rgba(34,211,238,.4); }
+
+    /* Önceki/Sonraki */
+    .article-nav { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:56px; padding-top:40px; border-top:1px solid rgba(255,255,255,.06); }
+    .article-nav-card { background:rgba(255,255,255,.025); border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:22px 24px; text-decoration:none; transition:all .3s; display:flex; flex-direction:column; gap:6px; }
+    .article-nav-card:hover { border-color:var(--accent-border); transform:translateY(-4px); box-shadow:0 16px 40px rgba(34,211,238,.1); }
+    .nav-card-dir { font-size:.72rem; font-weight:700; color:#64748b; text-transform:uppercase; letter-spacing:1.2px; }
+    .nav-card-title { font-family:var(--head-font); font-size:.95rem; font-weight:700; color:#f0f4fc; line-height:1.4; }
+    .article-nav-card.next { text-align:right; }
+
+    /* SIDEBAR */
+    .article-sidebar { position:sticky; top:100px; display:flex; flex-direction:column; gap:24px; }
+    .sidebar-card { background:rgba(255,255,255,.025); border:1px solid rgba(255,255,255,.08); border-radius:22px; padding:26px; }
+    .sidebar-card-title { font-family:var(--head-font); font-size:.78rem; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:18px; }
+
+    /* Şifre gücü testi */
+    .password-tester { }
+    .pt-input-wrap { position:relative; margin-bottom:12px; }
+    .pt-input { width:100%; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:11px 44px 11px 14px; color:#fff; font-size:.9rem; font-family:monospace; outline:none; transition:border-color .2s; }
+    .pt-input:focus { border-color:var(--accent-border); }
+    .pt-toggle { position:absolute; right:12px; top:50%; transform:translateY(-50%); background:none; border:none; color:#64748b; cursor:pointer; font-size:.85rem; padding:0; }
+    .pt-bar-track { height:6px; background:rgba(255,255,255,.06); border-radius:100px; overflow:hidden; margin-bottom:8px; }
+    .pt-bar-fill { height:100%; border-radius:100px; width:0%; transition:width .3s,background .3s; }
+    .pt-label { font-size:.78rem; font-weight:600; color:#64748b; min-height:18px; }
+    .pt-tips { margin-top:12px; display:flex; flex-direction:column; gap:5px; display:none; }
+    .pt-tip { font-size:.75rem; display:flex; align-items:center; gap:6px; }
+
+    /* Güvenlik skoru */
+    .security-score { text-align:center; }
+    .ss-ring-wrap { width:100px; height:100px; margin:0 auto 14px; position:relative; }
+    .ss-ring-wrap svg { transform:rotate(-90deg); }
+    .ss-circle-bg { fill:none; stroke:rgba(255,255,255,.06); stroke-width:8; }
+    .ss-circle-fill { fill:none; stroke-width:8; stroke-linecap:round; stroke-dasharray:251.2; stroke-dashoffset:251.2; transition:stroke-dashoffset 1s ease,stroke .3s; }
+    .ss-num { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-family:var(--head-font); font-size:1.5rem; font-weight:900; }
+    .ss-label { font-size:.78rem; color:#94a3b8; margin-bottom:16px; }
+    .ss-items { display:flex; flex-direction:column; gap:8px; }
+    .ss-item { display:flex; align-items:center; gap:10px; padding:8px 12px; border-radius:10px; background:rgba(255,255,255,.02); cursor:pointer; transition:background .2s; }
+    .ss-item:hover { background:rgba(255,255,255,.04); }
+    .ss-checkbox { width:18px; height:18px; border-radius:5px; border:1.5px solid rgba(255,255,255,.15); flex-shrink:0; display:flex; align-items:center; justify-content:center; transition:all .2s; }
+    .ss-item.checked .ss-checkbox { background:var(--accent); border-color:var(--accent); }
+    .ss-item.checked .ss-checkbox::after { content:'✓'; font-size:.7rem; color:#000; font-weight:800; }
+    .ss-item-text { font-size:.78rem; color:#94a3b8; }
+    .ss-item.checked .ss-item-text { color:#c8d4e4; text-decoration:line-through; opacity:.7; }
+
+    /* 10 adım mini */
+    .steps-mini { display:flex; flex-direction:column; gap:6px; }
+    .step-mini { display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:10px; transition:background .2s; }
+    .step-mini:hover { background:rgba(34,211,238,.05); }
+    .step-mini-num { font-family:var(--head-font); font-size:.7rem; font-weight:800; color:rgba(34,211,238,.55); min-width:18px; }
+    .step-mini-label { font-size:.8rem; color:#94a3b8; font-weight:500; }
+
+    /* İlgili */
+    .related-mini-card { display:flex; gap:12px; align-items:flex-start; padding:12px 0; border-bottom:1px solid rgba(255,255,255,.05); text-decoration:none; transition:all .2s; }
+    .related-mini-card:last-child { border-bottom:none; }
+    .related-mini-card:hover .related-mini-title { color:var(--accent); }
+    .related-mini-dot { width:38px; height:38px; border-radius:12px; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:1.1rem; }
+    .related-mini-title { font-family:var(--head-font); font-size:.82rem; font-weight:600; color:#c8d4e4; line-height:1.4; transition:color .2s; }
+    .related-mini-date { font-size:.72rem; color:#64748b; margin-top:3px; }
+
+    /* Paylaş */
+    .sidebar-share-btns { display:flex; flex-direction:column; gap:10px; }
+    .sidebar-share-btn { display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:14px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03); color:#94a3b8; text-decoration:none; font-size:.83rem; font-weight:600; cursor:pointer; transition:all .2s; font-family:var(--body-font); width:100%; text-align:left; }
+    .sidebar-share-btn:hover { background:var(--accent-dim); border-color:var(--accent-border); color:var(--accent); transform:translateX(4px); }
+
+    /* Bülten */
+    .sidebar-nl-input { width:100%; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:12px 18px; color:#fff; font-size:.88rem; font-family:var(--body-font); outline:none; margin-bottom:10px; transition:border-color .25s; }
+    .sidebar-nl-input::placeholder { color:#475569; }
+    .sidebar-nl-input:focus { border-color:var(--accent-border); }
+    .sidebar-nl-btn { width:100%; padding:12px; background:linear-gradient(135deg,var(--accent),#67e8f9); color:#000; border:none; border-radius:14px; font-size:.88rem; font-weight:700; cursor:pointer; font-family:var(--body-font); transition:all .2s; }
+    .sidebar-nl-btn:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(34,211,238,.3); }
+
+    /* FOOTER */
+    .article-footer { background:rgba(255,255,255,.015); border-top:1px solid rgba(255,255,255,.06); padding:40px 0; }
+    .footer-simple { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+    .footer-simple .logo-txt { font-family:var(--head-font); font-weight:800; color:#fff; font-size:1.1rem; text-decoration:none; }
+    .footer-simple p { color:#475569; font-size:.82rem; }
+    .footer-simple-links { display:flex; gap:20px; }
+    .footer-simple-links a { color:#475569; text-decoration:none; font-size:.82rem; transition:color .2s; }
+    .footer-simple-links a:hover { color:var(--accent); }
+
+    /* RESPONSIVE */
+    @media (max-width:1024px) { .article-layout { grid-template-columns:1fr; } .article-sidebar { position:relative; top:0; } .rule321 { grid-template-columns:1fr; } }
+    @media (max-width:768px) { .article-hero-title { font-size:1.9rem; } .article-cover { height:340px; } .article-cta { padding:36px 24px; } .article-nav { grid-template-columns:1fr; } .nav-wrapper { padding:0 16px; } .article-author-bar { flex-direction:column; align-items:flex-start; } }
+    </style>
+</head>
+<body>
+<div class="global-background-glow"></div>
+<div class="read-progress-bar" id="progressBar"></div>
+
+<!-- HEADER -->
+<header class="main-header">
+    <div class="nav-wrapper">
+        <div class="logo-area"><a href="index.html" class="logo">Nexora Innovation</a></div>
+        <nav>
+            <a href="index.html#mainpage">Ana Sayfa</a>
+            <a href="index.html#services">Hizmetlerimiz</a>
+            <a href="index.html#about">Hakkımızda</a>
+            <a href="blog.html" class="active">Blog</a>
+            <a href="index.html#contact">İletişim</a>
+        </nav>
+    </div>
+</header>
+
+<!-- COVER -->
+<div class="article-cover">
+    <div class="cover-caption" style="position:relative;z-index:2;padding:36px 48px 44px;width:100%;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
+            <span style="background:rgba(34,211,238,.2);color:#22d3ee;border:1px solid rgba(34,211,238,.4);border-radius:100px;padding:5px 16px;font-size:.72rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;backdrop-filter:blur(8px);">Siber Güvenlik</span>
+            <span style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:5px 16px;font-size:.72rem;font-weight:700;letter-spacing:.6px;backdrop-filter:blur(8px);">⏱ 11 dk okuma</span>
+        </div>
+        <h2 style="font-family:var(--head-font);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:900;color:#fff;letter-spacing:-1px;line-height:1.2;max-width:660px;text-shadow:0 2px 20px rgba(0,0,0,.7);">Siber Güvenlik:<br>Bireysel Verilerinizi Koruma Kılavuzu</h2>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;">
+            <span style="background:rgba(34,211,238,.15);color:#22d3ee;border:1px solid rgba(34,211,238,.3);border-radius:100px;padding:4px 12px;font-size:.7rem;font-weight:600;backdrop-filter:blur(6px);">Phishing Korunma</span>
+            <span style="background:rgba(34,211,238,.15);color:#22d3ee;border:1px solid rgba(34,211,238,.3);border-radius:100px;padding:4px 12px;font-size:.7rem;font-weight:600;backdrop-filter:blur(6px);">Şifre Yönetimi</span>
+            <span style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:4px 12px;font-size:.7rem;font-weight:600;backdrop-filter:blur(6px);">2FA & VPN</span>
+            <span style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:4px 12px;font-size:.7rem;font-weight:600;backdrop-filter:blur(6px);">Veri Şifreleme</span>
+        </div>
+    </div>
+</div>
+
+<!-- MAKALE -->
+<main>
+<div class="container">
+
+    <div class="breadcrumb">
+        <a href="index.html">Ana Sayfa</a><span class="sep">›</span>
+        <a href="blog.html">Blog</a><span class="sep">›</span>
+        <span class="current">Siber Güvenlik: Bireysel Verilerinizi Koruma Kılavuzu</span>
+    </div>
+
+    <div class="article-hero">
+        <div class="article-meta-top">
+            <span class="article-cat-badge">Siber Güvenlik</span>
+            <span class="article-date">27 Mart 2025</span>
+            <span class="article-read-time">⏱ 11 dk okuma</span>
+        </div>
+        <h1 class="article-hero-title">Siber Güvenlik:<br><span class="g-text">Bireysel Verilerinizi Koruma Kılavuzu</span></h1>
+        <p class="article-hero-desc">Dijital dünyada güvende kalın. Phishing saldırılarından korunma, şifre yönetimi ve veri güvenliği için kapsamlı güvenlik rehberi.</p>
+        <div class="article-hero-tags">
+            <span class="article-tag">Phishing Korunma</span>
+            <span class="article-tag">Şifre Yöneticisi</span>
+            <span class="article-tag">2FA</span>
+            <span class="article-tag">VPN</span>
+            <span class="article-tag">Veri Şifreleme</span>
+            <span class="article-tag">IoT Güvenliği</span>
+            <span class="article-tag">Sosyal Mühendislik</span>
+        </div>
+        <div class="article-author-bar">
+            <div class="author-info">
+                <div class="author-avatar">N</div>
+                <div>
+                    <div class="author-name">Nexora Innovation Ekibi</div>
+                    <div class="author-title">Dijital Güvenlik & Teknoloji Uzmanları</div>
+                </div>
+            </div>
+            <div class="share-row">
+                <span class="share-label">Paylaş:</span>
+                <a class="share-btn" href="https://twitter.com/intent/tweet?text=Siber+Güvenlik+Rehberi&url=https://nexorainnovation.com/bireysel-siber-guvenlik-kilavuzu" target="_blank">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a class="share-btn" href="https://www.linkedin.com/shareArticle?mini=true&url=https://nexorainnovation.com/bireysel-siber-guvenlik-kilavuzu" target="_blank">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <button class="share-btn" onclick="copyLink()">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-layout">
+
+        <!-- MAKALE METNİ -->
+        <article class="article-content">
+
+            <div class="toc-box">
+                <div class="toc-title">📋 İçindekiler</div>
+                <ol class="toc-list">
+                    <li><a href="#giris"><span class="toc-num">→</span> Dijital Dünyanın Görünmez Tehditleri</a></li>
+                    <li><a href="#parola"><span class="toc-num">01</span> Güçlü Parolalar ve Şifre Yöneticileri</a></li>
+                    <li><a href="#twofa"><span class="toc-num">02</span> İki Faktörlü Kimlik Doğrulama (2FA)</a></li>
+                    <li><a href="#phishing"><span class="toc-num">03</span> Oltalama (Phishing) Saldırılarına Karşı Uyanıklık</a></li>
+                    <li><a href="#wifi"><span class="toc-num">04</span> Kamusal Wi-Fi Ağlarının Riskleri</a></li>
+                    <li><a href="#guncelleme"><span class="toc-num">05</span> Yazılım ve İşletim Sistemi Güncellemeleri</a></li>
+                    <li><a href="#yedekleme"><span class="toc-num">06</span> Veri Şifreleme ve Yedekleme Stratejileri</a></li>
+                    <li><a href="#sosyal"><span class="toc-num">07</span> Sosyal Medyada Gizlilik Ayarları</a></li>
+                    <li><a href="#iot"><span class="toc-num">08</span> Akıllı Ev ve IoT Cihazlarının Güvenliği</a></li>
+                    <li><a href="#mobil"><span class="toc-num">09</span> Mobil Cihaz Güvenliği</a></li>
+                    <li><a href="#finansal"><span class="toc-num">10</span> Finansal Güvenlik ve Online Bankacılık</a></li>
+                </ol>
+            </div>
+
+            <!-- Giriş -->
+            <section id="giris">
+                <p>İnternet, hayatımızı kolaylaştıran devasa bir kütüphane ve pazar yeri olmasının yanı sıra, her geçen gün daha karmaşık hale gelen dijital tehditlerin de merkezidir. Artık "siber güvenlik" sadece büyük bankaların veya teknoloji devlerinin sorunu değil; <strong>akıllı telefonu, e-posta hesabı veya sosyal medya profili olan her bireyin birincil sorumluluğudur.</strong></p>
+
+                <div class="danger-box">
+                    <span class="d-icon">⚠️</span>
+                    <div class="d-text">
+                        <strong>Kritik Gerçek:</strong>
+                        Siber saldırganlar artık sadece sistemleri hacklemekle kalmıyor, <strong>"insan psikolojisini" hackleyerek (sosyal mühendislik)</strong> en savunmasız anımızda bizi yakalamaya çalışıyorlar. Tüm siber saldırıların %90'ından fazlası bir phishing girişimiyle başlıyor.
+                    </div>
+                </div>
+            </section>
+
+            <!-- 1 -->
+            <section id="parola">
+                <h2><span class="step-num">01</span> Güçlü Parolalar ve Şifre Yöneticileri</h2>
+                <p>Siber güvenliğin en zayıf halkası genellikle <em>"123456"</em> veya doğum tarihimiz gibi tahmin edilmesi kolay parolalardır. Bir hesabın ele geçirilmesi, diğer tüm hesapları da tehlikeye atan bir <strong>domino etkisi</strong> yaratır.</p>
+                <ul>
+                    <li><strong>Karmaşıklık Kuralı:</strong> Parolanız en az 12 karakterden oluşmalı; büyük harf, küçük harf, rakam ve özel karakter içermelidir.</li>
+                    <li><strong>Şifre Yöneticisi Kullanımı:</strong> Her site için farklı ve karmaşık bir şifre hatırlamak imkansızdır. Şifre yöneticisi kullanarak tüm şifrelerinizi tek bir "ana şifre" altında güvenle saklayabilirsiniz.</li>
+                    <li><strong>Aynı Şifreyi Kullanmama:</strong> Bir platformda yaşanan veri sızıntısı, aynı şifreyi kullandığınız tüm hesaplarınızı açık hedef haline getirir.</li>
+                </ul>
+                <div class="tool-pills">
+                    <span class="tool-pill">Bitwarden</span>
+                    <span class="tool-pill">1Password</span>
+                    <span class="tool-pill">LastPass</span>
+                    <span class="tool-pill">KeePass</span>
+                </div>
+            </section>
+
+            <!-- 2 -->
+            <section id="twofa">
+                <h2><span class="step-num">02</span> İki Faktörlü Kimlik Doğrulama (2FA)</h2>
+                <p>Sadece şifre kullanmak artık yeterli bir güvenlik önlemi değildir. <strong>2FA, şifreniz çalınsa bile hesabınıza erişimi engelleyen ikinci bir savunma hattıdır.</strong></p>
+                <ul>
+                    <li><strong>Authenticator Uygulamaları:</strong> SMS tabanlı doğrulamalar "SIM swapping" adı verilen yöntemle ele geçirilebilir. Bunun yerine Google Authenticator veya Microsoft Authenticator gibi uygulamaları tercih edin.</li>
+                    <li><strong>Yedek Kodlar:</strong> Cihazınızı kaybetmeniz durumunda hesabınıza erişebilmek için 2FA kurulumu sırasında verilen yedek kodları mutlaka güvenli ve fiziksel bir yerde saklayın.</li>
+                </ul>
+                <div class="safe-box">
+                    <span class="s-icon">🛡️</span>
+                    <div class="s-text">
+                        <strong>Öncelik Sırası:</strong>
+                        Önce e-posta hesabınızı, ardından banka hesaplarınızı ve sosyal medya profillerinizi 2FA ile koruyun. E-posta hesabı, tüm diğer hesapların "ana anahtarı"dır.
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3 -->
+            <section id="phishing">
+                <h2><span class="step-num">03</span> Oltalama (Phishing) Saldırılarına Karşı Uyanık Olmak</h2>
+                <p>Saldırganlar; bankanızdan, kargo şirketinizden veya çalıştığınız kurumdan geliyormuş gibi görünen <strong>sahte mesajlarla sizi kandırmaya çalışır.</strong></p>
+
+                <div class="phishing-checklist">
+                    <div class="pc-title">🎣 Phishing Kontrol Listesi</div>
+                    <div class="pc-items">
+                        <div class="pc-item">
+                            <div class="pc-dot">!</div>
+                            <div class="pc-label"><strong>Gönderici adresini kontrol edin:</strong> "banka.com" yerine "bankaa-destek.com" gibi küçük harf oyunlarına dikkat edin.</div>
+                        </div>
+                        <div class="pc-item">
+                            <div class="pc-dot">!</div>
+                            <div class="pc-label"><strong>Linklere hemen tıklamayın:</strong> Farenizi linkin üzerine getirerek (tıklamadan) gerçek URL'yi kontrol edin.</div>
+                        </div>
+                        <div class="pc-item">
+                            <div class="pc-dot">!</div>
+                            <div class="pc-label"><strong>Aciliyet hissine aldanmayın:</strong> "Hesabınız askıya alındı", "Ödenmemiş borcunuz var" gibi panik yaratan ifadeler şüphe işaretidir.</div>
+                        </div>
+                        <div class="pc-item">
+                            <div class="pc-dot">!</div>
+                            <div class="pc-label"><strong>Ek dosyalara dikkat edin:</strong> Tanımadığınız kişilerden gelen .exe, .zip veya .docm uzantılı dosyaları açmayın.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4 -->
+            <section id="wifi">
+                <h2><span class="step-num">04</span> Kamusal Wi-Fi Ağlarının Riskleri</h2>
+                <p>Havalimanları, kafeler veya kütüphanelerdeki ücretsiz Wi-Fi ağları, siber saldırganlar için <strong>"ortadaki adam" (Man-in-the-Middle)</strong> saldırısı yapmak için mükemmel bir ortamdır.</p>
+                <ul>
+                    <li><strong>VPN Kullanın:</strong> Eğer halka açık bir ağa bağlanmak zorundaysanız, verilerinizi şifreleyen güvenilir bir VPN servisi kullanın.</li>
+                    <li><strong>Hassas İşlemlerden Kaçının:</strong> Halka açık ağlardayken bankacılık işlemleri yapmaktan veya e-devlet gibi platformlara giriş yapmaktan kaçının.</li>
+                </ul>
+                <div class="tool-pills">
+                    <span class="tool-pill">NordVPN</span>
+                    <span class="tool-pill">ProtonVPN</span>
+                    <span class="tool-pill">Mullvad</span>
+                    <span class="tool-pill">ExpressVPN</span>
+                </div>
+            </section>
+
+            <!-- 5 -->
+            <section id="guncelleme">
+                <h2><span class="step-num">05</span> Yazılım ve İşletim Sistemi Güncellemeleri</h2>
+                <p>Bilgisayarınıza veya telefonunuza gelen güncellemeler sadece yeni özellikler getirmez; <strong>çoğu zaman keşfedilen güvenlik açıklarını kapatır.</strong></p>
+                <ul>
+                    <li><strong>Otomatik Güncellemeleri Açın:</strong> İşletim sisteminiz (Windows, macOS, iOS, Android) ve sık kullandığınız uygulamalar için otomatik güncelleme seçeneğini etkinleştirin.</li>
+                    <li><strong>Eski Yazılımlardan Kurtulun:</strong> Artık geliştiricisi tarafından desteklenmeyen ve güncelleme almayan yazılımlar, siber saldırganlar için açık bir kapı hükmündedir.</li>
+                </ul>
+            </section>
+
+            <!-- 6 -->
+            <section id="yedekleme">
+                <h2><span class="step-num">06</span> Veri Şifreleme ve Yedekleme Stratejileri</h2>
+                <p>Cihazınızın çalınması veya bozulması durumunda verilerinizin geri döndürülemez şekilde kaybolmasını önlemek için <strong>yedekleme yapmak şarttır.</strong></p>
+
+                <div class="rule321">
+                    <div class="r321-card">
+                        <div class="r321-num">3</div>
+                        <div class="r321-label"><strong>Kopyası</strong><br>Verinizin 3 ayrı kopyası olsun</div>
+                    </div>
+                    <div class="r321-card">
+                        <div class="r321-num">2</div>
+                        <div class="r321-label"><strong>Farklı Ortam</strong><br>Harici disk ve bulut depolama</div>
+                    </div>
+                    <div class="r321-card">
+                        <div class="r321-num">1</div>
+                        <div class="r321-label"><strong>Uzak Konum</strong><br>En az biri farklı fiziksel mekanda</div>
+                    </div>
+                </div>
+
+                <div class="safe-box">
+                    <span class="s-icon">🔐</span>
+                    <div class="s-text">
+                        <strong>Disk Şifreleme:</strong>
+                        Bilgisayarınızdaki diskleri (Windows: BitLocker, Mac: FileVault) şifreleyin. Bu sayede cihazınız çalınsa bile verilerinize izinsiz erişim sağlanamaz.
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7 -->
+            <section id="sosyal">
+                <h2><span class="step-num">07</span> Sosyal Medyada Gizlilik Ayarları</h2>
+                <p>Sosyal medya platformlarında paylaştığınız her bilgi, siber saldırganlar tarafından <strong>profilinizi çıkarmak (profiling) için kullanılabilir.</strong></p>
+                <ul>
+                    <li><strong>Konum Paylaşımına Dikkat:</strong> Gerçek zamanlı konum paylaşmak, hırsızlara evde olmadığınız bilgisini verir. Fotoğraflarınızı konum etiketi olmadan paylaşmayı tercih edin.</li>
+                    <li><strong>Arkadaş Listesini Temizleyin:</strong> Tanımadığınız kişilerden gelen arkadaşlık isteklerini kabul etmeyin.</li>
+                    <li><strong>Dijital Ayak İzi Temizliği:</strong> Kullanmadığınız eski sosyal medya hesaplarını kapatın ve Google'da adınızı aratarak hangi bilgilerinizin halka açık olduğunu kontrol edin.</li>
+                </ul>
+            </section>
+
+            <!-- 8 -->
+            <section id="iot">
+                <h2><span class="step-num">08</span> Akıllı Ev ve IoT Cihazlarının Güvenliği</h2>
+                <p>Akıllı ampuller, kameralar ve sesli asistanlar (IoT cihazları) genellikle <strong>en zayıf güvenlik standartlarına</strong> sahiptir ve hackerların ev ağınıza giriş noktası olabilir.</p>
+                <ul>
+                    <li><strong>Varsayılan Şifreleri Değiştirin:</strong> Cihazı kutusundan çıkardığınızda gelen "admin/admin" gibi varsayılan şifreleri hemen değiştirin.</li>
+                    <li><strong>Ayrı Bir Ağ Oluşturun:</strong> Akıllı ev cihazlarınızı, ana bilgisayarınızın ve telefonunuzun bağlı olduğu ağdan farklı bir "misafir ağı" üzerinden internete bağlayın.</li>
+                </ul>
+            </section>
+
+            <!-- 9 -->
+            <section id="mobil">
+                <h2><span class="step-num">09</span> Mobil Cihaz Güvenliği</h2>
+                <p>Telefonlarımız artık banka cüzdanımız, fotoğraf albümümüz ve iletişim merkezimizdir. <strong>Bir telefonun çalınması, hayatımızın çalınmasıyla eşdeğer</strong> hale geldi.</p>
+                <ul>
+                    <li><strong>Biyometrik Güvenlik:</strong> FaceID veya parmak izi okuyucu gibi biyometrik güvenlik önlemlerini mutlaka kullanın.</li>
+                    <li><strong>Uygulama İzinleri:</strong> Bir fener uygulamasının neden rehberinize veya konumunuza erişmek istediğini sorgulayın. Gereksiz izinleri kapatın.</li>
+                    <li><strong>Resmi Mağazalar:</strong> Uygulamaları sadece App Store veya Google Play Store gibi resmi kaynaklardan indirin. "APK" olarak adlandırılan dış kaynaklı dosyalardan uzak durun.</li>
+                </ul>
+            </section>
+
+            <!-- 10 -->
+            <section id="finansal">
+                <h2><span class="step-num">10</span> Finansal Güvenlik ve Online Bankacılık</h2>
+                <p>Siber saldırganların nihai hedefi genellikle paradır. <strong>Finansal verilerinizi korumak için ekstra katmanlar ekleyin.</strong></p>
+                <ul>
+                    <li><strong>Sanal Kart Kullanımı:</strong> İnternet alışverişlerinizde asıl kredi kartınız yerine, limiti sizin tarafınızdan belirlenen bir sanal kart kullanın.</li>
+                    <li><strong>Harcama Bildirimleri:</strong> Banka hesabınızdan yapılan her işlem için anlık bildirim (push notification) veya SMS gelmesini sağlayın. Bu, yetkisiz bir işlemi anında fark etmenizi sağlar.</li>
+                </ul>
+            </section>
+
+            <!-- Sonuç -->
+            <div style="margin-top:56px;padding:36px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:24px;">
+                <h2 style="font-family:var(--head-font);font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:16px;letter-spacing:-.3px;">Siber Güvenlik Bir Ürün Değil, Bir Süreçtir</h2>
+                <p>Hiçbir yazılım veya donanım %100 güvenlik garantisi veremez. Siber güvenlik, kullandığınız araçlardan ziyade <strong>sizin dijital alışkanlıklarınızla ilgilidir.</strong> Şüpheci olmak, dijital dünyada bir paranoya değil, bir hayatta kalma becerisidir.</p>
+                <p style="margin-bottom:0;">Unutmayın; <strong>siber güvenlikte en güçlü savunma, bilgili ve uyanık bir kullanıcıdır.</strong> Verilerinizi korumak için bugün ayıracağınız 15 dakika, gelecekte yaşayabileceğiniz büyük bir felaketi önleyebilir.</p>
+            </div>
+
+            <div class="tip-box" style="margin-top:24px;background:rgba(52,211,153,.05);border-color:rgba(52,211,153,.2);border-left-color:#34d399;">
+                <span class="tip-icon">📌</span>
+                <div class="tip-text">
+                    <strong style="color:#34d399;">Okuma Önerisi:</strong>
+                    Son blog yazımızda, tüm bu dijital dönüşümün kariyer yolculuğumuzu nasıl şekillendirdiğini inceleyeceğimiz <strong>"Geleceğin Meslekleri: Hangi Yetkinliklere Yatırım Yapmalı?"</strong> konusuna odaklanacağız. Serinin final yazısını kaçırmayın!
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="article-cta">
+                <h3>Web Sitenizin Güvenliğini Değerlendirelim</h3>
+                <p>Nexora Innovation olarak SSL sertifikasından veri koruma politikalarına kadar dijital güvenlik altyapınızı gözden geçirelim.</p>
+                <a href="index.html#contact" class="btn-primary">Ücretsiz Güvenlik Analizi →</a>
+            </div>
+
+            <!-- Önceki/Sonraki -->
+            <div class="article-nav">
+                <a href="e-ticaret-musteri-sadakati-teknikleri.html" class="article-nav-card prev">
+                    <span class="nav-card-dir">← Önceki Yazı</span>
+                    <span class="nav-card-title">E-ticarette Müşteri Sadakati Oluşturma Teknikleri</span>
+                </a>
+                <a href="#" class="article-nav-card next">
+                    <span class="nav-card-dir">Sonraki Yazı →</span>
+                    <span class="nav-card-title">Geleceğin Meslekleri: Hangi Yetkinliklere Yatırım Yapmalı?</span>
+                </a>
+            </div>
+
+        </article>
+
+        <!-- SIDEBAR -->
+        <aside class="article-sidebar">
+
+            <!-- Şifre Güç Testi -->
+            <div class="sidebar-card">
+                <div class="sidebar-card-title">🔑 Şifre Güç Testi</div>
+                <div class="password-tester">
+                    <div class="pt-input-wrap">
+                        <input type="password" class="pt-input" id="ptInput" placeholder="Şifrenizi girin…" oninput="testPassword(this.value)">
+                        <button class="pt-toggle" onclick="togglePw()" id="ptToggle">👁</button>
+                    </div>
+                    <div class="pt-bar-track"><div class="pt-bar-fill" id="ptBar"></div></div>
+                    <div class="pt-label" id="ptLabel">Şifre gücünüzü test edin</div>
+                    <div class="pt-tips" id="ptTips"></div>
+                </div>
+            </div>
+
+            <!-- Güvenlik Kontrol Listesi -->
+            <div class="sidebar-card">
+                <div class="sidebar-card-title">✅ Güvenlik Kontrol Listesi</div>
+                <div class="security-score">
+                    <div class="ss-ring-wrap">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <circle class="ss-circle-bg" cx="50" cy="50" r="40"/>
+                            <circle class="ss-circle-fill" id="ssCircle" cx="50" cy="50" r="40" stroke="var(--accent)"/>
+                        </svg>
+                        <div class="ss-num" id="ssScore" style="color:var(--accent)">0</div>
+                    </div>
+                    <div class="ss-label" id="ssLabel">Kontrol listesini doldurun</div>
+                    <div class="ss-items">
+                        <div class="ss-item" onclick="toggleCheck(this)" data-val="10"><div class="ss-checkbox"></div><div class="ss-item-text">Güçlü ve benzersiz şifreler kullanıyorum</div></div>
+                        <div class="ss-item" onclick="toggleCheck(this)" data-val="20"><div class="ss-checkbox"></div><div class="ss-item-text">2FA açık (e-posta & bankacılık)</div></div>
+                        <div class="ss-item" onclick="toggleCheck(this)" data-val="15"><div class="ss-checkbox"></div><div class="ss-item-text">Şifre yöneticisi kullanıyorum</div></div>
+                        <div class="ss-item" onclick="toggleCheck(this)" data-val="15"><div class="ss-checkbox"></div><div class="ss-item-text">Phishing mailine tıklamam</div></div>
+                        <div class="ss-item" onclick="toggleCheck(this)" data-val="10"><div class="ss-checkbox"></div><div class="ss-item-text">Yazılımlarım güncel</div></div>
+                        <div class="ss-item" onclick="toggleCheck(this)" data-val="15"><div class="ss-checkbox"></div><div class="ss-item-text">Düzenli yedek alıyorum</div></div>
+                        <div class="ss-item" onclick="toggleCheck(this)" data-val="15"><div class="ss-checkbox"></div><div class="ss-item-text">VPN kullanıyorum (gerektiğinde)</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- İlgili Yazılar -->
+            <div class="sidebar-card">
+                <div class="sidebar-card-title">İlgili Yazılar</div>
+                <a href="e-ticaret-musteri-sadakati-teknikleri.html" class="related-mini-card">
+                    <div class="related-mini-dot" style="background:linear-gradient(135deg,rgba(249,115,22,.2),rgba(251,146,60,.1));">🛒</div>
+                    <div>
+                        <div class="related-mini-title">E-ticarette Müşteri Sadakati Oluşturma Teknikleri</div>
+                        <div class="related-mini-date">27 Mart 2025 · 10 dk</div>
+                    </div>
+                </a>
+                <a href="veri-analitigi-ile-karar-verme.html" class="related-mini-card">
+                    <div class="related-mini-dot" style="background:linear-gradient(135deg,rgba(56,189,248,.2),rgba(125,211,252,.1));">📊</div>
+                    <div>
+                        <div class="related-mini-title">Veri Analitiği ile Karar Verme Süreçlerini Optimize Etme</div>
+                        <div class="related-mini-date">27 Mart 2025 · 11 dk</div>
+                    </div>
+                </a>
+                <a href="kisisel-markalasma-stratejileri.html" class="related-mini-card">
+                    <div class="related-mini-dot" style="background:linear-gradient(135deg,rgba(244,63,94,.2),rgba(251,146,60,.1));">🏷️</div>
+                    <div>
+                        <div class="related-mini-title">Kişisel Markalaşma: Dijital Dünyada Nasıl Öne Çıkılır?</div>
+                        <div class="related-mini-date">27 Mart 2025 · 10 dk</div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Paylaş -->
+            <div class="sidebar-card">
+                <div class="sidebar-card-title">Bu Yazıyı Paylaş</div>
+                <div class="sidebar-share-btns">
+                    <a class="sidebar-share-btn" href="https://twitter.com/intent/tweet?text=Siber+Güvenlik+Rehberi&url=https://nexorainnovation.com/bireysel-siber-guvenlik-kilavuzu" target="_blank">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        X (Twitter)'da Paylaş
+                    </a>
+                    <a class="sidebar-share-btn" href="https://www.linkedin.com/shareArticle?mini=true&url=https://nexorainnovation.com/bireysel-siber-guvenlik-kilavuzu" target="_blank">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn'de Paylaş
+                    </a>
+                    <button class="sidebar-share-btn" onclick="copyLink()">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+                        Bağlantıyı Kopyala
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bülten -->
+            <div class="sidebar-card" style="background:linear-gradient(135deg,var(--accent-dim),rgba(103,232,249,.04));border-color:var(--accent-border);">
+                <div class="sidebar-card-title">Haftalık Bülten</div>
+                <p style="color:#94a3b8;font-size:.83rem;line-height:1.6;margin-bottom:16px;">Yeni içeriklerden ilk siz haberdar olun. Spam yok, sadece değer.</p>
+                <input type="email" class="sidebar-nl-input" placeholder="E-posta adresiniz" id="sidebarEmail">
+                <button class="sidebar-nl-btn" onclick="sidebarSubscribe()">Abone Ol →</button>
+            </div>
+
+        </aside>
+    </div>
+</div>
+</main>
+
+<!-- FOOTER -->
+<footer class="article-footer">
+    <div class="container">
+        <div class="footer-simple">
+            <a href="index.html" class="logo-txt">Nexora Innovation</a>
+            <p>© 2025 Nexora Innovation. Tüm hakları saklıdır.</p>
+            <div class="footer-simple-links">
+                <a href="blog.html">Blog</a>
+                <a href="index.html#contact">İletişim</a>
+                <a href="#">Gizlilik</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Progress bar
+window.addEventListener('scroll', () => {
+    const el = document.documentElement;
+    const st = el.scrollTop || document.body.scrollTop;
+    const sh = el.scrollHeight - el.clientHeight;
+    document.getElementById('progressBar').style.width = sh > 0 ? (st/sh*100)+'%' : '0%';
+});
+
+// Link kopyala
+function copyLink() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+        const t = document.createElement('div');
+        t.textContent = 'Bağlantı kopyalandı ✓';
+        t.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:rgba(34,211,238,.95);color:#000;padding:12px 24px;border-radius:100px;font-size:.85rem;font-weight:700;z-index:9999;backdrop-filter:blur(10px);';
+        document.body.appendChild(t);
+        setTimeout(() => t.remove(), 2200);
+    });
+}
+
+// Bülten
+function sidebarSubscribe() {
+    const email = document.getElementById('sidebarEmail').value.trim();
+    if (!email || !email.includes('@')) { document.getElementById('sidebarEmail').focus(); return; }
+    const btn = event.target;
+    btn.textContent = 'Kaydedildi ✓';
+    btn.style.background = 'linear-gradient(135deg,#10b981,#34d399)';
+    btn.style.color = '#fff';
+    document.getElementById('sidebarEmail').value = '';
+    setTimeout(() => { btn.textContent = 'Abone Ol →'; btn.style.background = ''; btn.style.color = ''; }, 3500);
+}
+
+// TOC aktif
+const sections = document.querySelectorAll('section[id]');
+const tocLinks = document.querySelectorAll('.toc-list a');
+window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
+    tocLinks.forEach(l => { l.style.color = l.getAttribute('href') === '#'+cur ? 'var(--accent)' : ''; });
+});
+
+// Şifre Güç Testi
+function togglePw() {
+    const inp = document.getElementById('ptInput');
+    inp.type = inp.type === 'password' ? 'text' : 'password';
+}
+
+function testPassword(val) {
+    const bar = document.getElementById('ptBar');
+    const label = document.getElementById('ptLabel');
+    const tips = document.getElementById('ptTips');
+
+    if (!val) {
+        bar.style.width = '0%'; label.textContent = 'Şifre gücünüzü test edin';
+        tips.style.display = 'none'; return;
+    }
+
+    let score = 0;
+    const checks = [
+        { ok: val.length >= 8, tip: 'En az 8 karakter' },
+        { ok: val.length >= 12, tip: 'En az 12 karakter (önerilen)' },
+        { ok: /[A-Z]/.test(val), tip: 'Büyük harf içermeli' },
+        { ok: /[a-z]/.test(val), tip: 'Küçük harf içermeli' },
+        { ok: /[0-9]/.test(val), tip: 'Rakam içermeli' },
+        { ok: /[^A-Za-z0-9]/.test(val), tip: 'Özel karakter (!@#$…) içermeli' },
+    ];
+
+    checks.forEach(c => { if (c.ok) score++; });
+
+    const pct = Math.round((score / checks.length) * 100);
+    bar.style.width = pct + '%';
+
+    const levels = [
+        { min:0,  max:33, color:'#ef4444', text:'Çok Zayıf ⚠️' },
+        { min:34, max:50, color:'#f97316', text:'Zayıf' },
+        { min:51, max:67, color:'#eab308', text:'Orta' },
+        { min:68, max:84, color:'#22d3ee', text:'İyi' },
+        { min:85, max:100, color:'#10b981', text:'Çok Güçlü 🛡️' },
+    ];
+    const lv = levels.find(l => pct >= l.min && pct <= l.max) || levels[0];
+    bar.style.background = lv.color;
+    label.textContent = lv.text;
+    label.style.color = lv.color;
+
+    const failedTips = checks.filter(c => !c.ok).map(c => c.tip);
+    if (failedTips.length > 0) {
+        tips.style.display = 'flex';
+        tips.innerHTML = failedTips.map(t => `<div class="pt-tip"><span style="color:#ef4444;">✗</span><span style="color:#94a3b8;font-size:.73rem;">${t}</span></div>`).join('');
+    } else {
+        tips.style.display = 'none';
+    }
+}
+
+// Güvenlik Skoru
+let totalScore = 0;
+function toggleCheck(item) {
+    const val = parseInt(item.dataset.val);
+    const checked = item.classList.toggle('checked');
+    totalScore = checked ? totalScore + val : totalScore - val;
+    totalScore = Math.max(0, Math.min(100, totalScore));
+
+    document.getElementById('ssScore').textContent = totalScore;
+    const offset = 251.2 - (251.2 * totalScore / 100);
+    document.getElementById('ssCircle').style.strokeDashoffset = offset;
+
+    const color = totalScore >= 80 ? '#10b981' : totalScore >= 50 ? '#22d3ee' : totalScore >= 30 ? '#f97316' : '#ef4444';
+    document.getElementById('ssCircle').style.stroke = color;
+    document.getElementById('ssScore').style.color = color;
+
+    const labels = { 0:'Başlayın!', 30:'Temel Koruma', 50:'Orta Düzey', 70:'İyi Güvenlik', 90:'Güvenli 🛡️', 100:'Mükemmel! 🏆' };
+    const lKey = Object.keys(labels).reverse().find(k => totalScore >= k);
+    document.getElementById('ssLabel').textContent = labels[lKey] || 'Başlayın!';
+}
+</script>
+</body>
+</html>

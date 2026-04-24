@@ -3,10 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexora Innovation | SEO & Web Çözümleri</title>
-    <meta name="description" content="Nexora Innovation, SEO ve modern web geliştirme çözümleriyle markanızı dijitalde büyütür.">
-    <meta property="og:title" content="Nexora Innovation | SEO & Web Çözümleri">
+    <title>Nexora Inovation | SEO & Web Çözümleri</title>
+    <meta name="description" content="Nexora Inovation, SEO ve modern web geliştirme çözümleriyle markanızı dijitalde büyütür.">
+    <meta property="og:title" content="Nexora Inovation | SEO & Web Çözümleri">
     <meta property="og:image" content="logo-veya-onizleme.jpg">
+
+   <!-- EmailJS SDK -->
+   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+   <script>
+     const EMAILJS_PUBLIC_KEY  = 'NKO8pnOQvGecQbJBh';
+     const EMAILJS_SERVICE_ID  = 'service_a85ow5z';
+     const EMAILJS_TEMPLATE_ID = 'template_twilo6p';
+     emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+   </script>
 
    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2091,8 +2100,8 @@
 
     </style>
 </head>
-<title>İletişim | Nexora Innovation</title>
-    <meta name="description" content="Nexora Innovation ile iletişime geçin. Ücretsiz analiz ve teklif için bize ulaşın.">
+<title>İletişim | Nexora Inovation</title>
+    <meta name="description" content="Nexora Inovation ile iletişime geçin. Ücretsiz analiz ve teklif için bize ulaşın.">
 </head>
 <body>
 <div class="global-background-glow"></div>
@@ -2103,7 +2112,7 @@
                 <div class="logo-lottie-container">
                     <img src="logo.png" alt="Nexora Logo" style="width:52px;height:52px;object-fit:contain;">
                 </div>
-                <h2 class="logo">Nexora Innovation</h2>
+                <h2 class="logo">Nexora Inovation</h2>
             </div>
             <nav>
                 <a href="index.html">Ana Sayfa</a>
@@ -2139,22 +2148,14 @@
                         </p>
 
                         <div class="contact-channels">
-                            <div class="contact-channel">
-                                <div class="contact-channel-icon">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#gradient-mor-turkuaz)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .93h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                                </div>
-                                <div class="contact-channel-info">
-                                    <div class="contact-channel-type">Telefon</div>
-                                    <div class="contact-channel-value">+90 5XX XXX XX XX</div>
-                                </div>
-                            </div>
+                            
                             <div class="contact-channel">
                                 <div class="contact-channel-icon">
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#gradient-mor-turkuaz)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                                 </div>
                                 <div class="contact-channel-info">
                                     <div class="contact-channel-type">E-posta</div>
-                                    <div class="contact-channel-value"><a href="/cdn-cgi/l/email-protection#86efe8e0e9c6e8e3fee9f4e7efe8e8e9f0e7f2efe9e8a8e5e9eb"><span class="__cf_email__" data-cfemail="a7cec9c1c8e7c9c2dfc8d5c6cec9c9c8d1c6d3cec8c989c4c8ca">[email&#160;protected]</span></a></div>
+                                    <div class="contact-channel-value"><a href="/cdn-cgi/l/email-protection#86efe8e0e9c6e8e3fee9f4e7efe8e8e9f0e7f2efe9e8a8e5e9eb"><span class="__cf_email__" data-cfemail="a7cec9c1c8e7c9c2dfc8d5c6cec9c9c8d1c6d3cec8c989c4c8ca">info@nexorainovation.com</a></div>
                                 </div>
                             </div>
                             <div class="contact-channel">
@@ -2237,10 +2238,15 @@
                             <textarea id="cfMsg" class="cf-input" placeholder="Projeniz hakkında kısaca bilgi verin…"></textarea>
                         </div>
 
-                        <button class="cf-submit" onclick="submitContactForm()">Teklif İste →</button>
+                        <button class="cf-submit" id="cfSubmitBtn" onclick="submitContactForm()">Teklif İste →</button>
                         <div class="cf-note">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#334155" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
                             Bilgileriniz üçüncü taraflarla paylaşılmaz.
+                        </div>
+                        <div id="cfSuccess" style="display:none;margin-top:20px;padding:20px 24px;background:rgba(108,99,255,.1);border:1px solid rgba(108,99,255,.3);border-radius:16px;text-align:center;">
+                            <div style="font-size:1.8rem;margin-bottom:8px;">✅</div>
+                            <div style="color:#eaf2ff;font-weight:700;font-size:1rem;margin-bottom:6px;">Talebiniz Alındı!</div>
+                            <div style="color:#8096b0;font-size:.875rem;">En kısa sürede sizinle iletişime geçeceğiz.</div>
                         </div>
                     </div>
 
@@ -2324,7 +2330,7 @@
                 <div class="footer-brand">
                     <div class="f-logo-wrapper">
                         <img src="logo.png" alt="Nexora Logo" style="width:52px;height:52px;object-fit:contain;">
-                        <span class="brand-name">Nexora Innovation</span>
+                        <span class="brand-name">Nexora Inovation</span>
                     </div>
                     <p class="footer-brand-desc">SEO, web geliştirme, dijital reklamcılık ve global lokalizasyonda uçtan uca çözümler.</p>
 
@@ -2333,14 +2339,9 @@
                             <div class="footer-contact-icon">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                             </div>
-                            <a href="/cdn-cgi/l/email-protection#e28b8c848da28c879a8d90838b8c8c8d9483968b8d8ccc818d8f"><span class="__cf_email__" data-cfemail="a5cccbc3cae5cbc0ddcad7c4cccbcbcad3c4d1cccacb8bc6cac8">[email&#160;protected]</span></a>
+                            <a href="/cdn-cgi/l/email-protection#e28b8c848da28c879a8d90838b8c8c8d9483968b8d8ccc818d8f"><span class="__cf_email__" data-cfemail="a5cccbc3cae5cbc0ddcad7c4cccbcbcad3c4d1cccacb8bc6cac8">info@nexorainovation.com</span></a>
                         </div>
-                        <div class="footer-contact-row">
-                            <div class="footer-contact-icon">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 010 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                            </div>
-                            +90 5XX XXX XX XX
-                        </div>
+                    
                         <div class="footer-contact-row">
                             <div class="footer-contact-icon">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -2422,7 +2423,7 @@
         <!-- Alt bar -->
         <div class="footer-bottom-bar">
             <div class="container">
-                <div class="footer-copy">© 2025 <span>Nexora Innovation</span>. Tüm hakları saklıdır.</div>
+                <div class="footer-copy">© 2025 <span>Nexora Inovation</span>. Tüm hakları saklıdır.</div>
                 <div class="legal-links">
                     <a href="#">Gizlilik</a>
                     <a href="#">Kullanım Koşulları</a>
@@ -2433,6 +2434,50 @@
     </footer>
 
     <script>
+// İletişim formu — EmailJS
+async function submitContactForm() {
+    const name    = document.getElementById('cfName').value.trim();
+    const email   = document.getElementById('cfEmail').value.trim();
+    const phone   = document.getElementById('cfPhone').value.trim();
+    const service = document.getElementById('cfService').value;
+    const message = document.getElementById('cfMsg').value.trim();
+
+    if (!name || !email) {
+        alert('Lütfen ad soyad ve e-posta adresinizi girin.');
+        return;
+    }
+
+    const btn = document.getElementById('cfSubmitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Gönderiliyor…';
+
+    try {
+        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+            from_name:  name,
+            from_email: email,
+            phone:      phone   || 'Belirtilmedi',
+            service:    service || 'Belirtilmedi',
+            message:    message || 'Belirtilmedi',
+            to_email:   'info@nexorainovation.com',
+            reply_to:   email,
+        });
+
+        // Başarı göster
+        btn.style.display = 'none';
+        document.getElementById('cfSuccess').style.display = 'block';
+
+        // Formu sıfırla
+        ['cfName','cfEmail','cfPhone','cfMsg'].forEach(id => document.getElementById(id).value = '');
+        document.getElementById('cfService').selectedIndex = 0;
+
+    } catch (err) {
+        console.error('EmailJS hatası:', err);
+        btn.disabled = false;
+        btn.textContent = 'Teklif İste →';
+        alert('Bir hata oluştu. Lütfen tekrar deneyin veya info@nexorainovation.com adresine doğrudan yazın.');
+    }
+}
+
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {

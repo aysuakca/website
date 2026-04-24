@@ -3,10 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexora Innovation | SEO & Web Çözümleri</title>
-    <meta name="description" content="Nexora Innovation, SEO ve modern web geliştirme çözümleriyle markanızı dijitalde büyütür.">
-    <meta property="og:title" content="Nexora Innovation | SEO & Web Çözümleri">
+    <title>Nexora Inovation | SEO & Web Çözümleri</title>
+    <meta name="description" content="Nexora Inovation, SEO ve modern web geliştirme çözümleriyle markanızı dijitalde büyütür.">
+    <meta property="og:title" content="Nexora Inovation | SEO & Web Çözümleri">
     <meta property="og:image" content="logo-veya-onizleme.jpg">
+
+   <!-- EmailJS SDK -->
+   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+   <script>
+     // ⚙️ BURAYA KENDİ EmailJS BİLGİLERİNİZİ GİRİN
+     const EMAILJS_PUBLIC_KEY  = 'NKO8pnOQvGecQbJBh';
+     const EMAILJS_SERVICE_ID  = 'service_a85ow5z';
+     const EMAILJS_TEMPLATE_ID = 'template_twilo6p';
+     emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+   </script>
 
    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2133,6 +2143,11 @@
                     </select>
                 </div>
 
+                <div class="popup-field">
+                    <label>Mesaj <span class="popup-optional">(isteğe bağlı)</span></label>
+                    <textarea id="popupMessage" placeholder="Projeniz hakkında kısaca bilgi verin…" rows="3" style="width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:14px 16px;color:#eaf2ff;font-size:.9rem;font-family:inherit;resize:vertical;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='rgba(108,99,255,.5)'" onblur="this.style.borderColor='rgba(255,255,255,.12)'"></textarea>
+                </div>
+
                 <button class="popup-btn" onclick="submitPopup()">Teklif İste →</button>
                 <p class="popup-note">Bilgileriniz yalnızca sizinle iletişim kurmak için kullanılır.</p>
             </div>
@@ -2152,7 +2167,7 @@
                 <div class="logo-lottie-container">
                     <img src="logo.png" alt="Nexora Logo" style="width:52px;height:52px;object-fit:contain;">
                 </div>
-                <h2 class="logo">Nexora Innovation</h2>
+                <h2 class="logo">Nexora Inovation</h2>
             </div>
             <nav>
                 <a href="index.html" class="active">Ana Sayfa</a>
@@ -2161,6 +2176,10 @@
                 <a href="blog.html">Blog</a>
                 <a href="iletisim.html" class="nav-cta">İletişim</a>
             </nav>
+            <div style="display:flex;align-items:center;gap:12px;">
+                <a href="index.html" style="font-size:.78rem;font-weight:700;letter-spacing:1px;color:#fff;background:rgba(108,99,255,.25);border:1px solid rgba(108,99,255,.5);border-radius:8px;padding:5px 12px;text-decoration:none;">🇹🇷 TR</a>
+                <a href="en/index.html" style="font-size:.78rem;font-weight:700;letter-spacing:1px;color:#7c6dff;border:1px solid rgba(108,99,255,.35);border-radius:8px;padding:5px 12px;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='rgba(108,99,255,.1)'" onmouseout="this.style.background=''">🇬🇧 EN</a>
+            </div>
         </div>
     </header>
 
@@ -2186,13 +2205,13 @@
                     <div class="hero-divider"></div>
 
                     <p class="hero-sub">
-                        Nexora Innovation olarak işletmeler için sadece bir web sitesi değil,
+                        Nexora Inovation olarak işletmeler için sadece bir web sitesi değil,
                         yüksek performanslı bir dijital büyüme altyapısı inşa ediyoruz.
                     </p>
 
                     <div class="hero-buttons">
                         <a href="hizmetler.html" class="btn-primary" id="btnPrimary">Hizmetlerimiz</a>
-                        <a href="iletisim.html" class="btn-ghost" id="btnGhost">Ücretsiz Analiz</a>
+                        <a href="javascript:void(0)" class="btn-ghost popup-trigger" id="btnGhost">Ücretsiz Teklif Al</a>
                     </div>
 
                     <div class="hero-chips">
@@ -2262,6 +2281,289 @@
 
     <hr class="s-divider">
 
+    <!-- HİZMETLER -->
+    <section id="hizmetler" style="position:relative;padding:120px 0;background:#000;overflow:hidden;">
+        <div class="services-bg-grid"></div>
+        <div class="services-center-glow"></div>
+        <div class="container">
+            <div class="services-header">
+                <div class="hero-badge" style="margin-bottom:20px;">
+                    <span></span> Hizmetlerimiz
+                </div>
+                <h2 style="font-family:var(--head-font);font-size:clamp(2rem,3.5vw,3rem);font-weight:900;letter-spacing:-1.5px;color:#fff;margin-bottom:16px;">
+                    Dijital Başarınız İçin<br><span class="g-text">Uçtan Uca Çözümler</span>
+                </h2>
+                <p style="color:#b0bdd0;font-size:1.05rem;max-width:520px;margin:0 auto;line-height:1.8;">İşletmenizin ihtiyaçlarına göre şekillenen, ölçülebilir sonuçlar üreten hizmet paketleri.</p>
+                <div class="divider-line"></div>
+            </div>
+            <div class="services-grid">
+                <!-- Web Tasarım -->
+                <div class="pro-service-card">
+                    <div>
+                        <div class="service-icon-wrap">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        </div>
+                        <h3>Web Tasarım & Geliştirme</h3>
+                        <p>Hız, estetik ve dönüşüm odaklı, mobil uyumlu web siteleri tasarlıyoruz.</p>
+                        <ul class="service-list">
+                            <li>Kurumsal & e-ticaret siteleri</li>
+                            <li>React / Next.js modern altyapı</li>
+                            <li>Core Web Vitals optimizasyonu</li>
+                            <li>UI/UX tasarım & prototipleme</li>
+                        </ul>
+                    </div>
+                    <a href="web-tasarim-gelistirme.html" class="service-link">Detaylı İncele <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+                <!-- SEO -->
+                <div class="pro-service-card">
+                    <div>
+                        <div class="service-icon-wrap">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+                        </div>
+                        <h3>SEO Optimizasyonu</h3>
+                        <p>Google'da kalıcı sıralama ve sürdürülebilir organik trafik için kapsamlı SEO stratejisi.</p>
+                        <ul class="service-list">
+                            <li>Teknik SEO & site denetimi</li>
+                            <li>Anahtar kelime araştırması</li>
+                            <li>İçerik stratejisi & üretimi</li>
+                            <li>Bağlantı inşası & otorite artırımı</li>
+                        </ul>
+                    </div>
+                    <a href="seo-optimizasyonu.html" class="service-link">Detaylı İncele <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+                <!-- Google Ads -->
+                <div class="pro-service-card">
+                    <div>
+                        <div class="service-icon-wrap">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        </div>
+                        <h3>Google Ads Yönetimi</h3>
+                        <p>Bütçenizin her kuruşunu verimli kullanan, ROI odaklı reklam kampanyaları yönetiyoruz.</p>
+                        <ul class="service-list">
+                            <li>Arama & Display kampanyaları</li>
+                            <li>Google Shopping & Performance Max</li>
+                            <li>Remarketing & hedef kitle optimizasyonu</li>
+                            <li>Aylık raporlama & analiz</li>
+                        </ul>
+                    </div>
+                    <a href="google-ads-yonetimi.html" class="service-link">Detaylı İncele <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+                <!-- Global Lokalizasyon -->
+                <div class="pro-service-card">
+                    <div>
+                        <div class="service-icon-wrap">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+                        </div>
+                        <h3>Global Lokalizasyon</h3>
+                        <p>Markanızı uluslararası pazarlara taşıyoruz; sadece çeviri değil, kültürel adaptasyon.</p>
+                        <ul class="service-list">
+                            <li>Çok dilli SEO & hreflang yapısı</li>
+                            <li>Kültürel içerik adaptasyonu</li>
+                            <li>Uluslararası pazar araştırması</li>
+                            <li>Yerelleştirilmiş reklam kampanyaları</li>
+                        </ul>
+                    </div>
+                    <a href="global-lokalizasyon.html" class="service-link">Detaylı İncele <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+                <!-- Analitik -->
+                <div class="pro-service-card">
+                    <div>
+                        <div class="service-icon-wrap">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                        </div>
+                        <h3>Analitik & Veri Takibi</h3>
+                        <p>GA4, GTM ve özel dashboard'larla veriye dayalı kararlar almanıza destek oluyoruz.</p>
+                        <ul class="service-list">
+                            <li>GA4 & GTM kurulumu</li>
+                            <li>Dönüşüm izleme & hedef tanımlama</li>
+                            <li>Özel raporlama dashboard'ları</li>
+                            <li>Kullanıcı davranışı analizi</li>
+                        </ul>
+                    </div>
+                    <a href="analitik-veri-takibi.html" class="service-link">Detaylı İncele <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+                <!-- Bakım & Destek -->
+                <div class="pro-service-card">
+                    <div>
+                        <div class="service-icon-wrap">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3>Website Bakım & Destek</h3>
+                        <p>Siteniz her zaman hızlı, güvenli ve güncel kalsın diye arka planda çalışıyoruz.</p>
+                        <ul class="service-list">
+                            <li>Güvenlik güncellemeleri & yedekleme</li>
+                            <li>Performans izleme & iyileştirme</li>
+                            <li>İçerik güncellemeleri</li>
+                            <li>7/24 teknik destek</li>
+                        </ul>
+                    </div>
+                    <a href="website-bakim-destek.html" class="service-link">Detaylı İncele <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="s-divider">
+
+    <!-- NEDEN BİZ? -->
+    <section id="neden-biz" style="position:relative;padding:120px 0;background:#000;overflow:hidden;">
+        <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 60% at 20% 50%,rgba(108,99,255,.05) 0%,transparent 70%);"></div>
+        <div class="container">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+                <!-- Sol metin -->
+                <div>
+                    <div class="hero-badge" style="margin-bottom:24px;justify-content:flex-start;display:inline-flex;">
+                        <span></span> Neden Nexora?
+                    </div>
+                    <h2 style="font-family:var(--head-font);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;letter-spacing:-1.5px;color:#fff;line-height:1.15;margin-bottom:20px;">
+                        Sonuç Odaklı Bir<br><span class="g-text">Dijital Ortaklık</span>
+                    </h2>
+                    <p style="color:#b0bdd0;font-size:1rem;line-height:1.85;margin-bottom:32px;">Ajanslardan farklı olarak, her müşterimize özel strateji ve gerçek ölçülebilir hedefler belirliyoruz. Raporlar değil, sonuçlar sunuyoruz.</p>
+                    <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:40px;">
+                        <div style="display:flex;align-items:flex-start;gap:16px;">
+                            <div style="width:40px;height:40px;border-radius:10px;background:rgba(108,99,255,.1);border:1px solid rgba(108,99,255,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <div><strong style="color:#eaf2ff;font-size:.95rem;">Şeffaf Raporlama</strong><p style="color:#8096b0;font-size:.875rem;margin-top:4px;line-height:1.6;">Her ay detaylı analiz raporu ile ne nerede, neden olduğunu bilirsiniz.</p></div>
+                        </div>
+                        <div style="display:flex;align-items:flex-start;gap:16px;">
+                            <div style="width:40px;height:40px;border-radius:10px;background:rgba(108,99,255,.1);border:1px solid rgba(108,99,255,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                            </div>
+                            <div><strong style="color:#eaf2ff;font-size:.95rem;">Hızlı Sonuç</strong><p style="color:#8096b0;font-size:.875rem;margin-top:4px;line-height:1.6;">Veri odaklı yaklaşımımızla kısa sürede somut büyüme rakamları görürsünüz.</p></div>
+                        </div>
+                        <div style="display:flex;align-items:flex-start;gap:16px;">
+                            <div style="width:40px;height:40px;border-radius:10px;background:rgba(108,99,255,.1);border:1px solid rgba(108,99,255,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                            </div>
+                            <div><strong style="color:#eaf2ff;font-size:.95rem;">Uzun Vadeli Ortaklık</strong><p style="color:#8096b0;font-size:.875rem;margin-top:4px;line-height:1.6;">Tek seferlik proje değil, markanızın sürekli büyümesine odaklanıyoruz.</p></div>
+                        </div>
+                    </div>
+                    <a href="javascript:void(0)" class="btn-primary popup-trigger" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;">
+                        Ücretsiz Teklif Al →
+                    </a>
+                </div>
+                <!-- Sağ istatistik kartları -->
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+                    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:24px;padding:36px 28px;text-align:center;">
+                        <div style="font-family:var(--head-font);font-size:2.8rem;font-weight:900;background:linear-gradient(135deg,var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;">+150</div>
+                        <div style="color:#7a8ea8;font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;margin-top:10px;">Tamamlanan Proje</div>
+                    </div>
+                    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:24px;padding:36px 28px;text-align:center;margin-top:24px;">
+                        <div style="font-family:var(--head-font);font-size:2.8rem;font-weight:900;background:linear-gradient(135deg,var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;">%100</div>
+                        <div style="color:#7a8ea8;font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;margin-top:10px;">Müşteri Memnuniyeti</div>
+                    </div>
+                    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:24px;padding:36px 28px;text-align:center;">
+                        <div style="font-family:var(--head-font);font-size:2.8rem;font-weight:900;background:linear-gradient(135deg,var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;">+320%</div>
+                        <div style="color:#7a8ea8;font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;margin-top:10px;">Organik Trafik Artışı</div>
+                    </div>
+                    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:24px;padding:36px 28px;text-align:center;margin-top:24px;">
+                        <div style="font-family:var(--head-font);font-size:2.8rem;font-weight:900;background:linear-gradient(135deg,var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;">5+</div>
+                        <div style="color:#7a8ea8;font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;margin-top:10px;">Yıllık Deneyim</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+        @media(max-width:900px){
+            #neden-biz .container > div { grid-template-columns:1fr!important; gap:48px!important; }
+        }
+        </style>
+    </section>
+
+    <hr class="s-divider">
+
+    <!-- SSS -->
+    <section id="sss" style="position:relative;padding:120px 0;background:#000;overflow:hidden;">
+        <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 80% 50%,rgba(0,240,255,.04) 0%,transparent 70%);"></div>
+        <div class="container">
+            <div style="display:grid;grid-template-columns:1fr 1.6fr;gap:80px;align-items:start;">
+                <!-- Sol -->
+                <div style="position:sticky;top:100px;">
+                    <div class="hero-badge" style="margin-bottom:20px;justify-content:flex-start;display:inline-flex;">
+                        <span></span> SSS
+                    </div>
+                    <h2 style="font-family:var(--head-font);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;letter-spacing:-1.5px;color:#fff;line-height:1.15;margin-bottom:16px;">Aklınızdaki <span class="g-text">Sorular</span></h2>
+                    <p style="color:#b0bdd0;font-size:1rem;line-height:1.8;margin-bottom:32px;">Cevap bulamadığınız bir şey varsa bize ulaşın, 24 saat içinde dönüş yapalım.</p>
+                    <a href="javascript:void(0)" class="btn-primary popup-trigger" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;">Soru Sormak İstiyorum →</a>
+                </div>
+                <!-- Sağ: Accordion -->
+                <div style="display:flex;flex-direction:column;gap:12px;" id="faqList">
+                    <style>
+                    .faq-item { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.09); border-radius:18px; overflow:hidden; transition:border-color .3s; }
+                    .faq-item.open { border-color:rgba(108,99,255,.35); }
+                    .faq-q { display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 28px;cursor:pointer;user-select:none; }
+                    .faq-q-text { font-family:var(--head-font);font-weight:700;color:#eaf2ff;font-size:.95rem;line-height:1.4; }
+                    .faq-icon { width:28px;height:28px;border-radius:50%;background:rgba(108,99,255,.12);border:1px solid rgba(108,99,255,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s,background .3s; }
+                    .faq-item.open .faq-icon { transform:rotate(45deg);background:rgba(108,99,255,.25); }
+                    .faq-a { max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.23,1,.32,1),padding .3s; }
+                    .faq-item.open .faq-a { max-height:400px; }
+                    .faq-a-inner { padding:0 28px 22px;color:#8096b0;font-size:.9rem;line-height:1.8; }
+                    @media(max-width:900px){ #sss .container > div { grid-template-columns:1fr!important; gap:48px!important; } #sss [style*="sticky"]{ position:static!important; } }
+                    </style>
+
+                    <div class="faq-item open">
+                        <div class="faq-q" onclick="toggleFaq(this)">
+                            <span class="faq-q-text">Fiyatlar nasıl belirleniyor?</span>
+                            <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+                        </div>
+                        <div class="faq-a"><div class="faq-a-inner">Her proje birbirinden farklıdır. Proje kapsamı, süre ve ihtiyaç duyulan kaynaklar değerlendirilerek size özel fiyat sunulur. İlk görüşme tamamen ücretsizdir ve herhangi bir taahhüt gerektirmez.</div></div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q" onclick="toggleFaq(this)">
+                            <span class="faq-q-text">Bir web sitesi ne kadar sürede teslim edilir?</span>
+                            <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+                        </div>
+                        <div class="faq-a"><div class="faq-a-inner">Projenin büyüklüğüne göre değişmekle birlikte kurumsal web siteleri genellikle 2–4 hafta, e-ticaret projeleri 4–8 hafta sürmektedir. Başlamadan önce net bir zaman çizelgesi paylaşırız.</div></div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q" onclick="toggleFaq(this)">
+                            <span class="faq-q-text">SEO sonuçlarını ne zaman görmeye başlarım?</span>
+                            <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+                        </div>
+                        <div class="faq-a"><div class="faq-a-inner">SEO uzun vadeli bir yatırımdır. Teknik düzenlemelerden sonra ilk iyileşmeler genellikle 4–8 hafta içinde gözlemlenir; kalıcı ve güçlü sıralamalar için 3–6 aylık bir süreç beklenmektedir.</div></div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q" onclick="toggleFaq(this)">
+                            <span class="faq-q-text">Birden fazla hizmeti birlikte alabilir miyim?</span>
+                            <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+                        </div>
+                        <div class="faq-a"><div class="faq-a-inner">Evet, hizmetlerimiz birbirleriyle entegre çalışacak şekilde tasarlanmıştır. Web tasarım + SEO + Google Ads gibi paket çözümler hem maliyet avantajı sağlar hem de daha hızlı sonuç üretir.</div></div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q" onclick="toggleFaq(this)">
+                            <span class="faq-q-text">Proje tesliminden sonra destek veriyor musunuz?</span>
+                            <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+                        </div>
+                        <div class="faq-a"><div class="faq-a-inner">Tüm web projelerinde 6 aylık ücretsiz teknik destek sunuyoruz. Bakım & destek paketi ile uzun vadeli ortaklık da kurabilirsiniz; güvenlik güncellemeleri, performans izleme ve içerik güncellemelerini üstleniyoruz.</div></div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q" onclick="toggleFaq(this)">
+                            <span class="faq-q-text">Yurt dışı müşterilerle de çalışıyor musunuz?</span>
+                            <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+                        </div>
+                        <div class="faq-a"><div class="faq-a-inner">Evet, global lokalizasyon hizmetimiz kapsamında Avrupa, Amerika ve Orta Doğu pazarlarında faaliyet gösteren müşterilerle uzaktan çalışıyoruz. Tüm görüşmeler online yapılabilmektedir.</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+        function toggleFaq(el) {
+            var item = el.parentElement;
+            var isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+            if (!isOpen) item.classList.add('open');
+        }
+        </script>
+    </section>
+
+    <hr class="s-divider">
+
     <!-- CONTACT -->
     <!-- FOOTER -->
     <footer class="main-footer">
@@ -2289,7 +2591,7 @@
                 <div class="footer-brand">
                     <div class="f-logo-wrapper">
                         <img src="logo.png" alt="Nexora Logo" style="width:52px;height:52px;object-fit:contain;">
-                        <span class="brand-name">Nexora Innovation</span>
+                        <span class="brand-name">Nexora Inovation</span>
                     </div>
                     <p class="footer-brand-desc">SEO, web geliştirme, dijital reklamcılık ve global lokalizasyonda uçtan uca çözümler.</p>
 
@@ -2298,14 +2600,9 @@
                             <div class="footer-contact-icon">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                             </div>
-                            <a href="/cdn-cgi/l/email-protection#e28b8c848da28c879a8d90838b8c8c8d9483968b8d8ccc818d8f"><span class="__cf_email__" data-cfemail="a5cccbc3cae5cbc0ddcad7c4cccbcbcad3c4d1cccacb8bc6cac8">[email&#160;protected]</span></a>
+                            <a href="/cdn-cgi/l/email-protection#e28b8c848da28c879a8d90838b8c8c8d9483968b8d8ccc818d8f"><span class="__cf_email__" data-cfemail="a5cccbc3cae5cbc0ddcad7c4cccbcbcad3c4d1cccacb8bc6cac8">info@nexorainovation.com</span></a>
                         </div>
-                        <div class="footer-contact-row">
-                            <div class="footer-contact-icon">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 010 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                            </div>
-                            +90 5XX XXX XX XX
-                        </div>
+                       
                         <div class="footer-contact-row">
                             <div class="footer-contact-icon">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -2331,13 +2628,13 @@
                 <div class="footer-nav-col">
                     <div class="footer-nav-heading">Hizmetler</div>
                     <ul class="footer-nav-list">
-                        <li><a href="hizmetler.html#web-tasarim-detay">Web Tasarım & Geliştirme</a></li>
-                        <li><a href="hizmetler.html#seo-detay">SEO Optimizasyonu</a></li>
-                        <li><a href="hizmetler.html#ads-detay">Google Ads Yönetimi</a></li>
-                        <li><a href="hizmetler.html#lokalizasyon-detay">Global Lokalizasyon</a></li>
-                        <li><a href="hizmetler.html#qa-detay">Performans & QA Test</a></li>
-                        <li><a href="hizmetler.html#analitik-detay">Analitik & Veri Takibi</a></li>
-                        <li><a href="hizmetler.html#bakim-detay">Website Bakım & Destek</a></li>
+                        <li><a href="web-tasarim-gelistirme.html">Web Tasarım & Geliştirme</a></li>
+                        <li><a href="seo-optimizasyonu.html">SEO Optimizasyonu</a></li>
+                        <li><a href="google-ads-yonetimi.html">Google Ads Yönetimi</a></li>
+                        <li><a href="global-lokalizasyon.html">Global Lokalizasyon</a></li>
+                        <li><a href="performans-qa-test.html">Performans & QA Test</a></li>
+                        <li><a href="analitik-veri-takibi.html">Analitik & Veri Takibi</a></li>
+                        <li><a href="website-bakim-destek.html">Website Bakım & Destek</a></li>
                     </ul>
                 </div>
 
@@ -2387,7 +2684,7 @@
         <!-- Alt bar -->
         <div class="footer-bottom-bar">
             <div class="container">
-                <div class="footer-copy">© 2025 <span>Nexora Innovation</span>. Tüm hakları saklıdır.</div>
+                <div class="footer-copy">© 2025 <span>Nexora Inovation</span>. Tüm hakları saklıdır.</div>
                 <div class="legal-links">
                     <a href="#">Gizlilik</a>
                     <a href="#">Kullanım Koşulları</a>
@@ -2498,12 +2795,81 @@ document.querySelectorAll('.card-mouse-glow, .strategy-card-pro').forEach(card =
 
 // Teklif popup
 const popup = document.getElementById('teklifPopup');
+function openPopup() { if(popup) popup.classList.add('open'); }
+function closePopup() { if(popup) popup.classList.remove('open'); }
 if (popup) {
-    document.querySelectorAll('[data-popup="teklif"], .btn-quote').forEach(btn => {
-        btn.addEventListener('click', e => { e.preventDefault(); popup.style.display = 'flex'; });
+    document.querySelectorAll('[data-popup="teklif"], .btn-quote, .popup-trigger').forEach(btn => {
+        btn.addEventListener('click', e => { e.preventDefault(); openPopup(); });
     });
-    popup.addEventListener('click', e => { if(e.target === popup) popup.style.display = 'none'; });
-    document.querySelectorAll('.popup-close').forEach(b => b.addEventListener('click', () => popup.style.display = 'none'));
+    popup.addEventListener('click', e => { if(e.target === popup) closePopup(); });
+    document.querySelectorAll('.popup-close').forEach(b => b.addEventListener('click', closePopup));
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') closePopup(); });
+}
+
+// submitPopup — EmailJS ile mail gönderir
+async function submitPopup() {
+    const name    = document.getElementById('popupName').value.trim();
+    const email   = document.getElementById('popupEmail').value.trim();
+    const phone   = document.getElementById('popupPhone').value.trim();
+    const service = document.getElementById('popupService').value;
+    const message = document.getElementById('popupMessage').value.trim();
+
+    if (!name || !email) {
+        alert('Lütfen ad soyad ve e-posta adresinizi girin.');
+        return;
+    }
+
+    const btn = document.querySelector('.popup-btn');
+    btn.disabled = true;
+    btn.textContent = 'Gönderiliyor…';
+
+    try {
+        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+            from_name:    name,
+            from_email:   email,
+            phone:        phone || 'Belirtilmedi',
+            service:      service || 'Belirtilmedi',
+            message:      message || 'Belirtilmedi',
+            to_email:     'info@nexorainovation.com',
+            reply_to:     email,
+        });
+
+        // Başarı
+        document.getElementById('popupSuccessEmail').textContent = email;
+        document.getElementById('popupForm').style.display = 'none';
+        document.getElementById('popupSuccess').classList.add('show');
+
+        // Formu sıfırla ve popup'ı kapat
+        setTimeout(() => {
+            closePopup();
+            setTimeout(() => {
+                document.getElementById('popupForm').style.display = '';
+                document.getElementById('popupSuccess').classList.remove('show');
+                document.getElementById('popupName').value  = '';
+                document.getElementById('popupEmail').value = '';
+                document.getElementById('popupPhone').value = '';
+                document.getElementById('popupService').value = '';
+                document.getElementById('popupMessage').value = '';
+                btn.disabled = false;
+                btn.textContent = 'Teklif İste →';
+            }, 400);
+        }, 2800);
+
+    } catch (err) {
+        console.error('EmailJS hatası:', err);
+        btn.disabled = false;
+        btn.textContent = 'Teklif İste →';
+        alert('Bir hata oluştu. Lütfen tekrar deneyin veya info@nexorainovation.com adresine doğrudan yazın.');
+    }
+}
+
+// Otomatik dil yönlendirme (sadece ilk ziyarette)
+if (!sessionStorage.getItem('langRedirected')) {
+    sessionStorage.setItem('langRedirected', '1');
+    const lang = navigator.language || navigator.userLanguage || '';
+    if (!lang.startsWith('tr')) {
+        window.location.href = 'en/index.html';
+    }
 }
 
 // Fade-up animasyon observer

@@ -3,10 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hizmetlerimiz | Nexora Innovation</title>
-    <meta name="description" content="Nexora Innovation'ın sunduğu SEO, web tasarım, Google Ads ve lokalizasyon hizmetlerini keşfedin.">
-    <meta property="og:title" content="Nexora Innovation | SEO & Web Çözümleri">
+    <title>Hizmetlerimiz | Nexora Inovation</title>
+    <meta name="description" content="Nexora Inovation'ın sunduğu SEO, web tasarım, Google Ads ve lokalizasyon hizmetlerini keşfedin.">
+    <meta property="og:title" content="Nexora Inovation | SEO & Web Çözümleri">
     <meta property="og:image" content="logo-veya-onizleme.jpg">
+
+   <!-- EmailJS SDK -->
+   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+   <script>
+     const EMAILJS_PUBLIC_KEY  = 'NKO8pnOQvGecQbJBh';
+     const EMAILJS_SERVICE_ID  = 'service_a85ow5z';
+     const EMAILJS_TEMPLATE_ID = 'template_twilo6p';
+     emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+   </script>
 
    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -708,7 +717,7 @@
     /* display:none'dan açılan section'larda animasyonlu elementler görünür kalsın */
     section { isolation: isolate; }
 
-    #web-tasarim-detay {
+    web-tasarim-gelistirme.html {
         position: relative;
         padding: 0;
         margin: 0;
@@ -992,13 +1001,13 @@
     /* ====================================================
        GOOGLE ADS DETAIL
     ==================================================== */
-    #ads-detay {
+    google-ads-yonetimi.html {
         padding: 110px 0 100px;
         background: var(--bg);
         position: relative; overflow: hidden;
         scroll-margin-top: 76px;
     }
-    #ads-detay::before {
+    google-ads-yonetimi.html::before {
         content: '';
         position: absolute; top: 0; right: 0;
         width: 500px; height: 500px; border-radius: 50%;
@@ -1211,7 +1220,7 @@
     .seo-acc-body.open { max-height: 300px; padding: 0 24px 20px; }
     .seo-acc-body p { color: #a0b4c8; font-size: .88rem; line-height: 1.8; }
 
-    #seo-detay {
+    seo-optimizasyonu.html {
         padding:120px 0;
         background: linear-gradient(135deg, #060410 0%, #0a0820 100%);
     }
@@ -1864,7 +1873,7 @@
        RESPONSIVE
     ==================================================== */
     @media (max-width:768px) {
-        #web-tasarim-detay { padding:40px 24px; margin:0 16px 40px; }
+        web-tasarim-gelistirme.html { padding:40px 24px; margin:0 16px 40px; }
         .detail-grid { grid-template-columns:1fr; gap:40px; }
         .detail-mini-grid { grid-template-columns:1fr; }
         .footer-grid { flex-direction:column; }
@@ -2100,7 +2109,7 @@
                 <div class="logo-lottie-container">
                     <img src="logo.png" alt="Nexora Logo" style="width:52px;height:52px;object-fit:contain;">
                 </div>
-                <h2 class="logo">Nexora Innovation</h2>
+                <h2 class="logo">Nexora Inovation</h2>
             </div>
             <nav>
                 <a href="index.html">Ana Sayfa</a>
@@ -2160,7 +2169,7 @@
                             <li>E-ticaret web sitesi kurulumu ve optimizasyonu</li>
                         </ul>
                     </div>
-                    <a href="#web-tasarim-detay" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <a href="web-tasarim-gelistirme.html" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
                 </div>
 
                 <!-- SEO -->
@@ -2181,7 +2190,7 @@
                             <li>İçerik stratejisi ve anahtar kelime araştırması</li>
                         </ul>
                     </div>
-                    <a href="#seo-detay" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <a href="seo-optimizasyonu.html" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
                 </div>
 
                 <!-- Google Ads -->
@@ -2201,7 +2210,7 @@
                             <li>Dönüşüm optimizasyonu ve A/B testleri</li>
                         </ul>
                     </div>
-                    <a href="#ads-detay" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <a href="google-ads-yonetimi.html" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
                 </div>
 
                 <!-- Global Lokalizasyon -->
@@ -2222,7 +2231,7 @@
                             <li>Uluslararası SEO stratejileri</li>
                         </ul>
                     </div>
-                    <a href="#lokalizasyon-detay" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <a href="global-lokalizasyon.html" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
                 </div>
 
                 <!-- Performans & QA -->
@@ -2242,7 +2251,7 @@
                             <li>Cross-browser & Cihaz Testleri</li>
                         </ul>
                     </div>
-                    <a href="#qa-detay" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <a href="performans-qa-test.html" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
                 </div>
 
                 <!-- Analitik -->
@@ -2263,7 +2272,7 @@
                             <li>Veri analizi ve dashboard raporları</li>
                         </ul>
                     </div>
-                    <a href="#analitik-detay" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <a href="analitik-veri-takibi.html" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
                 </div>
 
                 <!-- Website Bakım -->
@@ -2282,7 +2291,7 @@
                             <li>Site performansı ve hız optimizasyonu</li>
                         </ul>
                     </div>
-                    <a href="#bakim-detay" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <a href="website-bakim-destek.html" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
                 </div>
 
             </div>
@@ -2356,7 +2365,7 @@
                 <div class="ads-text">
                     <span class="section-label">Web Tasarım & Geliştirme</span>
                     <h2 class="section-title">Sadece Site Değil, <span class="g-text">Dijital İş Yeriniz</span></h2>
-                    <p>Güçlü bir dijital varlığın temeli profesyonel bir web sitesidir. <strong>Nexora Innovation</strong> olarak işletmenizin kimliğini yansıtan, hızlı açılan, güvenli ve dönüşüm odaklı web siteleri tasarlıyor ve geliştiriyoruz.</p>
+                    <p>Güçlü bir dijital varlığın temeli profesyonel bir web sitesidir. <strong>Nexora Inovation</strong> olarak işletmenizin kimliğini yansıtan, hızlı açılan, güvenli ve dönüşüm odaklı web siteleri tasarlıyor ve geliştiriyoruz.</p>
                     <p>Sıradan şablonların ötesine geçerek markanıza özel, <strong>kullanıcı davranışını yönlendiren</strong> tasarımlar üretiyoruz. Ziyaretçiniz siteye girdiği anda nereye tıklayacağını bilir — çünkü biz bunu tasarladık.</p>
                     <div class="tags-row">
                         <span class="tag">Kurumsal Web</span>
@@ -2365,7 +2374,7 @@
                         <span class="tag">Mobil Uyumlu</span>
                         <span class="tag">Core Web Vitals</span>
                     </div>
-                    <a href="javascript:void(0)" class="btn-primary">Ücretsiz Keşif Görüşmesi Al</a>
+                    <a href="javascript:void(0)" class="btn-primary popup-trigger" data-service="Web Sitesi Tasarımı">Ücretsiz Keşif Görüşmesi Al</a>
                 </div>
             </div>
 
@@ -2587,7 +2596,7 @@
                         <span class="tag">Dönüşüm Takibi</span>
                         <span class="tag">ROI Odaklı</span>
                     </div>
-                    <a href="javascript:void(0)" class="btn-primary">Ücretsiz Reklam Analizi Al</a>
+                    <a href="javascript:void(0)" class="btn-primary popup-trigger" data-service="Google Ads Yönetimi">Ücretsiz Reklam Analizi Al</a>
                 </div>
             </div>
 
@@ -2774,7 +2783,7 @@
                 <div class="ads-text">
                     <span class="section-label">Organik Büyüme</span>
                     <h2 class="section-title">SEO ile <span class="g-text">Kalıcı Büyüme</span> Sağlayın</h2>
-                    <p>Arama motoru optimizasyonu, işletmenizin dijital görünürlüğünü sürdürülebilir biçimde artırır. <strong>Nexora Innovation</strong> olarak teknik SEO, içerik stratejisi ve bağlantı inşası ile arama sıralamalarınızı iyileştiriyor; hedef kitlenize kalıcı olarak ulaşmanızı sağlıyoruz.</p>
+                    <p>Arama motoru optimizasyonu, işletmenizin dijital görünürlüğünü sürdürülebilir biçimde artırır. <strong>Nexora Inovation</strong> olarak teknik SEO, içerik stratejisi ve bağlantı inşası ile arama sıralamalarınızı iyileştiriyor; hedef kitlenize kalıcı olarak ulaşmanızı sağlıyoruz.</p>
                     <p>Sadece trafik değil — <strong>dönüşüm odaklı</strong> bir yaklaşımla çalışıyoruz. E-ticaret, Shopify, İkas ve WordPress'ten kurumsal yapılara kadar her platforma özel strateji geliştiriyoruz.</p>
                     <div class="tags-row">
                         <span class="tag">Teknik SEO</span>
@@ -2783,7 +2792,7 @@
                         <span class="tag">Shopify & İkas</span>
                         <span class="tag">Uluslararası SEO</span>
                     </div>
-                    <a href="javascript:void(0)" class="btn-primary">Ücretsiz SEO Analizi Al</a>
+                    <a href="javascript:void(0)" class="btn-primary popup-trigger" data-service="SEO Hizmeti">Ücretsiz SEO Analizi Al</a>
                 </div>
             </div>
 
@@ -3051,7 +3060,7 @@
                 <div class="ads-text">
                     <span class="section-label">Global Lokalizasyon</span>
                     <h2 class="section-title">Dünyaya Açılın, <span class="g-text">Yerel Konuşun</span></h2>
-                    <p>İçeriklerinizi yalnızca çevirmiyor, hedef pazarın kültürüne, arama alışkanlıklarına ve kullanıcı beklentilerine göre yeniden uyarlıyoruz. <strong>Nexora Innovation</strong> olarak markanızı küresel ölçekte konumlandırıyor, her pazarda yerelde üretilmiş gibi hissettiriyoruz.</p>
+                    <p>İçeriklerinizi yalnızca çevirmiyor, hedef pazarın kültürüne, arama alışkanlıklarına ve kullanıcı beklentilerine göre yeniden uyarlıyoruz. <strong>Nexora Inovation</strong> olarak markanızı küresel ölçekte konumlandırıyor, her pazarda yerelde üretilmiş gibi hissettiriyoruz.</p>
                     <p>Yanlış çeviri değil — <strong>doğru lokalizasyon</strong>. Hedef ülkenin arama motorlarında görünür olun, kültürel bariyer olmadan dönüşüm sağlayın. Teknik altyapıdan içerik stratejisine kadar uçtan uca global büyüme ortağınızız.</p>
                     <div class="tags-row">
                         <span class="tag">Çok Dilli SEO</span>
@@ -3343,7 +3352,7 @@
                 <div class="ads-text">
                     <span class="section-label">Performans & QA Test</span>
                     <h2 class="section-title">Canlıya Almadan Önce <span class="g-text">Her Şeyi Test Edin</span></h2>
-                    <p>Sitenizin görünmez hataları ziyaretçi kaybettirir, yavaş sayfalar müşteri kaçırır. <strong>Nexora Innovation</strong> olarak uçtan uca QA süreçleriyle her tarayıcıda, her cihazda kusursuz çalışan dijital ürünler teslim ediyoruz.</p>
+                    <p>Sitenizin görünmez hataları ziyaretçi kaybettirir, yavaş sayfalar müşteri kaçırır. <strong>Nexora Inovation</strong> olarak uçtan uca QA süreçleriyle her tarayıcıda, her cihazda kusursuz çalışan dijital ürünler teslim ediyoruz.</p>
                     <p>Sadece hata bulmuyoruz — <strong>kullanıcıyı müşteriye dönüştüren</strong> bir deneyim tasarlıyoruz. CRO testlerinden hız optimizasyonuna, erişilebilirlikten güvenlik taramalarına kadar sitenizi üretim ortamına hazır hale getiriyoruz.</p>
                     <div class="tags-row">
                         <span class="tag">Fonksiyonel Test</span>
@@ -3635,7 +3644,7 @@
                 <div class="ads-text">
                     <span class="section-label">Analitik & Veri Takibi</span>
                     <h2 class="section-title">Tahmin Değil, <span class="g-text">Veriyle Karar Verin</span></h2>
-                    <p>Kaç ziyaretçi geldi, ama gerçekten nereden? Hangi sayfa dönüştürüyor, hangisi terk ettiriyor? <strong>Nexora Innovation</strong> olarak GA4, GTM ve gelişmiş dönüşüm takibi altyapısını kurarak tüm bu sorulara net cevaplar veriyoruz.</p>
+                    <p>Kaç ziyaretçi geldi, ama gerçekten nereden? Hangi sayfa dönüştürüyor, hangisi terk ettiriyor? <strong>Nexora Inovation</strong> olarak GA4, GTM ve gelişmiş dönüşüm takibi altyapısını kurarak tüm bu sorulara net cevaplar veriyoruz.</p>
                     <p>Kör kararlar pahalıya patlar. <strong>Doğru kurulmuş analitik altyapısı</strong>; reklam bütçesi israfını ortadan kaldırır, hangi kanalın gerçekten getirdiğini gösterir ve büyüme fırsatlarını görünür kılar. Veriye dayalı büyüme, varsayıma dayalı büyümeden her zaman kazanır.</p>
                     <div class="tags-row">
                         <span class="tag">GA4</span>
@@ -3929,7 +3938,7 @@
                 <div class="ads-text">
                     <span class="section-label">Website Bakım & Destek</span>
                     <h2 class="section-title">Siteniz Uyurken Biz <span class="g-text">Nöbet Tutuyoruz</span></h2>
-                    <p>Güncellenmemiş bir eklenti, eski bir PHP sürümü ya da fark edilmemiş bir güvenlik açığı — sitenizi dakikalar içinde çökertebilir. <strong>Nexora Innovation</strong> olarak 7/24 izleme, proaktif güvenlik ve düzenli bakımla sitenizin her zaman en iyi formda çalışmasını sağlıyoruz.</p>
+                    <p>Güncellenmemiş bir eklenti, eski bir PHP sürümü ya da fark edilmemiş bir güvenlik açığı — sitenizi dakikalar içinde çökertebilir. <strong>Nexora Inovation</strong> olarak 7/24 izleme, proaktif güvenlik ve düzenli bakımla sitenizin her zaman en iyi formda çalışmasını sağlıyoruz.</p>
                     <p>Siz işinize odaklanın, <strong>teknik her şeyle biz ilgileniyoruz</strong>. Bir şey bozulmadan önce müdahale ediyor, bozulduğunda ise saatler içinde geri getiriyoruz. Her ay detaylı bakım raporu, her gün otomatik yedekleme.</p>
                     <div class="tags-row">
                         <span class="tag">WordPress & Shopify</span>
@@ -4197,7 +4206,7 @@
                 <div class="footer-brand">
                     <div class="f-logo-wrapper">
                         <img src="logo.png" alt="Nexora Logo" style="width:52px;height:52px;object-fit:contain;">
-                        <span class="brand-name">Nexora Innovation</span>
+                        <span class="brand-name">Nexora Inovation</span>
                     </div>
                     <p class="footer-brand-desc">SEO, web geliştirme, dijital reklamcılık ve global lokalizasyonda uçtan uca çözümler.</p>
 
@@ -4239,13 +4248,13 @@
                 <div class="footer-nav-col">
                     <div class="footer-nav-heading">Hizmetler</div>
                     <ul class="footer-nav-list">
-                        <li><a href="#web-tasarim-detay">Web Tasarım & Geliştirme</a></li>
-                        <li><a href="#seo-detay">SEO Optimizasyonu</a></li>
-                        <li><a href="#ads-detay">Google Ads Yönetimi</a></li>
-                        <li><a href="#lokalizasyon-detay">Global Lokalizasyon</a></li>
-                        <li><a href="#qa-detay">Performans & QA Test</a></li>
-                        <li><a href="#analitik-detay">Analitik & Veri Takibi</a></li>
-                        <li><a href="#bakim-detay">Website Bakım & Destek</a></li>
+                        <li><a href="web-tasarim-gelistirme.html">Web Tasarım & Geliştirme</a></li>
+                        <li><a href="seo-optimizasyonu.html">SEO Optimizasyonu</a></li>
+                        <li><a href="google-ads-yonetimi.html">Google Ads Yönetimi</a></li>
+                        <li><a href="global-lokalizasyon.html">Global Lokalizasyon</a></li>
+                        <li><a href="performans-qa-test.html">Performans & QA Test</a></li>
+                        <li><a href="analitik-veri-takibi.html">Analitik & Veri Takibi</a></li>
+                        <li><a href="website-bakim-destek.html">Website Bakım & Destek</a></li>
                     </ul>
                 </div>
 
@@ -4295,7 +4304,7 @@
         <!-- Alt bar -->
         <div class="footer-bottom-bar">
             <div class="container">
-                <div class="footer-copy">© 2025 <span>Nexora Innovation</span>. Tüm hakları saklıdır.</div>
+                <div class="footer-copy">© 2025 <span>Nexora Inovation</span>. Tüm hakları saklıdır.</div>
                 <div class="legal-links">
                     <a href="#">Gizlilik</a>
                     <a href="#">Kullanım Koşulları</a>
@@ -4338,12 +4347,76 @@ document.querySelectorAll('.ctr').forEach(function(el) {
 
 // Teklif popup
 var popup = document.getElementById('teklifPopup');
+function openPopup(service) {
+    if (!popup) return;
+    popup.classList.add('open');
+    if (service) {
+        var sel = document.getElementById('popupService');
+        if (sel) {
+            for (var i = 0; i < sel.options.length; i++) {
+                if (sel.options[i].value === service) { sel.selectedIndex = i; break; }
+            }
+        }
+    }
+}
+function closePopup() { if (popup) popup.classList.remove('open'); }
+
 if (popup) {
     document.querySelectorAll('[data-popup="teklif"], .btn-quote, .popup-trigger').forEach(function(btn) {
-        btn.addEventListener('click', function(e) { e.preventDefault(); popup.style.display = 'flex'; });
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            openPopup(btn.dataset.service || '');
+        });
     });
-    popup.addEventListener('click', function(e) { if (e.target === popup) popup.style.display = 'none'; });
-    document.querySelectorAll('.popup-close').forEach(function(b) { b.addEventListener('click', function() { popup.style.display = 'none'; }); });
+    popup.addEventListener('click', function(e) { if (e.target === popup) closePopup(); });
+    document.querySelectorAll('.popup-close').forEach(function(b) { b.addEventListener('click', closePopup); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePopup(); });
+}
+
+// submitPopup — EmailJS
+async function submitPopup() {
+    var name    = document.getElementById('popupName').value.trim();
+    var email   = document.getElementById('popupEmail').value.trim();
+    var phone   = document.getElementById('popupPhone').value.trim();
+    var service = document.getElementById('popupService').value;
+    var msgEl   = document.getElementById('popupMessage');
+    var message = msgEl ? msgEl.value.trim() : '';
+
+    if (!name || !email) { alert('Lütfen ad soyad ve e-posta adresinizi girin.'); return; }
+
+    var btn = document.querySelector('.popup-btn');
+    btn.disabled = true; btn.textContent = 'Gönderiliyor…';
+
+    try {
+        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+            from_name:  name,
+            from_email: email,
+            phone:      phone   || 'Belirtilmedi',
+            service:    service || 'Belirtilmedi',
+            message:    message || 'Belirtilmedi',
+            to_email:   'info@nexorainovation.com',
+            reply_to:   email,
+        });
+        var emailSpan = document.getElementById('popupSuccessEmail');
+        if (emailSpan) emailSpan.textContent = email;
+        document.getElementById('popupForm').style.display = 'none';
+        document.getElementById('popupSuccess').classList.add('show');
+        setTimeout(function() {
+            closePopup();
+            setTimeout(function() {
+                document.getElementById('popupForm').style.display = '';
+                document.getElementById('popupSuccess').classList.remove('show');
+                ['popupName','popupEmail','popupPhone'].forEach(function(id){ document.getElementById(id).value=''; });
+                document.getElementById('popupService').selectedIndex = 0;
+                if (msgEl) msgEl.value = '';
+                btn.disabled = false; btn.textContent = 'Teklif İste →';
+            }, 400);
+        }, 2800);
+    } catch(err) {
+        console.error(err);
+        btn.disabled = false; btn.textContent = 'Teklif İste →';
+        alert('Bir hata oluştu. Lütfen info@nexorainovation.com adresine doğrudan yazın.');
+    }
 }
 
 // Fade-up observer
@@ -4352,5 +4425,54 @@ var obs = new IntersectionObserver(function(entries) {
 }, { threshold: 0.1 });
 document.querySelectorAll('.fadeUp, [class*="fade"]').forEach(function(el) { obs.observe(el); });
 </script>
+<!-- TEKLİF POPUP -->
+<div class="popup-overlay" id="teklifPopup">
+    <div class="popup-box">
+        <button class="popup-close" onclick="closePopup()">✕</button>
+        <div id="popupForm">
+            <div class="popup-label">Ücretsiz Teklif</div>
+            <h2 class="popup-title">Size Özel Teklif Alalım</h2>
+            <p class="popup-sub">Bilgilerinizi bırakın, en kısa sürede sizinle iletişime geçelim. Taahhüt yok.</p>
+            <div class="popup-field">
+                <label>Ad Soyad</label>
+                <input type="text" id="popupName" placeholder="Adınız ve soyadınız" required>
+            </div>
+            <div class="popup-field">
+                <label>E-posta</label>
+                <input type="email" id="popupEmail" placeholder="ornek@sirket.com" required>
+            </div>
+            <div class="popup-field">
+                <label>Telefon <span class="popup-optional">(isteğe bağlı)</span></label>
+                <input type="tel" id="popupPhone" placeholder="+90 5XX XXX XX XX">
+            </div>
+            <div class="popup-field">
+                <label>İlgilendiğiniz Hizmet</label>
+                <select id="popupService">
+                    <option value="">Seçiniz…</option>
+                    <option value="Web Sitesi Tasarımı">Web Sitesi Tasarımı</option>
+                    <option value="SEO Hizmeti">SEO Hizmeti</option>
+                    <option value="Google Ads Yönetimi">Google Ads Yönetimi</option>
+                    <option value="Global Lokalizasyon">Global Lokalizasyon</option>
+                    <option value="Performans & QA">Performans & QA</option>
+                    <option value="Analitik Kurulumu">Analitik Kurulumu</option>
+                    <option value="Website Bakım">Website Bakım</option>
+                    <option value="Diğer / Birden Fazla">Diğer / Birden Fazla</option>
+                </select>
+            </div>
+            <div class="popup-field">
+                <label>Mesaj <span class="popup-optional">(isteğe bağlı)</span></label>
+                <textarea id="popupMessage" placeholder="Projeniz hakkında kısaca bilgi verin…" rows="3" style="width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:14px 16px;color:#eaf2ff;font-size:.9rem;font-family:inherit;resize:vertical;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='rgba(108,99,255,.5)'" onblur="this.style.borderColor='rgba(255,255,255,.12)'"></textarea>
+            </div>
+            <button class="popup-btn" onclick="submitPopup()">Teklif İste →</button>
+            <p class="popup-note">Bilgileriniz yalnızca sizinle iletişim kurmak için kullanılır.</p>
+        </div>
+        <div class="popup-success" id="popupSuccess">
+            <div class="popup-success-icon">✓</div>
+            <h3>Talebiniz Alındı!</h3>
+            <p>En kısa sürede <strong id="popupSuccessEmail"></strong> adresine veya telefonla geri dönüş yapacağız.</p>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

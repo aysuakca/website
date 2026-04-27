@@ -2259,27 +2259,50 @@
         </div>
     </section>
 
+<!-- QUOTE POPUP -->
 <div class="popup-overlay" id="teklifPopup">
-        <div class="popup-box">
-            <button class="popup-close" onclick="closePopup()">✕</button>
-
-            <div id="popupForm">
-                <div class="popup-label">Free Quote</div>
-                <h2 class="popup-title">Let's Build Your Custom Quote</h2>
-                <p class="popup-sub">Leave your details and we'll get in touch as soon as possible. No commitment.</p>
-
-                <div class="popup-field">
-                    <label>Full Name</label>
-                    <input type="text" id="popupName" placeholder="Your full name" required>
-                </div>
-                <div class="popup-field">
-                    <label>Email</label>
-                    <input type="email" id="popupEmail" placeholder="example@company.com" required>
-                </div>
+    <div class="popup-box">
+        <button class="popup-close" onclick="closePopup()">✕</button>
+        <div id="popupForm">
+            <div class="popup-label">Free Quote</div>
+            <h2 class="popup-title">Get a Quote Tailored for You</h2>
+            <p class="popup-sub">Leave your details and we'll get in touch as soon as possible. No commitment.</p>
+            <div class="popup-field">
+                <label>Full Name</label>
+                <input type="text" id="popupName" placeholder="Your full name" required>
+            </div>
+            <div class="popup-field">
+                <label>Email</label>
+                <input type="email" id="popupEmail" placeholder="example@company.com" required>
+            </div>
+            <div class="popup-field">
+                <label>Service of Interest</label>
+                <select id="popupService">
+                    <option value="">Select…</option>
+                    <option value="Website Design">Website Design</option>
+                    <option value="SEO Service">SEO Service</option>
+                    <option value="Google Ads Management">Google Ads Management</option>
+                    <option value="Global Localization">Global Localization</option>
+                    <option value="Performance & QA">Performance & QA</option>
+                    <option value="Analytics Setup">Analytics Setup</option>
+                    <option value="Website Maintenance">Website Maintenance</option>
+                    <option value="Other / Multiple">Other / Multiple</option>
+                </select>
+            </div>
+            <div class="popup-field">
+                <label>Message <span class="popup-optional">(optional)</span></label>
+                <textarea id="popupMessage" placeholder="Briefly describe your project…" rows="3" style="width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:14px 16px;color:#eaf2ff;font-size:.9rem;font-family:inherit;resize:vertical;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='rgba(108,99,255,.5)'" onblur="this.style.borderColor='rgba(255,255,255,.12)'"></textarea>
+            </div>
+            <button class="popup-btn" onclick="submitPopup()">Request a Quote →</button>
+            <p class="popup-note">Your information is only used to contact you.</p>
+        </div>
+        <div class="popup-success" id="popupSuccess">
+            <div class="popup-success-icon">✓</div>
+            <h3>Request Received!</h3>
+            <p>We'll get back to you at <strong id="popupSuccessEmail"></strong> as soon as possible.</p>
+        </div>
     </div>
-
-   
-    <!-- HERO -->
+</div>
 
     <footer class="main-footer">
         <div class="footer-bg-element"></div>

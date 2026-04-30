@@ -2189,7 +2189,7 @@
                     <span></span> Your Digital Growth Partner
                 </div>
                 <h1 class="hero-title">
-                    Strategic Solutions To<span class="typed-word" id="heroTyped">Grow</span><span class="cursor-blink"></span><br>Your Business Digitally
+                    Strategic Solutions To<span class="typed-word" id="heroTyped">Grow</span><br>Your Business Digitally
                 </h1>
                 <p class="hero-tagline">SEO · Web Design · Google Ads · Global Localization</p>
                 <div class="hero-divider"></div>
@@ -2685,17 +2685,8 @@ function runCounter(el) {
 }
 document.querySelectorAll('.ctr').forEach(runCounter);
 
-// Hero typed text
-const words = ['Grow', 'Scale'];
-let wi = 0, ci = 0, del = false;
-const el = document.getElementById('heroTyped');
-if (el) {
-    setInterval(() => {
-        const w = words[wi];
-        if (!del) { el.textContent = w.slice(0, ++ci); if (ci === w.length) del = true; }
-        else { el.textContent = w.slice(0, --ci); if (ci === 0) { del = false; wi = (wi + 1) % words.length; } }
-    }, 120);
-}
+// Hero typed text — sabit "Grow" (animasyon devre dışı)
+// const words = ['Grow', 'Scale']; — animasyon kaldırıldı
 
 // Canvas background
 const canvas = document.getElementById('hero-canvas');

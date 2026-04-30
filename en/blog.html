@@ -70,9 +70,9 @@
     }
     .nav-wrapper {
         display:flex; align-items:center; justify-content:space-between;
-        height:100%; gap:20px; padding: 0 40px 0 24px; width: 100%;
+        height:100%; gap:20px; padding: 0 40px 0 16px; width: 100%;
     }
-    .logo-area { display:flex; align-items:center; gap:12px; flex-shrink:0; }
+    .logo-area { display:flex; align-items:center; gap:8px; flex-shrink:0; }
     .logo {
         font-family: var(--head-font); font-weight:800; font-size:1.45rem;
         color:#fff; white-space:nowrap; letter-spacing:-.5px; text-decoration:none;
@@ -314,8 +314,10 @@
 <header class="main-header">
     <div class="nav-wrapper">
         <div class="logo-area">
-            <img src="logo.png" alt="Nexora Logo" style="width:52px;height:52px;object-fit:contain;">
-            <a href="index.html" class="logo">Nexora Inovation</a>
+            <div class="logo-lottie-container">
+                <img src="logo.png" alt="Nexora Logo" style="width:52px;height:52px;object-fit:contain;">
+            </div>
+            <h2 class="logo">Nexora Inovation</h2>
         </div>
         <nav>
             <a href="index.html">Home</a>
@@ -324,9 +326,9 @@
             <a href="blog.html" class="active">Blog</a>
             <a href="contact.html" class="nav-cta">Contact</a>
         </nav>
-        <div style="display:flex;align-items:center;gap:8px;margin-left:8px;">
-            <a href="blog.html" style="display:flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;letter-spacing:.5px;color:#7c6dff;border:1px solid rgba(108,99,255,.3);border-radius:8px;padding:6px 13px;text-decoration:none;transition:background .2s,border-color .2s;" onmouseover="this.style.background='rgba(108,99,255,.1)';this.style.borderColor='rgba(108,99,255,.55)'" onmouseout="this.style.background='';this.style.borderColor='rgba(108,99,255,.3)'">🇹🇷 Türkçe</a>
-            <a href="blog.html" style="display:flex;align-items:center;gap:6px;font-size:.8rem;font-weight:700;letter-spacing:.5px;color:#fff;background:rgba(108,99,255,.25);border:1px solid rgba(108,99,255,.55);border-radius:8px;padding:6px 13px;text-decoration:none;pointer-events:none;">🇬🇧 English</a>
+        <div style="display:flex;align-items:center;gap:12px;">
+            <a href="../blog.html" style="font-size:.78rem;font-weight:700;letter-spacing:1px;color:#7c6dff;border:1px solid rgba(108,99,255,.35);border-radius:8px;padding:5px 12px;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='rgba(108,99,255,.1)'" onmouseout="this.style.background=''">🇹🇷 TR</a>
+            <a href="blog.html" style="font-size:.78rem;font-weight:700;letter-spacing:1px;color:#fff;background:rgba(108,99,255,.25);border:1px solid rgba(108,99,255,.5);border-radius:8px;padding:5px 12px;text-decoration:none;">🇬🇧 EN</a>
         </div>
     </div>
 </header>

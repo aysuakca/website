@@ -439,24 +439,19 @@
     }
 
     /* ──────────────────── CONTENT LAYOUT ──────────────────── */
-    .content-layout {
-        display: grid;
-        grid-template-columns: 1fr 268px;
-        gap: 60px; align-items: start;
-    }
-    @media(max-width:900px){ .content-layout { grid-template-columns: 1fr; } .sidebar { display: none; } }
+    .content-layout { display: block; max-width: 860px; margin: 0 auto; }
     .article-body { min-width: 0; }
 
     /* Section blocks */
-    .section-block { margin-bottom: 52px; }
+    .section-block { margin-bottom: 64px; }
     .section-block h2 {
         font-family: var(--head-font);
-        font-size: 1.5rem; font-weight: 800; color: #fff;
-        letter-spacing: -.4px; margin-bottom: 16px;
-        padding-bottom: 14px;
+        font-size: 1.65rem; font-weight: 800; color: #fff;
+        letter-spacing: -.5px; margin-bottom: 18px;
+        padding-bottom: 16px;
         border-bottom: 1px solid var(--border);
     }
-    .section-block p { color: #a8b8cc; line-height: 1.8; margin-bottom: 14px; }
+    .section-block p { color: #a8b8cc; line-height: 1.85; margin-bottom: 16px; font-size: 1.01rem; }
     .section-block p strong { color: var(--text); }
 
     /* Steps */
@@ -483,13 +478,13 @@
 
     /* Cards grid */
     .cards-grid {
-        display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-        gap: 16px; margin: 20px 0;
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px; margin: 24px 0;
     }
     .info-card {
         background: var(--bg-card);
         border: 1px solid var(--border);
-        border-radius: var(--radius); padding: 22px;
+        border-radius: var(--radius); padding: 26px;
         transition: .3s;
     }
     .info-card:hover {
@@ -596,38 +591,15 @@
     }
     .cta-strip p { color: var(--muted); font-size: .88rem; max-width: 460px; }
 
-    /* ──────────────────── SIDEBAR ──────────────────── */
-    .sidebar { position: sticky; top: 92px; }
-    .sidebar-card {
-        background: var(--bg-card);
-        border: 1px solid var(--border);
-        border-radius: var(--radius); padding: 22px; margin-bottom: 16px;
-    }
-    .sidebar-card h4 {
-        font-family: var(--head-font); font-size: .88rem; font-weight: 700;
-        color: #fff; margin-bottom: 13px;
-    }
-    .sidebar-links { display: flex; flex-direction: column; gap: 3px; }
-    .sidebar-links a {
-        color: var(--muted); text-decoration: none; font-size: .82rem;
-        padding: 7px 11px; border-radius: 7px; transition: .2s;
-        border-left: 2px solid transparent;
-    }
-    .sidebar-links a:hover {
-        color: #a598ff; border-left-color: var(--purple);
-        background: rgba(108,99,255,.07);
-    }
-    .other-services { display: flex; flex-direction: column; gap: 9px; }
-    .other-service-link {
-        display: flex; align-items: center; gap: 9px;
-        color: var(--muted); text-decoration: none; font-size: .82rem;
-        padding: 9px 11px; border-radius: 9px;
-        border: 1px solid rgba(255,255,255,.06); transition: .22s;
-    }
-    .other-service-link:hover {
-        color: #fff; border-color: rgba(108,99,255,.3);
-        background: rgba(108,99,255,.07);
-    }
+    /* ──────────────────── SIDEBAR (kaldırıldı) ──────────────────── */
+    .sidebar { display: none; }
+
+    /* Other Services Bottom Strip */
+    .other-services-strip { margin: 56px 0 0; padding: 36px 40px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); }
+    .other-services-strip h4 { font-family: var(--head-font); font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 20px; letter-spacing: -.2px; }
+    .other-services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+    .other-service-link { display: flex; align-items: center; gap: 10px; color: var(--muted); text-decoration: none; font-size: .84rem; padding: 10px 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,.06); transition: .22s; }
+    .other-service-link:hover { color: #fff; border-color: rgba(108,99,255,.3); background: rgba(108,99,255,.07); transform: translateX(3px); }
     .other-service-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
 
     /* ──────────────────── FOOTER ──────────────────── */
@@ -1242,7 +1214,7 @@
                                 <li>İçerik boşlukları tespiti</li>
                                 <li>3 aylık aksiyon planı</li>
                             </ul>
-                            <button class="pkg-price-btn popup-trigger">Teklif Al <span class="pkg-price-note">· projeye özel</span></button>
+                            <div class="pkg-price">3.000 ₺ <span>· tek seferlik</span></div>
                         </div>
                         <div class="pkg-card featured">
                             <div class="pkg-badge">Önerilen · Aylık Büyüme</div>
@@ -1255,8 +1227,12 @@
                                 <li>Aylık performans raporu</li>
                                 <li>Search Console & GA4 takibi</li>
                                 <li>Öncelikli iletişim & strateji görüşmesi</li>
+                                <li>Kırık link kontrolü</li>
+                                <li>Blog içerik önerileri</li>
+                                <li>Site içi linkleme düzenlemeleri</li>  
+                                <li>Site hızı kontrolü ve temel hız önerileri</li> 
                             </ul>
-                            <button class="pkg-price-btn popup-trigger">Teklif Al <span class="pkg-price-note">· aylık · platforma özel</span></button>
+                           <div class="pkg-price">10.000 ₺ <span>· aylık</span></div>
                         </div>
                     </div>
                 </div>
@@ -1269,31 +1245,23 @@
                     <button class="btn-primary popup-trigger">Ücretsiz SEO Analizi Al →</button>
                 </div>
 
-            </article>
-
-            <!-- Sidebar -->
-            <aside class="sidebar">
-                <div class="sidebar-card">
-                    <h4>Bu Sayfada</h4>
-                    <div class="sidebar-links">
-                        <a href="#">Hizmet Türleri</a>
-                        <a href="#">On-Page SEO</a>
-                        <a href="#">Sektör Çözümleri</a>
-                        <a href="#">Paketler</a>
-                    </div>
-                </div>
-                <div class="sidebar-card">
-                    <h4>Diğer Hizmetler</h4>
-                    <div class="other-services">
-                        <a href="web-tasarim-gelistirme.html" class="other-service-link"><span class="other-service-dot" style="background:#38bdf8"></span>Web Tasarım & Geliştirme</a>
+                <div class="other-services-strip fade-up">
+                    <h4>Diğer Hizmetlerimiz</h4>
+                    <div class="other-services-grid">
+                        <a href="web-tasarim-gelistirme.html" class="other-service-link"><span class="other-service-dot" style="background:#38bdf8"></span>Web Tasarım &amp; Geliştirme</a>
                         <a href="google-ads-yonetimi.html" class="other-service-link"><span class="other-service-dot" style="background:#f59e0b"></span>Google Ads Yönetimi</a>
+                        <a href="sosyal-medya-yonetimi.html" class="other-service-link"><span class="other-service-dot" style="background:#f472b6"></span>Sosyal Medya Yönetimi</a>
+                        <a href="icerik-pazarlama.html" class="other-service-link"><span class="other-service-dot" style="background:#fb923c"></span>İçerik Pazarlama</a>
+                        <a href="e-posta-pazarlama.html" class="other-service-link"><span class="other-service-dot" style="background:#60a5fa"></span>E-posta Pazarlama</a>
+                        <a href="marka-kimlik-tasarimi.html" class="other-service-link"><span class="other-service-dot" style="background:#c084fc"></span>Marka &amp; Kimlik Tasarımı</a>
                         <a href="global-lokalizasyon.html" class="other-service-link"><span class="other-service-dot" style="background:#a78bfa"></span>Global Lokalizasyon</a>
-                        <a href="performans-qa-test.html" class="other-service-link"><span class="other-service-dot" style="background:#34d399"></span>Performans & QA Test</a>
-                        <a href="analitik-veri-takibi.html" class="other-service-link"><span class="other-service-dot" style="background:#fb7185"></span>Analitik & Veri Takibi</a>
-                        <a href="website-bakim-destek.html" class="other-service-link"><span class="other-service-dot" style="background:#fbbf24"></span>Website Bakım & Destek</a>
+                        <a href="performans-qa-test.html" class="other-service-link"><span class="other-service-dot" style="background:#34d399"></span>Performans &amp; QA Test</a>
+                        <a href="analitik-veri-takibi.html" class="other-service-link"><span class="other-service-dot" style="background:#fb7185"></span>Analitik &amp; Veri Takibi</a>
+                        <a href="website-bakim-destek.html" class="other-service-link"><span class="other-service-dot" style="background:#fbbf24"></span>Website Bakım &amp; Destek</a>
                     </div>
                 </div>
-            </aside>
+
+            </article>
         </div>
 
     </div>
@@ -1571,18 +1539,6 @@ function toggleAcc(btn) {
     }
 }
 
-// ── Active sidebar section tracking ──
-const sidebarLinks = document.querySelectorAll('.sidebar-links a');
-const sections = document.querySelectorAll('.section-block');
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => {
-        if (window.scrollY >= s.offsetTop - 160) current = s.id;
-    });
-    sidebarLinks.forEach(a => {
-        a.classList.toggle('active-section', a.getAttribute('href') === '#' + current);
-    });
-}, { passive: true });
 
 // ── Pkg card hover tilt ──
 document.querySelectorAll('.pkg-card').forEach(card => {

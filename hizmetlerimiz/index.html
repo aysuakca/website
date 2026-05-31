@@ -717,7 +717,7 @@
     /* display:none'dan açılan section'larda animasyonlu elementler görünür kalsın */
     section { isolation: isolate; }
 
-    web-tasarim-gelistirme.html {
+    web-tasarim-gelistirme {
         position: relative;
         padding: 0;
         margin: 0;
@@ -1001,13 +1001,13 @@
     /* ====================================================
        GOOGLE ADS DETAIL
     ==================================================== */
-    google-ads-yonetimi.html {
+    google-ads-yonetimi {
         padding: 110px 0 100px;
         background: var(--bg);
         position: relative; overflow: hidden;
         scroll-margin-top: 76px;
     }
-    google-ads-yonetimi.html::before {
+    google-ads-yonetimi::before {
         content: '';
         position: absolute; top: 0; right: 0;
         width: 500px; height: 500px; border-radius: 50%;
@@ -1220,7 +1220,7 @@
     .seo-acc-body.open { max-height: 300px; padding: 0 24px 20px; }
     .seo-acc-body p { color: #a0b4c8; font-size: .88rem; line-height: 1.8; }
 
-    seo-optimizasyonu.html {
+    seo-optimizasyonu {
         padding:120px 0;
         background: linear-gradient(135deg, #060410 0%, #0a0820 100%);
     }
@@ -1873,7 +1873,7 @@
        RESPONSIVE
     ==================================================== */
     @media (max-width:768px) {
-        web-tasarim-gelistirme.html { padding:40px 24px; margin:0 16px 40px; }
+        web-tasarim-gelistirme { padding:40px 24px; margin:0 16px 40px; }
         .detail-grid { grid-template-columns:1fr; gap:40px; }
         .detail-mini-grid { grid-template-columns:1fr; }
         .footer-grid { flex-direction:column; }
@@ -2112,15 +2112,15 @@
                 <h2 class="logo">Nexora Inovation</h2>
             </div>
             <nav>
-                <a href="index.html">Ana Sayfa</a>
+                <a href="index">Ana Sayfa</a>
                 <a href="hizmetlerimiz" class="active">Hizmetlerimiz</a>
                 <a href="hakkımızda">Hakkımızda</a>
                 <a href="blog">Blog</a>
                 <a href="iletişim" class="nav-cta">İletişim</a>
             </nav>
             <div style="display:flex;align-items:center;gap:12px;">
-                <a href="hizmetlerimiz" style="font-size:.78rem;font-weight:700;letter-spacing:1px;color:#fff;background:rgba(108,99,255,.25);border:1px solid rgba(108,99,255,.5);border-radius:8px;padding:5px 12px;text-decoration:none;">🇹🇷 TR</a>
-                <a href="en/services.html" style="font-size:.78rem;font-weight:700;letter-spacing:1px;color:#7c6dff;border:1px solid rgba(108,99,255,.35);border-radius:8px;padding:5px 12px;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='rgba(108,99,255,.1)'" onmouseout="this.style.background=''">🇬🇧 EN</a>
+                <a href="hizmetler" style="font-size:.78rem;font-weight:700;letter-spacing:1px;color:#fff;background:rgba(108,99,255,.25);border:1px solid rgba(108,99,255,.5);border-radius:8px;padding:5px 12px;text-decoration:none;">🇹🇷 TR</a>
+                <a href="en/services" style="font-size:.78rem;font-weight:700;letter-spacing:1px;color:#7c6dff;border:1px solid rgba(108,99,255,.35);border-radius:8px;padding:5px 12px;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='rgba(108,99,255,.1)'" onmouseout="this.style.background=''">🇬🇧 EN</a>
             </div>
         </div>
     </header>
@@ -2173,7 +2173,7 @@
                             <li>E-ticaret web sitesi kurulumu ve optimizasyonu</li>
                         </ul>
                     </div>
-                    <a href="web-tasarim-gelistirme.html" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <a href="web-tasarim-gelistirme" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
                 </div>
 
                 <!-- SEO -->
@@ -2194,7 +2194,7 @@
                             <li>İçerik stratejisi ve anahtar kelime araştırması</li>
                         </ul>
                     </div>
-                    <a href="seo-optimizasyonu.html" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <a href="seo-optimizasyonu" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
                 </div>
 
                 <!-- Google Ads -->
@@ -2214,7 +2214,7 @@
                             <li>Dönüşüm optimizasyonu ve A/B testleri</li>
                         </ul>
                     </div>
-                    <a href="google-ads-yonetimi.html" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <a href="google-ads-yonetimi" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
                 </div>
 
                 <!-- Global Lokalizasyon -->
@@ -2235,7 +2235,7 @@
                             <li>Uluslararası SEO stratejileri</li>
                         </ul>
                     </div>
-                    <a href="global-lokalizasyon.html" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <a href="global-lokalizasyon" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
                 </div>
 
                 <!-- Performans & QA -->
@@ -2255,7 +2255,7 @@
                             <li>Cross-browser & Cihaz Testleri</li>
                         </ul>
                     </div>
-                    <a href="performans-qa-test.html" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <a href="performans-qa-test" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
                 </div>
 
                 <!-- Analitik -->
@@ -2276,7 +2276,7 @@
                             <li>Veri analizi ve dashboard raporları</li>
                         </ul>
                     </div>
-                    <a href="analitik-veri-takibi.html" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <a href="analitik-veri-takibi" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
                 </div>
 
                 <!-- Website Bakım -->
@@ -2295,7 +2295,7 @@
                             <li>Site performansı ve hız optimizasyonu</li>
                         </ul>
                     </div>
-                    <a href="website-bakim-destek.html" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <a href="website-bakim-destek" class="service-link">Detayları Gör <svg viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
                 </div>
 
             </div>
@@ -2547,7 +2547,7 @@
             </div>
             <div style="display:flex;gap:16px;flex-wrap:wrap;flex-shrink:0;">
                 <a href="javascript:void(0)" class="btn-primary popup-trigger">Ücretsiz Teklif Al →</a>
-                <a href="iletişim" class="btn-ghost">Bize Ulaşın</a>
+                <a href="iletisim" class="btn-ghost">Bize Ulaşın</a>
             </div>
         </div>
     </section>
@@ -2600,10 +2600,10 @@
                     </div>
 
                     <div class="footer-socials">
-                        <a href="#" class="footer-social-btn" title="LinkedIn">
+                        <a href="https://www.linkedin.com/in/nexora-inovation-74140b401/" class="footer-social-btn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
                         </a>
-                        <a href="#" class="footer-social-btn" title="Instagram">
+                        <a href="https://www.instagram.com/nexorainovation/" class="footer-social-btn" title="Instagram" target="_blank" rel="noopener noreferrer">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
                         </a>
                        
@@ -2614,13 +2614,13 @@
                 <div class="footer-nav-col">
                     <div class="footer-nav-heading">Hizmetler</div>
                     <ul class="footer-nav-list">
-                        <li><a href="web-tasarim-gelistirme.html">Web Tasarım & Geliştirme</a></li>
-                        <li><a href="seo-optimizasyonu.html">SEO Optimizasyonu</a></li>
-                        <li><a href="google-ads-yonetimi.html">Google Ads Yönetimi</a></li>
-                        <li><a href="global-lokalizasyon.html">Global Lokalizasyon</a></li>
-                        <li><a href="performans-qa-test.html">Performans & QA Test</a></li>
-                        <li><a href="analitik-veri-takibi.html">Analitik & Veri Takibi</a></li>
-                        <li><a href="website-bakim-destek.html">Website Bakım & Destek</a></li>
+                        <li><a href="web-tasarim-gelistirme">Web Tasarım & Geliştirme</a></li>
+                        <li><a href="seo-optimizasyonu">SEO Optimizasyonu</a></li>
+                        <li><a href="google-ads-yonetimi">Google Ads Yönetimi</a></li>
+                        <li><a href="global-lokalizasyon">Global Lokalizasyon</a></li>
+                        <li><a href="performans-qa-test">Performans & QA Test</a></li>
+                        <li><a href="analitik-veri-takibi">Analitik & Veri Takibi</a></li>
+                        <li><a href="website-bakim-destek">Website Bakım & Destek</a></li>
                     </ul>
                 </div>
 
@@ -2628,8 +2628,8 @@
                 <div class="footer-nav-col">
                     <div class="footer-nav-heading">Şirket</div>
                     <ul class="footer-nav-list">
-                        <li><a href="hakkımızda">Hakkımızda</a></li>
-                        <li><a href="iletişim">İletişim</a></li>
+                        <li><a href="hakkimizda">Hakkımızda</a></li>
+                        <li><a href="iletisim">İletişim</a></li>
                         <li><a href="blog">Blog</a></li>
                         <li><a href="#">Referanslar</a></li>
                         <li><a href="#">Kariyer</a></li>

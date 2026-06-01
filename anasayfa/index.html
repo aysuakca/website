@@ -2178,7 +2178,7 @@
             </nav>
             <div style="display:flex;align-items:center;gap:12px;">
                 <a href="index.html" style="font-size:.78rem;font-weight:700;letter-spacing:1px;color:#fff;background:rgba(108,99,255,.25);border:1px solid rgba(108,99,255,.5);border-radius:8px;padding:5px 12px;text-decoration:none;">🇹🇷 TR</a>
-                <a href="en/index.html" style="font-size:.78rem;font-weight:700;letter-spacing:1px;color:#7c6dff;border:1px solid rgba(108,99,255,.35);border-radius:8px;padding:5px 12px;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='rgba(108,99,255,.1)'" onmouseout="this.style.background=''">🇬🇧 EN</a>
+                <a href="/en/home" style="font-size:.78rem;font-weight:700;letter-spacing:1px;color:#7c6dff;border:1px solid rgba(108,99,255,.35);border-radius:8px;padding:5px 12px;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='rgba(108,99,255,.1)'" onmouseout="this.style.background=''">🇬🇧 EN</a>
             </div>
         </div>
     </header>
@@ -2854,7 +2854,7 @@ if (!sessionStorage.getItem('langRedirected')) {
     sessionStorage.setItem('langRedirected', '1');
     const lang = navigator.language || navigator.userLanguage || '';
     if (!lang.startsWith('tr')) {
-        window.location.href = 'en/index.html';
+        window.location.href = '/en/home';
     }
 }
 

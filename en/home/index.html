@@ -2166,7 +2166,7 @@
             <h2 class="logo">Nexora Inovation</h2>
         </div>
         <nav>
-            <a href="index.html" class="active">Home</a>
+            <a href="home" class="active">Home</a>
             <a href="services">Services</a>
             <a href="about">About</a>
             <a href="blog">Blog</a>
@@ -2744,7 +2744,7 @@ if (!sessionStorage.getItem('langRedirected')) {
     sessionStorage.setItem('langRedirected', '1');
     const lang = navigator.language || navigator.userLanguage || '';
     if (!lang.startsWith('tr') && window.location.pathname.indexOf('/en/') === -1) {
-        window.location.href = '/en/index.html';
+        window.location.href = '/en/home';
     }
 }
 </script>

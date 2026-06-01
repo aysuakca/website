@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <title>Nexora Innovation</title>
     <script type="text/javascript">
+        // Kullanıcının tarayıcı dilini tespit et
         var userLang = navigator.language || navigator.userLanguage; 
         userLang = userLang.substring(0, 2).toLowerCase();
 
-        // en klasörü artık ana dizinde olduğu için direkt "/en/" yazıyoruz
+        // Eğer tarayıcı dili İngilizce ise en klasörünün içindeki home'a yönlendir
         if (userLang === 'en') {
             window.location.replace("/en/home/");
         } else {
+            // İngilizce dışındaki tüm diller (ve Türkçe) için anasayfa klasörüne yönlendir
             window.location.replace("/anasayfa/");
         }
     </script>

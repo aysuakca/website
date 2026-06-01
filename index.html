@@ -4,24 +4,19 @@
     <meta charset="UTF-8">
     <title>Nexora Innovation</title>
     <script type="text/javascript">
-        // Kullanıcının tarayıcı dilini al (Örn: "tr", "tr-TR", "en", "en-US")
         var userLang = navigator.language || navigator.userLanguage; 
-        
-        // Dil kodunu ilk iki harfe indirge (Örn: "en-US" -> "en")
         userLang = userLang.substring(0, 2).toLowerCase();
 
-        // Eğer tarayıcı dili İngilizce ise direkt temiz /en/ klasörüne yönlendir
+        // en klasörü artık ana dizinde olduğu için direkt "/en/" yazıyoruz
         if (userLang === 'en') {
             window.location.replace("/en/");
         } else {
-            // İngilizce dışındaki tüm diller (varsayılan olarak Türkçe) için /anasayfa/ klasörüne yönlendir
             window.location.replace("/anasayfa/");
         }
     </script>
 </head>
 <body>
     <noscript>
-        <!-- JavaScript devre dışıysa varsayılan olarak Türkçe anasayfaya yönlendir -->
         <meta http-equiv="refresh" content="0; url=/anasayfa/">
     </noscript>
 </body>

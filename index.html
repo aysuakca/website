@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Sayfa açılır açılmaz kullanıcıyı /anasayfa klasörüne yönlendirir -->
-    <meta http-equiv="refresh" content="0; url=/anasayfa/">
-    <title>Yönlendiriliyorsunuz...</title>
+    <meta charset="UTF-8">
+    <title>Nexora Innovation</title>
+    <script type="text/javascript">
+        // Sayfa geçmişini bozmadan ve tarayıcıyı bekletmeden anında yönlendirir
+        window.location.replace("/anasayfa/");
+    </script>
 </head>
 <body>
-    <p>Eğer yönlendirilmediyseniz <a href="/anasayfa/">buraya tıklayın</a>.</p>
+    <!-- JavaScript kapalıysa çalışacak yedek plan -->
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=/anasayfa/">
+    </noscript>
 </body>
 </html>

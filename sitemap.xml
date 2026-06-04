@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Ana Sayfa -->
+  <url>
+    <loc>https://nexorainovation.com/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://nexorainovation.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexorainovation.com/en/home"/>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Hizmetlerimiz -->
+  <url>
+    <loc>https://nexorainovation.com/hizmetlerimiz</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://nexorainovation.com/hizmetlerimiz"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexorainovation.com/en/services"/>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Hakkımızda -->
+  <url>
+    <loc>https://nexorainovation.com/hakkımızda</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://nexorainovation.com/hakkımızda"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexorainovation.com/en/about"/>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://nexorainovation.com/blog</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://nexorainovation.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexorainovation.com/en/blog"/>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- İletişim -->
+  <url>
+    <loc>https://nexorainovation.com/iletişim</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://nexorainovation.com/iletişim"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexorainovation.com/en/contact"/>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- EN: Home -->
+  <url>
+    <loc>https://nexorainovation.com/en/home</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexorainovation.com/en/home"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://nexorainovation.com/"/>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- EN: Services -->
+  <url>
+    <loc>https://nexorainovation.com/en/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexorainovation.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://nexorainovation.com/hizmetlerimiz"/>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- EN: About -->
+  <url>
+    <loc>https://nexorainovation.com/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexorainovation.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://nexorainovation.com/hakkımızda"/>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- EN: Blog -->
+  <url>
+    <loc>https://nexorainovation.com/en/blog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexorainovation.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://nexorainovation.com/blog"/>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- EN: Contact -->
+  <url>
+    <loc>https://nexorainovation.com/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexorainovation.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://nexorainovation.com/iletişim"/>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>

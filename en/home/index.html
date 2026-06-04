@@ -3,10 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ✅ Core SEO -->
     <title>Nexora Inovation | SEO & Web Solutions</title>
-    <meta name="description" content="Nexora Inovation grows your brand digitally with SEO and modern web development solutions.">
+    <meta name="description" content="Nexora Inovation grows your brand digitally with SEO and modern web development solutions. Rank higher on Google and increase conversions.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Nexora Inovation">
+    <link rel="canonical" href="https://nexorainovation.com/en/home">
+
+    <!-- ✅ hreflang — Google'a TR ve EN sayfaların ilişkisini söyler -->
+    <link rel="alternate" hreflang="tr" href="https://nexorainovation.com/">
+    <link rel="alternate" hreflang="en" href="https://nexorainovation.com/en/home">
+    <link rel="alternate" hreflang="x-default" href="https://nexorainovation.com/">
+
+    <!-- ✅ Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nexorainovation.com/en/home">
     <meta property="og:title" content="Nexora Inovation | SEO & Web Solutions">
-    <meta property="og:image" content="logo-veya-onizleme.jpg">
+    <meta property="og:description" content="Nexora Inovation grows your brand digitally with SEO and modern web development solutions. Rank higher on Google and increase conversions.">
+    <meta property="og:image" content="https://nexorainovation.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="tr_TR">
+    <meta property="og:site_name" content="Nexora Inovation">
+
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://nexorainovation.com/en/home">
+    <meta name="twitter:title" content="Nexora Inovation | SEO & Web Solutions">
+    <meta name="twitter:description" content="Nexora Inovation grows your brand digitally with SEO and modern web development solutions.">
+    <meta name="twitter:image" content="https://nexorainovation.com/og-image.jpg">
+
+    <!-- ✅ Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Nexora Inovation",
+      "description": "SEO and modern web development solutions to grow your brand digitally.",
+      "url": "https://nexorainovation.com",
+      "logo": "https://nexorainovation.com/logo.png",
+      "email": "info@nexorainovation.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "TR"
+      },
+      "sameAs": [],
+      "serviceType": ["SEO", "Web Development", "Digital Marketing"],
+      "availableLanguage": ["Turkish", "English"]
+    }
+    </script>
 
    <!-- EmailJS SDK -->
    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -2743,8 +2790,9 @@ async function submitPopup() {
 if (!sessionStorage.getItem('langRedirected')) {
     sessionStorage.setItem('langRedirected', '1');
     const lang = navigator.language || navigator.userLanguage || '';
-    if (!lang.startsWith('tr') && window.location.pathname.indexOf('/en/') === -1) {
-        window.location.href = '/en/home';
+    // TR kullanıcıları Türkçe anasayfaya yönlendir
+    if (lang.startsWith('tr')) {
+        window.location.href = '/';
     }
 }
 </script>

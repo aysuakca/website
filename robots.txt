@@ -1,0 +1,8 @@
+# Nexora Inovation — robots.txt
+# https://nexorainovation.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://nexorainovation.com/sitemap.xml

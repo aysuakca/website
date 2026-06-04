@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Yaşamın Zihinsel Sağlık Üzerindeki Etkileri | Nexora Inovation Blog</title>
+    <meta name="description" content="Daha az eşya, daha çok huzur. Minimalist yaşam tarzının stres yönetimi ve mental sağlık üzerindeki bilimsel etkilerini inceleyin.">
+    <meta name="keywords" content="minimalizm, zihinsel sağlık, mental health, stres yönetimi, dijital detoks, karar yorgunluğu, minimalist yaşam">
+    <meta property="og:title" content="Minimalist Yaşamın Zihinsel Sağlık Üzerindeki Etkileri">
+    <meta property="og:description" content="Daha az eşya, daha çok huzur. Minimalist yaşam tarzının mental sağlık üzerindeki bilimsel etkilerini inceleyin.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://nexorainovation.com/minimalizm-ve-zihinsel-saglik">
+    <link rel="canonical" href="https://nexorainovation.com/minimalizm-ve-zihinsel-saglik">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+    :root {
+        --bg:        #000000;
+        --border:    rgba(255,255,255,0.1);
+        --purple:    #7c6dff;
+        --cyan:      #00f0ff;
+        --text:      #f0f4fc;
+        --body-font: 'Inter', sans-serif;
+        --head-font: 'Plus Jakarta Sans', sans-serif;
+        --radius-xl: 28px;
+        --radius-2xl:40px;
+        /* Bu yazının aksant: sakin sage/yeşil */
+        --accent:        #818cf8;
+        --accent-dim:    rgba(129,140,248,.1);
+        --accent-border: rgba(129,140,248,.28);
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background:var(--bg); color:var(--text); font-family:var(--body-font); font-size:1rem; line-height:1.6; overflow-x:hidden; }
+    body::before { content:''; position:fixed; inset:0; z-index:9999; pointer-events:none; opacity:.025; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:200px 200px; }
+
+    .global-background-glow { position:fixed; inset:0; z-index:-1; pointer-events:none; background: radial-gradient(ellipse 70% 60% at 30% 15%, rgba(132,204,22,.05) 0%, transparent 65%), radial-gradient(ellipse 60% 50% at 75% 85%, rgba(108,99,255,.04) 0%, transparent 65%); filter:blur(40px); }
+
+    .container { width:100%; max-width:1200px; margin:0 auto; padding:0 28px; }
+    .g-text { background:linear-gradient(100deg,var(--accent),#c4b5fd); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+    /* HEADER */
+    .main-header { height:76px; position:sticky; top:0; z-index:1000; background:rgba(6,8,15,.85); backdrop-filter:blur(18px) saturate(180%); border-bottom:1px solid var(--border); }
+    .nav-wrapper { display:flex; align-items:center; justify-content:space-between; height:100%; gap:20px; padding:0 40px 0 24px; width:100%; }
+    .logo-area { display:flex; align-items:center; gap:12px; flex-shrink:0; }
+    .logo { font-family:var(--head-font); font-weight:800; font-size:1.45rem; color:#fff; white-space:nowrap; letter-spacing:-.5px; text-decoration:none; }
+    nav { display:flex; align-items:center; gap:4px; }
+    nav a { color:#fff; text-decoration:none; padding:9px 16px; font-size:.875rem; font-weight:500; border-radius:100px; opacity:.55; transition:opacity .25s,background .25s,color .25s; }
+    nav a:hover { opacity:1; }
+    nav a.active { opacity:1; background:rgba(108,99,255,.15); color:var(--purple); box-shadow:inset 0 0 0 1px rgba(108,99,255,.3); }
+
+    .read-progress-bar { position:fixed; top:76px; left:0; width:0%; height:3px; background:linear-gradient(90deg,var(--accent),#c4b5fd); z-index:999; transition:width .1s linear; }
+
+    .article-cover {
+        width:100%; height:480px;
+        background:url('minimalizm-cover.jpg') center center / cover no-repeat;
+        display:flex; align-items:flex-end; justify-content:flex-start;
+        position:relative; overflow:hidden;
+        border-radius:0 0 var(--radius-2xl) var(--radius-2xl);
+    }
+
+    .article-cover::before {
+        content:''; position:absolute; inset:0;
+        background:
+            linear-gradient(to top, rgba(0,0,0,.82) 0%, rgba(0,0,0,.3) 55%, rgba(0,0,0,.05) 100%),
+            linear-gradient(to right, rgba(129,140,248,.12) 0%, transparent 65%);
+    }
+
+    /* Merkezdeki sade görsel dekor */
+    .cover-inner { position:relative; z-index:2; text-align:center; }
+    .cover-leaf-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; max-width:280px; margin:0 auto 20px; }
+    .cover-leaf-box {
+        background:rgba(132,204,22,.08); border:1px solid rgba(129,140,248,.18);
+        border-radius:18px; padding:18px 14px;
+        display:flex; flex-direction:column; align-items:center; gap:6px;
+        backdrop-filter:blur(8px);
+        animation:leafFloat var(--dur,6s) ease-in-out infinite alternate;
+    }
+    .cover-leaf-box:nth-child(1){--dur:5.5s} .cover-leaf-box:nth-child(2){--dur:7s;animation-delay:-1s} .cover-leaf-box:nth-child(3){--dur:6s;animation-delay:-2s}
+    @keyframes leafFloat { 0%{transform:translateY(0)} 100%{transform:translateY(-8px)} }
+    .cover-leaf-box .leaf-emoji { font-size:1.6rem; }
+    .cover-leaf-box .leaf-label { font-size:.6rem; font-weight:700; color:rgba(132,204,22,.6); letter-spacing:.8px; text-transform:uppercase; }
+    .cover-tagline { color:rgba(255,255,255,.35); font-size:.72rem; font-weight:600; letter-spacing:2px; text-transform:uppercase; }
+
+    /* BREADCRUMB */
+    .breadcrumb { padding:20px 0 0; display:flex; align-items:center; gap:8px; font-size:.82rem; color:#64748b; }
+    .breadcrumb a { color:#64748b; text-decoration:none; transition:color .2s; }
+    .breadcrumb a:hover { color:var(--accent); }
+    .breadcrumb .sep { opacity:.4; }
+    .breadcrumb .current { color:#94a3b8; }
+
+    /* HERO */
+    .article-hero { padding:40px 0 0; }
+    .article-meta-top { display:flex; align-items:center; gap:14px; margin-bottom:24px; flex-wrap:wrap; }
+    .article-cat-badge { background:var(--accent-dim); color:var(--accent); border:1px solid var(--accent-border); border-radius:100px; padding:6px 16px; font-size:.75rem; font-weight:700; letter-spacing:.8px; text-transform:uppercase; }
+    .article-date { color:#64748b; font-size:.82rem; font-weight:500; }
+    .article-read-time { color:var(--accent); font-size:.78rem; font-weight:600; background:var(--accent-dim); border:1px solid var(--accent-border); padding:4px 12px; border-radius:100px; }
+    .article-hero-title { font-family:var(--head-font); font-size:clamp(2rem,4vw,3rem); font-weight:900; color:#fff; letter-spacing:-1.5px; line-height:1.15; margin-bottom:20px; max-width:820px; }
+    .article-hero-desc { font-size:1.15rem; color:#94a3b8; line-height:1.75; max-width:680px; margin-bottom:32px; }
+    .article-hero-tags { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:40px; }
+    .article-tag { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); color:#94a3b8; padding:5px 14px; border-radius:100px; font-size:.75rem; font-weight:600; transition:all .2s; }
+    .article-tag:hover { border-color:var(--accent-border); color:var(--accent); }
+    .article-author-bar { display:flex; align-items:center; justify-content:space-between; padding:20px 0; border-top:1px solid rgba(255,255,255,.06); border-bottom:1px solid rgba(255,255,255,.06); flex-wrap:wrap; gap:16px; }
+    .author-info { display:flex; align-items:center; gap:14px; }
+    .author-avatar { width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,var(--accent),#c4b5fd); display:flex; align-items:center; justify-content:center; font-family:var(--head-font); font-weight:800; font-size:1rem; color:#fff; flex-shrink:0; }
+    .author-name { font-family:var(--head-font); font-weight:700; color:#f0f4fc; font-size:.9rem; }
+    .author-title { color:#64748b; font-size:.78rem; margin-top:2px; }
+    .share-row { display:flex; align-items:center; gap:10px; }
+    .share-label { color:#64748b; font-size:.78rem; font-weight:600; }
+    .share-btn { display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); color:#94a3b8; text-decoration:none; transition:all .2s; cursor:pointer; }
+    .share-btn:hover { background:var(--accent-dim); border-color:var(--accent-border); color:var(--accent); transform:translateY(-2px); }
+
+    /* LAYOUT */
+    .article-layout { display:grid; grid-template-columns:1fr 320px; gap:60px; padding:60px 0 100px; align-items:start; }
+    .article-content { min-width:0; }
+
+    /* TOC */
+    .toc-box { background:rgba(255,255,255,.025); border:1px solid rgba(255,255,255,.08); border-left:3px solid var(--accent); border-radius:20px; padding:28px 32px; margin-bottom:52px; }
+    .toc-title { font-family:var(--head-font); font-size:.85rem; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:16px; }
+    .toc-list { list-style:none; display:flex; flex-direction:column; gap:4px; }
+    .toc-list li a { color:#94a3b8; text-decoration:none; font-size:.88rem; font-weight:500; display:flex; align-items:center; gap:10px; padding:6px 0; border-bottom:1px solid rgba(255,255,255,.04); transition:color .2s,gap .2s; }
+    .toc-list li:last-child a { border-bottom:none; }
+    .toc-list li a:hover { color:var(--accent); gap:14px; }
+    .toc-list li a .toc-num { color:rgba(132,204,22,.55); font-weight:700; font-size:.75rem; min-width:22px; }
+
+    /* İçerik stilleri */
+    .article-content h2 { font-family:var(--head-font); font-size:1.55rem; font-weight:800; color:#fff; letter-spacing:-.5px; margin:56px 0 18px; display:flex; align-items:center; gap:14px; }
+    .article-content h2 .step-num { display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:12px; background:var(--accent-dim); border:1px solid var(--accent-border); font-size:.85rem; font-weight:800; color:var(--accent); flex-shrink:0; }
+    .article-content p { color:#c8d4e4; font-size:1.02rem; line-height:1.85; margin-bottom:20px; }
+    .article-content p strong { color:#f0f4fc; font-weight:600; }
+    .article-content ul { list-style:none; margin:16px 0 24px; display:flex; flex-direction:column; gap:10px; }
+    .article-content ul li { color:#c8d4e4; font-size:1rem; line-height:1.7; display:flex; gap:12px; align-items:flex-start; }
+    .article-content ul li::before { content:''; display:inline-block; width:6px; height:6px; border-radius:50%; background:linear-gradient(135deg,var(--accent),#c4b5fd); margin-top:9px; flex-shrink:0; }
+
+    /* Bilimsel stat kutusu */
+    .science-box { background:linear-gradient(135deg,rgba(129,140,248,.06),rgba(196,181,253,.04)); border:1px solid rgba(129,140,248,.18); border-radius:20px; padding:26px 30px; margin:28px 0; display:flex; gap:20px; align-items:flex-start; }
+    .science-icon { font-size:2rem; flex-shrink:0; }
+    .science-body .sb-label { font-family:var(--head-font); font-size:.72rem; font-weight:800; color:var(--accent); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:6px; }
+    .science-body p { color:#c8d4e4; font-size:.94rem; line-height:1.7; margin:0; }
+    .science-body p strong { color:#f0f4fc; }
+
+    /* Pratik adım kartı */
+    .action-card { background:rgba(255,255,255,.025); border:1px solid rgba(255,255,255,.07); border-left:3px solid var(--accent); border-radius:16px; padding:20px 24px; margin:12px 0; display:flex; gap:16px; align-items:flex-start; transition:border-color .2s; }
+    .action-card:hover { border-color:rgba(132,204,22,.35); }
+    .action-card .ac-num { font-family:var(--head-font); font-size:1.1rem; font-weight:900; color:rgba(132,204,22,.4); flex-shrink:0; min-width:28px; }
+    .action-card .ac-text { color:#c8d4e4; font-size:.95rem; line-height:1.7; }
+    .action-card .ac-text strong { color:#f0f4fc; }
+
+    /* Tip kutusu */
+    .tip-box { background:var(--accent-dim); border:1px solid var(--accent-border); border-left:3px solid var(--accent); border-radius:16px; padding:22px 26px; margin:28px 0; display:flex; gap:16px; align-items:flex-start; }
+    .tip-box .tip-icon { font-size:1.3rem; flex-shrink:0; margin-top:2px; }
+    .tip-box .tip-text { color:#c8d4e4; font-size:.95rem; line-height:1.7; }
+    .tip-box .tip-text strong { color:var(--accent); display:block; margin-bottom:4px; font-weight:700; }
+
+    /* Sonuç kutusu */
+    .conclusion-box { margin-top:56px; padding:40px; background:linear-gradient(135deg,rgba(129,140,248,.05),rgba(196,181,253,.03)); border:1px solid rgba(129,140,248,.15); border-radius:var(--radius-xl); }
+    .conclusion-box h2 { font-family:var(--head-font); font-size:1.4rem; font-weight:800; color:#fff; margin-bottom:16px; letter-spacing:-.3px; }
+
+    /* CTA */
+    .article-cta { margin-top:72px; background:linear-gradient(135deg,rgba(129,140,248,.07),rgba(196,181,253,.04)); border:1px solid rgba(129,140,248,.18); border-radius:var(--radius-2xl); padding:52px 48px; text-align:center; position:relative; overflow:hidden; }
+    .article-cta::before { content:''; position:absolute; top:-60px;left:50%;transform:translateX(-50%); width:400px;height:200px; background:radial-gradient(ellipse,rgba(129,140,248,.15) 0%,transparent 70%); pointer-events:none; filter:blur(40px); }
+    .article-cta h3 { font-family:var(--head-font); font-size:1.7rem; font-weight:800; color:#fff; margin-bottom:14px; position:relative; }
+    .article-cta p { color:#94a3b8; font-size:1rem; line-height:1.7; max-width:460px; margin:0 auto 32px; position:relative; }
+    .btn-primary { display:inline-block; padding:15px 36px; background:linear-gradient(135deg,var(--accent),#c4b5fd); color:#fff; font-weight:700; font-size:.95rem; border-radius:100px; text-decoration:none; box-shadow:0 8px 28px rgba(129,140,248,.3); transition:transform .15s,box-shadow .15s; }
+    .btn-primary:hover { transform:translateY(-3px); box-shadow:0 18px 40px rgba(129,140,248,.4); }
+
+    /* Önceki/Sonraki */
+    .article-nav { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:56px; padding-top:40px; border-top:1px solid rgba(255,255,255,.06); }
+    .article-nav-card { background:rgba(255,255,255,.025); border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:22px 24px; text-decoration:none; transition:all .3s; display:flex; flex-direction:column; gap:6px; }
+    .article-nav-card:hover { border-color:var(--accent-border); transform:translateY(-4px); box-shadow:0 16px 40px rgba(132,204,22,.1); }
+    .nav-card-dir { font-size:.72rem; font-weight:700; color:#64748b; text-transform:uppercase; letter-spacing:1.2px; }
+    .nav-card-title { font-family:var(--head-font); font-size:.95rem; font-weight:700; color:#f0f4fc; line-height:1.4; }
+    .article-nav-card.next { text-align:right; }
+
+    /* SIDEBAR */
+    .article-sidebar { position:sticky; top:100px; display:flex; flex-direction:column; gap:24px; }
+    .sidebar-card { background:rgba(255,255,255,.025); border:1px solid rgba(255,255,255,.08); border-radius:22px; padding:26px; }
+    .sidebar-card-title { font-family:var(--head-font); font-size:.78rem; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:18px; }
+
+    /* Huzur ölçer — eğlenceli sidebar widget */
+    .peace-meter-widget { text-align:center; }
+    .pm-question { font-size:.85rem; color:#94a3b8; line-height:1.6; margin-bottom:16px; }
+    .pm-scale { display:flex; gap:6px; justify-content:center; margin-bottom:14px; }
+    .pm-btn { width:36px; height:36px; border-radius:50%; border:1.5px solid rgba(255,255,255,.1); background:rgba(255,255,255,.03); cursor:pointer; font-size:1rem; display:flex; align-items:center; justify-content:center; transition:all .2s; }
+    .pm-btn:hover, .pm-btn.active { border-color:rgba(129,140,248,.6); background:rgba(129,140,248,.1); transform:scale(1.15); }
+    .pm-result { font-family:var(--head-font); font-size:.88rem; color:#94a3b8; min-height:40px; line-height:1.5; transition:all .3s; }
+
+    /* 10 etki listesi */
+    .effects-mini { display:flex; flex-direction:column; gap:6px; }
+    .effect-item { display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:10px; transition:background .2s; }
+    .effect-item:hover { background:rgba(129,140,248,.05); }
+    .effect-num { font-family:var(--head-font); font-size:.7rem; font-weight:800; color:rgba(129,140,248,.6); min-width:18px; }
+    .effect-label { font-size:.8rem; color:#94a3b8; font-weight:500; }
+
+    /* İlgili yazılar */
+    .related-mini-card { display:flex; gap:12px; align-items:flex-start; padding:12px 0; border-bottom:1px solid rgba(255,255,255,.05); text-decoration:none; transition:all .2s; }
+    .related-mini-card:last-child { border-bottom:none; }
+    .related-mini-card:hover .related-mini-title { color:var(--accent); }
+    .related-mini-dot { width:38px; height:38px; border-radius:12px; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:1.1rem; }
+    .related-mini-title { font-family:var(--head-font); font-size:.82rem; font-weight:600; color:#c8d4e4; line-height:1.4; transition:color .2s; }
+    .related-mini-date { font-size:.72rem; color:#64748b; margin-top:3px; }
+
+    /* Paylaş */
+    .sidebar-share-btns { display:flex; flex-direction:column; gap:10px; }
+    .sidebar-share-btn { display:flex; align-items:center; gap:12px; padding:12px 18px; border-radius:14px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03); color:#94a3b8; text-decoration:none; font-size:.83rem; font-weight:600; cursor:pointer; transition:all .2s; font-family:var(--body-font); width:100%; text-align:left; }
+    .sidebar-share-btn:hover { background:var(--accent-dim); border-color:var(--accent-border); color:var(--accent); transform:translateX(4px); }
+
+    /* Bülten */
+    .sidebar-nl-input { width:100%; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:12px 18px; color:#fff; font-size:.88rem; font-family:var(--body-font); outline:none; margin-bottom:10px; transition:border-color .25s; }
+    .sidebar-nl-input::placeholder { color:#475569; }
+    .sidebar-nl-input:focus { border-color:var(--accent-border); }
+    .sidebar-nl-btn { width:100%; padding:12px; background:linear-gradient(135deg,var(--accent),#c4b5fd); color:#fff; border:none; border-radius:14px; font-size:.88rem; font-weight:700; cursor:pointer; font-family:var(--body-font); transition:all .2s; }
+    .sidebar-nl-btn:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(129,140,248,.3); }
+
+    /* FOOTER */
+    .article-footer { background:rgba(255,255,255,.015); border-top:1px solid rgba(255,255,255,.06); padding:40px 0; }
+    .footer-simple { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+    .footer-simple .logo-txt { font-family:var(--head-font); font-weight:800; color:#fff; font-size:1.1rem; text-decoration:none; }
+    .footer-simple p { color:#475569; font-size:.82rem; }
+    .footer-simple-links { display:flex; gap:20px; }
+    .footer-simple-links a { color:#475569; text-decoration:none; font-size:.82rem; transition:color .2s; }
+    .footer-simple-links a:hover { color:var(--accent); }
+
+    /* RESPONSIVE */
+    @media (max-width:1024px) { .article-layout { grid-template-columns:1fr; } .article-sidebar { position:relative; top:0; } }
+    @media (max-width:768px) { .article-hero-title { font-size:1.9rem; } .article-cover { height:300px; } .cover-leaf-grid { grid-template-columns:repeat(3,1fr); gap:10px; } .article-cta { padding:36px 24px; } .article-nav { grid-template-columns:1fr; } .nav-wrapper { padding:0 16px; } .article-author-bar { flex-direction:column; align-items:flex-start; } }
+    </style>
+</head>
+<body>
+<div class="global-background-glow"></div>
+<div class="read-progress-bar" id="progressBar"></div>
+
+<!-- HEADER -->
+<header class="main-header">
+    <div class="nav-wrapper">
+        <div class="logo-area"><a href="index.html" class="logo">Nexora Inovation</a></div>
+        <nav>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="hizmetler.html">Hizmetlerimiz</a>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="blog.html" class="active">Blog</a>
+            <a href="iletisim.html">İletişim</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO COVER -->
+<div class="article-cover">
+    <div class="cover-caption" style="position:relative;z-index:2;padding:36px 48px 44px;width:100%;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
+            <span style="background:rgba(129,140,248,.2);color:#818cf8;border:1px solid rgba(129,140,248,.4);border-radius:100px;padding:5px 16px;font-size:.72rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;backdrop-filter:blur(8px);">Yaşam & Sağlık</span>
+            <span style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:5px 16px;font-size:.72rem;font-weight:700;letter-spacing:.6px;backdrop-filter:blur(8px);">⏱ 9 dk okuma</span>
+        </div>
+        <h2 style="font-family:var(--head-font);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:900;color:#fff;letter-spacing:-1px;line-height:1.2;max-width:640px;text-shadow:0 2px 20px rgba(0,0,0,.6);">Minimalist Yaşamın<br>Zihinsel Sağlık Üzerindeki Etkileri</h2>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;">
+            <span style="background:rgba(129,140,248,.15);color:#818cf8;border:1px solid rgba(129,140,248,.3);border-radius:100px;padding:4px 12px;font-size:.7rem;font-weight:600;backdrop-filter:blur(6px);">Minimalizm</span>
+            <span style="background:rgba(129,140,248,.15);color:#818cf8;border:1px solid rgba(129,140,248,.3);border-radius:100px;padding:4px 12px;font-size:.7rem;font-weight:600;backdrop-filter:blur(6px);">Mental Sağlık</span>
+            <span style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:4px 12px;font-size:.7rem;font-weight:600;backdrop-filter:blur(6px);">Dijital Detoks</span>
+            <span style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:4px 12px;font-size:.7rem;font-weight:600;backdrop-filter:blur(6px);">Princeton Araştırması</span>
+        </div>
+    </div>
+</div>
+
+<!-- MAKALE -->
+<main>
+<div class="container">
+
+    <div class="breadcrumb">
+        <a href="index.html">Ana Sayfa</a><span class="sep">›</span>
+        <a href="blog.html">Blog</a><span class="sep">›</span>
+        <span class="current">Minimalist Yaşamın Zihinsel Sağlık Üzerindeki Etkileri</span>
+    </div>
+
+    <div class="article-hero">
+        <div class="article-meta-top">
+            <span class="article-cat-badge">Yaşam & Sağlık</span>
+            <span class="article-date">27 Mart 2026</span>
+            <span class="article-read-time">⏱ 9 dk okuma</span>
+        </div>
+        <h1 class="article-hero-title">Minimalist Yaşamın<br><span class="g-text">Zihinsel Sağlık Üzerindeki Etkileri</span></h1>
+        <p class="article-hero-desc">Daha az eşya, daha çok huzur. Minimalist yaşam tarzının stres yönetimi ve mental sağlık üzerindeki bilimsel etkilerini inceleyin.</p>
+        <div class="article-hero-tags">
+            <span class="article-tag">Minimalizm</span>
+            <span class="article-tag">Mental Sağlık</span>
+            <span class="article-tag">Stres Yönetimi</span>
+            <span class="article-tag">Dijital Detoks</span>
+            <span class="article-tag">Karar Yorgunluğu</span>
+            <span class="article-tag">Princeton Araştırması</span>
+            <span class="article-tag">Flow Hali</span>
+        </div>
+        <div class="article-author-bar">
+            <div class="author-info">
+                <div class="author-avatar">N</div>
+                <div>
+                    <div class="author-name">Nexora Inovation Ekibi</div>
+                    <div class="author-title">Dijital Strateji & Yaşam Kalitesi Uzmanları</div>
+                </div>
+            </div>
+            <div class="share-row">
+                <span class="share-label">Paylaş:</span>
+                <a class="share-btn" href="https://twitter.com/intent/tweet?text=Minimalizm+ve+Zihinsel+Sağlık&url=https://nexorainovation.com/minimalizm-ve-zihinsel-saglik" target="_blank">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a class="share-btn" href="https://www.linkedin.com/shareArticle?mini=true&url=https://nexorainovation.com/minimalizm-ve-zihinsel-saglik" target="_blank">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <button class="share-btn" onclick="copyLink()">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-layout">
+
+        <!-- MAKALE METNİ -->
+        <article class="article-content">
+
+            <div class="toc-box">
+                <div class="toc-title">📋 İçindekiler</div>
+                <ol class="toc-list">
+                    <li><a href="#giris"><span class="toc-num">→</span> Modern Dünyanın Kaosunda Sadeleşme</a></li>
+                    <li><a href="#kortizol"><span class="toc-num">01</span> Fiziksel Dağınıklık ve Kortizol İlişkisi</a></li>
+                    <li><a href="#karar"><span class="toc-num">02</span> Karar Yorgunluğunu Azaltmak</a></li>
+                    <li><a href="#dijital"><span class="toc-num">03</span> Dijital Minimalizm ve Dopamin Dengesi</a></li>
+                    <li><a href="#anksiyete"><span class="toc-num">04</span> Anksiyete ve Gelecek Kaygısının Azalması</a></li>
+                    <li><a href="#finansal"><span class="toc-num">05</span> Finansal Özgürlük ve Güven Hissi</a></li>
+                    <li><a href="#duygusal"><span class="toc-num">06</span> Geçmişin Yükünden Kurtulmak</a></li>
+                    <li><a href="#yaratici"><span class="toc-num">07</span> Odaklanma ve Yaratıcılığın Artışı</a></li>
+                    <li><a href="#uyku"><span class="toc-num">08</span> Daha Kaliteli Uyku ve Dinlenme</a></li>
+                    <li><a href="#sosyal"><span class="toc-num">09</span> Sosyal Minimalizm</a></li>
+                    <li><a href="#ozdeger"><span class="toc-num">10</span> Öz-Değer Algısının Değişmesi</a></li>
+                    <li><a href="#baslangic"><span class="toc-num">→</span> Nasıl Başlamalı? Yol Haritası</a></li>
+                </ol>
+            </div>
+
+            <!-- Giriş -->
+            <section id="giris">
+                <p>21. yüzyıl insanı olarak, tarihin hiçbir döneminde olmadığı kadar çok uyarana maruz kalıyoruz. Bildirimler, reklamlar, sonsuz eşya seçenekleri ve sürekli bir <strong>"daha fazlasına sahip olma"</strong> baskısı… Bu yoğun gürültünün içinde zihnimiz, sürekli bir aşırı yükleme (overload) durumunda çalışıyor.</p>
+                <p>Minimalizm, sadece <em>"daha az eşyaya sahip olmak"</em> değildir; aslında hayatımızdaki fazlalıkları ayıklayarak, <strong>gerçekten değer verdiğimiz şeylere yer açma sanatıdır.</strong> Bilimsel araştırmalar, azalan eşya sayısının artan mutluluk seviyeleriyle doğrudan bir ilişkisi olduğunu gösteriyor.</p>
+            </section>
+
+            <!-- 1 -->
+            <section id="kortizol">
+                <h2><span class="step-num">01</span> Fiziksel Dağınıklık ve Kortizol İlişkisi</h2>
+                <p>Gözlerinizle gördüğünüz her nesne, beyniniz tarafından işlenmesi gereken bir veri birimidir.</p>
+
+                <div class="science-box">
+                    <span class="science-icon">🔬</span>
+                    <div class="science-body">
+                        <div class="sb-label">Princeton Üniversitesi Araştırması</div>
+                        <p>Fiziksel çevredeki dağınıklığın bireyin <strong>odaklanma yeteneğini kısıtladığını</strong> ve bilişsel kapasiteyi tükettiğini kanıtlamıştır. Görsel uyarı fazlalığı, stres hormonu kortizol seviyelerinin kronik olarak yükselmesine yol açar.</p>
+                    </div>
+                </div>
+
+                <ul>
+                    <li><strong>Görsel Gürültü:</strong> Masanızın üzerindeki yığılmış kağıtlar veya dolabınızdan taşan kıyafetler, beyninize sürekli olarak "yapılmamış işler" sinyali gönderir.</li>
+                    <li><strong>Sadeleşmenin Etkisi:</strong> Yaşam alanınızı sadeleştirdiğinizde görsel gürültü azalır, beyniniz "tetikte" olma modundan çıkar ve daha dingin bir evreye geçer.</li>
+                </ul>
+            </section>
+
+            <!-- 2 -->
+            <section id="karar">
+                <h2><span class="step-num">02</span> Karar Yorgunluğunu (Decision Fatigue) Azaltmak</h2>
+                <p>Gün içinde aldığımız binlerce küçük karar, zihinsel enerjimizi tüketir. "Bugün ne giyeceğim?" gibi görünüşte önemsiz sorular, günün sonuna doğru <strong>karar yorgunluğuna</strong> yol açar.</p>
+                <ul>
+                    <li><strong>Kapsül Gardırop Mucizesi:</strong> Minimalistler genellikle birbirleriyle uyumlu, az ama öz parçadan oluşan kapsül gardıropları tercih eder. Bu, sabahları harcanan zihinsel eforu sıfıra indirerek enerjiyi daha kritik işlere saklamayı sağlar.</li>
+                    <li><strong>Zihinsel Alan Açmak:</strong> Günlük rutinleri sadeleştirmek, beynin yaratıcı ve stratejik düşünme bölümleri için daha fazla alan bırakır.</li>
+                </ul>
+
+                <div class="tip-box">
+                    <span class="tip-icon">💡</span>
+                    <div class="tip-text">
+                        <strong>Bağlantı:</strong>
+                        Karar yorgunluğunu iş hayatında nasıl azaltacağınızı öğrenmek için <a href="uzaktan-calismada-odaklanma-rehberi.html" style="color:var(--accent);font-weight:600;text-decoration:none;">Uzaktan Çalışmada Odaklanma Rehberi</a> yazımıza göz atın.
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3 -->
+            <section id="dijital">
+                <h2><span class="step-num">03</span> Dijital Minimalizm ve Dopamin Dengesi</h2>
+                <p>Minimalizm sadece fiziksel eşyalarla sınırlı kalmaz; <strong>dijital detoks</strong> bu felsefenin en kritik ayaklarından biridir. Akıllı telefonlarımıza gelen her bildirim, beynimizde yapay bir dopamin patlamasına neden olur.</p>
+                <ul>
+                    <li><strong>Sonsuz Kaydırma (Infinite Scrolling):</strong> Sosyal medyada geçirdiğimiz saatler, beynimizi sürekli bir "yeni bilgi" arayışına sokar. Bu durum dikkat süresinin kısalmasına ve anksiyetenin artmasına yol açar.</li>
+                    <li><strong>Seçici Tüketim:</strong> Sadece size gerçekten değer katan uygulamaları tutmak ve bildirimleri minimize etmek, odaklanma yeteneğinizi geri kazanmanıza yardımcı olur.</li>
+                </ul>
+            </section>
+
+            <!-- 4 -->
+            <section id="anksiyete">
+                <h2><span class="step-num">04</span> Anksiyete ve Gelecek Kaygısının Azalması</h2>
+                <p>Birçok insan, <em>"belki bir gün lazım olur"</em> düşüncesiyle eşya biriktirir. Bu istifleme dürtüsü, aslında <strong>geleceğe duyulan güvensizliğin bir yansımasıdır.</strong></p>
+                <ul>
+                    <li><strong>Bırakabilme Yetisi:</strong> Eşyalardan kurtulmak, aslında bir "bırakma" pratiğidir. Sahip olduğunuz nesnelere bağımlılığınız azaldıkça, dış koşulların mutluluğunuz üzerindeki etkisi de azalır.</li>
+                    <li><strong>Güven Duygusu:</strong> "Daha azla da mutlu olabilirim" düşüncesi, ekonomik krizler veya ani yaşam değişiklikleri karşısında duyulan anksiyeteyi minimize eder.</li>
+                </ul>
+            </section>
+
+            <!-- 5 -->
+            <section id="finansal">
+                <h2><span class="step-num">05</span> Finansal Özgürlük ve Güven Hissi</h2>
+                <p>Tüketim kültürü, bizi sürekli bir borçlanma ve daha çok çalışma döngüsüne iter. <strong>Minimalizm, bu döngüden çıkış biletidir.</strong></p>
+                <ul>
+                    <li><strong>Bilinçli Tüketim:</strong> İhtiyaç dışı alımları durdurduğunuzda, banka hesabınızdaki birikim artmaya başlar. Finansal güven, zihinsel huzurun en büyük destekçilerinden biridir.</li>
+                    <li><strong>Zaman Satın Almak:</strong> Daha az eşya almak için daha az paraya, daha az para için de daha az çalışma saatine ihtiyacınız vardır. Minimalizm size aslında dünyadaki en değerli şeyi — <strong>zamanı</strong> — geri verir.</li>
+                </ul>
+            </section>
+
+            <!-- 6 -->
+            <section id="duygusal">
+                <h2><span class="step-num">06</span> Geçmişin Yükünden Kurtulmak: Duygusal Minimalizm</h2>
+                <p>Evimizdeki birçok eşya, geçmişteki bir anıya veya artık olmadığımız bir kişiye bağlıdır. Eski bir sevgiliden kalan eşyalar veya artık yapmadığınız bir hobiye ait ekipmanlar <strong>sizi geçmişe hapseder.</strong></p>
+
+                <div class="science-box">
+                    <span class="science-icon">🧪</span>
+                    <div class="science-body">
+                        <div class="sb-label">Duygusal Boşalma (Catharsis)</div>
+                        <p>Sizi mutsuz eden veya sadece <strong>suçluluk hissettiğiniz için tuttuğunuz nesnelerden kurtulmak</strong>, psikolojik bir rahatlama yaratır. Minimalizm, "şu an" için yaşamayı teşvik eder.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7 -->
+            <section id="yaratici">
+                <h2><span class="step-num">07</span> Odaklanma ve Yaratıcılığın Artışı</h2>
+                <p>Yaratıcı bir zihin, boşluğa ihtiyaç duyar. <strong>Karmaşık bir ortamda yeni fikirlerin yeşermesi çok daha zordur.</strong></p>
+                <ul>
+                    <li><strong>Flow (Akış) Hali:</strong> Sade bir çalışma alanı, bireyin yaptığı işe tamamen gömüldüğü "akış" haline girmesini kolaylaştırır. Minimalizm, derin çalışma (Deep Work) disiplini için mükemmel bir zemin hazırlar.</li>
+                </ul>
+
+                <div class="tip-box">
+                    <span class="tip-icon">🔗</span>
+                    <div class="tip-text">
+                        <strong>Deep Work bağlantısı:</strong>
+                        Flow hali ve derin çalışma tekniklerini detaylıca anlattığımız <a href="uzaktan-calismada-odaklanma-rehberi.html" style="color:var(--accent);font-weight:600;text-decoration:none;">Uzaktan Çalışmada Odaklanma Rehberi</a> yazımıza bakın.
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8 -->
+            <section id="uyku">
+                <h2><span class="step-num">08</span> Daha Kaliteli Uyku ve Dinlenme</h2>
+                <p>Yatak odanızın durumu, <strong>uyku kalitenizi doğrudan etkiler.</strong> Dağınık, içinde bilgisayar veya televizyon bulunan bir yatak odası, beynin uykuya geçişini zorlaştırır.</p>
+                <ul>
+                    <li><strong>Uyku Hijyeni:</strong> Minimalist bir yatak odası; sadece uyku ve dinlenme için tasarlanmış bir sığınaktır. Görsel sadelik, melatonin salgılanmasını destekler ve zihnin daha hızlı sakinleşmesini sağlar.</li>
+                </ul>
+            </section>
+
+            <!-- 9 -->
+            <section id="sosyal">
+                <h2><span class="step-num">09</span> Sosyal Minimalizm: Nitelik, Nicelikten Önemlidir</h2>
+                <p>Çevremizdeki insan sayısı arttıkça, her bir ilişkiye ayırdığımız enerji azalır. <strong>Sosyal minimalizm,</strong> sizi tüketen ve size değer katmayan ilişkileri nazikçe sonlandırmaktır.</p>
+                <ul>
+                    <li><strong>Derin Bağlar:</strong> Daha az insanla daha derin ve anlamlı bağlar kurmak, yalnızlık hissini azaltır ve aidiyet duygusunu güçlendirir. Bu, mental sağlık için kritik bir koruyucudur.</li>
+                </ul>
+            </section>
+
+            <!-- 10 -->
+            <section id="ozdeger">
+                <h2><span class="step-num">10</span> Öz-Değer Algısının Değişmesi</h2>
+                <p>Minimalizm size, değerinizin sahip olduğunuz arabayla, taktığınız saatle veya evinizin büyüklüğüyle ilgili olmadığını öğretir.</p>
+                <ul>
+                    <li><strong>İçsel Tatmin:</strong> Dışsal onay arayışından vazgeçip içsel değerlerinize odaklandığınızda, öz-saygınız artar. Bu, depresyon ve yetersizlik hissiyle mücadelede en güçlü silahtır.</li>
+                </ul>
+            </section>
+
+            <!-- Nasıl Başlamalı -->
+            <section id="baslangic" style="margin-top:56px;">
+                <h2 style="font-family:var(--head-font);font-size:1.55rem;font-weight:800;color:#fff;letter-spacing:-.5px;margin-bottom:24px;">🗺️ Nasıl Başlamalı? Pratik Bir Yol Haritası</h2>
+                <p>Minimalizme geçiş bir gecede olmaz. İşte başlamanız için küçük ama etkili adımlar:</p>
+
+                <div class="action-card">
+                    <span class="ac-num">①</span>
+                    <div class="ac-text"><strong>Tek Bir Çekmece ile Başlayın:</strong> Tüm evi bir günde sadeleştirmeye çalışmak kaygı yaratabilir. Bugün sadece bir mutfak çekmecesini boşaltın.</div>
+                </div>
+                <div class="action-card">
+                    <span class="ac-num">②</span>
+                    <div class="ac-text"><strong>90/90 Kuralı:</strong> Bir nesneyi son 90 günde kullanmadıysanız ve önümüzdeki 90 günde kullanmayacaksanız, vedalaşın.</div>
+                </div>
+                <div class="action-card">
+                    <span class="ac-num">③</span>
+                    <div class="ac-text"><strong>Bir İçeri-Bir Dışarı:</strong> Hayatınıza yeni bir eşya girdiğinde, eskilerden birini mutlaka çıkarın.</div>
+                </div>
+                <div class="action-card">
+                    <span class="ac-num">④</span>
+                    <div class="ac-text"><strong>Dijital Temizlik:</strong> Kullanmadığınız tüm uygulamaları silin ve e-posta aboneliklerinden çıkın. Bildirim sayısını minimum ikiye indirin.</div>
+                </div>
+            </section>
+
+            <!-- Sonuç -->
+            <div class="conclusion-box">
+                <h2>Daha Az, Aslında Daha Çoktur</h2>
+                <p>Minimalizm bir mahrumiyet değil, <strong>bir zenginleşmedir.</strong> Gereksiz olanı hayatınızdan çıkardığınızda; zamanınız, enerjiniz, paranız ve en önemlisi zihinsel sağlığınız size geri döner.</p>
+                <p style="margin-bottom:0;">Hayatın karmaşasını kontrol edemeyebiliriz ama kendi yaşam alanımızda ve zihnimizde bir sığınak yaratmak bizim elimizdedir. Sadeleşmek için attığınız her adım, aslında kendinize verdiğiniz bir sözdür: <strong>"Ben, eşyalardan daha değerliyim."</strong></p>
+            </div>
+
+            <div class="tip-box" style="margin-top:24px;background:rgba(52,211,153,.05);border-color:rgba(52,211,153,.2);border-left-color:#34d399;">
+                <span class="tip-icon">📌</span>
+                <div class="tip-text">
+                    <strong style="color:#34d399;">Okuma Önerisi:</strong>
+                    Bir sonraki blog yazımızda, <strong>"Veri Analitiği ile Karar Verme Süreçlerini Optimize Etme"</strong> konusunu ele alacağız. Zihninizi sadeleştirdikten sonra, elinizdeki verileri net bir şekilde görmeye hazır olun!
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="article-cta">
+                <h3>Dijital Hayatınızı da Sadeleştirin</h3>
+                <p>Minimalist bir dijital stratejiyle daha az çabayla daha çok sonuç almak için Nexora Inovation ekibiyle tanışın.</p>
+                <a href="iletisim.html" class="btn-primary">Ücretsiz Görüşme Al →</a>
+            </div>
+
+            <!-- Önceki/Sonraki -->
+            <div class="article-nav">
+                <a href="kisisel-markalasma-stratejileri.html" class="article-nav-card prev">
+                    <span class="nav-card-dir">← Önceki Yazı</span>
+                    <span class="nav-card-title">Kişisel Markalaşma: Dijital Dünyada Nasıl Öne Çıkılır?</span>
+                </a>
+                <a href="veri-analitigi-ile-karar-verme.html" class="article-nav-card next">
+                    <span class="nav-card-dir">Sonraki Yazı →</span>
+                    <span class="nav-card-title">Veri Analitiği ile Karar Verme Süreçlerini Optimize Etme</span>
+                </a>
+            </div>
+
+        </article>
+
+        <!-- SIDEBAR -->
+        <aside class="article-sidebar">
+
+            <!-- Huzur Ölçer Widget -->
+            <div class="sidebar-card">
+                <div class="sidebar-card-title">🌿 Huzur Ölçeriniz</div>
+                <div class="peace-meter-widget">
+                    <div class="pm-question">Şu an masanız ne kadar düzenli?</div>
+                    <div class="pm-scale">
+                        <button class="pm-btn" onclick="peaceMeter(1,this)" title="Çok dağınık">😰</button>
+                        <button class="pm-btn" onclick="peaceMeter(2,this)" title="Biraz dağınık">😐</button>
+                        <button class="pm-btn" onclick="peaceMeter(3,this)" title="Orta">🙂</button>
+                        <button class="pm-btn" onclick="peaceMeter(4,this)" title="Düzenli">😊</button>
+                        <button class="pm-btn" onclick="peaceMeter(5,this)" title="Minimalist!">🧘</button>
+                    </div>
+                    <div class="pm-result" id="pmResult">Seçin ve analiz edelim →</div>
+                </div>
+            </div>
+
+            <!-- 10 Etki Özeti -->
+            <div class="sidebar-card">
+                <div class="sidebar-card-title">✨ 10 Mucizevi Etki</div>
+                <div class="effects-mini">
+                    <div class="effect-item"><span class="effect-num">01</span><span class="effect-label">Kortizol düşüşü</span></div>
+                    <div class="effect-item"><span class="effect-num">02</span><span class="effect-label">Karar yorgunluğunun azalması</span></div>
+                    <div class="effect-item"><span class="effect-num">03</span><span class="effect-label">Dopamin dengesi</span></div>
+                    <div class="effect-item"><span class="effect-num">04</span><span class="effect-label">Anksiyetenin azalması</span></div>
+                    <div class="effect-item"><span class="effect-num">05</span><span class="effect-label">Finansal özgürlük</span></div>
+                    <div class="effect-item"><span class="effect-num">06</span><span class="effect-label">Duygusal boşalma</span></div>
+                    <div class="effect-item"><span class="effect-num">07</span><span class="effect-label">Yaratıcılık & flow</span></div>
+                    <div class="effect-item"><span class="effect-num">08</span><span class="effect-label">Kaliteli uyku</span></div>
+                    <div class="effect-item"><span class="effect-num">09</span><span class="effect-label">Derin sosyal bağlar</span></div>
+                    <div class="effect-item"><span class="effect-num">10</span><span class="effect-label">Öz-değer artışı</span></div>
+                </div>
+            </div>
+
+            <!-- İlgili Yazılar -->
+            <div class="sidebar-card">
+                <div class="sidebar-card-title">İlgili Yazılar</div>
+                <a href="uzaktan-calismada-odaklanma-rehberi.html" class="related-mini-card">
+                    <div class="related-mini-dot" style="background:linear-gradient(135deg,rgba(45,212,191,.2),rgba(0,240,255,.1));">🎯</div>
+                    <div>
+                        <div class="related-mini-title">Uzaktan Çalışmada Odaklanma Sorununu Aşma Rehberi</div>
+                        <div class="related-mini-date">27 Mart 2026 · 10 dk</div>
+                    </div>
+                </a>
+                <a href="kisisel-markalasma-stratejileri.html" class="related-mini-card">
+                    <div class="related-mini-dot" style="background:linear-gradient(135deg,rgba(244,63,94,.2),rgba(251,146,60,.1));">🏷️</div>
+                    <div>
+                        <div class="related-mini-title">Kişisel Markalaşma: Dijital Dünyada Nasıl Öne Çıkılır?</div>
+                        <div class="related-mini-date">27 Mart 2026 · 10 dk</div>
+                    </div>
+                </a>
+                <a href="yapay-zeka-is-verimliligi-artirma-yollari.html" class="related-mini-card">
+                    <div class="related-mini-dot" style="background:linear-gradient(135deg,rgba(108,99,255,.2),rgba(0,240,255,.1));">🤖</div>
+                    <div>
+                        <div class="related-mini-title">Yapay Zeka ile İş Verimliliğini Artırmanın 10 Yolu</div>
+                        <div class="related-mini-date">27 Mart 2026 · 12 dk</div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Paylaş -->
+            <div class="sidebar-card">
+                <div class="sidebar-card-title">Bu Yazıyı Paylaş</div>
+                <div class="sidebar-share-btns">
+                    <a class="sidebar-share-btn" href="https://twitter.com/intent/tweet?text=Minimalizm+ve+Zihinsel+Sağlık&url=https://nexorainovation.com/minimalizm-ve-zihinsel-saglik" target="_blank">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        X (Twitter)'da Paylaş
+                    </a>
+                    <a class="sidebar-share-btn" href="https://www.linkedin.com/shareArticle?mini=true&url=https://nexorainovation.com/minimalizm-ve-zihinsel-saglik" target="_blank">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn'de Paylaş
+                    </a>
+                    <button class="sidebar-share-btn" onclick="copyLink()">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+                        Bağlantıyı Kopyala
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bülten -->
+            <div class="sidebar-card" style="background:linear-gradient(135deg,var(--accent-dim),rgba(74,222,128,.04));border-color:var(--accent-border);">
+                <div class="sidebar-card-title">Haftalık Bülten</div>
+                <p style="color:#94a3b8;font-size:.83rem;line-height:1.6;margin-bottom:16px;">Yeni içeriklerden ilk siz haberdar olun. Spam yok, sadece değer.</p>
+                <input type="email" class="sidebar-nl-input" placeholder="E-posta adresiniz" id="sidebarEmail">
+                <button class="sidebar-nl-btn" onclick="sidebarSubscribe()">Abone Ol →</button>
+            </div>
+
+        </aside>
+    </div>
+</div>
+</main>
+
+<!-- FOOTER -->
+<footer class="article-footer">
+    <div class="container">
+        <div class="footer-simple">
+            <a href="index.html" class="logo-txt">Nexora Inovation</a>
+            <p>© 2026 Nexora Inovation. Tüm hakları saklıdır.</p>
+            <div class="footer-simple-links">
+                <a href="blog.html">Blog</a>
+                <a href="iletisim.html">İletişim</a>
+                <a href="#">Gizlilik</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Okuma çubuğu
+window.addEventListener('scroll', () => {
+    const el = document.documentElement;
+    const st = el.scrollTop || document.body.scrollTop;
+    const sh = el.scrollHeight - el.clientHeight;
+    document.getElementById('progressBar').style.width = sh > 0 ? (st/sh*100)+'%' : '0%';
+});
+
+// Link kopyala
+function copyLink() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+        const t = document.createElement('div');
+        t.textContent = 'Bağlantı kopyalandı ✓';
+        t.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:rgba(129,140,248,.95);color:#fff;padding:12px 24px;border-radius:100px;font-size:.85rem;font-weight:700;z-index:9999;backdrop-filter:blur(10px);';
+        document.body.appendChild(t);
+        setTimeout(() => t.remove(), 2200);
+    });
+}
+
+// Bülten
+function sidebarSubscribe() {
+    const email = document.getElementById('sidebarEmail').value.trim();
+    if (!email || !email.includes('@')) { document.getElementById('sidebarEmail').focus(); return; }
+    const btn = event.target;
+    btn.textContent = 'Kaydedildi ✓';
+    btn.style.background = 'linear-gradient(135deg,#10b981,#34d399)';
+    btn.style.color = '#fff';
+    document.getElementById('sidebarEmail').value = '';
+    setTimeout(() => { btn.textContent = 'Abone Ol →'; btn.style.background = ''; btn.style.color = ''; }, 3500);
+}
+
+// Aktif TOC
+const sections = document.querySelectorAll('section[id]');
+const tocLinks = document.querySelectorAll('.toc-list a');
+window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
+    tocLinks.forEach(l => { l.style.color = l.getAttribute('href') === '#'+cur ? 'var(--accent)' : ''; });
+});
+
+// Huzur Ölçer Widget
+const peaceMessages = {
+    1: '😰 Kortizol seviyelerin biraz yüksek olabilir. Bu yazıyı okuduktan sonra ilk çekmecenle başla!',
+    2: '😐 İyi haber: küçük bir temizlik bile büyük fark yaratır. Bugün 10 dakika ayır.',
+    3: '🙂 Fena değil! Kapsül gardırop denedin mi hiç?',
+    4: '😊 Güzel! Şimdi dijital alanda da aynı enerjiyi uygula.',
+    5: '🧘 Minimalist bir ruh halisindesin. Bu yazıyı paylaşmayı unutma!'
+};
+
+function peaceMeter(val, btn) {
+    document.querySelectorAll('.pm-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('pmResult').textContent = peaceMessages[val];
+    document.getElementById('pmResult').style.color = '#c8d4e4';
+}
+</script>
+</body>
+</html>

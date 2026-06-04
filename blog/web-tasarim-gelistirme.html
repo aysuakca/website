@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Tasarım & Geliştirme | Nexora Inovation</title>
+<meta name="description" content="Nexora Inovation — Hız, estetik ve dönüşüm odaklı kurumsal web siteleri. Markanıza özel UI/UX tasarım, React/Next.js altyapı, Core Web Vitals optimizasyonu.">
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  const EMAILJS_PUBLIC_KEY  = 'NKO8pnOQvGecQbJBh';
+  const EMAILJS_SERVICE_ID  = 'service_a85ow5z';
+  const EMAILJS_TEMPLATE_ID = 'template_twilo6p';
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ====================================================
+   RESET & TOKENS
+==================================================== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --bg:        #000000;
+    --bg-2:      #050507;
+    --bg-card:   rgba(255,255,255,0.05);
+    --border:    rgba(255,255,255,0.1);
+    --border-hi: rgba(120,100,255,0.55);
+    --purple:    #7c6dff;
+    --cyan:      #00f0ff;
+    --text:      #f0f4fc;
+    --muted:     #b8c4d4;
+    --body-font: 'Inter', sans-serif;
+    --head-font: 'Plus Jakarta Sans', sans-serif;
+    --radius-xl: 28px;
+    --radius-2xl:40px;
+    --grad: linear-gradient(135deg, #7c6dff 0%, #00f0ff 100%);
+    --green:  #22c55e;
+    --blue2:  #3b82f6;
+    --violet: #a855f7;
+    --dim:    #3d4d5e;
+    --r:      12px;
+    --rl:     20px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body-font);
+    font-size: 1rem;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* grain overlay */
+body::before {
+    content:'';
+    position:fixed; inset:0; z-index:9999; pointer-events:none;
+    opacity:.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+}
+
+.global-background-glow {
+    position:fixed; inset:0; z-index:-1; pointer-events:none;
+    background:
+        radial-gradient(ellipse 80% 60% at 75% 10%, rgba(108,99,255,.06) 0%, transparent 65%),
+        radial-gradient(ellipse 60% 50% at 10% 90%, rgba(0,245,255,.04) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 40% at 50% 50%, rgba(108,99,255,.025) 0%, transparent 70%);
+    filter: blur(40px);
+}
+
+.container { width:100%; max-width:1200px; margin:0 auto; padding:0 28px; }
+.wrap { width:100%; max-width:1200px; margin:0 auto; padding:0 40px; }
+@media(max-width:640px){ .wrap { padding:0 20px; } }
+
+.g-text {
+    background: linear-gradient(100deg, var(--purple), var(--cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.g { background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+/* ====================================================
+   HEADER — index.html ile aynı
+==================================================== */
+.main-header {
+    height: 76px;
+    position: sticky; top:0; z-index:1000;
+    background: rgba(0,0,0,.85);
+    backdrop-filter: blur(18px) saturate(180%);
+    -webkit-backdrop-filter: blur(18px) saturate(180%);
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(90deg, transparent, rgba(120,100,255,.3), rgba(0,240,255,.15), transparent) 1;
+}
+
+.nav-wrapper {
+    display:flex; align-items:center; justify-content:space-between;
+    height:100%; gap:20px;
+    padding: 0 40px 0 16px;
+    width: 100%;
+}
+
+.logo-area { display:flex; align-items:center; gap:8px; flex-shrink:0; }
+.logo-lottie-container { width:52px; height:52px; display:flex; align-items:center; }
+.logo {
+    font-family: var(--head-font);
+    font-weight:800; font-size:1.45rem;
+    color:#fff; white-space:nowrap; letter-spacing:-.5px;
+}
+
+nav { display:flex; align-items:center; gap:4px; }
+nav a {
+    color:#fff; text-decoration:none;
+    padding:9px 16px;
+    font-size:.875rem; font-weight:500;
+    border-radius:100px;
+    transition: opacity .25s, background .25s, color .25s;
+}
+nav a.active {
+    background: rgba(120,100,255,.2);
+    color: var(--purple);
+    box-shadow: inset 0 0 0 1px rgba(120,100,255,.4), 0 0 16px rgba(120,100,255,.15);
+}
+nav a:hover:not(.active) { background: rgba(255,255,255,.06); }
+.nav-cta { color:#fff; }
+.nav-cta.active {
+    background: rgba(108,99,255,.15) !important;
+    color: var(--purple) !important;
+    box-shadow: inset 0 0 0 1px rgba(108,99,255,.3) !important;
+}
+
+/* scroll bar */
+.bar { position:fixed; top:76px; left:0; width:0; height:2px; background:var(--grad); z-index:999; }
+
+/* ====================================================
+   HERO
+==================================================== */
+.hero {
+    position: relative;
+    padding: 100px 0 80px;
+    overflow: hidden;
+    background: #000;
+}
+
+/* canvas arka plan */
+#hero-canvas {
+    position:absolute; inset:0; width:100%; height:100%;
+    pointer-events:none; z-index:0;
+}
+
+/* Grid çizgiler */
+.hero::after {
+    content:'';
+    position:absolute; inset:0; z-index:0; pointer-events:none;
+    background-image:
+        linear-gradient(rgba(120,100,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(120,100,255,.03) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: radial-gradient(ellipse 90% 90% at 50% 0%, black 30%, transparent);
+}
+
+.hero-inner-wrap {
+    position: relative; z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+@media(max-width:900px){
+    .hero-inner-wrap { grid-template-columns:1fr; gap:48px; }
+    .hero-visual { display:none; }
+}
+
+/* Sol: içerik */
+.hero-eyebrow {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(108,99,255,.12); border:1px solid rgba(108,99,255,.28);
+    color:#a598ff; padding:6px 16px; border-radius:100px;
+    font-size:.72rem; font-weight:700; letter-spacing:1.4px; text-transform:uppercase;
+    margin-bottom:24px;
+    box-shadow: 0 0 24px rgba(120,100,255,.12);
+    backdrop-filter: blur(10px);
+}
+.hero-eyebrow span { width:6px; height:6px; background:var(--cyan); border-radius:50%; box-shadow:0 0 8px var(--cyan); animation:blinkDot 2s ease-in-out infinite; }
+@keyframes blinkDot { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+.hero-title {
+    font-family: var(--head-font);
+    font-size: clamp(2.2rem, 4vw, 3.6rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    margin-bottom: 22px;
+    animation: fadeUp .7s .1s cubic-bezier(.23,1,.32,1) both;
+}
+.hero-title .hl { display:inline; background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+.hero-lead {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.85;
+    margin-bottom: 38px;
+    max-width: 500px;
+    animation: fadeUp .7s .22s cubic-bezier(.23,1,.32,1) both;
+}
+
+.hero-btns {
+    display: flex; gap: 14px; flex-wrap: wrap;
+    margin-bottom: 52px;
+    animation: fadeUp .7s .3s cubic-bezier(.23,1,.32,1) both;
+}
+
+.btn { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:100px; font-weight:700; font-size:.93rem; text-decoration:none; transition:.22s; }
+.btn-grad { background:var(--grad); color:#fff; box-shadow:0 6px 22px rgba(108,99,255,.4); }
+.btn-grad:hover { transform:translateY(-3px); box-shadow:0 14px 34px rgba(108,99,255,.55); }
+.btn-ghost-hero { background:rgba(255,255,255,.03); border:1px solid rgba(120,100,255,.45); color:#fff; border-radius:100px; padding:13px 28px; font-weight:700; font-size:.93rem; text-decoration:none; transition:.22s; backdrop-filter:blur(8px); }
+.btn-ghost-hero:hover { background:rgba(120,100,255,.12); border-color:var(--purple); transform:translateY(-3px); box-shadow:0 12px 32px rgba(120,100,255,.2); }
+
+/* Stats satırı */
+.hero-stat-row {
+    display: flex; gap: 36px; flex-wrap: wrap;
+    animation: fadeUp .7s .38s cubic-bezier(.23,1,.32,1) both;
+}
+.hs-num { font-family:var(--head-font); font-size:2rem; font-weight:900; color:#fff; line-height:1; }
+.hs-num span { background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.hs-lbl { font-size:.76rem; color:var(--muted); margin-top:4px; }
+
+/* Sağ: görsel */
+.hero-visual { display:flex; align-items:center; justify-content:center; position:relative; padding:20px 0; }
+.hv-scene { position:relative; width:360px; height:400px; }
+
+.hv-glow1 { position:absolute; width:220px; height:220px; background:radial-gradient(circle,rgba(108,99,255,.28) 0%,transparent 70%); border-radius:50%; top:10%; left:5%; filter:blur(28px); animation:hvamb 5s ease-in-out infinite; pointer-events:none; }
+.hv-glow2 { position:absolute; width:170px; height:170px; background:radial-gradient(circle,rgba(0,207,255,.18) 0%,transparent 70%); border-radius:50%; bottom:10%; right:0; filter:blur(28px); animation:hvamb 5s ease-in-out infinite reverse; animation-delay:-2.5s; pointer-events:none; }
+@keyframes hvamb { 0%,100%{transform:translate(0,0)} 50%{transform:translate(10px,-14px)} }
+
+.hv-browser { position:absolute; inset:30px 0 0; background:rgba(14,16,24,.97); border:1px solid rgba(255,255,255,.1); border-radius:14px; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,.55), 0 0 0 1px rgba(108,99,255,.18), inset 0 1px 0 rgba(255,255,255,.07); animation:hvfloat 5.5s ease-in-out infinite; }
+@keyframes hvfloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+
+.hv-toolbar { display:flex; align-items:center; gap:10px; padding:10px 14px; background:rgba(255,255,255,.03); border-bottom:1px solid rgba(255,255,255,.06); }
+.hv-dots { display:flex; gap:5px; }
+.hv-dot { width:9px; height:9px; border-radius:50%; }
+.hv-dot:nth-child(1){ background:#ff5f56; box-shadow:0 0 5px rgba(255,95,86,.4); }
+.hv-dot:nth-child(2){ background:#ffbd2e; box-shadow:0 0 5px rgba(255,189,46,.4); }
+.hv-dot:nth-child(3){ background:#27c93f; box-shadow:0 0 5px rgba(39,201,63,.4); }
+.hv-urlbar { flex:1; height:22px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.07); border-radius:7px; display:flex; align-items:center; padding:0 9px; gap:5px; }
+.hv-urlbar-text { font-size:.54rem; color:rgba(255,255,255,.28); letter-spacing:.3px; }
+
+.hv-screen { padding:16px 14px; }
+.hv-nav { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+.hv-nav-logo { width:46px; height:6px; background:linear-gradient(90deg,#7c6dff,#00f0ff); border-radius:3px; }
+.hv-nav-links { display:flex; gap:7px; }
+.hv-nav-link { width:22px; height:4px; background:rgba(255,255,255,.12); border-radius:2px; }
+.hv-nav-btn { width:32px; height:16px; background:linear-gradient(90deg,#7c6dff,#00f0ff); border-radius:10px; box-shadow:0 0 10px rgba(108,99,255,.5); }
+
+.hv-hero { margin-bottom:14px; }
+.hv-h-line { height:8px; border-radius:4px; margin-bottom:6px; }
+.hv-h-line:nth-child(1){ width:88%; background:rgba(255,255,255,.18); animation:hvshim 3s ease-in-out infinite; }
+.hv-h-line:nth-child(2){ width:68%; background:linear-gradient(90deg,#7c6dff,#00f0ff); animation:hvshim 3s ease-in-out infinite .25s; }
+.hv-h-sub { height:4px; border-radius:3px; background:rgba(255,255,255,.07); margin-bottom:4px; }
+.hv-h-sub:nth-child(4){ width:90%; }
+.hv-h-sub:nth-child(5){ width:72%; }
+.hv-h-cta { display:flex; gap:7px; margin-top:10px; }
+.hv-h-cta-a { height:14px; border-radius:8px; }
+.hv-h-cta-a:nth-child(1){ width:58px; background:linear-gradient(90deg,#7c6dff,#00f0ff); box-shadow:0 0 12px rgba(108,99,255,.5); }
+.hv-h-cta-a:nth-child(2){ width:44px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.1); }
+
+.hv-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; }
+.hv-card { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07); border-radius:8px; padding:9px 8px; }
+.hv-card-ico { width:16px; height:16px; border-radius:5px; margin-bottom:6px; }
+.hv-card:nth-child(1) .hv-card-ico { background:rgba(124,109,255,.45); }
+.hv-card:nth-child(2) .hv-card-ico { background:rgba(0,240,255,.35); }
+.hv-card:nth-child(3) .hv-card-ico { background:rgba(34,197,94,.35); }
+.hv-card-ln { height:3px; background:rgba(255,255,255,.09); border-radius:2px; margin-bottom:4px; }
+.hv-card-ln:last-child { width:65%; }
+.hv-code { display:flex; align-items:center; gap:5px; margin-top:14px; padding:8px 10px; background:rgba(0,0,0,.3); border-radius:7px; border:1px solid rgba(255,255,255,.05); }
+.hv-code-dot { width:5px; height:5px; background:#22c55e; border-radius:50%; box-shadow:0 0 6px rgba(34,197,94,.7); animation:blinkDot 1.1s ease-in-out infinite; }
+.hv-code-txt { font-size:.54rem; font-family:monospace; color:rgba(255,255,255,.28); letter-spacing:.5px; }
+.hv-code-cursor { width:5px; height:10px; background:#a598ff; border-radius:1px; animation:blinkDot .9s ease-in-out infinite; }
+@keyframes hvshim { 0%,100%{opacity:1} 50%{opacity:.55} }
+
+/* floating tech badges */
+.hv-badge { position:absolute; display:flex; align-items:center; gap:5px; background:rgba(14,16,24,.92); border:1px solid rgba(255,255,255,.1); border-radius:9px; padding:6px 11px; font-size:.6rem; font-weight:700; letter-spacing:.5px; white-space:nowrap; backdrop-filter:blur(12px); box-shadow:0 10px 28px rgba(0,0,0,.4); z-index:10; }
+.hv-badge-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+.hv-b-html  { top:-8px; left:-30px; border-color:rgba(230,80,30,.35); color:#e6501e; animation:hvb1 6s ease-in-out infinite; }
+.hv-b-html  .hv-badge-dot { background:#e6501e; box-shadow:0 0 6px rgba(230,80,30,.6); }
+.hv-b-css   { bottom:70px; left:-38px; border-color:rgba(37,155,219,.35); color:#259bdb; animation:hvb1 7s ease-in-out infinite 1.5s reverse; }
+.hv-b-css   .hv-badge-dot { background:#259bdb; box-shadow:0 0 6px rgba(37,155,219,.6); }
+.hv-b-js    { top:22%; right:-36px; border-color:rgba(240,200,0,.35); color:#f0c800; animation:hvb2 5.5s ease-in-out infinite .8s; }
+.hv-b-js    .hv-badge-dot { background:#f0c800; box-shadow:0 0 6px rgba(240,200,0,.6); }
+.hv-b-react { bottom:35px; right:-28px; border-color:rgba(97,218,251,.35); color:#61dafb; animation:hvb2 6s ease-in-out infinite 2s reverse; }
+.hv-b-react .hv-badge-dot { background:#61dafb; box-shadow:0 0 6px rgba(97,218,251,.6); }
+.hv-b-perf  { top:52%; left:-44px; border-color:rgba(34,197,94,.35); color:#22c55e; animation:hvb1 7.5s ease-in-out infinite 1s; }
+.hv-b-perf  .hv-badge-dot { background:#22c55e; box-shadow:0 0 6px rgba(34,197,94,.6); }
+@keyframes hvb1 { 0%,100%{transform:translateY(0) rotate(-1.5deg)} 50%{transform:translateY(-9px) rotate(1deg)} }
+@keyframes hvb2 { 0%,100%{transform:translateY(0) rotate(1.5deg)} 50%{transform:translateY(-11px) rotate(-1deg)} }
+
+/* ====================================================
+   SECTION COMMON
+==================================================== */
+.sec { padding: 80px 0; }
+.sec-divider { width:100%; height:1px; border:none; background:linear-gradient(90deg,transparent,rgba(108,99,255,.22),rgba(0,245,255,.14),transparent); margin:0; display:block; }
+
+.sec-label { display:block; font-size:.68rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#a598ff; margin-bottom:10px; }
+.sec-title { font-family:var(--head-font); font-size:clamp(1.7rem,3vw,2.4rem); font-weight:800; color:#fff; letter-spacing:-.6px; line-height:1.2; margin-bottom:14px; }
+.sec-sub { font-size:.97rem; color:var(--muted); line-height:1.75; max-width:560px; }
+.sec-head { text-align:center; margin-bottom:56px; }
+.sec-head .sec-sub { margin:0 auto; }
+
+/* fade-up */
+.fu { opacity:0; transform:translateY(24px); transition:.65s cubic-bezier(.23,1,.32,1); }
+.fu.vis { opacity:1; transform:none; }
+
+/* tags */
+.tags-row { display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 28px; }
+.tag { background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.09); color:var(--muted); padding:6px 14px; border-radius:100px; font-size:.76rem; font-weight:600; transition:.2s; }
+.tag:hover { border-color:rgba(108,99,255,.4); color:#a598ff; }
+
+/* ====================================================
+   METRICS PANEL
+==================================================== */
+.metrics-grid { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; background:rgba(255,255,255,.03); border:1px solid var(--border); border-radius:var(--rl); padding:52px; }
+@media(max-width:800px){ .metrics-grid { grid-template-columns:1fr; padding:32px; gap:36px; } }
+
+.m-label { font-size:.65rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--dim); margin-bottom:20px; }
+.m-row { display:flex; align-items:center; gap:14px; padding:14px 18px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.05); border-radius:10px; margin-bottom:8px; }
+.m-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.m-dot.g { background:var(--green); box-shadow:0 0 8px rgba(34,197,94,.5); }
+.m-dot.b { background:var(--blue2); box-shadow:0 0 8px rgba(59,130,246,.5); }
+.m-dot.v { background:var(--violet); box-shadow:0 0 8px rgba(168,85,247,.5); }
+.m-dot.c { background:var(--cyan); box-shadow:0 0 8px rgba(0,240,255,.5); }
+.m-info { flex:1; min-width:0; }
+.m-top { display:flex; justify-content:space-between; margin-bottom:7px; }
+.m-name { font-size:.8rem; color:var(--muted); }
+.m-val { font-size:.85rem; color:#fff; font-weight:700; font-family:var(--head-font); }
+.bar-t { height:3px; background:rgba(255,255,255,.06); border-radius:100px; overflow:hidden; }
+.bar-f { height:100%; border-radius:100px; animation:barGrow .9s ease-out both; }
+@keyframes barGrow { from { width:0 !important; } }
+.bar-f.g { background:var(--green); }
+.bar-f.b { background:var(--blue2); }
+.bar-f.v { background:var(--violet); }
+.bar-f.c { background:var(--cyan); }
+
+.m-stats { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:14px; }
+.m-stat { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.06); border-radius:10px; padding:14px 18px; }
+.m-stat-n { font-family:var(--head-font); font-size:1.6rem; font-weight:900; color:#fff; line-height:1; }
+.m-stat-l { font-size:.72rem; color:var(--dim); margin-top:4px; }
+
+/* ====================================================
+   PROCESS
+==================================================== */
+.process-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; background:var(--border); border:1px solid var(--border); border-radius:var(--rl); overflow:hidden; }
+@media(max-width:800px){ .process-grid { grid-template-columns:1fr 1fr; } }
+@media(max-width:500px){ .process-grid { grid-template-columns:1fr; } }
+.proc-step { background:rgba(255,255,255,.03); padding:36px 28px; transition:.25s; }
+.proc-step:hover { background:#14172a; }
+.proc-num { font-family:var(--head-font); font-size:.7rem; font-weight:800; letter-spacing:1.5px; color:#a598ff; background:rgba(108,99,255,.12); border:1px solid rgba(108,99,255,.25); width:34px; height:34px; border-radius:9px; display:flex; align-items:center; justify-content:center; margin-bottom:18px; }
+.proc-step h4 { font-family:var(--head-font); font-size:1rem; font-weight:700; color:#fff; margin-bottom:10px; }
+.proc-step p { font-size:.86rem; color:var(--muted); line-height:1.65; }
+
+/* ====================================================
+   FEATURES
+==================================================== */
+.feat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:var(--rl); overflow:hidden; }
+@media(max-width:800px){ .feat-grid { grid-template-columns:1fr 1fr; } }
+@media(max-width:500px){ .feat-grid { grid-template-columns:1fr; } }
+.feat-card { background:rgba(255,255,255,.03); padding:32px 28px; transition:.25s; }
+.feat-card:hover { background:#14172a; }
+.feat-icon { width:40px; height:40px; border-radius:10px; background:rgba(108,99,255,.12); display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+.feat-card h4 { font-family:var(--head-font); font-size:.95rem; font-weight:700; color:#fff; margin-bottom:7px; }
+.feat-card p { font-size:.85rem; color:var(--muted); line-height:1.6; }
+
+/* ====================================================
+   PRICING
+==================================================== */
+.pkg-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+@media(max-width:900px){ .pkg-grid { grid-template-columns:1fr; max-width:440px; margin:0 auto; } }
+
+.pkg { background:rgba(255,255,255,.04); border:1px solid var(--border); border-radius:var(--rl); padding:32px 28px; display:flex; flex-direction:column; transition:.3s; position:relative; overflow:hidden; }
+.pkg::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:rgba(255,255,255,.07); transition:.3s; }
+.pkg:hover { transform:translateY(-6px); box-shadow:0 24px 56px rgba(0,0,0,.4); border-color:rgba(108,99,255,.28); }
+.pkg:hover::before { background:var(--grad); }
+
+.pkg.pop { background:linear-gradient(155deg,rgba(108,99,255,.12) 0%,rgba(0,240,255,.06) 100%); border-color:rgba(108,99,255,.45); box-shadow:0 0 0 1px rgba(108,99,255,.15), 0 20px 56px rgba(108,99,255,.14); }
+.pkg.pop::before { background:var(--grad); }
+
+.pop-badge { position:absolute; top:0; right:22px; background:var(--grad); color:#fff; font-size:.62rem; font-weight:800; letter-spacing:1px; text-transform:uppercase; padding:5px 14px; border-radius:0 0 10px 10px; }
+
+.pkg-tier { font-size:.63rem; font-weight:700; letter-spacing:1.8px; text-transform:uppercase; color:var(--dim); margin-bottom:8px; }
+.pkg-name { font-family:var(--head-font); font-size:1.15rem; font-weight:800; color:#fff; margin-bottom:10px; }
+.pkg-desc { color:var(--muted); font-size:.84rem; line-height:1.6; margin-bottom:24px; min-height:44px; }
+
+.pkg-price { margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid var(--border); }
+.pkg-from { font-size:.68rem; color:var(--dim); margin-bottom:4px; }
+.pkg-amt { font-family:var(--head-font); font-size:2.2rem; font-weight:900; color:#fff; line-height:1; }
+.cur { font-size:1.2rem; font-weight:600; color:var(--muted); vertical-align:top; margin-top:6px; display:inline-block; }
+.pkg-note { font-size:.72rem; color:var(--dim); margin-top:6px; }
+
+.pkg-list { list-style:none; padding:0; margin-bottom:auto; display:flex; flex-direction:column; gap:10px; }
+.pkg-list li { font-size:.86rem; color:var(--muted); padding-left:20px; position:relative; line-height:1.5; }
+.pkg-list li::before { content:''; position:absolute; left:0; top:.55em; width:8px; height:8px; border-radius:50%; background:var(--grad); box-shadow:0 0 6px rgba(108,99,255,.5); }
+
+.pkg-btn { display:inline-flex; align-items:center; justify-content:center; margin-top:28px; padding:12px 22px; border-radius:100px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); color:#fff; font-weight:700; font-size:.88rem; text-decoration:none; transition:.22s; }
+.pkg-btn:hover { background:rgba(108,99,255,.2); border-color:rgba(108,99,255,.5); }
+.pkg.pop .pkg-btn { background:var(--grad); border-color:transparent; box-shadow:0 6px 24px rgba(108,99,255,.4); }
+.pkg.pop .pkg-btn:hover { transform:translateY(-2px); box-shadow:0 12px 34px rgba(108,99,255,.55); }
+
+.pkg-note-row { text-align:center; margin-top:32px; font-size:.85rem; color:var(--muted); }
+.pkg-note-row a { color:#a598ff; text-decoration:none; border-bottom:1px solid rgba(165,152,255,.3); }
+.pkg-note-row a:hover { border-color:#a598ff; }
+
+/* ====================================================
+   CTA STRIP
+==================================================== */
+.cta-strip { background:linear-gradient(135deg,rgba(108,99,255,.12),rgba(0,240,255,.06)); border:1px solid rgba(108,99,255,.3); border-radius:var(--radius-xl); padding:52px 48px; display:flex; align-items:center; justify-content:space-between; gap:36px; flex-wrap:wrap; position:relative; overflow:hidden; }
+.cta-strip::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 70% at 80% 50%,rgba(108,99,255,.1),transparent); pointer-events:none; }
+.cta-strip h3 { font-family:var(--head-font); font-size:clamp(1.3rem,2.5vw,1.7rem); font-weight:800; color:#fff; letter-spacing:-.4px; margin-bottom:10px; }
+.cta-strip p { color:var(--muted); font-size:.95rem; line-height:1.7; max-width:500px; }
+
+/* ====================================================
+   FOOTER — index.html ile birebir aynı
+==================================================== */
+.main-footer {
+    background: #03040e;
+    padding: 0;
+    position: relative; overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,.06);
+}
+.footer-bg-element {
+    position: absolute; top: 0; left: -5%;
+    width: 700px; height: 500px;
+    background: radial-gradient(ellipse, rgba(108,99,255,.06) 0%, transparent 65%);
+    pointer-events: none; filter: blur(60px);
+}
+.footer-bg-element-2 {
+    position: absolute; bottom: 0; right: 0;
+    width: 500px; height: 400px;
+    background: radial-gradient(ellipse, rgba(0,240,255,.03) 0%, transparent 65%);
+    pointer-events: none; filter: blur(60px);
+}
+
+.footer-cta-strip {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 32px; flex-wrap: wrap;
+    padding: 40px 0;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    position: relative; z-index: 1;
+}
+.footer-cta-text h3 { font-family: var(--head-font); font-size: 1.35rem; font-weight: 800; color: #fff; letter-spacing: -.3px; margin-bottom: 6px; }
+.footer-cta-text p { color: #475569; font-size: .875rem; line-height: 1.6; }
+.footer-cta-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.btn-quote {
+    background: linear-gradient(135deg, var(--purple), #8b5cf6);
+    color: #fff !important; padding: 13px 30px;
+    border-radius: 100px; text-decoration: none; font-weight: 700;
+    font-family: var(--head-font); font-size: .88rem;
+    box-shadow: 0 8px 24px rgba(120,100,255,.35);
+    transition: transform .2s, box-shadow .2s; white-space: nowrap;
+}
+.btn-quote:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(120,100,255,.5); }
+.footer-cta-email { color: #475569; font-size: .84rem; text-decoration: none; transition: color .2s; }
+.footer-cta-email:hover { color: var(--purple); }
+
+.footer-main {
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 48px; padding: 80px 0 72px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    position: relative; z-index: 1;
+}
+@media (max-width: 1024px) { .footer-main { grid-template-columns: 1fr 1fr; gap: 40px; } }
+@media (max-width: 600px)  { .footer-main { grid-template-columns: 1fr; gap: 36px; } }
+
+.f-logo-wrapper { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.brand-name { font-family: var(--head-font); font-size: 1.3rem; font-weight: 800; color: #fff; letter-spacing: -.5px; }
+.footer-brand-desc { color: #475569; font-size: .875rem; line-height: 1.75; margin-bottom: 28px; max-width: 260px; }
+
+.footer-contacts { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+.footer-contact-row { display: flex; align-items: center; gap: 12px; color: #64748b; font-size: .84rem; transition: color .2s; }
+.footer-contact-row:hover { color: #b8c4d4; }
+.footer-contact-row a { color: inherit; text-decoration: none; }
+.footer-contact-row a:hover { color: var(--purple); }
+.footer-contact-icon { width: 32px; height: 32px; border-radius: 8px; flex-shrink: 0; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); display: flex; align-items: center; justify-content: center; }
+
+.footer-socials { display: flex; gap: 10px; }
+.footer-social-btn { width: 38px; height: 38px; border-radius: 10px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: #475569; text-decoration: none; transition: background .2s, border-color .2s, color .2s, transform .2s; }
+.footer-social-btn:hover { background: rgba(120,100,255,.15); border-color: rgba(120,100,255,.4); color: #fff; transform: translateY(-3px); }
+
+.footer-nav-heading { font-size: .68rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #fff; margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,.07); display: flex; align-items: center; gap: 8px; }
+.footer-nav-heading::before { content: ''; width: 16px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, var(--purple), var(--cyan)); flex-shrink: 0; }
+.footer-nav-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.footer-nav-list li a { color: #475569; font-size: .875rem; text-decoration: none; padding: 7px 0; display: block; transition: color .2s, padding-left .2s; }
+.footer-nav-list li a:hover { color: #e2eeff; padding-left: 6px; }
+
+.footer-bottom-bar { padding: 24px 0; position: relative; z-index: 1; }
+.footer-bottom-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.footer-copy { color: #2d3748; font-size: .78rem; }
+.footer-copy span { color: #475569; }
+.legal-links { display: flex; gap: 4px; flex-wrap: wrap; }
+.legal-links a { color: #2d3748; font-size: .78rem; text-decoration: none; padding: 4px 10px; border-radius: 6px; transition: color .2s, background .2s; }
+.legal-links a:hover { color: #b8c4d4; background: rgba(255,255,255,.04); }
+
+/* ====================================================
+   POPUP — index.html ile aynı
+==================================================== */
+.popup-overlay { position: fixed; inset: 0; z-index: 9000; background: rgba(0,0,0,.7); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; padding: 20px; opacity: 0; pointer-events: none; transition: opacity .3s; }
+.popup-overlay.open { opacity: 1; pointer-events: all; }
+.popup-box { background: #0d0b1a; border: 1px solid rgba(255,255,255,.1); border-radius: 24px; padding: 48px 44px; width: 100%; max-width: 480px; position: relative; transform: translateY(24px) scale(.97); transition: transform .35s cubic-bezier(.23,1,.32,1); box-shadow: 0 32px 80px rgba(0,0,0,.6); }
+.popup-overlay.open .popup-box { transform: translateY(0) scale(1); }
+.popup-close { position: absolute; top: 18px; right: 18px; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); color: #b8c4d4; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background .2s, color .2s; }
+.popup-close:hover { background: rgba(255,255,255,.12); color: #fff; }
+.popup-label { font-size: .72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--purple); margin-bottom: 10px; }
+.popup-title { font-family: var(--head-font); font-size: 1.55rem; font-weight: 800; color: #fff; margin-bottom: 8px; letter-spacing: -.3px; }
+.popup-sub { color: #7a8aa0; font-size: .875rem; line-height: 1.65; margin-bottom: 32px; }
+.popup-field { margin-bottom: 16px; }
+.popup-field label { display: block; font-size: .78rem; font-weight: 600; color: #b8c4d4; margin-bottom: 7px; letter-spacing: .3px; }
+.popup-field input, .popup-field select { width: 100%; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 12px 16px; color: #e8f0fb; font-size: .9rem; font-family: var(--body-font); outline: none; transition: border-color .2s, background .2s; }
+.popup-field input::placeholder { color: #4a5c70; }
+.popup-field input:focus, .popup-field select:focus { border-color: rgba(108,99,255,.5); background: rgba(255,255,255,.07); }
+.popup-field select option { background: #0d0b1a; color: #e8f0fb; }
+.popup-optional { font-size: .72rem; color: #4a5c70; font-weight: 400; margin-left: 6px; letter-spacing: 0; }
+.popup-btn { width: 100%; margin-top: 8px; padding: 14px; border-radius: 12px; background: linear-gradient(135deg, var(--purple), #8b5cf6); color: #fff; font-weight: 700; font-size: .95rem; border: none; cursor: pointer; box-shadow: 0 8px 28px rgba(120,100,255,.35); transition: transform .15s, box-shadow .15s, opacity .2s; font-family: var(--body-font); }
+.popup-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(120,100,255,.5); }
+.popup-btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+.popup-note { text-align: center; font-size: .75rem; color: #4a5c70; margin-top: 14px; line-height: 1.6; }
+.popup-success { text-align: center; padding: 20px 0; display: none; }
+.popup-success.show { display: block; }
+.popup-success-icon { width: 64px; height: 64px; border-radius: 50%; background: rgba(52,211,153,.12); border: 1px solid rgba(52,211,153,.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.8rem; }
+.popup-success h3 { font-family: var(--head-font); font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+.popup-success p { color: #7a8aa0; font-size: .88rem; line-height: 1.65; }
+@media (max-width: 540px) { .popup-box { padding: 32px 24px; } }
+
+/* ====================================================
+   RESPONSIVE NAV
+==================================================== */
+@media (max-width: 768px) {
+    .nav-wrapper { padding: 0 20px; }
+    nav a { padding: 8px 11px; font-size: .8rem; }
+    .hero-stat-row { gap: 20px; }
+    .cta-strip { padding: 36px 28px; }
+    .footer-bottom-bar .container { flex-direction: column; gap: 14px; }
+}
+</style>
+</head>
+
+<body>
+<div class="global-background-glow"></div>
+<div class="bar" id="bar"></div>
+
+<!-- ====================================================
+     POPUP
+==================================================== -->
+<div class="popup-overlay" id="teklifPopup">
+    <div class="popup-box">
+        <button class="popup-close" onclick="closePopup()">✕</button>
+        <div id="popupForm">
+            <div class="popup-label">Ücretsiz Teklif</div>
+            <h2 class="popup-title">Size Özel Teklif Alalım</h2>
+            <p class="popup-sub">Bilgilerinizi bırakın, en kısa sürede sizinle iletişime geçelim. Taahhüt yok.</p>
+            <div class="popup-field">
+                <label>Ad Soyad</label>
+                <input type="text" id="popupName" placeholder="Adınız ve soyadınız" required>
+            </div>
+            <div class="popup-field">
+                <label>E-posta</label>
+                <input type="email" id="popupEmail" placeholder="ornek@sirket.com" required>
+            </div>
+            <div class="popup-field">
+                <label>Telefon <span class="popup-optional">(isteğe bağlı)</span></label>
+                <input type="tel" id="popupPhone" placeholder="+90 5XX XXX XX XX">
+            </div>
+            <div class="popup-field">
+                <label>İlgilendiğiniz Hizmet</label>
+                <select id="popupService">
+                    <option value="">Seçiniz…</option>
+                    <option value="Web Sitesi Tasarımı" selected>Web Sitesi Tasarımı</option>
+                    <option value="SEO Hizmeti">SEO Hizmeti</option>
+                    <option value="Google Ads Yönetimi">Google Ads Yönetimi</option>
+                    <option value="Global Lokalizasyon">Global Lokalizasyon</option>
+                    <option value="Performans & QA">Performans & QA</option>
+                    <option value="Analitik Kurulumu">Analitik Kurulumu</option>
+                    <option value="Website Bakım">Website Bakım</option>
+                    <option value="Diğer / Birden Fazla">Diğer / Birden Fazla</option>
+                </select>
+            </div>
+            <div class="popup-field">
+                <label>Mesaj <span class="popup-optional">(isteğe bağlı)</span></label>
+                <textarea id="popupMessage" placeholder="Projeniz hakkında kısaca bilgi verin…" rows="3" style="width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:14px 16px;color:#eaf2ff;font-size:.9rem;font-family:inherit;resize:vertical;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='rgba(108,99,255,.5)'" onblur="this.style.borderColor='rgba(255,255,255,.12)'"></textarea>
+            </div>
+            <button class="popup-btn" onclick="submitPopup()">Teklif İste →</button>
+            <p class="popup-note">Bilgileriniz yalnızca sizinle iletişim kurmak için kullanılır.</p>
+        </div>
+        <div class="popup-success" id="popupSuccess">
+            <div class="popup-success-icon">✓</div>
+            <h3>Talebiniz Alındı!</h3>
+            <p>En kısa sürede <strong id="popupSuccessEmail"></strong> adresine veya telefonla geri dönüş yapacağız.</p>
+        </div>
+    </div>
+</div>
+
+<!-- ====================================================
+     HEADER — index.html ile aynı
+==================================================== -->
+<header class="main-header">
+    <div class="nav-wrapper">
+        <div class="logo-area">
+            <div class="logo-lottie-container">
+                <img src="logo.png" alt="Nexora Logo" style="width:52px;height:52px;object-fit:contain;">
+            </div>
+            <h2 class="logo">Nexora Inovation</h2>
+        </div>
+        <nav>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="hizmetler.html">Hizmetlerimiz</a>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="blog.html">Blog</a>
+            <a href="iletisim.html" class="nav-cta">İletişim</a>
+        </nav>
+        <div style="display:flex;align-items:center;gap:12px;">
+            <a href="index.html" style="font-size:.78rem;font-weight:700;letter-spacing:1px;color:#fff;background:rgba(108,99,255,.25);border:1px solid rgba(108,99,255,.5);border-radius:8px;padding:5px 12px;text-decoration:none;">🇹🇷 TR</a>
+            <a href="en/web-tasarim-gelistirme.html" style="font-size:.78rem;font-weight:700;letter-spacing:1px;color:#7c6dff;border:1px solid rgba(108,99,255,.35);border-radius:8px;padding:5px 12px;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='rgba(108,99,255,.1)'" onmouseout="this.style.background=''">🇬🇧 EN</a>
+        </div>
+    </div>
+</header>
+
+<!-- ====================================================
+     HERO — Yenilenmiş, daha güçlü
+==================================================== -->
+<section class="hero">
+    <canvas id="hero-canvas"></canvas>
+
+    <div class="wrap">
+        <div class="hero-inner-wrap">
+
+            <!-- Sol: Metin -->
+            <div>
+                <div class="hero-eyebrow">
+                    <span></span> Web Tasarım & Geliştirme
+                </div>
+
+                <h1 class="hero-title">
+                    Sadece Bir Site Değil,<br>
+                    <span class="hl">Dijital İş Yeriniz</span>
+                </h1>
+
+                <p class="hero-lead">
+                    Markanızın kimliğini yansıtan, kullanıcıyı dönüşüme yönlendiren ve Google'da öne çıkan web siteleri tasarlıyoruz. Kurumsal vizyonunuzu dijitalde kusursuz biçimde yansıtıyoruz.
+                </p>
+
+                <div class="hero-btns">
+                    <a href="javascript:void(0)" class="btn btn-grad popup-trigger">Ücretsiz Teklif Al →</a>
+                    <a href="#surec" class="btn-ghost-hero">Nasıl Çalışıyoruz?</a>
+                </div>
+
+                <div class="hero-stat-row">
+                    <div>
+                        <div class="hs-num"><span>+150</span></div>
+                        <div class="hs-lbl">Tamamlanan Proje</div>
+                    </div>
+                    <div>
+                        <div class="hs-num"><span>96</span>/100</div>
+                        <div class="hs-lbl">PageSpeed Skoru</div>
+                    </div>
+                    <div>
+                        <div class="hs-num"><span>%65</span>+</div>
+                        <div class="hs-lbl">Dönüşüm Artışı</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sağ: Browser Mockup -->
+            <div class="hero-visual">
+                <div class="hv-scene">
+                    <div class="hv-glow1"></div>
+                    <div class="hv-glow2"></div>
+
+                    <!-- floating tech badges -->
+                    <div class="hv-badge hv-b-html"><div class="hv-badge-dot"></div>HTML5</div>
+                    <div class="hv-badge hv-b-css"><div class="hv-badge-dot"></div>CSS3</div>
+                    <div class="hv-badge hv-b-js"><div class="hv-badge-dot"></div>JS ES2024</div>
+                    <div class="hv-badge hv-b-react"><div class="hv-badge-dot"></div>React</div>
+                    <div class="hv-badge hv-b-perf"><div class="hv-badge-dot"></div>96/100 Perf</div>
+
+                    <div class="hv-browser">
+                        <div class="hv-toolbar">
+                            <div class="hv-dots">
+                                <div class="hv-dot"></div>
+                                <div class="hv-dot"></div>
+                                <div class="hv-dot"></div>
+                            </div>
+                            <div class="hv-urlbar">
+                                <svg width="8" height="8" viewBox="0 0 24 24" fill="rgba(255,255,255,.3)"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+                                <span class="hv-urlbar-text">nexorainovation.com</span>
+                            </div>
+                        </div>
+                        <div class="hv-screen">
+                            <div class="hv-nav">
+                                <div class="hv-nav-logo"></div>
+                                <div class="hv-nav-links">
+                                    <div class="hv-nav-link"></div>
+                                    <div class="hv-nav-link"></div>
+                                    <div class="hv-nav-link"></div>
+                                </div>
+                                <div class="hv-nav-btn"></div>
+                            </div>
+                            <div class="hv-hero">
+                                <div class="hv-h-line"></div>
+                                <div class="hv-h-line"></div>
+                                <div class="hv-h-sub"></div>
+                                <div class="hv-h-sub"></div>
+                                <div class="hv-h-cta">
+                                    <div class="hv-h-cta-a"></div>
+                                    <div class="hv-h-cta-a"></div>
+                                </div>
+                            </div>
+                            <div class="hv-cards">
+                                <div class="hv-card"><div class="hv-card-ico"></div><div class="hv-card-ln"></div><div class="hv-card-ln"></div></div>
+                                <div class="hv-card"><div class="hv-card-ico"></div><div class="hv-card-ln"></div><div class="hv-card-ln"></div></div>
+                                <div class="hv-card"><div class="hv-card-ico"></div><div class="hv-card-ln"></div><div class="hv-card-ln"></div></div>
+                            </div>
+                            <div class="hv-code">
+                                <div class="hv-code-dot"></div>
+                                <span class="hv-code-txt">npm run build — ready to deploy</span>
+                                <div class="hv-code-cursor"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<hr class="sec-divider">
+
+<!-- ====================================================
+     METRİKS & AÇIKLAMA
+==================================================== -->
+<section class="sec">
+    <div class="wrap">
+        <div class="metrics-grid fu">
+            <div>
+                <div class="m-label">Performans Metrikleri</div>
+                <div class="m-row">
+                    <div class="m-dot g"></div>
+                    <div class="m-info">
+                        <div class="m-top"><span class="m-name">PageSpeed Skoru (Ort.)</span><span class="m-val">96 / 100</span></div>
+                        <div class="bar-t"><div class="bar-f g" style="width:96%"></div></div>
+                    </div>
+                </div>
+                <div class="m-row">
+                    <div class="m-dot b"></div>
+                    <div class="m-info">
+                        <div class="m-top"><span class="m-name">Müşteri Memnuniyeti</span><span class="m-val">%98</span></div>
+                        <div class="bar-t"><div class="bar-f b" style="width:98%"></div></div>
+                    </div>
+                </div>
+                <div class="m-row">
+                    <div class="m-dot v"></div>
+                    <div class="m-info">
+                        <div class="m-top"><span class="m-name">Dönüşüm Artışı (Ort.)</span><span class="m-val">+%65</span></div>
+                        <div class="bar-t"><div class="bar-f v" style="width:65%"></div></div>
+                    </div>
+                </div>
+                <div class="m-row">
+                    <div class="m-dot c"></div>
+                    <div class="m-info">
+                        <div class="m-top"><span class="m-name">Zamanında Teslim</span><span class="m-val">%100</span></div>
+                        <div class="bar-t"><div class="bar-f c" style="width:100%"></div></div>
+                    </div>
+                </div>
+                <div class="m-stats">
+                    <div class="m-stat"><div class="m-stat-n">+150</div><div class="m-stat-l">Tamamlanan Proje</div></div>
+                    <div class="m-stat"><div class="m-stat-n">6 Ay</div><div class="m-stat-l">Ücretsiz Destek</div></div>
+                </div>
+            </div>
+
+            <div>
+                <span class="sec-label">Web Tasarım & Geliştirme</span>
+                <h2 class="sec-title">Kullanıcıyı Etkileyen,<br><span class="g">Algoritmayı Kazanan</span> Siteler</h2>
+                <p style="color:var(--muted);font-size:.95rem;line-height:1.85;margin-bottom:14px;">
+                    Güçlü bir dijital varlık, rakiplerinizden sizi ayıran en kritik unsurdur. <strong style="color:var(--text);">Nexora Inovation</strong> olarak markanıza özel, kullanıcı davranışını inceleyen ve dönüşüm odaklı web deneyimleri tasarlıyoruz.
+                </p>
+                <p style="color:var(--muted);font-size:.95rem;line-height:1.85;margin-bottom:24px;">
+                    Şablonlardan değil, <strong style="color:var(--text);">stratejiden yola çıkıyoruz.</strong> Her piksel, her satır kod — hedef kitlenize hitap edecek şekilde kurgulanır.
+                </p>
+                <div class="tags-row">
+                    <span class="tag">Kurumsal Web</span>
+                    <span class="tag">E-Ticaret</span>
+                    <span class="tag">Landing Page</span>
+                    <span class="tag">Mobil Öncelikli</span>
+                    <span class="tag">Core Web Vitals</span>
+                    <span class="tag">WordPress / Özel CMS</span>
+                    <span class="tag">React / Next.js</span>
+                </div>
+                <a href="javascript:void(0)" class="btn btn-grad popup-trigger">Ücretsiz Keşif Görüşmesi Al →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="sec-divider">
+
+<!-- ====================================================
+     SÜREÇ
+==================================================== -->
+<section class="sec" id="surec">
+    <div class="wrap">
+        <div class="sec-head fu">
+            <span class="sec-label">Süreç</span>
+            <h2 class="sec-title">Fikrinizden Yayına,<br>Her Adım Şeffaf</h2>
+            <p class="sec-sub">Sürpriz yok. Net timeline, net fiyat. Baştan sona sizinle birlikte ilerliyoruz.</p>
+        </div>
+        <div class="process-grid fu">
+            <div class="proc-step">
+                <div class="proc-num">01</div>
+                <h4>Keşif & Analiz</h4>
+                <p>İşletmenizi, hedef kitlenizi ve rakiplerinizi derinlemesine anlıyoruz. Sektör dinamikleri ve kullanıcı alışkanlıkları analiz edilir.</p>
+            </div>
+            <div class="proc-step">
+                <div class="proc-num">02</div>
+                <h4>Tasarım & Prototip</h4>
+                <p>Markanıza özgü wireframe ve interaktif prototip hazırlıyoruz. Onayınız alındıktan sonra geliştirme başlar.</p>
+            </div>
+            <div class="proc-step">
+                <div class="proc-num">03</div>
+                <h4>Geliştirme</h4>
+                <p>Hızlı, güvenli ve ölçeklenebilir kod tabanıyla hayata geçiriyoruz. Core Web Vitals ve SEO baştan entegre edilir.</p>
+            </div>
+            <div class="proc-step">
+                <div class="proc-num">04</div>
+                <h4>Yayın & Destek</h4>
+                <p>Test, optimizasyon ve 6 ay ücretsiz bakım desteğiyle yanınızdayız. Siteniz canlıya geçtikten sonra da izliyoruz.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="sec-divider">
+
+<!-- ====================================================
+     ÖZELLİKLER
+==================================================== -->
+<section class="sec">
+    <div class="wrap">
+        <div class="sec-head fu">
+            <span class="sec-label">Standart Özellikler</span>
+            <h2 class="sec-title">Her Projede Dahil,<br>Ekstra Ücret Yok</h2>
+            <p class="sec-sub">Bunlar her projede başlangıçtan itibaren dahildir. Gizli kalem yok, sürpriz fatura yok.</p>
+        </div>
+        <div class="feat-grid fu">
+            <div class="feat-card">
+                <div class="feat-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#a598ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+                <h4>Özgün UI/UX Tasarım</h4>
+                <p>Markanızın ruhunu yansıtan, kullanıcıyı doğru yönlendiren, sektörde iz bırakan arayüz tasarımı.</p>
+            </div>
+            <div class="feat-card">
+                <div class="feat-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#a598ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+                <h4>Mobil Öncelikli Geliştirme</h4>
+                <p>Ziyaretçilerin %70'i mobilde. Her ekranda kusursuz çalışan, hızlı ve duyarlı yapı.</p>
+            </div>
+            <div class="feat-card">
+                <div class="feat-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#a598ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+                <h4>Hız & Core Web Vitals</h4>
+                <p>Google sıralamasını ve kullanıcı deneyimini doğrudan etkileyen performans metrikleri baştan optimize edilir.</p>
+            </div>
+            <div class="feat-card">
+                <div class="feat-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#a598ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+                <h4>Teknik SEO & Schema</h4>
+                <p>Yapısal veri, meta optimizasyonu ve Core Web Vitals ile arama motorlarında doğru okunma.</p>
+            </div>
+            <div class="feat-card">
+                <div class="feat-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#a598ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <h4>SSL & Güvenlik</h4>
+                <p>SSL sertifikası, güvenlik duvarı ve GDPR/KVKK uyumu ile ziyaretçilerin güveni korunur.</p>
+            </div>
+            <div class="feat-card">
+                <div class="feat-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#a598ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+                <h4>CMS & Entegrasyonlar</h4>
+                <p>WordPress, özel CMS, CRM ve 3. parti araçlarla sorunsuz entegrasyon.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="sec-divider">
+
+<!-- ====================================================
+     FİYATLANDIRMA
+==================================================== -->
+<section class="sec" id="fiyatlar">
+    <div class="wrap">
+        <div class="sec-head fu">
+            <span class="sec-label">Fiyatlandırma</span>
+            <h2 class="sec-title">Rekabetçi Fiyat,<br>Sınıfsız Kalite</h2>
+            <p class="sec-sub">Her bütçeye uygun paket. Gizli ücret yok, taahhüt yok. İlk görüşme tamamen ücretsiz.</p>
+        </div>
+        <div class="pkg-grid fu">
+
+            <div class="pkg">
+                <div class="pkg-tier">Başlangıç</div>
+                <div class="pkg-name">Landing Page</div>
+                <div class="pkg-desc">Kampanya veya ürününüz için tek sayfalık, dönüşüm odaklı tasarım. Hızlı yayın, maksimum etki.</div>
+                <div class="pkg-price">
+                    <div class="pkg-from">Başlayan fiyatlarla</div>
+                    <div class="pkg-amt"><span class="cur">₺</span>14.900</div>
+                    <div class="pkg-note">KDV dahil · tek seferlik</div>
+                </div>
+                <ul class="pkg-list">
+                    <li>Özel UI/UX tasarım</li>
+                    <li>Mobil uyumlu geliştirme</li>
+                    <li>Temel SEO optimizasyonu</li>
+                    <li>İletişim formu & CTA entegrasyonu</li>
+                    <li>SSL + hız optimizasyonu</li>
+                    <li>3 ay ücretsiz teknik destek</li>
+                </ul>
+                <a href="javascript:void(0)" class="pkg-btn popup-trigger">Teklif Al →</a>
+            </div>
+
+            <div class="pkg pop">
+                <div class="pop-badge">⭐ En Çok Tercih</div>
+                <div class="pkg-tier" style="margin-top:16px;">Tam Paket</div>
+                <div class="pkg-name">Kurumsal Web Sitesi</div>
+                <div class="pkg-desc">Markanızı tam yansıtan, büyümeyle birlikte ölçeklenen kurumsal web sitesi. Her şey dahil.</div>
+                <div class="pkg-price">
+                    <div class="pkg-from">Başlayan fiyatlarla</div>
+                    <div class="pkg-amt"><span class="cur">₺</span>34.900</div>
+                    <div class="pkg-note">KDV dahil · tek seferlik</div>
+                </div>
+                <ul class="pkg-list">
+                    <li>Kurumsal & özgün arayüz tasarımı</li>
+                    <li>CMS entegrasyonu (WordPress / Özel)</li>
+                    <li>SSL + hızlı hosting kurulumu</li>
+                    <li>Teknik SEO & meta veri optimizasyonu</li>
+                    <li>Google Analytics & Tag Manager</li>
+                    <li>CRM & 3. parti entegrasyonlar</li>
+                    <li>6 ay ücretsiz teknik destek</li>
+                </ul>
+                <a href="javascript:void(0)" class="pkg-btn popup-trigger">Hemen Başlayalım →</a>
+            </div>
+
+            <div class="pkg">
+                <div class="pkg-tier">Kurumsal</div>
+                <div class="pkg-name">E-Ticaret & Özel</div>
+                <div class="pkg-desc">Tam e-ticaret altyapısı, özel yazılım ve büyük ölçekli dijital projeler için eksiksiz çözüm.</div>
+                <div class="pkg-price">
+                    <div class="pkg-from">Başlayan fiyatlarla</div>
+                    <div class="pkg-amt"><span class="cur">₺</span>59.900</div>
+                    <div class="pkg-note">KDV dahil · tek seferlik</div>
+                </div>
+                <ul class="pkg-list">
+                    <li>Tam e-ticaret altyapısı</li>
+                    <li>Özel yazılım & API geliştirme</li>
+                    <li>Ödeme sistemi entegrasyonu</li>
+                    <li>Gelişmiş SEO & performans paketi</li>
+                    <li>Çok dilli destek & lokalizasyon</li>
+                    <li>12 ay öncelikli teknik destek</li>
+                </ul>
+                <a href="javascript:void(0)" class="pkg-btn popup-trigger">Teklif Al →</a>
+            </div>
+
+        </div>
+        <p class="pkg-note-row fu">Projenize özel fiyat için <a href="javascript:void(0)" class="popup-trigger">ücretsiz keşif görüşmesi</a> alabilirsiniz.</p>
+    </div>
+</section>
+
+<hr class="sec-divider">
+
+<!-- ====================================================
+     CTA
+==================================================== -->
+<section class="sec">
+    <div class="wrap">
+        <div class="cta-strip fu">
+            <div>
+                <h3>Projenizi Hayata Geçirelim</h3>
+                <p>Ücretsiz keşif görüşmesinde ihtiyaçlarınızı dinler, size özel çözüm ve net fiyat sunarız. Taahhüt yok, baskı yok.</p>
+            </div>
+            <a href="javascript:void(0)" class="btn btn-grad popup-trigger" style="flex-shrink:0;">Ücretsiz Görüşme Al →</a>
+        </div>
+    </div>
+</section>
+
+<!-- ====================================================
+     FOOTER — index.html ile birebir aynı
+==================================================== -->
+<footer class="main-footer">
+    <div class="footer-bg-element"></div>
+    <div class="footer-bg-element-2"></div>
+
+    <div class="container">
+
+        <!-- CTA şerit -->
+        <div class="footer-cta-strip">
+            <div class="footer-cta-text">
+                <h3>Büyümeye Hazır mısınız?</h3>
+                <p>İlk görüşme ücretsiz — projenizi anlatın, size özel strateji çıkaralım.</p>
+            </div>
+            <div class="footer-cta-actions">
+                <a href="javascript:void(0)" class="btn-quote popup-trigger">Ücretsiz Teklif Al →</a>
+                <a href="mailto:info@nexorainovation.com" class="footer-cta-email">veya e-posta gönderin</a>
+            </div>
+        </div>
+
+        <!-- Ana 4 kolon -->
+        <div class="footer-main">
+
+            <!-- 1. Kolon: Marka -->
+            <div class="footer-brand">
+                <div class="f-logo-wrapper">
+                    <img src="logo.png" alt="Nexora Logo" style="width:52px;height:52px;object-fit:contain;">
+                    <span class="brand-name">Nexora Inovation</span>
+                </div>
+                <p class="footer-brand-desc">SEO, web geliştirme, dijital reklamcılık ve global lokalizasyonda uçtan uca çözümler.</p>
+
+                <div class="footer-contacts">
+                    <div class="footer-contact-row">
+                        <div class="footer-contact-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <a href="mailto:info@nexorainovation.com">info@nexorainovation.com</a>
+                    </div>
+                    <div class="footer-contact-row">
+                        <div class="footer-contact-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        İstanbul, Türkiye
+                    </div>
+                </div>
+
+                <div class="footer-socials">
+                    <a href="#" class="footer-social-btn" title="LinkedIn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="#" class="footer-social-btn" title="Instagram">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="#" class="footer-social-btn" title="X / Twitter">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 2. Kolon: Hizmetler -->
+            <div class="footer-nav-col">
+                <div class="footer-nav-heading">Hizmetler</div>
+                <ul class="footer-nav-list">
+                    <li><a href="web-tasarim-gelistirme.html">Web Tasarım & Geliştirme</a></li>
+                    <li><a href="seo-optimizasyonu.html">SEO Optimizasyonu</a></li>
+                    <li><a href="google-ads-yonetimi.html">Google Ads Yönetimi</a></li>
+                    <li><a href="global-lokalizasyon.html">Global Lokalizasyon</a></li>
+                    <li><a href="performans-qa-test.html">Performans & QA Test</a></li>
+                    <li><a href="analitik-veri-takibi.html">Analitik & Veri Takibi</a></li>
+                    <li><a href="website-bakim-destek.html">Website Bakım & Destek</a></li>
+                </ul>
+            </div>
+
+            <!-- 3. Kolon: Şirket -->
+            <div class="footer-nav-col">
+                <div class="footer-nav-heading">Şirket</div>
+                <ul class="footer-nav-list">
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="#">Referanslar</a></li>
+                    <li><a href="#">Kariyer</a></li>
+                </ul>
+            </div>
+
+            <!-- 4. Kolon: Yasal -->
+            <div class="footer-nav-col">
+                <div class="footer-nav-heading">Yasal</div>
+                <ul class="footer-nav-list">
+                    <li><a href="#">Gizlilik Politikası</a></li>
+                    <li><a href="#">Kullanım Koşulları</a></li>
+                    <li><a href="#">KVKK Aydınlatma</a></li>
+                    <li><a href="#">Çerez Politikası</a></li>
+                </ul>
+                <div style="margin-top:32px;">
+                    <div style="font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#1e293b;margin-bottom:12px;">Sertifikalar</div>
+                    <div style="display:flex;flex-direction:column;gap:8px;">
+                        <div style="display:flex;align-items:center;gap:8px;color:#334155;font-size:.78rem;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            Google Partner
+                        </div>
+                        <div style="display:flex;align-items:center;gap:8px;color:#334155;font-size:.78rem;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            Shopify Partner
+                        </div>
+                        <div style="display:flex;align-items:center;gap:8px;color:#334155;font-size:.78rem;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c6dff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            GA4 Sertifikalı
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Alt bar -->
+    <div class="footer-bottom-bar">
+        <div class="container">
+            <div class="footer-copy">© 2025 <span>Nexora Inovation</span>. Tüm hakları saklıdır.</div>
+            <div class="legal-links">
+                <a href="#">Gizlilik</a>
+                <a href="#">Kullanım Koşulları</a>
+                <a href="#">KVKK</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Scroll progress bar
+window.addEventListener('scroll', () => {
+    const d = document.documentElement;
+    document.getElementById('bar').style.width = (d.scrollTop / (d.scrollHeight - d.clientHeight) * 100) + '%';
+});
+
+// Fade-up observer
+const obs = new IntersectionObserver(e => e.forEach(el => {
+    if (el.isIntersecting) { el.target.classList.add('vis'); obs.unobserve(el.target); }
+}), { threshold: 0.07 });
+document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+
+// Active nav on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('nav a');
+window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
+    navLinks.forEach(l => {
+        l.classList.remove('active');
+        if (l.getAttribute('href') === '#' + cur) l.classList.add('active');
+    });
+});
+
+// Canvas hero arka plan
+const canvas = document.getElementById('hero-canvas');
+if (canvas) {
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth; canvas.height = canvas.closest('section').offsetHeight;
+    const pts = Array.from({length:55}, () => ({
+        x: Math.random()*canvas.width, y: Math.random()*canvas.height,
+        vx: (Math.random()-.5)*.35, vy: (Math.random()-.5)*.35
+    }));
+    function draw() {
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        pts.forEach(p => {
+            p.x += p.vx; p.y += p.vy;
+            if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+            if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+            ctx.beginPath(); ctx.arc(p.x,p.y,1.5,0,Math.PI*2);
+            ctx.fillStyle = 'rgba(124,109,255,.35)'; ctx.fill();
+        });
+        pts.forEach((a,i) => pts.slice(i+1).forEach(b => {
+            const d = Math.hypot(a.x-b.x, a.y-b.y);
+            if (d < 120) {
+                ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y);
+                ctx.strokeStyle = `rgba(124,109,255,${.12*(1-d/120)})`; ctx.lineWidth=.6; ctx.stroke();
+            }
+        }));
+        requestAnimationFrame(draw);
+    }
+    draw();
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = canvas.closest('section').offsetHeight;
+    });
+}
+
+// Popup
+const popup = document.getElementById('teklifPopup');
+function openPopup() { if(popup) popup.classList.add('open'); }
+function closePopup() { if(popup) popup.classList.remove('open'); }
+if (popup) {
+    document.querySelectorAll('.popup-trigger').forEach(btn => {
+        btn.addEventListener('click', e => { e.preventDefault(); openPopup(); });
+    });
+    popup.addEventListener('click', e => { if(e.target === popup) closePopup(); });
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') closePopup(); });
+}
+
+async function submitPopup() {
+    const name    = document.getElementById('popupName').value.trim();
+    const email   = document.getElementById('popupEmail').value.trim();
+    const phone   = document.getElementById('popupPhone').value.trim();
+    const service = document.getElementById('popupService').value;
+    const message = document.getElementById('popupMessage').value.trim();
+
+    if (!name || !email) { alert('Lütfen ad soyad ve e-posta adresinizi girin.'); return; }
+
+    const btn = document.querySelector('.popup-btn');
+    btn.disabled = true; btn.textContent = 'Gönderiliyor…';
+
+    try {
+        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+            from_name: name, from_email: email,
+            phone: phone || 'Belirtilmedi',
+            service: service || 'Belirtilmedi',
+            message: message || 'Belirtilmedi',
+            to_email: 'info@nexorainovation.com', reply_to: email,
+        });
+        document.getElementById('popupSuccessEmail').textContent = email;
+        document.getElementById('popupForm').style.display = 'none';
+        document.getElementById('popupSuccess').classList.add('show');
+        setTimeout(() => {
+            closePopup();
+            setTimeout(() => {
+                document.getElementById('popupForm').style.display = '';
+                document.getElementById('popupSuccess').classList.remove('show');
+                ['popupName','popupEmail','popupPhone','popupMessage'].forEach(id => document.getElementById(id).value = '');
+                document.getElementById('popupService').value = '';
+                btn.disabled = false; btn.textContent = 'Teklif İste →';
+            }, 400);
+        }, 2800);
+    } catch (err) {
+        console.error('EmailJS hatası:', err);
+        btn.disabled = false; btn.textContent = 'Teklif İste →';
+        alert('Bir hata oluştu. Lütfen tekrar deneyin veya info@nexorainovation.com adresine doğrudan yazın.');
+    }
+}
+</script>
+</body>
+</html>

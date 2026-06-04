@@ -3,10 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ✅ Temel SEO -->
     <title>Nexora Inovation | SEO & Web Çözümleri</title>
-    <meta name="description" content="Nexora Inovation, SEO ve modern web geliştirme çözümleriyle markanızı dijitalde büyütür.">
+    <meta name="description" content="Nexora Inovation, SEO ve modern web geliştirme çözümleriyle markanızı dijitalde büyütür. Google'da üst sıralara çıkın, dönüşümlerinizi artırın.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Nexora Inovation">
+    <link rel="canonical" href="https://nexorainovation.com/">
+
+    <!-- ✅ Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nexorainovation.com/">
     <meta property="og:title" content="Nexora Inovation | SEO & Web Çözümleri">
-    <meta property="og:image" content="logo-veya-onizleme.jpg">
+    <meta property="og:description" content="Nexora Inovation, SEO ve modern web geliştirme çözümleriyle markanızı dijitalde büyütür. Google'da üst sıralara çıkın, dönüşümlerinizi artırın.">
+    <meta property="og:image" content="https://nexorainovation.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:site_name" content="Nexora Inovation">
+
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://nexorainovation.com/">
+    <meta name="twitter:title" content="Nexora Inovation | SEO & Web Çözümleri">
+    <meta name="twitter:description" content="Nexora Inovation, SEO ve modern web geliştirme çözümleriyle markanızı dijitalde büyütür.">
+    <meta name="twitter:image" content="https://nexorainovation.com/og-image.jpg">
+
+    <!-- ✅ Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Nexora Inovation",
+      "description": "SEO ve modern web geliştirme çözümleriyle markanızı dijitalde büyütün.",
+      "url": "https://nexorainovation.com",
+      "logo": "https://nexorainovation.com/logo.png",
+      "email": "info@nexorainovation.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "TR"
+      },
+      "sameAs": [],
+      "serviceType": ["SEO", "Web Geliştirme", "Dijital Pazarlama"]
+    }
+    </script>
 
    <!-- EmailJS SDK -->
    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -2854,7 +2894,8 @@ if (!sessionStorage.getItem('langRedirected')) {
     sessionStorage.setItem('langRedirected', '1');
     const lang = navigator.language || navigator.userLanguage || '';
     if (!lang.startsWith('tr')) {
-        window.location.href = '/en/home';
+        // ⚠️ /en/home sayfanız hazır olduğunda bu satırı aktif edin:
+        // window.location.href = '/en/home';
     }
 }
 

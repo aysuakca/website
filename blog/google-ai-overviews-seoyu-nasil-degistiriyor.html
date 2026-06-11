@@ -55,10 +55,10 @@
         --head-font: 'Plus Jakarta Sans', sans-serif;
         --radius-xl: 28px;
         --radius-2xl:40px;
-        /* Bu yazının aksant rengi: sıcak turuncu/amber */
-        --accent:        #f59e0b;
-        --accent-dim:    rgba(245,158,11,.12);
-        --accent-border: rgba(245,158,11,.3);
+        /* Bu yazının aksant rengi: indigo/mavi-mor */
+        --accent:        #6366f1;
+        --accent-dim:    rgba(99,102,241,.12);
+        --accent-border: rgba(99,102,241,.3);
     }
 
     html { scroll-behavior: smooth; }
@@ -82,16 +82,16 @@
     .global-background-glow {
         position:fixed; inset:0; z-index:-1; pointer-events:none;
         background:
-            radial-gradient(ellipse 80% 60% at 80% 10%, rgba(245,158,11,.05) 0%, transparent 65%),
-            radial-gradient(ellipse 60% 50% at 10% 85%, rgba(108,99,255,.04) 0%, transparent 65%),
-            radial-gradient(ellipse 50% 40% at 50% 50%, rgba(245,158,11,.02) 0%, transparent 70%);
+            radial-gradient(ellipse 80% 60% at 80% 10%, rgba(99,102,241,.06) 0%, transparent 65%),
+            radial-gradient(ellipse 60% 50% at 10% 85%, rgba(108,99,255,.05) 0%, transparent 65%),
+            radial-gradient(ellipse 50% 40% at 50% 50%, rgba(99,102,241,.03) 0%, transparent 70%);
         filter: blur(40px);
     }
 
-    .container { width:100%; max-width:1200px; margin:0 auto; padding:0 28px; }
+    .container { width:100%; max-width:1200px; margin:0 auto; padding:0 60px; }
 
     .g-text {
-        background: linear-gradient(100deg, var(--accent), #ef4444);
+        background: linear-gradient(100deg, #818cf8, #6366f1);
         -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         background-clip: text;
     }
@@ -127,7 +127,7 @@
     /* ── OKUMA ÇUBUĞU ── */
     .read-progress-bar {
         position: fixed; top: 76px; left: 0; width: 0%; height: 3px;
-        background: linear-gradient(90deg, var(--accent), #ef4444);
+        background: linear-gradient(90deg, var(--accent), #818cf8);
         z-index: 999; transition: width .1s linear;
     }
 
@@ -143,7 +143,7 @@
         content:''; position:absolute; inset:0;
         background:
             linear-gradient(to top, rgba(0,0,0,.9) 0%, rgba(0,0,0,.45) 50%, rgba(0,0,0,.12) 100%),
-            linear-gradient(to right, rgba(245,158,11,.12) 0%, transparent 65%);
+            linear-gradient(to right, rgba(99,102,241,.12) 0%, transparent 65%);
     }
 
     /* ── BREADCRUMB ── */
@@ -177,11 +177,11 @@
     .article-hero-title {
         font-family: var(--head-font); font-size: clamp(2rem, 4vw, 3rem);
         font-weight: 900; color: #fff; letter-spacing: -1.5px; line-height: 1.15;
-        margin-bottom: 20px; max-width: 820px;
+        margin-bottom: 20px; max-width: 100%;
     }
     .article-hero-desc {
         font-size: 1.15rem; color: #94a3b8; line-height: 1.75;
-        max-width: 680px; margin-bottom: 32px;
+        max-width: 100%; margin-bottom: 32px;
     }
     .article-hero-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px; }
     .article-tag {
@@ -201,7 +201,7 @@
     .author-info { display: flex; align-items: center; gap: 14px; }
     .author-avatar {
         width: 44px; height: 44px; border-radius: 50%;
-        background: linear-gradient(135deg, var(--accent), #ef4444);
+        background: linear-gradient(135deg, var(--accent), #818cf8);
         display: flex; align-items: center; justify-content: center;
         font-family: var(--head-font); font-weight: 800; font-size: 1rem; color: #fff;
         flex-shrink: 0;
@@ -223,8 +223,8 @@
 
     /* ── LAYOUT ── */
     .article-layout {
-        display: grid; grid-template-columns: 1fr 320px;
-        gap: 60px; padding: 60px 0 100px; align-items: start;
+        display: block;
+        padding: 60px 0 100px;
     }
 
     /* ── MAKALE İÇERİĞİ ── */
@@ -261,7 +261,7 @@
         background: var(--accent-dim); border: 1px solid var(--accent-border);
         font-size: .85rem; font-weight: 800; color: var(--accent); flex-shrink: 0;
     }
-    .article-content p { color: #c8d4e4; font-size: 1.02rem; line-height: 1.85; margin-bottom: 20px; }
+    .article-content p { color: #c8d4e4; font-size: 1.08rem; line-height: 1.9; margin-bottom: 22px; }
     .article-content p strong { color: #f0f4fc; font-weight: 600; }
     .article-content p em { color: var(--accent); font-style: normal; font-weight: 500; }
 
@@ -275,7 +275,7 @@
     }
     .article-content ul li::before {
         content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%;
-        background: linear-gradient(135deg, var(--accent), #ef4444);
+        background: linear-gradient(135deg, var(--accent), #818cf8);
         margin-top: 9px; flex-shrink: 0;
     }
 
@@ -289,11 +289,11 @@
     }
     .trend-card:hover {
         border-color: var(--accent-border);
-        box-shadow: 0 16px 48px rgba(245,158,11,.1);
+        box-shadow: 0 16px 48px rgba(99,102,241,.12);
     }
     .trend-card::before {
         content:''; position:absolute; top:0; left:0; right:0; height:2px;
-        background: linear-gradient(90deg, var(--accent), #ef4444, transparent);
+        background: linear-gradient(90deg, var(--accent), #818cf8, transparent);
         opacity: 0; transition: opacity .3s;
     }
     .trend-card:hover::before { opacity: 1; }
@@ -340,7 +340,7 @@
     /* Araç pilleri */
     .tool-pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 4px; }
     .tool-pill {
-        background: rgba(245,158,11,.07); border: 1px solid rgba(245,158,11,.2);
+        background: rgba(99,102,241,.07); border: 1px solid rgba(99,102,241,.2);
         color: var(--accent); padding: 6px 16px; border-radius: 100px;
         font-size: .78rem; font-weight: 700; font-family: var(--head-font);
     }
@@ -348,15 +348,15 @@
     /* Makale sonu CTA */
     .article-cta {
         margin-top: 72px;
-        background: linear-gradient(135deg, rgba(245,158,11,.08), rgba(239,68,68,.05));
-        border: 1px solid rgba(245,158,11,.2);
+        background: linear-gradient(135deg, rgba(99,102,241,.08), rgba(129,140,248,.05));
+        border: 1px solid rgba(99,102,241,.2);
         border-radius: var(--radius-2xl); padding: 52px 48px; text-align: center;
         position: relative; overflow: hidden;
     }
     .article-cta::before {
         content:''; position:absolute; top:-60px;left:50%;transform:translateX(-50%);
         width:400px; height:200px;
-        background:radial-gradient(ellipse,rgba(245,158,11,.12) 0%,transparent 70%);
+        background:radial-gradient(ellipse,rgba(99,102,241,.12) 0%,transparent 70%);
         pointer-events:none; filter:blur(40px);
     }
     .article-cta h3 { font-family: var(--head-font); font-size: 1.7rem; font-weight: 800; color: #fff; margin-bottom: 14px; position:relative; }
@@ -364,13 +364,13 @@
 
     .btn-primary {
         display: inline-block; padding: 15px 36px;
-        background: linear-gradient(135deg, var(--accent), #ef4444);
-        color: #000; font-weight: 700; font-size: .95rem;
+        background: linear-gradient(135deg, var(--accent), #818cf8);
+        color: #fff; font-weight: 700; font-size: .95rem;
         border-radius: 100px; text-decoration: none;
-        box-shadow: 0 8px 28px rgba(245,158,11,.35);
+        box-shadow: 0 8px 28px rgba(99,102,241,.35);
         transition: transform .15s, box-shadow .15s;
     }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(245,158,11,.45); }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(99,102,241,.45); }
 
     /* Sonraki / Önceki */
     .article-nav {
@@ -383,7 +383,7 @@
         border-radius: 20px; padding: 22px 24px; text-decoration: none;
         transition: all .3s; display: flex; flex-direction: column; gap: 6px;
     }
-    .article-nav-card:hover { border-color: var(--accent-border); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(245,158,11,.1); }
+    .article-nav-card:hover { border-color: var(--accent-border); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(99,102,241,.12); }
     .nav-card-dir { font-size: .72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1.2px; }
     .nav-card-title { font-family: var(--head-font); font-size: .95rem; font-weight: 700; color: #f0f4fc; line-height: 1.4; }
     .article-nav-card.next { text-align: right; }
@@ -406,10 +406,10 @@
         padding: 9px 12px; border-radius: 12px;
         transition: background .2s; cursor: default;
     }
-    .trend-mini-item:hover { background: rgba(245,158,11,.06); }
+    .trend-mini-item:hover { background: rgba(99,102,241,.06); }
     .trend-mini-num {
         font-family: var(--head-font); font-size: .72rem; font-weight: 800;
-        color: rgba(245,158,11,.5); min-width: 20px;
+        color: rgba(99,102,241,.6); min-width: 20px;
     }
     .trend-mini-label { font-size: .82rem; color: #94a3b8; font-weight: 500; line-height: 1.3; }
 
@@ -446,11 +446,11 @@
     .sidebar-nl-input:focus { border-color: var(--accent-border); }
     .sidebar-nl-btn {
         width: 100%; padding: 12px;
-        background: linear-gradient(135deg, var(--accent), #ef4444);
+        background: linear-gradient(135deg, var(--accent), #818cf8);
         color: #000; border: none; border-radius: 14px; font-size: .88rem; font-weight: 700;
         cursor: pointer; font-family: var(--body-font); transition: all .2s;
     }
-    .sidebar-nl-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,158,11,.35); }
+    .sidebar-nl-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(99,102,241,.35); }
 
     /* ── FOOTER ── */
     .article-footer { background: rgba(255,255,255,.015); border-top: 1px solid rgba(255,255,255,.06); padding: 40px 0; }
@@ -473,6 +473,7 @@
         .article-cta { padding: 36px 24px; }
         .article-nav { grid-template-columns: 1fr; }
         .nav-wrapper { padding: 0 16px; }
+        .container { padding: 0 20px; }
         .article-author-bar { flex-direction: column; align-items: flex-start; }
         .trend-card { padding: 24px 22px; }
     }
@@ -502,13 +503,13 @@
 <div class="article-cover">
     <div class="cover-caption" style="position:relative;z-index:2;padding:36px 48px 44px;width:100%;">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
-            <span style="background:rgba(245,158,11,.2);color:#f59e0b;border:1px solid rgba(245,158,11,.4);border-radius:100px;padding:5px 16px;font-size:.72rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;backdrop-filter:blur(8px);">SEO &amp; Yapay Zeka</span>
+            <span style="background:rgba(99,102,241,.2);color:#818cf8;border:1px solid rgba(99,102,241,.4);border-radius:100px;padding:5px 16px;font-size:.72rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;backdrop-filter:blur(8px);">SEO &amp; Yapay Zeka</span>
             <span style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:5px 16px;font-size:.72rem;font-weight:700;letter-spacing:.6px;backdrop-filter:blur(8px);">⏱ 8 dk okuma</span>
         </div>
         <h2 style="font-family:var(--head-font);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:900;color:#fff;letter-spacing:-1px;line-height:1.2;max-width:660px;text-shadow:0 2px 20px rgba(0,0,0,.6);">2026'da Google AI Overviews SEO'yu Nasıl Değiştiriyor?</h2>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;">
-            <span style="background:rgba(245,158,11,.15);color:#f59e0b;border:1px solid rgba(245,158,11,.3);border-radius:100px;padding:4px 12px;font-size:.7rem;font-weight:600;backdrop-filter:blur(6px);">AI Overviews</span>
-            <span style="background:rgba(245,158,11,.15);color:#f59e0b;border:1px solid rgba(245,158,11,.3);border-radius:100px;padding:4px 12px;font-size:.7rem;font-weight:600;backdrop-filter:blur(6px);">Semantic Search</span>
+            <span style="background:rgba(99,102,241,.15);color:#818cf8;border:1px solid rgba(99,102,241,.3);border-radius:100px;padding:4px 12px;font-size:.7rem;font-weight:600;backdrop-filter:blur(6px);">AI Overviews</span>
+            <span style="background:rgba(99,102,241,.15);color:#818cf8;border:1px solid rgba(99,102,241,.3);border-radius:100px;padding:4px 12px;font-size:.7rem;font-weight:600;backdrop-filter:blur(6px);">Semantic Search</span>
             <span style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:4px 12px;font-size:.7rem;font-weight:600;backdrop-filter:blur(6px);">Technical SEO</span>
             <span style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:4px 12px;font-size:.7rem;font-weight:600;backdrop-filter:blur(6px);">Core Web Vitals</span>
         </div>
@@ -746,7 +747,7 @@
                 </section>
 
                 <!-- Sonuç -->
-                <div style="margin-top:56px;padding:36px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:24px;">
+                <div style="margin-top:56px;padding:36px;background:rgba(99,102,241,.04);border:1px solid rgba(99,102,241,.12);border-radius:24px;">
                     <h2 style="font-family:var(--head-font);font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:16px;letter-spacing:-.3px;">Kalite ve Strateji: Tek Gerçek Formül</h2>
                     <p>2026 SEO dünyasında başarının tek bir formülü var: <strong>İnsan ve yapay zeka için aynı anda değer üretmek.</strong> Teknoloji ne kadar gelişirse gelişsin, arama motorlarının özü hâlâ doğru kişiye, doğru zamanda, doğru bilgiyi ulaştırmaktır.</p>
                     <p>AI Overviews bu amacı otomatikleştiriyor — ama kaynağını siz sağlıyorsunuz. <strong>Stratejinizi kaliteye, derinliğe ve güvene dayandırın;</strong> yapay zeka sisteminizin önünü kapatmaz, aksine vitrine taşır.</p>
@@ -781,69 +782,6 @@
 
             </article>
 
-            <!-- ── SIDEBAR ── -->
-            <aside class="article-sidebar">
-
-                <!-- 10 Trend Özeti -->
-                <div class="sidebar-card">
-                    <div class="sidebar-card-title">📊 Temel Çıkarımlar</div>
-                    <div class="trend-mini-list">
-                        <div class="trend-mini-item"><span class="trend-mini-num">01</span><span class="trend-mini-label">Keyword değil, kullanıcı değeri ön planda</span></div>
-                        <div class="trend-mini-item"><span class="trend-mini-num">02</span><span class="trend-mini-label">Semantic search artık zorunluluk</span></div>
-                        <div class="trend-mini-item"><span class="trend-mini-num">03</span><span class="trend-mini-label">Search intent doğru analiz edilmeli</span></div>
-                        <div class="trend-mini-item"><span class="trend-mini-num">04</span><span class="trend-mini-label">Core Web Vitals görünürlüğü etkiliyor</span></div>
-                        <div class="trend-mini-item"><span class="trend-mini-num">05</span><span class="trend-mini-label">Structured data (schema) şart</span></div>
-                        <div class="trend-mini-item"><span class="trend-mini-num">06</span><span class="trend-mini-label">FAQ yapısı AI özetlerine kaynak sağlıyor</span></div>
-                        <div class="trend-mini-item"><span class="trend-mini-num">07</span><span class="trend-mini-label">E-E-A-T çerçevesi belirleyici</span></div>
-                    </div>
-                </div>
-
-                <div class="sidebar-card">
-                    <div class="sidebar-card-title">İlgili Yazılar</div>
-                    <a href="2024-dijital-pazarlama-trendleri.html" class="related-mini-card">
-                        <div class="related-mini-dot" style="background:linear-gradient(135deg,rgba(245,158,11,.2),rgba(239,68,68,.1));">📈</div>
-                        <div>
-                            <div class="related-mini-title">2024 ve Sonrası İçin Dijital Pazarlama Trendleri</div>
-                            <div class="related-mini-date">27 Mart 2025 · 11 dk</div>
-                        </div>
-                    </a>
-                    <a href="yapay-zeka-is-verimliligi-artirma-yollari.html" class="related-mini-card">
-                        <div class="related-mini-dot" style="background:linear-gradient(135deg,rgba(108,99,255,.2),rgba(0,240,255,.1));">🤖</div>
-                        <div>
-                            <div class="related-mini-title">Yapay Zeka ile İş Verimliliğini Artırmanın 10 Yolu</div>
-                            <div class="related-mini-date">27 Mart 2025 · 12 dk</div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Paylaş -->
-                <div class="sidebar-card">
-                    <div class="sidebar-card-title">Bu Yazıyı Paylaş</div>
-                    <div class="sidebar-share-btns">
-                        <a class="sidebar-share-btn" href="https://twitter.com/intent/tweet?text=Google+AI+Overviews+SEO%27yu+Nas%C4%B1l+De%C4%9Fi%C5%9Ftiriyor%3F&url=https://nexorainnovation.com/blog/google-ai-overviews-seoyu-nasil-degistiriyor" target="_blank">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                            X (Twitter)'da Paylaş
-                        </a>
-                        <a class="sidebar-share-btn" href="https://www.linkedin.com/shareArticle?mini=true&url=https://nexorainnovation.com/blog/google-ai-overviews-seoyu-nasil-degistiriyor" target="_blank">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                            LinkedIn'de Paylaş
-                        </a>
-                        <button class="sidebar-share-btn" onclick="copyLink()">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
-                            Bağlantıyı Kopyala
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Bülten -->
-                <div class="sidebar-card" style="background:linear-gradient(135deg,var(--accent-dim),rgba(239,68,68,.04));border-color:var(--accent-border);">
-                    <div class="sidebar-card-title">Haftalık Bülten</div>
-                    <p style="color:#94a3b8;font-size:.83rem;line-height:1.6;margin-bottom:16px;">Yeni içeriklerden ilk siz haberdar olun. Spam yok, sadece değer.</p>
-                    <input type="email" class="sidebar-nl-input" placeholder="E-posta adresiniz" id="sidebarEmail">
-                    <button class="sidebar-nl-btn" onclick="sidebarSubscribe()">Abone Ol →</button>
-                </div>
-
-            </aside>
         </div>
     </div>
 </main>
@@ -878,7 +816,7 @@ function copyLink() {
     navigator.clipboard.writeText(window.location.href).then(() => {
         const toast = document.createElement('div');
         toast.textContent = 'Bağlantı kopyalandı ✓';
-        toast.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:rgba(245,158,11,.9);color:#000;padding:12px 24px;border-radius:100px;font-size:.85rem;font-weight:700;z-index:9999;backdrop-filter:blur(10px);';
+        toast.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:rgba(99,102,241,.9);color:#fff;padding:12px 24px;border-radius:100px;font-size:.85rem;font-weight:700;z-index:9999;backdrop-filter:blur(10px);';
         document.body.appendChild(toast);
         setTimeout(() => toast.remove(), 2200);
     });

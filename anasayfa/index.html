@@ -84,7 +84,7 @@
         --radius-2xl:40px;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
 
     body {
         background: var(--bg);
@@ -93,6 +93,8 @@
         font-size: 1rem;
         line-height: 1.6;
         overflow-x: hidden;
+        width: 100%;
+        position: relative;
     }
 
     /* animated noise grain overlay */
@@ -285,10 +287,18 @@
     }
 
     @media (max-width: 860px) {
-        .hamburger { display: flex; }
+        .hamburger { display: flex; flex-shrink: 0; }
         nav { display: none; }
-        .nav-wrapper > div:last-child { display: none; } /* dil butonları üst bardan gizle */
-        .nav-wrapper { padding: 0 20px; }
+        .lang-switch-desktop { display: none !important; } /* dil butonları üst bardan gizle */
+        .nav-wrapper { padding: 0 16px; gap: 10px; }
+        .logo-area { min-width: 0; overflow: hidden; }
+        .logo { font-size: 1.15rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    }
+
+    @media (max-width: 360px) {
+        .logo { font-size: 1rem; }
+        .logo-lottie-container { width: 40px; height: 40px; }
+        .logo-lottie-container img { width: 40px !important; height: 40px !important; }
     }
 
     /* Laptop lottie - sol tarafa absolute */
@@ -2314,7 +2324,7 @@
                 <a href="/blog">Blog</a>
                 <a href="/iletişim" class="nav-cta">İletişim</a>
             </nav>
-            <div style="display:flex;align-items:center;gap:12px;">
+            <div class="lang-switch-desktop" style="display:flex;align-items:center;gap:12px;">
                 <a href="/anasayfa" style="font-size:.78rem;font-weight:700;letter-spacing:1px;color:#fff;background:rgba(108,99,255,.25);border:1px solid rgba(108,99,255,.5);border-radius:8px;padding:5px 12px;text-decoration:none;">🇹🇷 TR</a>
                 <a href="/en/home" style="font-size:.78rem;font-weight:700;letter-spacing:1px;color:#7c6dff;border:1px solid rgba(108,99,255,.35);border-radius:8px;padding:5px 12px;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='rgba(108,99,255,.1)'" onmouseout="this.style.background=''">🇬🇧 EN</a>
             </div>
